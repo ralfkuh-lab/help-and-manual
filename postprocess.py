@@ -172,6 +172,83 @@ def fix_internal_links(content: str) -> str:
     return content
 
 
+def fix_heading_borders(content: str) -> str:
+    """Ergänzt border-bottom bei Überschriften mit Strich.
+
+    Die Klasse p_UeberschriftEinfach_Gross hat in default.css border-width: 0,
+    wodurch die inline-Styles border-top/right/left: none nicht zum gewünschten
+    Strich führen. Diese Funktion fügt explizit border-bottom hinzu.
+    """
+    pattern = r'class="p_UeberschriftEinfach_Gross"([^>]*?)style="([^"]*?)"'
+
+    def add_border_bottom(match):
+        attrs = match.group(1)
+        style = match.group(2)
+        if 'border-bottom' not in style:
+            style += '; border-bottom: 1px solid #000'
+        return f'class="p_UeberschriftEinfach_Gross"{attrs}style="{style}"'
+
+    return re.sub(pattern, add_border_bottom, content)
+
+
+def fix_bullet_points(content: str) -> str:
+    """Ersetzt Unicode-Bullet-Zeichen durch Bild (wie in alter Hilfe).
+
+    H&M generiert: <span class="f_Aufzaehlung1" style="...;display:inline-block;width:24px;margin-left:-24px">&#8226;</span>
+    Gewünscht:     <span style="display:inline-block;width:24px;margin-left:-24px"><img .../></span>
+
+    Die Einrückung muss beibehalten werden.
+    """
+    # Pattern für Aufzählungs-Bullets mit Styles
+    pattern = r'<span class="f_Aufzaehlung\d+"([^>]*)>(?:&#8226;|&#8211;|•|–)</span>'
+
+    def replace_bullet(match):
+        attrs = match.group(1)
+        return f'<span{attrs}><img src="../ImagesExt/image10_1.png" alt="" /></span>'
+
+    return re.sub(pattern, replace_bullet, content)
+
+
+def fix_table_headers(content: str) -> str:
+    """Korrigiert die Tabellen-Header-Styles.
+
+    H&M generiert thead/th mit inline-styles, die wir für das gewünschte
+    Aussehen (blauer Hintergrund, weiße Schrift) anpassen müssen.
+    """
+    # th-Elemente mit background-color im style
+    def fix_th_style(match):
+        full_match = match.group(0)
+        # Ersetze background-color Wert durch #4F81BD
+        full_match = re.sub(
+            r'background-color:\s*#[0-9a-fA-F]+',
+            'background-color:#4F81BD',
+            full_match
+        )
+        return full_match
+
+    content = re.sub(r'<th[^>]*style="[^"]*"[^>]*>', fix_th_style, content)
+
+    # strong in thead mit color:#ffffff sicherstellen
+    def fix_strong_in_header(match):
+        full_match = match.group(0)
+        # Stelle sicher dass color:#ffffff gesetzt ist
+        if 'color:' in full_match:
+            full_match = re.sub(r'color:\s*#[0-9a-fA-F]+', 'color:#ffffff', full_match)
+        else:
+            full_match = full_match.replace('style="', 'style="color:#ffffff; ')
+        return full_match
+
+    # Strong-Tags in thead
+    content = re.sub(
+        r'<thead>.*?</thead>',
+        lambda m: re.sub(r'<strong[^>]*style="[^"]*"[^>]*>', fix_strong_in_header, m.group(0)),
+        content,
+        flags=re.DOTALL
+    )
+
+    return content
+
+
 def create_nethelp_document(title: str, content: str, filename: str,
                            prev_page: Optional[str] = None,
                            next_page: Optional[str] = None) -> str:
@@ -223,6 +300,9 @@ def convert_content_pages(input_dir: str, output_dir: str) -> List[Tuple[str, st
             # Pfade korrigieren
             content = fix_image_paths(content)
             content = fix_internal_links(content)
+            content = fix_heading_borders(content)
+            content = fix_bullet_points(content)
+            content = fix_table_headers(content)
 
             # NetHelp-Dokument erstellen
             html = create_nethelp_document(title, content, filename)
@@ -463,30 +543,35 @@ def generate_help_html(output_dir: str) -> None:
         f.write(help_html)
 
 
-def copy_images(input_dir: str, output_dir: str) -> None:
-    """Kopiert Bilder aus dem H&M-Export."""
+def copy_images(input_dir: str, output_dir: str, template_dir: str) -> None:
+    """Kopiert Bilder aus dem H&M-Export und Template."""
     print("\n[6/7] Kopiere Bilder...")
 
     # H&M verwendet ./images/, NetHelp verwendet ImagesExt/
     src_images = os.path.join(input_dir, 'images')
     dst_images = os.path.join(output_dir, 'ImagesExt')
 
-    if os.path.isdir(src_images):
-        if os.path.exists(dst_images):
-            # Merge statt überschreiben
-            for filename in os.listdir(src_images):
-                src_file = os.path.join(src_images, filename)
-                dst_file = os.path.join(dst_images, filename)
-                if os.path.isfile(src_file):
-                    shutil.copy2(src_file, dst_file)
-        else:
-            shutil.copytree(src_images, dst_images)
+    os.makedirs(dst_images, exist_ok=True)
 
-        file_count = len([f for f in os.listdir(dst_images) if os.path.isfile(os.path.join(dst_images, f))])
-        print(f"  Kopiert: {file_count} Bilder nach ImagesExt/")
-    else:
-        os.makedirs(dst_images, exist_ok=True)
-        print("  Keine Bilder gefunden in images/")
+    # Zuerst Template-Bilder kopieren (z.B. Bullet-Bild)
+    template_images = os.path.join(template_dir, 'ImagesExt')
+    if os.path.isdir(template_images):
+        for filename in os.listdir(template_images):
+            src_file = os.path.join(template_images, filename)
+            dst_file = os.path.join(dst_images, filename)
+            if os.path.isfile(src_file):
+                shutil.copy2(src_file, dst_file)
+
+    # Dann H&M-Bilder kopieren (überschreiben Template-Bilder falls gleichnamig)
+    if os.path.isdir(src_images):
+        for filename in os.listdir(src_images):
+            src_file = os.path.join(src_images, filename)
+            dst_file = os.path.join(dst_images, filename)
+            if os.path.isfile(src_file):
+                shutil.copy2(src_file, dst_file)
+
+    file_count = len([f for f in os.listdir(dst_images) if os.path.isfile(os.path.join(dst_images, f))])
+    print(f"  Kopiert: {file_count} Bilder nach ImagesExt/")
 
 
 def copy_hm_css(input_dir: str, output_dir: str) -> None:
@@ -578,7 +663,7 @@ def main():
     generate_help_html(output_dir)
 
     # 7. Bilder kopieren
-    copy_images(input_dir, output_dir)
+    copy_images(input_dir, output_dir, template_dir)
 
     # 8. H&M CSS-Dateien kopieren
     copy_hm_css(input_dir, output_dir)

@@ -1,8 +1,43 @@
-﻿P.MeldungstextCxSpFirst {FONT-SIZE: 11pt;  FONT-FAMILY: "Segoe UI",sans-serif;  BACKGROUND: #d9d9d9;  MARGIN: 3pt 56.7pt 0pt 35.45pt; }
+﻿/* Font-Anpassungen für H&M-Output - nur im Content-Bereich */
+#c1topic, #c1topic * {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11pt;
+}
+
+/* Großer Seitentitel (H1) - wie in D2H_Handbuch_HTML.css */
+#c1topic h1 {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    color: inherit;
+    margin: 12pt 0 3pt 0;
+}
+
+/* Tabellen-Header: blauer Hintergrund, weiße Schrift */
+#c1topic thead th {
+    background-color: #4F81BD !important;
+}
+
+#c1topic thead th,
+#c1topic thead th *,
+#c1topic thead th p,
+#c1topic thead th strong {
+    color: #ffffff !important;
+}
+
+P.MeldungstextCxSpFirst {FONT-SIZE: 11pt;  FONT-FAMILY: "Segoe UI",sans-serif;  BACKGROUND: #d9d9d9;  MARGIN: 3pt 56.7pt 0pt 35.45pt; }
 
 SPAN.Icon {}
 
 P.MeldungstextCxSpLast {FONT-SIZE: 11pt;  FONT-FAMILY: "Segoe UI",sans-serif;  BACKGROUND: #d9d9d9;  MARGIN: 0pt 56.7pt 3pt 35.45pt; }
 
 P.MeldungstextCxSpMiddle {FONT-SIZE: 11pt;  FONT-FAMILY: "Segoe UI",sans-serif;  BACKGROUND: #d9d9d9;  MARGIN: 0pt 56.7pt 0pt 35.45pt; }
+
+/* Text-Shadow für fette Texte (wie in alter Hilfe) */
+/* H&M verwendet .f_Strong statt <strong> Tags */
+.f_Strong,
+span.f_Strong,
+strong {
+    text-shadow: 1px 1px 1px grey;
+}
 
