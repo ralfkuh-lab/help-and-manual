@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.560Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Hintergründe zum TRMS</title>
+  <keywords>
+    <keyword>TRMS<keyword>Hintergründe</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Hintergründe zum TRMS</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Verwendungsszenario für das TRMS</para>
+    <para styleclass="Normal">In der Praxis werden typischerweise mehrere IKAROS-Umgebungen genutzt – mindestens, wie von Ferber-Software dringend empfohlen, eine von der Produktivumgebung getrennte Test- und/oder Integrationsumgebung. Dadurch entsteht zwangsläufig der Bedarf, in einer Umgebung erstellte benutzerdefinierte Elemente wie Vorgangsvorlagen, Custom-Code-Programmierungen, Workflows, Kosten- und EP-Verträge usw. in andere Systeme zu übertragen, z. B. nach erfolgreichen Tests von der Integrations- in die Produktivumgebung.</para>
+    <para styleclass="Normal">IKAROS bietet für diesen Bedarf das Transport- und Release-Management-System (TRMS) an. Es handelt sich dabei um eine eigenständige Anwendung mit eigenem Anwendungs- und Webserver sowie eigenen Datenbanktabellen. Das TRMS erlaubt das Verteilen von Customizing-Elementen von einer zentralen Stelle in andere IKAROS-Umgebungen oder auch anhängige Geschäftseinheiten (Tochtergesellschaft, Kooperationspartner, ...).</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img1.png" scale="57.00%" width="18" height="18" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 1: Skizze der TRMS-Architektur</para>
+    <para styleclass="ÜberschriftEinfach">Ein Anwendungsfall: Change Requests als Änderungspakete im TRMS</para>
+    <para styleclass="Normal">Bei geordneter Planung von Änderungen in IKAROS werden typischerweise in einem externen System sog. Change Requests formuliert. Diese definieren, welche Elemente und Änderungen zur Umsetzung einer bestimmten Anforderung (z. B. Einführung der erforderlichen Verträge in IKAROS für eine bestimmte Art von Mandanten) notwendig sind.</para>
+    <para styleclass="Normal">Sie können nun die erforderlichen Änderungen stellvertretend in einer bestimmten IKAROS-Umgebung realisieren und anschließend im TRMS diese Änderungen zu einem oder mehreren Paketen beliebig bündeln.</para>
+    <para styleclass="Normal">In diesen Paketen könnten Sie auch die Dokumentation der Change Requests anhängen oder z. B. die Kennungen aus externen Systemen notieren.</para>
+    <para styleclass="Normal">Solche Pakete können Sie auf Knopfdruck oder automatisiert dann in beliebige andere IKAROS-Umgebungen einspielen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Features des TRMS</para>
+    <para styleclass="Normal">Das TRMS erlaubt das bequeme Zusammenstellen von Customizing-Elementen mithilfe eines Assistentendialogs und das Speichern, Exportieren und Installieren dieser Zusammenstellungen.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Mit dem <text styleclass="Strong">TRMS als zentraler Verwaltung</text> können Sie so zwischen IKAROS-Umgebungen (die mindestens Versionsstand 2019.2 haben müssen) Ihr eigenes Customizing austauschen, beispielsweise:</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Vorgangsvorlagen</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Workflows</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Custom-Code-Programmierungen</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Konditionen wie EP- oder Kostenverträge</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Änderungen am Datenmodell der Datenbank (UDF-und UDT-Definitionen)</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Datenbankobjekte (Views, Functions)</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Dateien vom Anwendungs- und Web-Server</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Report-Definitionen aus den Reporting Services</li>
+      </list>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Zudem gehört zum TRMS eine <text styleclass="Strong">Konsolenanwendung</text>, mit der Sie das Einspielen von Customizing-Zusammenstellungen <text styleclass="Strong">automatisiert</text> ausführen können.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Vorteile</para>
+    <para styleclass="Normal">Da das TRMS eine freistehende Anwendung mit eigener Datenbank und eigenem Anwendungs- und Web-Server ist, können Sie es zentralisiert in Ihre Systemlandschaft integrieren.</para>
+    <para styleclass="Normal">Sie können einerseits ihr Customizing zwischen IKAROS-Umgebungen (ENTW, INTE, PROD) derselben Geschäftseinheit austauschen. Andererseits ist auch denkbar, spezialisierte IKAROS-Systeme aufzusetzen, um von diesen als einheitlichem Customizing-Provider andere, produktive IKAROS-Systeme mit Customizing zu versorgen.</para>
+    <para styleclass="Normal">Damit wird es möglich, über alle angebundenen IKAROS-Systeme hinweg dieselbe Customizing-Verwaltung mit denselben Werkzeugen und Abläufen beizubehalten.</para>
+  </body>
+</topic>

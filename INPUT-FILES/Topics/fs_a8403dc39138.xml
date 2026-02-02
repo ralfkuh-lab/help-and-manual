@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.580Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Automatisierung des TRMS mit dem Kommandozeilenprogramm „TrmsCli.exe“</title>
+  <keywords>
+    <keyword>Automatisierung</keyword>
+    <keyword>TrmsCli</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Automatisierung des TRMS mit dem Kommandozeilenprogramm „TrmsCli.exe“</para>
+    </header>
+    <para styleclass="Normal">Mittels der Konsolenanwendung „TrmsCli.exe“ können Sie lokal gespeicherte „.trms4-“-Paketdateien, die mit dem TRMS lokal exportiert wurden, automatisiert in ein IKAROS-Zielsystem transportieren und somit dort installieren.</para>
+    <para styleclass="Einzug1"><text styleclass="Strong">Hinweis</text>: Das Transportieren von Changes bzw. Change Sets direkt aus der TRMS-Datenbank ist hiermit nicht möglich. Sie könnten jedoch die Paketdateien für die Changes/Change Sets im TRMS erstellen, herunterladen und sie so lokal verfügbar machen.</para>
+    <para styleclass="Normal">Das Programm besitzt keine eigene Oberfläche, sondern muss z. B. per Kommandozeile oder PowerShell unter Angabe bestimmter Parameter ausgeführt werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Bereitstellung der Programmdateien</para>
+    <para styleclass="Normal">Die Anwendung muss nicht installiert werden, sondern Sie können sie aus einem beliebigen Ordner heraus nutzen. Eine Anbindung an das TRMS ist nur erforderlich, wenn das Protokoll zu dem Transportprozess im TRMS selbst gespeichert werden soll (Parameter „/LoggingInTRMS“) – anstatt als Datei (Parameter „TransportLogOutputPath“).</para>
+    <para styleclass="Normal">Die ausführbaren Dateien der Konsolenanwendung können im TRMS-Menüpunkt [<text styleclass="Systemzitat">Administration -&gt; Dateizentrum</text>] heruntergeladen werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Aufruf von Funktionalität</para>
+    <para styleclass="Normal">Dem Programm müssen Sie beim Aufruf per Parameter „/Function“ übergeben, welche der folgenden vier Funktionen ausgeführt werden soll:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">„Import“,</li>
+      <li styleclass="Aufzählung1">„ImportSingleArtefact“</li>
+      <li styleclass="Aufzählung1">„ShowCustomizingArtefactSources“,</li>
+      <li styleclass="Aufzählung1">„EncryptPassword“ und</li>
+      <li styleclass="Aufzählung1">„CheckWebserviceAccessibility“.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Return Codes der TrmsCli.exe</para>
+    <para styleclass="Normal">Die Konsolenanwendung „TrmsCli.exe“ kann die folgenden Return Codes zurückliefern:</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="5" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:57px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Return Code</text></para>
+        </td>
+        <td style="vertical-align:top; width:72px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Bedeutung</text></para>
+        </td>
+        <td style="vertical-align:top; width:422px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:57px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">0</text></para>
+        </td>
+        <td style="vertical-align:top; width:72px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Erfolgreich</text></para>
+        </td>
+        <td style="vertical-align:top; width:422px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Die Funktionalität wurde erfolgreich ausgeführt.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:57px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">10</text></para>
+        </td>
+        <td style="vertical-align:top; width:72px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Warnung</text></para>
+        </td>
+        <td style="vertical-align:top; width:422px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Der Transportprozess lief durch, jedoch wurde mindestens ein Artefakt (eventuell auch alle) aus fachlichen oder technischen Gründen nicht im Zielsystem installiert.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:57px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">20</text></para>
+        </td>
+        <td style="vertical-align:top; width:72px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Fehler</text></para>
+        </td>
+        <td style="vertical-align:top; width:422px;">
+          <para styleclass="Normal"><text style="font-size:9pt;"> IKAROS hat bei Ausführung der Funktionen einen Fehler gemeldet (z. B. bei inhaltlichen Prüfungen oder Datenkonstellationen).</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:57px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">30</text></para>
+        </td>
+        <td style="vertical-align:top; width:72px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Fehler</text></para>
+        </td>
+        <td style="vertical-align:top; width:422px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Die Ausführung der Funktionalität wurde wegen eines technischen Fehlers vorzeitig abgebrochen.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">Hilfe-Parameter „/?“</para>
+    <para styleclass="Normal">Mittels des Hilfe-Parameters „/?“ können Sie sich die Funktionen und Parameter direkt in der Kommandozeile auflisten lassen.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Abfragen aller Funktionen (Konsolenaufruf, CMD):</li>
+    </list>
+    <para styleclass="Quellcode_Eingerückt_OhneFarbe" style="tabstops:19px left,38px left,57px left,76px left,95px left,113px left,132px left,151px left,170px left,189px left ;">TrmsCli.exe /?</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Abfragen der Parameter zu einer bestimmten Funktion (Konsolenaufruf, CMD):</li>
+    </list>
+    <para styleclass="Quellcode_Eingerückt_OhneFarbe" style="tabstops:19px left,38px left,57px left,76px left,95px left,113px left,132px left,151px left,170px left,189px left ;">TrmsCli.exe /Function=Import /?</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Beispiel (Konsolenaufruf, CMD):</li>
+    </list>
+    <para styleclass="Quellcode_Eingerückt_OhneFarbe" style="tabstops:19px left,38px left,57px left,76px left,95px left,113px left,132px left,151px left,170px left,189px left ;">TrmsCli.exe /Function=Import /ImportFilePath=&quot;c:\tmp\dpSourceSetUps.trms4&quot; ^<br/>/TargetSystemStsAddress=&quot;http://localhost:2014/trust.svc&quot; ^<br/>/TargetSystemServiceHostAddress=&quot;http://localhost:2309&quot; ^ <br/>/LoggingInTrms=true /TrmsStsAddress=&quot;http://localhost:2014/trust.svc&quot; ^<br/>/TrmsServiceHostAddress=&quot;http://localhost:4358&quot;</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Hinweise aus der Praxis mit der TrmsCli.exe</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Die TrmsCli.exe kann nicht aus Laufwerken ausgeführt werden, bei denen es sich lediglich um mit dem Befehl „SUBST“ gemappte lokale Verzeichnisse handelt.</li>
+      <li styleclass="Aufzählung1">Auf dem Rechner, auf dem die „TrmsCIi.exe“ abgelegt und genutzt werden soll, muss das „Token Signing Certificate“ des Servers/Rechners installiert sein, auf dem der STS läuft, da andernfalls keine Kommunikation mit dem IKAROS-Zielsystem stattfinden kann. Meistens ist das der Server/Rechner, auf dem auch der IKAROS-Web-Server „Talos“ läuft.</li>
+    </list>
+  </body>
+</topic>

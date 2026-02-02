@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.567Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Der Artefaktpaket-Assistent im TRMS</title>
+  <keywords>
+    <keyword>Artefaktpaket<keyword>Assistent</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Der Artefaktpaket-Assistent im TRMS</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Hintergrund</para>
+    <para styleclass="Normal">Der Artefaktpaket-Assistent im TRMS ist eine Oberfläche, mit der Sie Zusammenstellungen von Artefakten festlegen und im TRMS als Change bzw. Change Set speichern oder als Paketdatei exportieren können.</para>
+    <para styleclass="Normal">Zudem erlaubt der Assistent auch den Transport inkl. der Installation dieser Artefakte in eines oder mehrere Zielsysteme.</para>
+    <para styleclass="Normal">Beim Aufruf des Artefaktpaket-Assistenten müssen Sie sich zunächst am gewünschten Quellsystem anmelden.</para>
+    <para styleclass="ÜberschriftEinfach">Die drei Modi des Artefaktpaket-Assistenten</para>
+    <para styleclass="Normal">Der Artefaktpaket-Assistent besitzt <text styleclass="Strong">vier verschiedene Modi</text> für verschiedene Anwendungsfälle:</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="5" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:217px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Anwendungsfall</text></para>
+        </td>
+        <td style="vertical-align:top; width:79px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Menüpunkt</text></para>
+        </td>
+        <td style="vertical-align:top; width:255px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Besonderheiten</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:217px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Einzelne Artefakte exportieren</text></para>
+        </td>
+        <td style="vertical-align:top; width:79px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„Artefakte“</text></para>
+        </td>
+        <td style="vertical-align:top; width:255px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Artefakte bestehen aus zwei zusammengehörigen Einzeldateien („sql“, „wfu4“ oder „xml“ zzgl. „...-Content.xml“)</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Es kann keine Paketdatei erstellt werden.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Es können nur Artefakte ausgewählt werden (also keine Changes/Change Sets)</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:217px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketdateien erstellen und speichern</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketdateien in ein IKAROS- oder TRMS-Zielsystem transportieren</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketdateien als Change/Change Set in das aktuelle TRMS importieren</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:79px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„Pakete“</text></para>
+        </td>
+        <td style="vertical-align:top; width:255px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Das erstellte Paket muss zum Abschluss heruntergeladen werden, weil die Daten sonst nirgends gespeichert werden.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Es können nur Artefakte ausgewählt werden (also keine Changes/Change Sets)</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:217px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketzusammenstellung als „Change“ speichern,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketdateien erstellen</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:79px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„Changes“</text></para>
+        </td>
+        <td style="vertical-align:top; width:255px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Die Paketkonfigurationen können als „Change“ in der Datenbank gespeichert werden.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Die Artefakte aus einem Change können als Paketdatei exportiert oder direkt in Zielsystemen installiert werden.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Es können nur Artefakte ausgewählt werden (also keine anderen Changes oder Change Sets)</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:217px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketzusammenstellung als „Change Sets“ speichern,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Paketdateien erstellen</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:79px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„Change Sets“</text></para>
+        </td>
+        <td style="vertical-align:top; width:255px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Dasselbe wie unter „Change“. Zusätzlich zu Artefakten können jedoch auch ganze Changes ins Paket aufgenommen werden.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="Normal">Je nach Modus ist der Artefaktpaket-Assistent entsprechend um Schaltflächen, Zusatzinformationen für Changes/Change Sets bzw. die Registerkarte „Change“ erweitert.</para>
+    <para styleclass="ÜberschriftEinfach">Der reduzierte Artefaktpaket-Assistent in den Menüpunkten „Pakete“ und „Artefakte“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img7.png" scale="56.00%" width="18" height="18" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 7: Der reduzierte Artefaktpaket-Assistent (Menüpunkt „Pakete“)</para>
+    <para styleclass="ÜberschriftEinfach">Der erweiterte Artefaktpaket-Assistent im Menüpunkt „Change Sets“.</para>
+    <para styleclass="Normal">Im Menüpunkt „Changes“ ist es derselbe Artefaktpaket-Assistent, jedoch ohne die Möglichkeit, „Changes“ zu wählen.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img8.png" scale="49.00%" width="16" height="16" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 8: Der erweiterte Artefaktpaket-Assistent</para>
+  </body>
+</topic>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <styleclasses>
+    <styleclass name="CodeSampleTitle" shortcut="0">
+      <style-set media="screen" type="para">page-break-inside:avoid; </style-set>
+      <style-set media="screen" type="text">font-family:'Courier New'; font-size:12pt; font-weight:bold; letter-spacing:normal; </style-set>
+    </styleclass>
+    <styleclass name="CodeSampleToggleHeader" shortcut="0">
+      <style-set media="screen" type="para">text-indent:-18px; margin-bottom:10px; margin-left:18px; border:none; </style-set>
+      <style-set media="screen" type="text">font-family:'Courier New'; font-size:12pt; font-weight:bold; letter-spacing:normal; </style-set>
+    </styleclass>
+    <styleclass name="CodeSampleLink" shortcut="0">
+      <style-set media="screen" type="para">text-align:right; border:none; </style-set>
+      <style-set media="screen" type="text">font-family:'Courier New'; font-size:12pt; font-weight:bold; letter-spacing:normal; </style-set>
+    </styleclass>
+	<tablestyleclass name="CodeSampleTable">
+      <style-set media="screen">width:auto; cell-padding:5px; cell-spacing:0px; page-break-inside:avoid; border-width:2px; border-spacing:0px; cell-border-width:0px; border-color:#00ccff; border-style:solid; background-color:none; head-row-background-color:#ffffff; alt-row-background-color:none; </style-set>
+    </tablestyleclass>
+  </styleclasses>
+</Root>

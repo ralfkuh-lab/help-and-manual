@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.524Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Bedingungsprüfung und Vor- und Nachbereitung per Ereignisskript beim Transport</title>
+  <keywords>
+    <keyword>Transportkontrollskripte<keyword>Prerequisite-Skript</keyword><keyword>Initialisierungs-Skript</keyword><keyword>Finalisierungs-Skript</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Bedingungsprüfung und Vor- und Nachbereitung per Ereignisskript beim Transport</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Hintergrund</para>
+    <para styleclass="Normal">In jedem Paket, Change und Change Set können drei verschiedene sogenannte „Transportkontrollskripte“ hinterlegt sein: „Prerequisite“, „Initialisierung“ und „Finalisierung“</para>
+    <para styleclass="Normal">Alle drei müssen in Custom Code programmiert sein. Deren Quellcode wird an das IKAROS-Zielsystem übergeben und dort einmalig ausgeführt. Die Möglichkeiten in Custom Code sind bei allen dreien identisch, sie unterscheiden sich lediglich beim Zeitpunkt, an dem sie während des Transportprozesses ausgeführt werden (und dadurch, ob sie das Installieren von Artefakten abbrechen können):</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="5" colcount="4" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:44px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Reihen-folge</text></para>
+        </td>
+        <td style="vertical-align:top; width:86px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Name</text></para>
+        </td>
+        <td style="vertical-align:top; width:185px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Ausführungszeitpunkt</text></para>
+        </td>
+        <td style="vertical-align:top; width:222px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Besonderheit</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:44px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">1</text></para>
+        </td>
+        <td style="vertical-align:top; width:86px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Prerequisite-Skript</text></para>
+        </td>
+        <td style="vertical-align:top; width:185px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Wird vor den anderen Skripten ausgeführt, nachdem das Artefakt-Paket im Zielsystem angekommen ist und bevor der Installationsprozess beginnt.</text></para>
+        </td>
+        <td style="vertical-align:top; width:222px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Kann den Transport abbrechen und die Artefakt-Installation verhindern (s. Kapitel mit ID „fs_11ed2b9082ce“ in der TRMS-Hilfe).</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">In diesem Fall werden das Initialisierungs- und das Finalisierungs-Skript nicht ausgeführt.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:44px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">2</text></para>
+        </td>
+        <td style="vertical-align:top; width:86px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Initialisierungs-Skript</text></para>
+        </td>
+        <td style="vertical-align:top; width:185px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Wird ausgeführt, nachdem &#160;das Prerequisite-Skript ausgeführt wurde und bevor die Installation der Artefakte im IKAROS-Zielsystem beginnt.</text></para>
+        </td>
+        <td style="vertical-align:top; width:222px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Erlaubt es, den Schritt der Artefakt-Installation zu verhindern (durch Überspringen) und im Anschluss direkt das Finalisierungs-Skript auszuführen.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:44px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">3</text></para>
+        </td>
+        <td style="vertical-align:top; width:86px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">-</text></para>
+        </td>
+        <td style="vertical-align:top; width:185px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">[Installation der Artefakte im IKAROS-Zielsystem]</text></para>
+        </td>
+        <td style="vertical-align:top; width:222px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">-</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:44px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">4</text></para>
+        </td>
+        <td style="vertical-align:top; width:86px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Finalisierungs-Skript</text></para>
+        </td>
+        <td style="vertical-align:top; width:185px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Wird als letzter Schritt des Transportprozesses ausgeführt.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Wird immer ausgeführt – außer der gesamte Transport wurde im Prerequisite-Skript abgebrochen.</text></para>
+        </td>
+        <td style="vertical-align:top; width:222px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Kann mittels „trms.transportSuccessful“ prüfen, ob alle Artefakte erfolgreich im Zielsystem installiert wurden (liefert false, falls bei mindestens einem Artefakt ein Fehler aufgetreten ist).</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Es ist im Skript nicht möglich, die Installation der Artefakte rückgängig zu machen.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach">Technische Hinweise</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Es ist nicht möglich, mit den Skripten Einfluss auf die eigentliche Installation einzelner Artefakte zu nehmen. Fehler oder Warnungen, die bei der Artefakt-Installation im IKAROS-System auftreten, können von den Skripten auch nicht ausgelesen werden.</li>
+      <li styleclass="Aufzählung1">Pro „trms4“-Paketdatei darf es derzeit jeweils genau ein Prerequisite-, ein Initialisierungs- und ein Finalisierungs-Skript geben. D. h. wenn Sie mehrere Changes, die jeweils eigene Transportkontrollskripte beinhalten, in einem Change Set bündeln möchten, könnte es zu Konflikten hinsichtlich der Skripte kommen. Stellen Sie in diesem Fall sicher, dass nur der übergeordnete Change Set solche Skripte umfasst.</li>
+      <li styleclass="Aufzählung1">In den trms4-Paketen sind die Skripte als einfache Textdateien mit den Namen „Prerequisite.cc4“, „Initialization.cc4“ und „Finalization.cc4“ auf oberster Ordnerebene enthalten, falls Skript-Code eingegeben wurde (im Artefaktpaket-Assistenten per „Bearbeiten“-Schaltfläche).</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Ausführungskontext</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Rückgabe</text>: Eine Rückgabe benötigen die Skripte nicht und sie würde ignoriert.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Ausführungszeitpunkt</text>: Der Code des <text styleclass="Strong">Prerequisite</text>-Skripts wird nach dem Start des Transportprozesses im Zielsystem ausgeführt, vor der Ausführung eines ggf. vorhandenen <text styleclass="Strong">Initialisierungs</text>-Skripts und bevor IKAROS mit der eigentlichen Installation der Artefakte beginnt. Der Code des <text styleclass="Strong">Finalisierungs</text>-Skripts wird immer zum Abschluss des Transports ausgeführt (sofern nicht der gesamte Transportprozess im Prerequisite-Skript bzw. durch einen Fehler abgebrochen wurde).</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Ausführungsmodus</text>: Der Skriptcode wird im IKAROS-Zielsystem immer mit RuntimeMode „RuntimeMode.batch“ ausgeführt. Benutzerinteraktion ist somit nicht möglich, Dialoge und Meldungen aus dem Code werden unterdrückt.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">Transportabbruch, Transportverhinderung und Protokolleinträge</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Transportabbruch</text>: Wenn in einem Skript ein Fehler auftritt (unerwartet oder z. B. per „throw new Error()“ provoziert), wird der gesamte Transportprozess unmittelbar abgebrochen und ein technischer Fehler an das TRMS gemeldet. Auch das Finalisierungs-Skript läuft in diesem Fall <text styleclass="Strong">nicht</text>.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Installation der Artefakte verhindern</text>: Die Installation der Artefakte kann mittels „<text styleclass="Strong">trms.reportError()</text>“ verhindert werden, ohne den Transportprozess im Ganzen durch einen Fehler abbrechen zu müssen. </li>
+    </list>
+    <para styleclass="Einzug1">Wenn in einem Skript mindestens einmal „trms.reportError()“ ausgeführt wird, läuft das jeweilige Skript selbst bis zum Ende durch (sodass noch weitere Info- und Fehlereinträge aus Prüfungen protokolliert werden können).</para>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">„trms.reportError()“ im <text styleclass="Strong">Prerequisite-Skript</text> signalisiert, dass der Transportprozess nach Skriptausführung beendet und somit kein Artefakt in das Zielsystem transportiert und auch die anderen Transportprotokollskripte nicht mehr ausgeführt werden sollen.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">„trms.reportError()“ im <text styleclass="Strong">Initialisierungs-Skript</text> bewirkt, dass die Installation der Artefakte übersprungen (also nicht durchgeführt) und im Anschluss noch das Finalisierungs-Skript durchlaufen wird.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">„trms.reportError()“ im <text styleclass="Strong">Finalisierungs-Skript</text> führt nur zu Fehlereinträgen im Protokoll, kann aber den Transport bzw. die Installation der Artefakte nicht mehr rückgängig machen.</li>
+      </list>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Protokolleinträge</text>: Um Rückmeldungen an das TRMS zu erzeugen, müssen Sie die Methoden „trms.reportInfo()“ oder „trms.reportError()“ ausführen; diese schreiben Einträge in das Transportprotokoll.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Bearbeitung des Skript-Codes</para>
+    <para styleclass="Normal">Im Artefaktpaket-Assistenten <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_95ffca161df8" styleclass="Hyperlink">[Link]</link> in den Menüpunkten „Pakete“, „Changes“ und „Change Sets“ können Sie auf der Registerkarte „Transportkontrollskripte“ auf die Schaltfläche „Bearbeiten“ für ein bestimmtes der drei Skripte klicken, um den dazugehörigen Custom Code in einem Bearbeitungsdialog zu öffnen.</para>
+  </body>
+</topic>

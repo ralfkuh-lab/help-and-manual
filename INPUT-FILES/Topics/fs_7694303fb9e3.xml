@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:49.443Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Wartedialog während Transporten und Paketerstellung</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Wartedialog während Transporten und Paketerstellung</para>
+    </header>
+    <para styleclass="Normal">Nach dem manuellen Start der Paketerstellung oder eines Transports erscheint zunächst ein Wartedialog. Dieser Dialog kann nicht geschlossen werden und die TRMS-Oberfläche in der Browser-Registerkarte bleibt für die Dauer des Transports gesperrt.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Paketerstellung</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img3.png" scale="94.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 3: Fortschrittsdialog bei Paketerstellung</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Transport</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img4.png" scale="94.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 4: Wartedialog während eines Transports</para>
+    <para styleclass="Normal">Zum Abschluss erhalten Sie eine Meldung und die Oberfläche wird wieder freigegeben.</para>
+    <para styleclass="Meldungstext-Kopfzeile">TRMS</para>
+    <para styleclass="Meldungstext">Der Transport ist abgeschlossen</para>
+    <para styleclass="Meldungstext"></para>
+    <para styleclass="Meldungstext">Ausführliche Informationen finden Sie im Protokoll unter &quot;Transportprotokolle&quot;.</para>
+    <para styleclass="Meldungstext">[OK]</para>
+    <para styleclass="Normal"> Meldung bei Abschluss des Transports (mit Fehlern):</para>
+    <para styleclass="Meldungstext-Kopfzeile">TRMS</para>
+    <para styleclass="Meldungstext">Der Transport wurde durchgeführt, aber Import-Fehler wurden für die folgenden Zielsysteme gemeldet:</para>
+    <para styleclass="Meldungstext"></para>
+    <para styleclass="Meldungstext">IKAROS-PROD</para>
+    <para styleclass="Meldungstext">[Protokoll anzeigen][OK]</para>
+    <para styleclass="Normal">Meldung bei technischem Abbruch des Transports:</para>
+    <para styleclass="Meldungstext-Kopfzeile">TRMS</para>
+    <para styleclass="Meldungstext">Der Transport wurde aufgrund technischer Fehler in den folgenden Zielsystemen abgebrochen:</para>
+    <para styleclass="Meldungstext"></para>
+    <para styleclass="Meldungstext">IKAROS-PROD</para>
+    <para styleclass="Meldungstext">[Protokoll anzeigen][OK]</para>
+    <para styleclass="Normal">Falls beim Transport ein Fehler aufgetreten ist, enthält der Dialog die Schaltfläche „<text styleclass="Strong">Protokoll anzeigen</text>“. Beim Klick darauf wechseln Sie zum Menüpunkt „Transportprotokolle“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_0d66193132f1" styleclass="Hyperlink">[Link]</link>. Dessen Liste ist so gefiltert, dass nur Protokolle mit Fehlern zum betreffenden Transport angezeigt werden -falls nur eines gefunden wird, öffnet sich direkt der Protokolldialog.</para>
+  </body>
+</topic>

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.507Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Übersicht der Artefakt-Gruppen und -Typen</title>
+  <keywords>
+    <keyword>Artefakt<keyword>Übersicht aller Artefakte</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Übersicht der Artefakt-Gruppen und -Typen</para>
+    </header>
+    <para styleclass="Normal">Folgende Gruppen und Artefakt-Typen können im Artefaktpaket-Assistenten ausgewählt werden:</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="9" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:96px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Gruppe</text></para>
+        </td>
+        <td colspan="2" style="vertical-align:top; width:470px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Artefakt-Typen</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Weitere Artefakte</text></para>
+        </td>
+        <td style="vertical-align:top; width:225px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Abrechnungslayouts</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Aktenstadien</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Aktenstatus</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Aktenvorgangsvorlagen (inkl. Dokumentenvorlage, Auswahlaktion, Programmteil) [*12]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Ämter-Zahlungsmodi</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Ämtertypen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Anspruchskonten [</text><text styleclass="Strong" style="font-size:8pt;">*9!</text><text style="font-size:8pt;">]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Bearbeitungsstopp-Gründe</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Dialog-Layouts [*1]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Druckerspooler</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">E-Banking-Belegarten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Einrichtungsstatus</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">EP-Verträge</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Expertensystem-Experten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Expertensystem-Merkmale</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Finanzkonten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Forderungsgründe</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">forderungsseitige Verrechnungsreihenfolgen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Importformate</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Importkonfigurationen</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:230px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kalender [*16]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kontaktverweisarten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kontaktverweisgruppen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kontaktvorgangsvorlagen (inkl. Dokumentenvorlage, Auswahlaktion, Programmteil)</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Konten in der Fibu-Software</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kontoverwendungsarten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kostentabellen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Kostenverträge</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Länderkennungen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Listenansichten [*1]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">RVG-Faktoren [*3]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">RVG-Ziffern [*3]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Teams [*16]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Unteraktentypen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Verrechnungsfolgen [*3][*15]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Vertragsgegenstände</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Vorgangsvorlagenkategorien</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Währungen [*10]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Wiedervorlage-Prioritäten</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Custom Code [*4], [*7]</text></para>
+        </td>
+        <td style="vertical-align:top; width:225px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Apps [*5]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Ereignisskripte [*3], [*6]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Maskenereignisskripte</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:230px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Module [*1], [*5]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Unit-Tests [*5]</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Datenmodell [</text><text styleclass="Strong" style="font-size:8pt;">*18!</text><text style="font-size:8pt;">]</text></para>
+        </td>
+        <td style="vertical-align:top; width:225px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Datenbankobjekte (nur UDFs) [*2]</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:230px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Datenbankskripte</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Datenschutz</text></para>
+        </td>
+        <td style="vertical-align:top; width:225px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Bearbeitungskreise</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Bearbeitungskreis-Gruppen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Erhebungsarten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Herkunftsarten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Löschkonzepte</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Rechtsgrundlagen [</text><text styleclass="Strong" style="font-size:8pt;">*3!</text><text style="font-size:8pt;">]</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:230px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Schuldnermerkmale [1]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Schuldnermerkmalsgruppen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Schutzwürdigkeiten</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Zwecke [</text><text styleclass="Strong" style="font-size:8pt;">*3!</text><text style="font-size:8pt;">]</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Workflow-Management [*11]</text></para>
+        </td>
+        <td style="vertical-align:top; width:225px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Workflow-Aktualisierungs-Pakete</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Workflow-Ausdrücke</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Workflow-Kategorien</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:230px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Workflow-Verträge</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Workflows</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Administration</text></para>
+        </td>
+        <td style="vertical-align:top; width:225px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Allgemeine Übersetzungen [*13]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Auskunfteien [*14]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Corporate Designs [*17]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Ressourcen [*1]</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:230px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Rollen [*1]</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Systemeinstellungen</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Übersetzungen zu Artefakten [*13]</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Dateien aus Dateisystem</text></para>
+        </td>
+        <td colspan="2" style="vertical-align:top; width:470px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Auswählen von Dateien aus bestimmten Verzeichnissen des IKAROS-Anwendungs-Servers, die unverändert in das Paket integriert werden. [*8]</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:96px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Reports (MS Reporting Services)</text></para>
+        </td>
+        <td colspan="2" style="vertical-align:top; width:470px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Auswahl von Reports vom Reporting-Services-Server.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*1] Ausgeblendete Standard-Einrichtungen</para>
+    <para styleclass="Normal">In diesen Artefakt-Typen sind nur Artefakte auswählbar, deren Pflegeverantwortung nicht mehr komplett bei Ferber-Software liegt (d. h. ein „Update durch FS“-Häkchen wurde entfernt bzw., bei Custom-Code-Modulen, der Namensraum beginnt nicht mit „Fs.“).</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*2] Transport von Artefakten, die UDFs enthalten</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Beachten Sie, dass Artefakte, die UDFs (benutzerdefinierte Datenbankfelder) enthalten, nicht transportiert werden können, wenn die UDFs im Zielsystem noch nicht vorhanden sind. Um den Transport zu gewährleisten, müssen Sie die UDFs daher zunächst einmalig in einem <text styleclass="Strong">separaten Paket</text> in das Zielsystem transportieren und anschließend den Prozess des Anwendungs-Servers der Zielumgebung neu starten, damit die UDFs in IKAROS bekannt sind. Erst anschließend können Sie Artefakte, die diese UDFs voraussetzen, in das Zielsystem transportieren.</li>
+      <li styleclass="Aufzählung1">Einige Änderungen an Tabellen bzw. am SQL-Datenmodell sind nur durch ein Löschen und Neuanlegen möglich, wofür dann z. B. Dateninhalte, Schlüssel, Rechte, Indizes, Defaults und Constraints erst gesichert und dann wieder hergestellt werden müssten.</li>
+    </list>
+    <para styleclass="Einzug1">Da dieses Verhalten von Seiten des TRMS nicht allgemeingültig für alle erdenklichen Fälle generisch abgedeckt werden kann, können als Datenbankobjekte nur „UDFs“ (also benutzerdefinierte Felder) direkt als Artefakte ausgewählt werden. Für andere Datenbankobjekte (UDTs, Views, Functions und Prozeduren) müssen Sie selbst geeignete SQL-Skripte erzeugen und diese separat als Artefakte des Typs „Datenbankskripte“ hinzufügen.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Wenn ein UDF in ein IKAROS-System mit <text styleclass="Strong">Mehrfirmenbetrieb</text> transportiert wird, fügt das TRMS das UDF in <text styleclass="Strong">allen</text> Geschäftseinheiten-Datenbanken dieses IKAROS-Systems hinzu.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">[*3] Nicht als Unterartefakte transportierte Artefakte</para>
+    <para styleclass="Normal">Diese Artefakt-Typen können in anderen Artefakte referenziert sein, sie werden jedoch nicht (in allen Konstellationen) als Unterartefakte transportiert.</para>
+    <para styleclass="Normal">Im Zweifelsfall sollten Sie Artefakte dieses Typs daher entweder in Paketen immer explizit als Artefakte mit auswählen oder sie zunächst einmalig in einem eigenen Paket ins Zielsystem transportieren (falls sie dort nicht schon vorhanden sind).</para>
+    <para styleclass="Normal">Dies gilt derzeit für folgende Artefakt-Typen: </para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Datenschutz-Zwecke</text>: Zwecke können in folgenden Einrichtungen als individuelle Vorgabe für einen abweichenden Datenschutz-Kontext zugeordnet sein können (Schaltfläche „Datenschutz verwalten“ in den jeweiligen Stammdaten in IKAROS): Apps, Ereignisskripte, Maskenereignisskripte, Aktenvorgangsvorlagen, Kontaktvorgangsvorlagen und Workflows.</li>
+    </list>
+    <para styleclass="Einzug1">Das TRMS behandelt Zwecke grundsätzlich nie als Unterartefakte und sie müssen daher immer explizit als Artefakte ausgewählt und transportiert werden.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Custom-Code-Ereignisskripte</text>: Prinzipiell wird referenzierte Custom-Code-Programmierung (z. B. Auswahlaktion und Programmteil in Vorgangsvorlagen) automatisch als Unterartefakt transportiert. Ereignisskripte, auf die <text styleclass="Strong">in Abrechnungslayouts, Verrechnungsfolgen und EP-Vertragspositionen</text> verwiesen wird, werden jedoch <text styleclass="Strong">nicht</text> automatisch mit transportiert (weil dort kein spezielles Skript referenziert wird, sondern ein ganzer Skript-Stammbaum).</li>
+    </list>
+    <para styleclass="Einzug1">Ereignisskripte, die in Abrechnungslayouts, Verrechnungsfolgen und EP-Vertragspositionen verwendet werden, müssen daher immer explizit als Artefakte ausgewählt und transportiert werden.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">RVG-Faktoren und RVG-Ziffern</text>: Die RVG-Stammdaten sind für die Gebührenberechnung in IKAROS unerlässlich. Allerdings sind in anderen Datensätzen (z. B. Vorgängen) nur die fertigen Berechnungsergebnisse gespeichert, jedoch kein Verweis auf die RVG-Stammdaten. Daher können sie nicht als Unterartefakte, sondern ausschließlich als eigenständige Artefakte transportiert werden.</li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Strong">ACHTUNG</text>: Falls ein Artefakt dieses Typs nicht im Zielsystem vorhanden sein sollte, werden die anderen Artefakte bei einem Transport dennoch im Zielsystem angelegt. Diese Artefakte sind jedoch eventuell nicht funktionsfähig oder verhalten sich anders, solange die referenzierten Artefakte fehlen.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Tipp</text>: Nutzen Sie Transportkontrollskripte <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_11ed2b9082ce" styleclass="Hyperlink">[Link]</link>, um die erforderlichen Artefakte im Zielsystem zu prüfen und damit den Transport eventuell zu verhindern.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Besonderheiten bei Custom-Code-Artefakten</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">[*4] Von einem Custom-Code-Artefakt kann immer nur entweder die Arbeitskopie oder eine der freigegebenen Versionen transportiert werden:</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Die eindeutige Auswahl wird technisch in der Liste sichergestellt: Sobald ein Eintrag aus einem Stammbaum das „Ausgewählt“-Häkchen erhält, werden alle anderen aus demselben Stammbaum <text styleclass="Strong">ausgegraut</text> und sind nicht mehr wählbar. Damit die anderen Einträge des Stammbaums wieder wählbar werden, müssen Sie das Häkchen entfernen.</li>
+      </list>
+    </list>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img39.png" scale="66.00%" width="21" height="21" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 10: In der Auswahlliste für Custom-Code-Artefakte kann nur ein Eintrag pro Stammbaum gewählt werden</para>
+    <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung2" style="tabstops:none;">Wenn Sie die Funktionalität „<text styleclass="Strong">Gemäß Filter setzen</text>“ ausführen, wird jeweils die höchste freigegebene Version (nicht die Arbeitskopie) als „Ausgewählt“ markiert. Falls aus einem Stammbaum bereits ein Eintrag gewählt ist, bleibt dieser unverändert.</li>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Editionshinweis">[*5] In IKAROS basic/starter sind diese Artefakt-Typen nicht verfügbar.</text></li>
+      <li styleclass="Aufzählung1"><text styleclass="Editionshinweis">[*6] In IKAROS basic/starter werden nur diejenigen Ereignisskripte angeboten, die in diesen Editionen auch bearbeitet werden können.</text></li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">[*7] Transport von freigegebenen Versionen</para>
+    <para styleclass="Normal">Freigegebene Versionen von Custom-Code-Artefakten werden auch als freigegebene Versionen ins Zielsystem eingespielt; transportierte Arbeitskopien hingegen bleiben auch im Zielsystem Arbeitskopien.</para>
+    <para styleclass="Normal">Beachten Sie hierbei Folgendes: </para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Das freigegebene Artefakt übernimmt nicht die Versionsnummer aus dem Quellsystem, sondern erhält die nächsthöhere im Zielsystem. Diese kann somit von der Versionsnummer im Quellsystem abweichen.</li>
+      <li styleclass="Aufzählung1">Falls in dem Stammbaum eine Arbeitskopie existiert, wird diese beim Einspielen einer freigegebenen Version gelöscht.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">Automatischer Export/Transport</para>
+    <para styleclass="Normal">In den Transportvorgaben für Custom-Code-Artefakte <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_ef9609a3fd0b" styleclass="Hyperlink">[Link]</link> können Sie festlegen, ob eingebundene Custom-Code-Module („requiredModule()“ z. B. in Ereignisskripten) automatisch mit exportiert/transportiert werden sollen. Im Standard geschieht dies nicht.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*8] Dateien nach Transport für produktive Nutzung verschieben</para>
+    <para styleclass="Normal">Beachten Sie, dass die Artefakte des Typs „Dateien aus Dateisystem“ nicht direkt in den produktiven Ordner der Zielumgebung transportiert werden. Stattdessen legt das TRMS die Dateien in der Zielumgebung in einem Unterordner mit dem Namen „TRMS“ ab (in der Zielumgebung im „Dateiablageverzeichnis des Anwendungs-Servers“; gemäß der gleichnamigen IKAROS-Systemeinstellung).</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*9] Abrechnungssicht beim Transport von Anspruchskonten</para>
+    <para styleclass="Normal">In IKAROS gibt es die SQL-View „BookingWithAccountsInColumns“, die in mehreren Standard-Abrechnungs-Views verwendet wird. Wenn Sie mit dem TRMS Anspruchskonten transportieren, ergeben sich dadurch wahrscheinlich für die Abrechnung relevante Stammdatenänderungen.</para>
+    <para styleclass="Normal">Damit die Abrechnungen, die die genannte View verwenden, nach dem Transport noch korrekte Ergebnisse liefern, müssen Sie diese View aktualisieren. Verwenden Sie dazu nach dem Transport im IKAROS-Zielsystem unter „Stammdaten/Konten/Anspruchskonten“) die Schaltfläche „Abrechnungssicht erzeugen“.</para>
+    <para styleclass="Normal">Darüber hinaus sollten Sie prüfen, ob eventuell <text styleclass="Strong">kundenspezifische</text> Views aufgrund des Transports im Zielsystem angepasst werden müssen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*10] Transport von Währungen</para>
+    <para styleclass="Normal">Währungen können auch als Unterartefakt transportiert werden. Dies geschieht automatisch im Zusammenhang mit den Artefakt-Typen „EP-Verträge“, „Finanzkonten“, „Kostentabellen“ und „Kostenverträge“, wenn der Transport von Unterartefakten angehakt ist und Währungen bei diesen Artefakten hinterlegt sind.</para>
+    <para styleclass="Normal">Hinweis: Taggenaue Währungskurse (in IKAROS unter „Stammdaten/Finanztabellen/Währungskurse“) können nicht per TRMS transportiert werden. Währungskurse sind unabhängig von IKAROS und können jederzeit vom Zielsystem für jeden beliebigen Zeitpunkt z. B. von externen Services abgefragt werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*11] Artefakte aus der Gruppe „Workflow-Management“</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Alle Artefakte der Typen „Workflows“, „Workflow-Ausdrücke“ und „Workflow-Verträge“ werden jeweils als separates wfu4-Paket exportiert bzw. transportiert; Workflow-Kategorien hingegen wie sonstige Artefakte als XML-Datei.</li>
+      <li styleclass="Aufzählung1">Um sicherzustellen, dass alle Workflow-Artefakte im Zielsystem in der korrekten Reihenfolge eingespielt werden, können Sie diese explizit festlegen. Markieren Sie dazu in der Baumansicht die Artefakt-Gruppe „Workflow-Management“, klicken Sie auf die Schaltfläche „Reihenfolge“ und bringen Sie die Pakete im Dialog per Drag&amp;Drop in die gewünschte Reihenfolge.</li>
+      <li styleclass="Aufzählung1">Im Transportprotokoll werden bei Workflow-Management-Artefakten keine detaillierten Meldungen festgehalten, sondern nur eine Statusmeldung „Transport erfolgreich“ oder „Transport fehlgeschlagen“. Das ausführliche Protokoll finden Sie im betreffenden IKAROS-Zielsystem unter „Stammdaten/Abläufe/Workflow-Management/Workflow-Aktualisierungen“.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">[*12] Löschen von PROSA-Word-Dokumenten in Vorgangsvorlagen</para>
+    <para styleclass="Normal">Falls Sie Vorgangsvorlagen bereits in einer früheren IKAROS-Generation verwendet und auf Custom Code umgestellt haben, sind dazu in der Datenbank eventuell noch die vorherigen PROSA-basierten Word-Dokumentvorlagen gespeichert. Wenn Sie eine solche Vorgangsvorlage mit dem TRMS transportieren, werden diese nicht mehr benötigten (und in IKAROS auch nicht mehr zugreifbaren) Dokumente gezielt aus der Datenbank des IKAROS-Zielsystems gelöscht. Das Transportprotokoll enthält in diesem Fall entsprechende Einträge.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*13] Übersetzungen</para>
+    <para styleclass="Normal">In IKAROS wird zwischen zwei Arten von kundenspezifisch anpassbaren Übersetzungen unterschieden:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Artefakt-Typ „<text styleclass="Strong">Allgemeine Übersetzungen</text>“: Die kundenspezifischen Übersetzungen aus dem IKAROS-Menüpunkt [<text styleclass="Systemzitat">Administration -&gt; Übersetzungen</text>]. Neben den anpassbaren Beschriftungen einiger Standard-Dialogfelder könnten hier z. B. auch kundenspezifische Texte für Meldungen verwaltet werden, die per Custom Code abgefragt werden können.</li>
+      <li styleclass="Aufzählung1">Artefakt-Typ „<text styleclass="Strong">Übersetzungen zu Artefakten</text>“: Kundenspezifische Übersetzungen, die in individuellen Artefakten hinterlegt sind, z. B. die Bezeichnung einer Aktenvorgangsvorlage oder eines Workflows in mehreren Sprachen. Hier werden nur Übersetzungen angezeigt, die Sie selbst in IKAROS angelegt haben. Hinweis: Diese Übersetzungen werden typischerweise als Unterartefakte automatisch mitttransportiert.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">[*14] Auskunftei-Schnittstellen</para>
+    <para styleclass="Normal">Das Paket für ein „Auskunfteien“-Artefakt enthält nicht zwangsläufig alle Einrichtungen, die zum produktiven Einsatz der Auskunftei-Schnittstelle erforderlich sind. Eventuell müssen Sie daher weitere Artefakte separat transportieren oder im Zielsystem manuell erforderliche Datensätze anlegen:</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="4" colcount="2" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:100px;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Fall</text></para>
+        </td>
+        <td style="vertical-align:top; width:466px;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Artefakte</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:100px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">In Artefakt-Typ „Auskunfteien“ </text><text styleclass="Strong" style="font-size:9pt;">inklusive</text></para>
+        </td>
+        <td style="vertical-align:top; width:466px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Die </text><text styleclass="Strong" style="font-size:9pt;">Konfiguration</text><text style="font-size:9pt;"> der Schnittstelle (inkl. der Definition der Aktionen und Schritte).</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Die </text><text styleclass="Strong" style="font-size:9pt;">Custom-Code-Module</text><text style="font-size:9pt;">, in denen die Logik der Aktionen und Schritte der Schnittstelle programmiert ist.</text></li>
+          </list>
+          <para styleclass="Einzug1"><text style="font-size:9pt;">Hinweise:</text></para>
+          <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+            <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:9pt;">Durch Setzen der Transportvorgabe „Erforderliche Custom-Code-Module beim Export einschließen.“ können Sie erreichen, dass auch innerhalb dieser Module referenzierte weitere Module automatisch mit transportiert werden. Dies ist im Zusammenhang mit den Auskunftei-Schnittstellen von besonderem Interesse, um die speziell für kundenspezifische Anpassungen vorgesehenen Module mit dem Namensraum „</text><text styleclass="Strong" style="font-size:9pt;">CreditAgency.[Schnittstellenname].Customizing</text><text style="font-size:9pt;">“ automatisch zu transportieren.</text></li>
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:9pt;">Module, deren Namensraum mit „Fs.“ beginnt, werden nie transportiert, weil es sich um unveränderliche Standard-Module handelt, die in jedem IKAROS-System erwartet werden.</text></li>
+            </list>
+          </list>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text styleclass="Strong" style="font-size:9pt;">Systemeinstellungen</text><text style="font-size:9pt;">, deren Anwendungsnamensraum dem Kürzel der Auskunftei-Konfiguration entspricht.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Die „</text><text styleclass="Strong" style="font-size:9pt;">Merkmalszuordnungen</text><text style="font-size:9pt;">“ der Schnittstelle.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Speziell SCHUFA-Schnittstelle:</text></li>
+          </list>
+          <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+            <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:9pt;">SCHUFA-Gläubigergruppen</text></li>
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:9pt;">SCHUFA-Merkmale</text></li>
+            </list>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:100px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Eventuell </text><text styleclass="Strong" style="font-size:9pt;">separat</text><text style="font-size:9pt;"> zu transportieren</text></para>
+        </td>
+        <td style="vertical-align:top; width:466px;">
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text styleclass="Strong" style="font-size:9pt;">Zusätzliche Systemeinstellungen</text><text style="font-size:9pt;"> (falls von der Schnittstelle benötigt, aber mit anderem Anwendungsnamensraum)</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Akten- und Kontakt</text><text styleclass="Strong" style="font-size:9pt;">vorgangsvorlagen</text></li>
+            <li styleclass="Aufzählung1"><text styleclass="Strong" style="font-size:9pt;">Vorgangsvorlagenkategorien</text></li>
+            <li styleclass="Aufzählung1"><text styleclass="Strong" style="font-size:9pt;">Dateien</text><text style="font-size:9pt;"> aus Dateisystem: Zertifikatsdateien (wie z. B. bei der SCHUFA-Schnittstelle)</text></li>
+            <li styleclass="Aufzählung1"><text styleclass="Strong" style="font-size:9pt;">Custom-Code-Module</text><text style="font-size:9pt;">: Falls die Transportvorgabe „Erforderliche Custom-Code-Module beim Export einschließen.“ für die Schnittstelle </text><text styleclass="Strong" style="font-size:9pt;">nicht</text><text style="font-size:9pt;"> angehakt ist, müssen Sie alle Module, die nur indirekt per „requiredModule()“-Funktion in der Programmierung der Schnittstelle referenziert sind, separat als Artefakte auswählen und transportieren.</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:100px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Eventuell </text><text styleclass="Strong" style="font-size:9pt;">manuell anzulegen</text></para>
+        </td>
+        <td style="vertical-align:top; width:466px;">
+          <para styleclass="Normal"><text styleclass="Strong" style="font-size:9pt;">Herkunftskontakt</text><text style="font-size:9pt;"> (falls wie bei den Standard-Schnittstellen eine Systemeinstellung für den Kontakt der Datenschutz-Herkunft erforderlich ist).</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*15] Vorgangszuordnungen in Verrechnungsfolgen</para>
+    <para styleclass="Normal">Beim Transport von Verrechnungsfolgen müssen Sie zwei Dinge beachten:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Erstens, dass die in der Verrechnungsfolge zugeordneten Aktenvorgangsvorlagen nicht automatisch als Artefakte mit transportiert werden.</li>
+      <li styleclass="Aufzählung1">Zweitens, dass die Vorgangsvorlagen-Zuordnungen nicht im Ganzen mit der Verrechnungsfolge transportiert werden – sondern umgekehrt jede Aktenvorgangsvorlage individuell ihre eigenen Zuordnungen transportiert.</li>
+    </list>
+    <para styleclass="Normal">Für die Praxis bedeutet dies: Wenn Sie eine Verrechnungsfolge transportieren, sollten Sie diese Verrechnungsfolge nach dem Transport im Zielsystem öffnen und die Vorgangszuordnungen prüfen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*16] Teams und Kalender</para>
+    <para styleclass="Normal">Aufgrund der fachlichen Zusammenhänge zwischen Kalendern und Referenzkalendern sowie Wiedervorlage-Teams gelten die folgenden Besonderheiten:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Wenn der Kalender einen <text styleclass="Strong">Referenzkalender</text> hat, muss dieser Referenzkalender schon im Zielsystem vorhanden sein oder als eigenes Artefakt im selben TRMS-Paket mit transportiert werden.</li>
+      <li styleclass="Aufzählung1">Die <text styleclass="Strong">Sachbearbeiter</text>, die einem Kalender zugeordnet sind, sind die einzigen „Unterartefakte“ von Kalendern und können optional mit transportiert werden. In den Transportvorgaben ist das Kontrollkästchen „Die Sachbearbeiter, die zum Kalender zugewiesen sind, beim Export einschließen.“ standardmäßig angehakt.</li>
+      <li styleclass="Aufzählung1">Die Transportvorgabe „<text styleclass="Strong">Artefakt beim Import überschreiben, wenn schon vorhanden.</text>“ hat zwei mögliche Ergebnisse:</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Häkchen gesetzt: Der vorhandene Kalender im Zielsystem wird komplett gelöscht (inkl. aller Nichtarbeitstage und Sachbearbeiter-Zuordnungen) und der Kalender aus dem TRMS-Paket wird eingespielt.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Kein Häkchen: Der vorhandene Kalender bleibt komplett unverändert. Es werden also auch keine Nichtarbeitstage oder zugeordnete Sachbearbeiter entfernt/vervollständigt.</li>
+      </list>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Wenn es im Quellsystem <text styleclass="Strong">Teams</text> gibt, die dem Kalender zugeordnet sind, aber im Zielsystem fehlen, wird der Kalender dennoch transportiert. Im Transportprotokoll finden Sie dann entsprechende Hinweise, dass Sie diese Zuordnungen im Zielsystem (bei Bedarf) manuell nachtragen müssen, wenn die Teams im Zielsystem angelegt wurden. Sie können dies vermeiden, indem Sie zusammengehörige Teams und Kalender <text styleclass="Strong">als separate Artefakte</text> im <text styleclass="Strong">selben</text> TRMS-Paket transportieren.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">Transport von Teams mit Kalenderzuordnung</para>
+    <para styleclass="Normal">Falls ein Team mit einer Kalenderzuordnung transportiert wird, aber der Kalender im Zielsystem nicht vorhanden ist, wird das Team dennoch transportiert. Die Zuordnung im Zielsystem muss (bei Bedarf) manuell erfolgen, sobald der Kalender im System vorhanden ist. Im Transportprotokoll finden Sie einen entsprechenden Hinweis. Sie können dies vermeiden, indem Sie zusammengehörige Teams und Kalender <text styleclass="Strong">als separate Artefakte</text> im <text styleclass="Strong">selben</text> TRMS-Paket transportieren.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">[*17] Corporate Designs</para>
+    <para styleclass="Normal">Für den Transport der Corporate Designs gelten die folgenden Besonderheiten:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Es werden sowohl Corporate Designs als auch Unter-Corporate-Designs zum Transport angeboten. Wenn Unter-Corporate-Designs transportiert werden, werden automatisch die übergeordneten Corporate Designs mittransportiert.</li>
+      <li styleclass="Aufzählung1">Ein Corporate Design kann nur mitsamt <text styleclass="Strong">aller Elemente</text> transportiert werden.</li>
+      <li styleclass="Aufzählung1">Lediglich Unter-Corporate-Designs können beim Transport eines Corporate Designs ausgeschlossen werden. Im Gegensatz zu anderen Artefakten ist der Standardfall bei diesem Transport, dass die Unter-Corporate-Designs <text styleclass="Strong">nicht mittransportiert</text> werden, wenn dies nicht ausdrücklich in den Transportvorgaben festgelegt wird.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">[*18] SQL-„Datenmodell“-Transporte und Mehrfirmenbetrieb</para>
+    <para styleclass="Normal"><text styleclass="Strong">Achtung</text>: Wenn Sie IKAROS mit aktivem Mehrfirmenbetrieb einsetzen, beachten Sie bei Transporten aus der Artefakt-Gruppe „Datenmodell“ („Datenbankobjekte“, „Datenbankskripte“) <text styleclass="Strong">unbedingt</text> Folgendes:</para>
+    <para styleclass="Einzug1">Das TRMS führt die Datenmodelländerungen immer <text styleclass="Strong">in allen Geschäftseinheiten</text> der IKAROS-Zielumgebung durch (egal, welche Geschäftseinheit konkret in den „IKAROS-System“-Stammdaten hinterlegt ist). Dies ist notwendig, damit die Datenbanken aller Geschäftseinheiten strukturell gleich bleiben, weil dies für den Mehrfirmenbetrieb erforderlich ist.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Achten Sie daher unbedingt darauf, dass Artefakte des Typs „Datenbankskript“ tatsächlich dafür geeignet sind, in allen Geschäftseinheiten ausgeführt zu werden.</text> Dies gilt insbesondere dann, wenn Sie nicht nur übergreifende SQL-Objekte (UDTs, Views, usw.) transportieren, sondern – wovon aber generell abzuraten ist! – per Skript auch Änderungen innerhalb von vorhandenen Datenbeständen durchführen. Sollten Sie in Skripten Änderungen an Dateninhalten nur einer Geschäftseinheit vornehmen wollen, müssen Sie Ihre Skripte entsprechend gestalten, z. B. im Skript den konkreten Namen der Datenbank mit berücksichtigen.</para>
+  </body>
+</topic>

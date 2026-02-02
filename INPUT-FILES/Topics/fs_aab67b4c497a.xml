@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.585Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Der Bearbeitungsdialog für Transportaufträge</title>
+  <keywords>
+    <keyword>Transport<keyword>Transportauftrag</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Der Bearbeitungsdialog für Transportaufträge</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img109.png" scale="53.00%" width="17" height="17" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 32: Dialog für einen Transportauftrag</para>
+    <para styleclass="ÜberschriftEinfach">Rahmen „Transportplanung“</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Name</text>“: Der maximal 50 Zeichen lange, eindeutige Name für den Transportauftrag.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Beschreibung</text>“: Eine Beschreibung zu dem Transportauftrag. Sie wird unter anderem in der Übersicht der Transportprotokolle angezeigt.</li>
+      <li styleclass="Aufzählung1">Auswahlfeld „<text styleclass="Strong">Zielsystem</text>“: Das IKAROS-System, in das der Change bzw. das Change Set übertragen und installiert werden soll.</li>
+      <li styleclass="Aufzählung1">Datumsfeld „<text styleclass="Strong">Startdatum</text>“[*]: Das Datum hat derzeit keine technische Auswirkung, sondern kann zur manuellen Organisation von Transporten herangezogen werden.</li>
+      <li styleclass="Aufzählung1">Zeitfeld „<text styleclass="Strong">Startzeit</text>“[*]: Die Uhrzeit hat derzeit keine technische Auswirkung, sondern kann zur manuellen Organisation von Transporten herangezogen werden.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Ereignis</text>“[*]: Das „Ereignis“ hat derzeit keine technische Auswirkung, sondern kann zur manuellen Organisation von Transporten herangezogen werden.</li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Strong">[*] Hinweis</text>: Für das TRMS ist eine Anbindung an Scheduler-Anwendungen geplant, welche dann das Startdatum, die Startzeit sowie den „Ereignis“-Ausdruck für die automatisierte Ausführung auslesen könnten.</para>
+    <para styleclass="ÜberschriftEinfach">Rahmen „Inhalt“</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Typ</text>“: Zeigt an, welche Art von Artefaktpaket mit dem Auftrag transportiert werden soll. Möglich sind „Change“ und „Change Set“. Das TRMS trägt den Wert automatisch ein, sobald dem Auftrag der gewünschte Change bzw. das gewünschte Change Set zugewiesen wurde.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Bezeichnung</text>“: Enthält die Bezeichnung des gewählten Changes/Change Sets. Wird vom TRMS automatisch eingetragen.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Beschreibung</text>“: Die Beschreibung des gewählten Changes/Change Sets. Wird vom TRMS automatisch eingetragen.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Paketname</text>“: Der Name des „.trms4“-Pakets zum gewählten Change/des Change Sets, falls eines bereits generiert (und somit in der TRMS-Datenbank gespeichert) wurde; wird vom TRMS automatisch eingetragen. Um ein Paket vorab zu erstellen, müssen Sie die Schaltfläche „Erstellen“ in den Menüpunkten „Changes“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_0f120fd4d0f5" styleclass="Hyperlink">[Link]</link> oder „Change Sets“ &#160;<link displaytype="text" defaultstyle="true" type="topiclink" href="fs_779ccf6ad627" styleclass="Hyperlink">[Link]</link> bzw. im Dialog des erweiterten Artefaktpaket-Assistenten nutzen <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_95ffca161df8" styleclass="Hyperlink">[Link]</link>.</li>
+    </list>
+    <para styleclass="Einzug1">Hinweis: Falls das Paket zum Zeitpunkt des Transportvorgangs noch nicht in der Datenbank gespeichert vorliegt, wird es vom TRMS automatisch erzeugt. Dies erfordert zum einen Zugriff auf das Quellsystem und kann den Transportprozess zum anderen verlängern.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Quellsystem-Name</text>“: Der Name des Systems, aus dem die Artefakte im gewählten Change/Change Set stammen. Wird vom TRMS aus dem Change/Change Set übernommen.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Quellsystem-Version</text>“: Die IKAROS-Version des Quellsystems, wie sie im Change/Change Set steht.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="7" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:111px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img11.png" scale="59.00%" width="19" height="19" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:111px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Speichern &amp; Schließen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [H]</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Speichert die Änderungen am Transportauftrag und schließt den Dialog.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img12.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:111px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Speichern</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [S]</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Speichert die Änderungen am Transportauftrag.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img13.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:111px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Löschen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [D]</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Löscht den Transportauftrag nach der Bestätigung einer Sicherheitsabfrage dauerhaft aus der Datenbank des TRMS.</text></para>
+          <para styleclass="Normal"></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img113.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:111px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Change auswählen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [L]</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet eine Liste mit Changes, um dem Transportauftrag einen davon zuzuweisen.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Einem Transportauftrag muss immer genau entweder ein Change oder ein Change Set zugewiesen sein.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img114.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:111px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Change Set auswählen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [Umschalt] + [L]</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet eine Liste mit Change Sets, um dem Transportauftrag einen davon zuzuweisen.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Einem Transportauftrag muss immer genau entweder ein Change oder ein Change Set zugewiesen sein.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img16.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:111px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Transport</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [i]</text></para>
+        </td>
+        <td style="vertical-align:top; width:390px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet einen Dialog zur Anmeldung am Zielsystem und startet den Transportprozess für den markierten Transportauftrag.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Das Protokoll dazu können Sie im Menüpunkt „Transportprotokolle“ öffnen.</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

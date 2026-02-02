@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:52.317Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Die Funktion „EncryptPassword“</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Die Funktion „EncryptPassword“</para>
+    </header>
+    <para styleclass="Normal">Diese Funktion nimmt ein Passwort als Zeichenkette entgegen und liefert eine Zeichenkette mit einer verschlüsselten Version des Passworts zurück.</para>
+    <para styleclass="Normal">Wenn Sie also bei der Automatisierung des TRMS ein Passwort hinterlegen müssen (z. B. für die Funktion „Import“), sollten Sie zunächst einmalig und flüchtig die „EncryptPassword“-Funktion für dieses Passwort aufrufen, um sich die verschlüsselte Zeichenkette erzeugen zu lassen. Diese können Sie dann aus der Konsole herauskopieren und auch z. B. in CMD-Dateien nutzen.</para>
+    <para styleclass="Normal">Damit können Sie vermeiden, echte Passwörter in Aufrufen hinterlegen zu müssen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Parameter</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="2" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:103px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Parameter</text></para>
+        </td>
+        <td style="vertical-align:top; width:380px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+        <td style="vertical-align:top; width:68px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Werte</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:103px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">PasswordToEncrypt</text></para>
+        </td>
+        <td style="vertical-align:top; width:380px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Das unverschlüsselte Passwort, für das Sie eine verschlüsselte Zeichenkette erhalten möchten.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Weder das übergebene Passwort noch die verschlüsselte Zeichenkette werden von der Funktion irgendwo gespeichert.</text></para>
+        </td>
+        <td style="vertical-align:top; width:68px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">Beispiel (Konsolenaufruf, CMD)</para>
+    <para styleclass="Quellcode_Konsole" style="tabstops:19px left,38px left,57px left,76px left,95px left,113px left,132px left,151px left,170px left,189px left ;">.\TrmsCli.exe ^<br/>/Function=EncryptPassword ^<br/>/PasswordToEncrypt=&quot;MyPassword_123!&quot;</para>
+  </body>
+</topic>

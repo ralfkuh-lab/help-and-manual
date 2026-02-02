@@ -1,0 +1,142 @@
+# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp49_responsivemodernew
+PP_DESCRIPTION=V5 Minimalist Modern eWriter skins (HM 7, 8 and 9)
+
+[General Settings]
+CODESAMPLE_COPIED=Copied!$T$
+CODESAMPLE_NOCOPY=Sorry, cannot copy to clipboard with this browser!$T$
+ERROR_NOTFOUND=ERROR Topic Not Found$T$
+NOJS_WARNING=Please enable JavaScript in your Internet Explorer Internet Options to view this documentation.$T$
+
+[Header & Footer]
+HEADERLOGO_TITLE=EC Software Website$T$
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=No contents for this topic$T$
+ATOC_BTNTIP_ON=Contents of this topic$T$
+ATOC_TIP=Jump to:&nbsp;$H$
+ATOC_TITLE=Scroll$T$
+ATOC_TOP=Scroll to Top of Page$T$
+ATOC_TOPTIP=Jump to top of page$T$
+
+[Topic Pane]
+BREAD_LABEL=Navigation:$T$
+BREAD_NOTOCENTRY=No TOC entry for this topic$T$
+BREAD_NOTOPIC=No topics above this level$T$
+
+[Button Texts]
+BTNTEXT_HOME=Top$T$
+BTNTEXT_HOMENO=No topics above this level$T$
+BTNTEXT_HOMETIP=Go to top topic$T$
+BTNTEXT_LTABLE=Tap to View Table$T$
+BTNTEXT_NEXT=Next$T$
+BTNTEXT_NEXTNO=This is the last topic$T$
+BTNTEXT_NEXTTIP=Go to next topic$T$
+BTNTEXT_PREV=Prev$T$
+BTNTEXT_PREVNO=This is the first topic$T$
+BTNTEXT_PREVTIP=Go to previous topic$T$
+
+[Hamburger Menu]
+HMBTEXT_HEADER=Show/Hide Page Header$T$
+HMBTEXT_HEADERTIP=Show/hide top banner menu$T$
+HMBTEXT_HEADER_HIDE=Hide Page Header$T$
+HMBTEXT_HEADER_HIDETIP=Hide the banner header at the top of the page$T$
+HMBTEXT_HEADER_SHOW=Show Page Header$T$
+HMBTEXT_HEADER_SHOWTIP=Show the banner header at the top of the page$T$
+HMBTEXT_MAIL=Send Mail Feedback$T$
+HMBTEXT_MAILTIP=Send an E-Mail with Feedback on This Topic$T$
+HMBTEXT_PRINT=Print Topic$T$
+HMBTEXT_PRINTTIP=Print Current Topic$T$
+HMBTEXT_TEXTMINUS=Smaller Text$T$
+HMBTEXT_TEXTMINUSTIP=Decrease Font Size$T$
+HMBTEXT_TEXTPLUS=Larger Text$T$
+HMBTEXT_TEXTPLUSTIP=Increase Font Size$T$
+HMBTEXT_TITLE=More$T$
+HMBTEXT_TITLETIP=Additional Functions Menu$T$
+HMBTEXT_TOGGLES=Show/Hide Expanding Text$T$
+HMBTEXT_TOGGLESTIP=Show/hide Expanding Text Blocks on Page$T$
+HMBTEXT_TOGGLES_HIDE=Hide Expanding Text$T$
+HMBTEXT_TOGGLES_SHOW=Show Expanding Text$T$
+
+[TOC, Index and Search]
+IDXTEXT_CLICKTIP=Select sub-keywords of this entry to see references to$T$
+IDXTEXT_NOTFOUND=Not found!$T$
+IDXTEXT_SEARCHBUTTON=Search:$T$
+IDXTEXT_SEARCHMODE=From start of term$T$
+SEARCH_HOWTO=Enter one or more keywords to search ('*' and '?' wildcards are supported):$T$
+SEARCH_JSWARN=You must have JavaScript enabled to search this documentation.$T$
+
+[Tab Texts]
+TABTEXT_INDEXTAB=Index$T$
+TABTEXT_INDEXTABTIP=Keyword Index$T$
+TABTEXT_NAVPANE=Show/Hide Contents$T$
+TABTEXT_SEARCHTAB=Search$T$
+TABTEXT_SEARCHTABTIP=Search Topics$T$
+TABTEXT_TOCTAB=Contents$T$
+TABTEXT_TOCTABTIP=Table of Contents$T$
+
+[Mail Feedback]
+FB_BODY=Dear Support Staff,$T$
+FB_NOJS=Documentation%20Feedback$T$
+FB_REF=Reference:$T$
+FB_SUBJ=Feedback on:$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=and or the it is an on we us to of has be all for in as so are that can you at its by have with into$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_ANY_OF_TERMS=any of the terms$T$
+STR_DIDYOUMEAN=Did you mean:$T$
+STR_FORM_ALL_SEARCH_WORDS=all words$T$
+STR_FORM_ANY_SEARCH_WORDS=any words$T$
+STR_FORM_MATCH=Match:$T$
+STR_FORM_RESULTS_PER_PAGE=Results per page:$T$
+STR_FORM_SEARCHFOR=Search for:$T$
+STR_FORM_SUBMIT_BUTTON=Submit$T$
+STR_NO_QUERY=No search query entered.$T$
+STR_NO_RESULTS=No results$T$
+STR_PAGES_OF_RESULTS=pages of results.$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=Your search query contained too many common words to return the entire set of results available. Please try again with a more specific query for better results.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=You can possibly get more results searching for$T$
+STR_RESULT=result$T$
+STR_RESULTS=results$T$
+STR_RESULTS_FOR=Search results for:$T$
+STR_RESULT_PAGES=Result Pages:$T$
+STR_RESULT_PAGES_NEXT=Next$T$
+STR_RESULT_PAGES_PREVIOUS=Previous$T$
+STR_RESULT_SCORE=Score: $T$
+STR_RESULT_TERMS_MATCHED=Terms matched: $T$
+STR_RESULT_URL=URL:$T$
+STR_SKIPPED_FOLLOWING_WORDS=The following word(s) are in the skip word list and have been omitted from your search:$T$
+STR_SKIPPED_PHRASE=Note that you can not search for exact phrases beginning with a skipped word$T$
+STR_SORTBY_DATE=Sort by date$T$
+STR_SORTBY_RELEVANCE=Sort by relevance$T$
+STR_SORTEDBY_DATE=Sorted by date &#9660;$T$
+STR_SORTEDBY_RELEVANCE=Sorted by relevance$T$
+STR_SUMMARY_FOUND=found.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=found containing all search terms.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=found containing some search terms.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=No results found.$T$

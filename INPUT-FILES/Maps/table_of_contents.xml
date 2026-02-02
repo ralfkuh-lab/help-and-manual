@@ -1,0 +1,141 @@
+<?xml version="1.0" standalone="yes"?>
+<map xmlns:xsi="http://www.w3.org/2001/XInclude">
+	<topicref type="topic" id="460526700009936" build="ALL" modified="2026-01-30T13:12:49.323Z" icon="0" href="fs_8bd7d2d2d793">
+		<caption translate="true">Hintergründe zum TRMS</caption>
+		<topicref type="topic" id="460526681822023" build="ALL" modified="2026-01-30T13:12:49.341Z" icon="0" href="fs_56f5b8c32ff9">
+			<caption translate="true">Klärungen von Begriffen aus dem TRMS-Kontext</caption>
+		</topicref>
+		<topicref type="topic" id="460526863622919" build="ALL" modified="2026-01-30T13:12:49.343Z" icon="0" href="fs_0f91786ea1d0">
+			<caption translate="true">Zusammenspiel von IKAROS und TRMS</caption>
+			<topicref type="topic" id="460525284580588" build="ALL" modified="2026-01-30T13:12:49.359Z" icon="0" href="fs_45b3577393e3">
+				<caption translate="true">Erstellung von „.trms4“-Paketdateien</caption>
+			</topicref>
+			<topicref type="topic" id="46051988494941" build="ALL" modified="2026-01-30T13:12:49.403Z" icon="0" href="fs_cfea2aa5c9ba">
+				<caption translate="true">Prüfungen bei Paketerstellung und Transport</caption>
+			</topicref>
+			<topicref type="topic" id="460527612723137" build="ALL" modified="2026-01-30T13:12:49.442Z" icon="0" href="fs_7694303fb9e3">
+				<caption translate="true">Wartedialog während Transporten und Paketerstellung</caption>
+			</topicref>
+			<topicref type="topic" id="460526129705145" build="ALL" modified="2026-01-30T13:12:49.451Z" icon="0" href="fs_e8d7812768c9">
+				<caption translate="true">Empfehlung: Vermeiden Sie die parallele Pflege von Artefakten in verschiedenen Systemen</caption>
+			</topicref>
+		</topicref>
+		<topicref type="topic" id="460525469046054" build="ALL" modified="2026-01-30T13:12:49.515Z" icon="0" href="fs_8c4e9fbfe746">
+			<caption translate="true">Transport zwischen verschiedenen TRMS</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="460527307446430" build="ALL" modified="2026-01-30T13:12:49.607Z" icon="0" href="fs_95ffca161df8">
+		<caption translate="true">Der Artefaktpaket-Assistent im TRMS</caption>
+		<topicref type="topic" id="460525127654076" build="ALL" modified="2026-01-30T13:12:49.713Z" icon="0" href="fs_ca85463e4f46">
+			<caption translate="true">Der Dialog des Artefaktpaket-Assistenten</caption>
+		</topicref>
+		<topicref type="topic" id="460526156257513" build="ALL" modified="2026-01-30T13:12:50.030Z" icon="0" href="fs_a5410b5feeef">
+			<caption translate="true">Schaltflächen (Artefaktpaket-Assistent)</caption>
+		</topicref>
+		<topicref type="topic" id="460523896150332" build="ALL" modified="2026-01-30T13:12:50.104Z" icon="0" href="fs_0cc83015b201">
+			<caption translate="true">Übersicht der Artefakt-Gruppen und -Typen</caption>
+		</topicref>
+		<topicref type="topic" id="460525674457473" build="ALL" modified="2026-01-30T13:12:50.150Z" icon="0" href="fs_d84060bf97c3">
+			<caption translate="true">Dialog mit Übersicht der gewählten Artefakte</caption>
+		</topicref>
+		<topicref type="topic" id="460523814620381" build="ALL" modified="2026-01-30T13:12:50.324Z" icon="0" href="fs_ef9609a3fd0b">
+			<caption translate="true">Dialoge für Transportvorgaben</caption>
+			<topicref type="topic" id="460526439939985" build="ALL" modified="2026-01-30T13:12:50.424Z" icon="0" href="fs_cf02b19e9b5e">
+				<caption translate="true">Dialog für die Transportkonfiguration von Workflows und Workflow-Ausdrücken</caption>
+			</topicref>
+		</topicref>
+		<topicref type="topic" id="460526647108151" build="ALL" modified="2026-01-30T13:12:50.480Z" icon="0" href="fs_c6c8c6efde30">
+			<caption translate="true">Dialog für die Anmeldung an ein System</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="460526707073373" build="ALL" modified="2026-01-30T13:12:50.581Z" icon="0" href="fs_c54c03a52f57">
+		<caption translate="true">Menüpunkt „Artefakte“</caption>
+	</topicref>
+	<topicref type="topic" id="460525614135441" build="ALL" modified="2026-01-30T13:12:50.700Z" icon="0" href="fs_756be6e75af0">
+		<caption translate="true">Menüpunkt „Pakete“</caption>
+		<topicref type="topic" id="46051945488662" build="ALL" modified="2026-01-30T13:12:50.767Z" icon="0" href="fs_16a832b9966f">
+			<caption translate="true">trms4-Paketdateien in IKAROS-Systeme transportieren</caption>
+		</topicref>
+		<topicref type="topic" id="460525010744500" build="ALL" modified="2026-01-30T13:12:50.831Z" icon="0" href="fs_2884601c3b0a">
+			<caption translate="true">trms4-Paketdateien in ein TRMS transportieren</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="460527313395938" build="ALL" modified="2026-01-30T13:12:50.989Z" icon="0" href="fs_0f120fd4d0f5">
+		<caption translate="true">Menüpunkt „Changes“</caption>
+	</topicref>
+	<topicref type="topic" id="460524948051180" build="ALL" modified="2026-01-30T13:12:51.076Z" icon="0" href="fs_779ccf6ad627">
+		<caption translate="true">Menüpunkt „Change Sets“</caption>
+	</topicref>
+	<topicref type="topic" id="460527098200589" build="ALL" modified="2026-01-30T13:12:51.140Z" icon="0" href="fs_7c02462359d9">
+		<caption translate="true">Menüpunkt „Transportplanung“</caption>
+		<topicref type="topic" id="46050485899643" build="ALL" modified="2026-01-30T13:12:51.239Z" icon="0" href="fs_aab67b4c497a">
+			<caption translate="true">Der Bearbeitungsdialog für Transportaufträge</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="46053346177813" build="ALL" modified="2026-01-30T13:12:51.293Z" icon="0" href="fs_0d66193132f1">
+		<caption translate="true">Menüpunkt „Transportprotokolle“</caption>
+		<topicref type="topic" id="460523364395049" build="ALL" modified="2026-01-30T13:12:51.374Z" icon="0" href="fs_c6adcb5003b9">
+			<caption translate="true">Der Dialog für Transportprotokolle</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="460526947469452" build="ALL" modified="2026-01-30T13:12:51.380Z" icon="0" href="fs_a96fbdd2507b">
+		<caption translate="true">Menüpunkt „Administration“</caption>
+		<topicref type="topic" id="460526867013934" build="ALL" modified="2026-01-30T13:12:51.443Z" icon="0" href="fs_2ff526eec226">
+			<caption translate="true">Menüpunkt „IKAROS-Systeme“</caption>
+			<topicref type="topic" id="460524028733438" build="ALL" modified="2026-01-30T13:12:51.535Z" icon="0" href="fs_ae147e301e50">
+				<caption translate="true">Der Bearbeitungsdialog für IKAROS-Systeme</caption>
+			</topicref>
+		</topicref>
+		<topicref type="topic" id="460525446493062" build="ALL" modified="2026-01-30T13:12:51.583Z" icon="0" href="fs_79693aea93bb">
+			<caption translate="true">Menüpunkt „TRMS-Systeme“</caption>
+			<topicref type="topic" id="460523767220139" build="ALL" modified="2026-01-30T13:12:51.653Z" icon="0" href="fs_380cd814ef42">
+				<caption translate="true">Der Bearbeitungsdialog für TRMS-Systeme</caption>
+			</topicref>
+		</topicref>
+		<topicref type="topic" id="460527497769528" build="ALL" modified="2026-01-30T13:12:51.855Z" icon="0" href="fs_c6bbe91d22bd">
+			<caption translate="true">Menüpunkt „Rechte“</caption>
+			<topicref type="topic" id="460523523002194" build="ALL" modified="2026-01-30T13:12:51.870Z" icon="0" href="fs_107ae47c5a52">
+				<caption translate="true">Notwendige Benutzer, Rollen und Claims in IKAROS und im TRMS</caption>
+			</topicref>
+		</topicref>
+		<topicref type="topic" id="460526593332315" build="ALL" modified="2026-01-30T13:12:51.925Z" icon="0" href="fs_bc555f65d818">
+			<caption translate="true">Menüpunkt „Systemeinstellungen“</caption>
+		</topicref>
+		<topicref type="topic" id="460527201232750" build="ALL" modified="2026-01-30T13:12:51.969Z" icon="0" href="fs_52ee3b02ee67">
+			<caption translate="true">Menüpunkt „Dateizentrum“</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="460524060920981" build="ALL" modified="2026-01-30T13:12:51.987Z" icon="0" href="fs_11ed2b9082ce">
+		<caption translate="true">Bedingungsprüfung und Vor- und Nachbereitung per Ereignisskript beim Transport</caption>
+		<topicref type="topic" id="460527010337180" build="ALL" modified="2026-01-30T13:12:52.052Z" icon="0" href="fs_a684a04e034a">
+			<caption translate="true">Programmiermöglichkeiten in Transportkontrollskripten</caption>
+			<topicref type="topic" id="460525223175217" build="ALL" modified="2026-01-30T13:12:52.064Z" icon="0" href="fs_3361362778f0">
+				<caption translate="true">Beispiel für ein Prerequisite-Skript zum Prüfen von Datenschutz-Zwecken</caption>
+			</topicref>
+		</topicref>
+		<topicref type="topic" id="460526725212534" build="ALL" modified="2026-01-30T13:12:52.257Z" icon="0" href="fs_50463acdbe7b">
+			<caption translate="true">Bearbeitungsdialog für Transportkontrollskripte</caption>
+		</topicref>
+	</topicref>
+	<topicref type="topic" id="45209376902" build="ALL" modified="2026-01-30T13:12:52.272Z" icon="0" href="fs_a8403dc39138">
+		<caption translate="true">Automatisierung des TRMS mit dem Kommandozeilenprogramm „TrmsCli.exe“</caption>
+		<topicref type="topic" id="460524631559161" build="ALL" modified="2026-01-30T13:12:52.290Z" icon="0" href="fs_48e53bb7f919">
+			<caption translate="true">Die Funktion „CheckWebserviceAccessibility“</caption>
+		</topicref>
+		<topicref type="topic" id="460527237399357" build="ALL" modified="2026-01-30T13:12:52.305Z" icon="0" href="fs_1e465b06c0f5">
+			<caption translate="true">Die Funktion „ClearAllCacheRegions“</caption>
+		</topicref>
+		<topicref type="topic" id="460526759522375" build="ALL" modified="2026-01-30T13:12:52.316Z" icon="0" href="fs_f277925f2d56">
+			<caption translate="true">Die Funktion „EncryptPassword“</caption>
+		</topicref>
+		<topicref type="topic" id="46053086152304" build="ALL" modified="2026-01-30T13:12:52.340Z" icon="0" href="fs_f6e54c8e010e">
+			<caption translate="true">Die Funktion „Import“</caption>
+		</topicref>
+		<topicref type="topic" id="460527167218361" build="ALL" modified="2026-01-30T13:12:52.369Z" icon="0" href="fs_4d751254095c">
+			<caption translate="true">Die Funktion „ImportSingleArtefact“</caption>
+		</topicref>
+		<topicref type="topic" id="460524801686887" build="ALL" modified="2026-01-30T13:12:52.388Z" icon="0" href="fs_a9bba19f32ee">
+			<caption translate="true">Die Funktion „ShowCustomizingArtefactSources“</caption>
+		</topicref>
+	</topicref>
+</map>

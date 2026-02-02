@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:51.654Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Der Bearbeitungsdialog für TRMS-Systeme</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Der Bearbeitungsdialog für TRMS-Systeme</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img138.png" scale="78.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 38: Bearbeitungsdialog für ein TRMS-System</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Name</text>“: Der maximal 50 Zeichen lange Name für das TRMS-Zielsystem.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Servicehost-Adresse</text>“: Die Adresse des Anwendungs-Servers des Ziel-TRMS.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Version</text>“: Zeigt schreibgeschützt die IKAROS-Version des Ziel-TRMS an. Wird bei Ausführung von „Verbindung prüfen“ automatisch gefüllt.</li>
+    </list>
+    <para styleclass="Normal">Die Dokumentation der „OpenID Connect“-Felder (wie „Provider“ oder „Client-ID“) finden Sie in der Dokumentation des Menüpunkts [<text styleclass="Systemzitat">Administration -&gt; Services</text>] in IKAROS (Kapitel-ID „fs_a8c663c5abe7“).</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="5" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:108px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img11.png" scale="59.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Speichern &amp; Schließen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [H]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Speichert die Änderungen an den Systemverbindungsdaten und schließt den Dialog.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur aktiv, wenn Änderungen vorliegen und „</text><text styleclass="Strong" style="font-size:9pt;">Verbindung prüfen</text><text style="font-size:9pt;">“ erfolgreich ausgeführt wurde.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img12.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Speichern</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [S]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Speichert die Änderungen an den Systemverbindungsdaten.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur aktiv, wenn Änderungen vorliegen und „</text><text styleclass="Strong" style="font-size:9pt;">Verbindung prüfen</text><text style="font-size:9pt;">“ erfolgreich ausgeführt wurde.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img13.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Löschen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [D]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Löscht die Systemverbindungsdaten nach der Bestätigung einer Sicherheitsabfrage dauerhaft aus der Datenbank des TRMS.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Auf das tatsächliche TRMS-System, auf das diese Daten verweisen, hat das Löschen keinen Einfluss.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Das Löschen ist nur möglich, wenn das System noch nicht in Changes, Change Sets oder Transportaufträgen eingetragen ist.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img131.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Verbindung prüfen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [K]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft den Anmeldedialog auf, um sich an dem System testweise anzumelden und so die Verbindungsdaten zu überprüfen.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">„System“-Datensätze können erst gespeichert werden, wenn die Verbindungsprüfung erfolgreich war.</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

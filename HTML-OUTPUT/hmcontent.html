@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html><head>
+   <title>Enter the help project title here</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="robots" content="noindex,follow" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="./css/default.css" rel="stylesheet" />
+
+   <!-- This block defines the styles of the TOC headings, change them as needed -->
+   <style type="text/css">
+       body { font-size: 1em }
+       .heading1 { color: #000; text-decoration: none; }
+       .heading2 { color: #000; text-decoration: none; }
+       .heading3 { color: #000; text-decoration: none; }
+       .heading4 { color: #000; text-decoration: none; }
+       .heading5 { color: #000; text-decoration: none; }
+       .heading6 { color: #000; text-decoration: none; }
+
+       .hilight1 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight2 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight3 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight4 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight5 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight6 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+
+       /* TOC LIST CSS */
+       #toc    { padding:0; margin:0 }
+       #toc li { 
+			margin-top:2px; 
+			margin-left:0; 
+			padding: 1px;
+			background-position: 0px 3px !important;
+			background-size: 18px 18px !important;
+            padding-left: 23px !important;
+			}
+       #toc ul { padding-left:0; margin-left:0px }       
+       /* TOC LIST CSS */
+       
+       @media (pointer: coarse) {
+         body    { transform-origin: 0 0;
+		   transform:scale(1.25); 
+		   max-width: 80%;
+       }       
+   </style>
+   <script type="text/javascript" src="./js/jquery.js"></script>
+   <script type="text/javascript" src="./js/helpman_settings.js"></script>
+   <script type="text/javascript">
+   $(document).ready(function(){
+   	   var hiTest = /^hilight/im,
+			parentScope = (parent.hmNavigationFrame);
+		if (parentScope) parent.currentNav("toc");
+		$("a[class^='heading']").on("click",function(event){
+			var doSwipe = (hiTest.test($(this).children("span").first().attr("class")) || false || (parentScope && !parent.hmBrowser.nonDeskTouch));
+			if (doSwipe && parentScope) {
+			window.parent.showNav("toggle");
+			}
+			});
+     });
+   </script>
+      <script type="text/javascript">
+     var parentScope = (parent.hmNavigationFrame);
+     if (!parentScope) {
+		      var s = document.createElement("script");
+		      s.setAttribute("type","text/javascript");
+		      s.setAttribute("src", "helpman_navigation.js");
+		      document.getElementsByTagName("head")[0].appendChild(s);
+	    }
+     else {
+       if (initialtocstate != "expandall") parent.hmAddCss(document, "#toc li ul { display: none }");
+     }
+     function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { if (parentScope) parent.loadstate(document.getElementById("toc")); else loadstate(document.getElementById("toc")); }
+     function savetoc() { if (parentScope) parent.savestate(document.getElementById("toc")); else savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); if (parentScope) parent.hmNodeClicked(node, event); else hmNodeClicked(node, event); }
+     function dblclicked(node) { if (parentScope) parent.hmNodeDblclicked(node); else hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
+</head>
+<body>
+<ul id="toc" style="list-style-type:none;display:block;padding-left:0">
+<li class="heading1" id="i1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href="fs_8bd7d2d2d793.html" target="hmcontent"><span class="heading1" id="s1">Hintergründe zum TRMS</span></a>
+</li>
+<li class="heading1" id="i2" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="fs_56f5b8c32ff9.html" target="hmcontent"><span class="heading1" id="s2">Klärungen von Begriffen aus dem TRMS-Kontext</span></a>
+</li>
+<li class="heading1" id="i3" data-bg="./images/cicon1.svg;./images/cicon2.svg" style="background:url(./images/cicon2.svg) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="fs_0f91786ea1d0.html" target="hmcontent"><span class="heading1" id="s3" ondblclick="return dblclicked(this)">Zusammenspiel von IKAROS und TRMS</span></a>
+<ul id="ul3" style="list-style-type:none">
+<li class="heading2" id="i3.1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.1" href="fs_45b3577393e3.html" target="hmcontent"><span class="heading2" id="s3.1">Erstellung von „.trms4“-Paketdateien</span></a>
+</li>
+<li class="heading2" id="i3.2" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.2" href="fs_cfea2aa5c9ba.html" target="hmcontent"><span class="heading2" id="s3.2">Prüfungen bei Paketerstellung und Transport</span></a>
+</li>
+<li class="heading2" id="i3.3" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.3" href="fs_7694303fb9e3.html" target="hmcontent"><span class="heading2" id="s3.3">Wartedialog während Transporten und Paketerstellung</span></a>
+</li>
+<li class="heading2" id="i3.4" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.4" href="fs_e8d7812768c9.html" target="hmcontent"><span class="heading2" id="s3.4">Empfehlung: Vermeiden Sie die parallele Pflege von Artefakten in verschiedenen Systemen</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i4" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="fs_8c4e9fbfe746.html" target="hmcontent"><span class="heading1" id="s4">Transport zwischen verschiedenen TRMS</span></a>
+</li>
+<li class="heading1" id="i5" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="fs_95ffca161df8.html" target="hmcontent"><span class="heading1" id="s5">Der Artefaktpaket-Assistent im TRMS</span></a>
+</li>
+<li class="heading1" id="i6" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="fs_ca85463e4f46.html" target="hmcontent"><span class="heading1" id="s6">Der Dialog des Artefaktpaket-Assistenten</span></a>
+</li>
+<li class="heading1" id="i7" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a7" href="fs_a5410b5feeef.html" target="hmcontent"><span class="heading1" id="s7">Schaltflächen (Artefaktpaket-Assistent)</span></a>
+</li>
+<li class="heading1" id="i8" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a8" href="fs_0cc83015b201.html" target="hmcontent"><span class="heading1" id="s8">Übersicht der Artefakt-Gruppen und -Typen</span></a>
+</li>
+<li class="heading1" id="i9" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a9" href="fs_d84060bf97c3.html" target="hmcontent"><span class="heading1" id="s9">Dialog mit Übersicht der gewählten Artefakte</span></a>
+</li>
+<li class="heading1" id="i10" data-bg="./images/cicon1.svg;./images/cicon2.svg" style="background:url(./images/cicon2.svg) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a10" href="fs_ef9609a3fd0b.html" target="hmcontent"><span class="heading1" id="s10" ondblclick="return dblclicked(this)">Dialoge für Transportvorgaben</span></a>
+<ul id="ul10" style="list-style-type:none">
+<li class="heading2" id="i10.1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a10.1" href="fs_cf02b19e9b5e.html" target="hmcontent"><span class="heading2" id="s10.1">Dialog für die Transportkonfiguration von Workflows und Workflow-Ausdrücken</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i11" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a11" href="fs_c6c8c6efde30.html" target="hmcontent"><span class="heading1" id="s11">Dialog für die Anmeldung an ein System</span></a>
+</li>
+<li class="heading1" id="i12" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a12" href="fs_c54c03a52f57.html" target="hmcontent"><span class="heading1" id="s12">Menüpunkt „Artefakte“</span></a>
+</li>
+<li class="heading1" id="i13" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a13" href="fs_756be6e75af0.html" target="hmcontent"><span class="heading1" id="s13">Menüpunkt „Pakete“</span></a>
+</li>
+<li class="heading1" id="i14" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a14" href="fs_16a832b9966f.html" target="hmcontent"><span class="heading1" id="s14">trms4-Paketdateien in IKAROS-Systeme transportieren</span></a>
+</li>
+<li class="heading1" id="i15" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a15" href="fs_2884601c3b0a.html" target="hmcontent"><span class="heading1" id="s15">trms4-Paketdateien in ein TRMS transportieren</span></a>
+</li>
+<li class="heading1" id="i16" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a16" href="fs_0f120fd4d0f5.html" target="hmcontent"><span class="heading1" id="s16">Menüpunkt „Changes“</span></a>
+</li>
+<li class="heading1" id="i17" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a17" href="fs_779ccf6ad627.html" target="hmcontent"><span class="heading1" id="s17">Menüpunkt „Change Sets“</span></a>
+</li>
+<li class="heading1" id="i18" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a18" href="fs_7c02462359d9.html" target="hmcontent"><span class="heading1" id="s18">Menüpunkt „Transportplanung“</span></a>
+</li>
+<li class="heading1" id="i19" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a19" href="fs_aab67b4c497a.html" target="hmcontent"><span class="heading1" id="s19">Der Bearbeitungsdialog für Transportaufträge</span></a>
+</li>
+<li class="heading1" id="i20" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a20" href="fs_0d66193132f1.html" target="hmcontent"><span class="heading1" id="s20">Menüpunkt „Transportprotokolle“</span></a>
+</li>
+<li class="heading1" id="i21" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a21" href="fs_c6adcb5003b9.html" target="hmcontent"><span class="heading1" id="s21">Der Dialog für Transportprotokolle</span></a>
+</li>
+<li class="heading1" id="i22" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a22" href="fs_a96fbdd2507b.html" target="hmcontent"><span class="heading1" id="s22">Menüpunkt „Administration“</span></a>
+</li>
+<li class="heading1" id="i23" data-bg="./images/cicon1.svg;./images/cicon2.svg" style="background:url(./images/cicon2.svg) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a23" href="fs_2ff526eec226.html" target="hmcontent"><span class="heading1" id="s23" ondblclick="return dblclicked(this)">Menüpunkt „IKAROS-Systeme“</span></a>
+<ul id="ul23" style="list-style-type:none">
+<li class="heading2" id="i23.1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a23.1" href="fs_ae147e301e50.html" target="hmcontent"><span class="heading2" id="s23.1">Der Bearbeitungsdialog für IKAROS-Systeme</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i24" data-bg="./images/cicon1.svg;./images/cicon2.svg" style="background:url(./images/cicon2.svg) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a24" href="fs_79693aea93bb.html" target="hmcontent"><span class="heading1" id="s24" ondblclick="return dblclicked(this)">Menüpunkt „TRMS-Systeme“</span></a>
+<ul id="ul24" style="list-style-type:none">
+<li class="heading2" id="i24.1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a24.1" href="fs_380cd814ef42.html" target="hmcontent"><span class="heading2" id="s24.1">Der Bearbeitungsdialog für TRMS-Systeme</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i25" data-bg="./images/cicon1.svg;./images/cicon2.svg" style="background:url(./images/cicon2.svg) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a25" href="fs_c6bbe91d22bd.html" target="hmcontent"><span class="heading1" id="s25" ondblclick="return dblclicked(this)">Menüpunkt „Rechte“</span></a>
+<ul id="ul25" style="list-style-type:none">
+<li class="heading2" id="i25.1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a25.1" href="fs_107ae47c5a52.html" target="hmcontent"><span class="heading2" id="s25.1">Notwendige Benutzer, Rollen und Claims in IKAROS und im TRMS</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i26" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a26" href="fs_bc555f65d818.html" target="hmcontent"><span class="heading1" id="s26">Menüpunkt „Systemeinstellungen“</span></a>
+</li>
+<li class="heading1" id="i27" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a27" href="fs_52ee3b02ee67.html" target="hmcontent"><span class="heading1" id="s27">Menüpunkt „Dateizentrum“</span></a>
+</li>
+<li class="heading1" id="i28" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a28" href="fs_11ed2b9082ce.html" target="hmcontent"><span class="heading1" id="s28">Bedingungsprüfung und Vor- und Nachbereitung per Ereignisskript beim Transport</span></a>
+</li>
+<li class="heading1" id="i29" data-bg="./images/cicon1.svg;./images/cicon2.svg" style="background:url(./images/cicon2.svg) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a29" href="fs_a684a04e034a.html" target="hmcontent"><span class="heading1" id="s29" ondblclick="return dblclicked(this)">Programmiermöglichkeiten in Transportkontrollskripten</span></a>
+<ul id="ul29" style="list-style-type:none">
+<li class="heading2" id="i29.1" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a29.1" href="fs_3361362778f0.html" target="hmcontent"><span class="heading2" id="s29.1">Beispiel für ein Prerequisite-Skript zum Prüfen von Datenschutz-Zwecken</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i30" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a30" href="fs_50463acdbe7b.html" target="hmcontent"><span class="heading1" id="s30">Bearbeitungsdialog für Transportkontrollskripte</span></a>
+</li>
+<li class="heading1" id="i31" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a31" href="fs_a8403dc39138.html" target="hmcontent"><span class="heading1" id="s31">Automatisierung des TRMS mit dem Kommandozeilenprogramm „TrmsCli.exe“</span></a>
+</li>
+<li class="heading1" id="i32" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a32" href="fs_48e53bb7f919.html" target="hmcontent"><span class="heading1" id="s32">Die Funktion „CheckWebserviceAccessibility“</span></a>
+</li>
+<li class="heading1" id="i33" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a33" href="fs_1e465b06c0f5.html" target="hmcontent"><span class="heading1" id="s33">Die Funktion „ClearAllCacheRegions“</span></a>
+</li>
+<li class="heading1" id="i34" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a34" href="fs_f277925f2d56.html" target="hmcontent"><span class="heading1" id="s34">Die Funktion „EncryptPassword“</span></a>
+</li>
+<li class="heading1" id="i35" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a35" href="fs_f6e54c8e010e.html" target="hmcontent"><span class="heading1" id="s35">Die Funktion „Import“</span></a>
+</li>
+<li class="heading1" id="i36" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a36" href="fs_4d751254095c.html" target="hmcontent"><span class="heading1" id="s36">Die Funktion „ImportSingleArtefact“</span></a>
+</li>
+<li class="heading1" id="i37" style="background:url(./images/cicon9.svg) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a37" href="fs_a9bba19f32ee.html" target="hmcontent"><span class="heading1" id="s37">Die Funktion „ShowCustomizingArtefactSources“</span></a>
+</li>
+</ul>
+<script type="text/javascript">loadicons('./images/cicon9.svg','./images/cicon2.svg','./images/cicon1.svg');</script>
+</body>
+</html>

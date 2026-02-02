@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:52.257Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Bearbeitungsdialog für Transportkontrollskripte</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Bearbeitungsdialog für Transportkontrollskripte</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img151.png" scale="44.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 45: Der Bearbeitungsdialog für Transportkontrollskripte</para>
+    <para styleclass="Normal">Der Dialog besitzt ein Textfeld, in das Sie den Custom Code hineinkopieren und dort auch bearbeiten können.</para>
+    <para styleclass="Normal">Beachten Sie jedoch, dass es sich hierbei <text styleclass="Strong">nicht</text> um den Custom-Code-Editor aus IKAROS handelt, sondern um einen vereinfachten Code-Editor. D. h. er bietet u. a. keine Code-Vervollständigung, keine einheitliche Quelltext-Formatierung oder die Möglichkeit des Debuggens.</para>
+    <para styleclass="Normal">Die übliche <text styleclass="Strong">Vorgehensweise</text> für die Erstellung und das Testen von Transportkontrollskripten ist es daher, im TRMS das Transportkontrollskript im TRMS mit Platzhalter-Code anzulegen, die Schaltfläche „<text styleclass="Strong">Code für IKAROS kopieren</text>“ zu nutzen und mit dem so erhaltenen Code <text styleclass="Strong">in IKAROS</text> das Skript zu programmieren und dort zu testen. Den fertigen Code fügen Sie dann im TRMS im Bearbeitungsdialog mit der Schaltfläche „<text styleclass="Strong">Code von IKAROS einfügen</text>“ wieder ein.</para>
+    <para styleclass="Normal">Ein lauffähiges Skript können Sie mit der Schaltfläche „<text styleclass="Strong">Simulieren</text>“ auch vom TRMS aus schreibgeschützt in einem Zielsystem ausführen und auch ein Protokoll zum Simulationslauf erhalten.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="8" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:102px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img152.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Übernehmen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [H]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Übernimmt den Text als Code für das Transportkontrollskript.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">In Changes und Change Sets müssen Sie noch speichern, damit der Skriptcode auch endgültig in die Datenbank geschrieben wird.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Falls die Paketdatei eines Changes/Change Sets bereits in der Datenbank vorliegt, wird dort automatisch die neueste Skriptversion hinterlegt, ohne dass die Paketdatei neu erzeugt werden muss.</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img153.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Code für IKAROS kopieren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [Alt] &#160;+ [C]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Kopiert den gesamten Skript-Code in die Zwischenablage. Dabei wird der Code automatisch um weiteren Code angereichert, der ihn im JavaScript-Editor in IKAROS direkt ausführbar macht, indem das „trms“-Objekt mit seinen Methoden generisch nachgebildet wird.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Wenn Sie den Code in IKAROS weiterentwickelt haben, kopieren Sie ihn im Ganzen (inkl. des angereicherten Codes) und nutzen dann zum Einfügen im Script-Editor im TRMS die Schaltfläche „Code von IKAROS einfügen“. Dadurch wird der Script-Code ohne den generisch angereicherten Code eingefügt.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Die Schaltfläche ist erst aktiv, wenn mindestens ein Zeichen im Editor eingegeben wurde.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img154.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Code von IKAROS einfügen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [Alt] + [V]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Leert den gesamten Script-Editor und fügt den Inhalt der Zwischenablage ein. Dabei wird der generische Code, der beim Kopieren mittels der Schaltfläche „Code für IKAROS kopieren“ angereichert wurde, automatisch entfernt.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img155.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Löschen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [D]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Löscht den Code des Skripts, sodass es nicht mehr in das trms4-Paket aufgenommen wird.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Changes und Change Sets müssen Sie zusätzlich noch speichern, damit das Löschen des Skriptcodes auch endgültig in der Datenbank erfolgt.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Falls die Paketdatei eines Changes/Change Sets bereits in der Datenbank vorliegt, wird das Skript automatisch daraus entfernt, ohne dass die Paketdatei neu erzeugt werden muss.</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img156.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Simulieren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[F5]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur in Initialisierungs- und Prerequisite-Skripten.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft zunächst einen Dialog auf, in dem Sie sich an einem Zielsystem anmelden müssen. Anschließend führt das TRMS den Skript-Code im Zielsystem schreibgeschützt aus.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Falls im Skript Meldungen erzeugt wurden, erscheint ein Transportprotokoll für die simulierte Ausführung.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Bei technischen Fehlern erhalten Sie eine entsprechende Fehlermeldung.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Andernfalls erhalten Sie einen Hinweis, dass das Skript ohne Meldungen durchgelaufen ist.</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img157.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Nach Erfolg simulieren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[F5]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur in &#160;Finalisierungs-Skripten.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Wie bei „Simulieren“, aber der Zugriff „trms.transportSuccessful“ liefert im Skript „true“.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img158.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Nach Fehler simulieren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[F6]</text></para>
+        </td>
+        <td style="vertical-align:top; width:399px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur in Finalisierungs-Skripten.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Wie bei „Simulieren“, aber der Zugriff „trms.transportSuccessful“ liefert im Skript „false“.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">„Simulieren“ (Test-Ausführung von Transportkontrollskripten)</para>
+    <para styleclass="Normal">Sie können den Custom Code eines Transportkontrollskripts schreibgeschützt in einem IKAROS-Zielsystem ausführen. Dazu müssen Sie die Schaltfläche „<text styleclass="Strong">Simulieren</text>“ (für Prerequisite- und Initialisierungs-Skripte) bzw. „<text styleclass="Strong">Nach Erfolg simulieren</text>“ oder „<text styleclass="Strong">Nach Fehler simulieren</text>“ (für Finalisierungs-Skripte) im Bearbeitungsdialog für das Skript betätigen.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Falls Sie im Skript mit den Methoden <text styleclass="Strong">„trms.reportInfo()</text>“ oder „<text styleclass="Strong">trms.reportError()</text>“ Meldungen ins Protokoll schreiben, erhalten Sie bei Abschluss des Simulierens einen Dialog mit den Protokolleinträgen.</li>
+    </list>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img159.png" scale="59.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 46: Dialog mit Ergebnissen aus simuliertem Transportkontrollskript</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Falls <text styleclass="Strong">technische Fehler</text> auftreten (z. B. Syntaxfehler in Custom Code), erhalten Sie eine entsprechende Fehlermeldung und die Skriptausführung wird sofort abgebrochen.</li>
+      <li styleclass="Aufzählung1">Falls das Skript ohne technische Fehler durchläuft und auch keine Protokolleinträge gemacht wurden, erhalten Sie eine Erfolgsmeldung: „Das Skript wurde ausgeführt.“</li>
+    </list>
+  </body>
+</topic>

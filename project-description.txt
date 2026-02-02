@@ -1,0 +1,23 @@
+In diesem Projekt geht es um die Erstellung eines HTML Skins für die Software "Help+Manual" (www.helpandmanual.com)
+Beim Aufruf der Exportieren Funktion in der Software kann eine Vorlage ausgewählt werden, die das Layout der generierten Hilfe Dateien bestimmt.
+Diese Vorlage (.hmskin) muss nach bestimmten Vorgaben erstellt werden. Wir hatten die Hilfe Dateien bisher mit einer anderen Software erstellt (ich glaube Nethelp).
+Der Output von Help+Manual soll vorerst das genau gleiche Layout haben wie bisher.
+
+Es befinden sich folgende Dateien/Verzeichnisse im Projektverzeichnis:
+
+- Verzeichnis "DESIRED-OUTPUT-FORMAT"
+  dies ist unsere alte Hilfe, die mit einer anderen Software erstellt wurde.
+  Startdatei=help.html
+- Verzeichnis "INPUT-FILES"
+  dieses Verzeichnis enthält das aktuelle Help+Manual Projekt, also quasi die Quelldateien aus denen die Hilfe erstellt wird
+- Verzeichnis "HTML-OUTPUT"
+  der aktuelle output den H&M erzeugt. Es wurde hier der skin "Webhelp, Responsive Blue, Keywordslist.hmskin" verwendet.
+  Startdatei=index.html
+- Verzeichnis "help-and-manual-html-skins"
+  Vorgegebene skins von H&M. Diese können ggf. als Inspiration dienen was möglich ist
+
+
+Vorgaben
+- Es soll eine .hmskin Datei erzeugt werden mit der das möglichst genau gleiche Layout erzeugt werden kann wie in der alten Hilfe Version
+- Es dürfen auf keinen Fall iFrames verwendet werden.
+- Das Verhalten soll genau dem der ursprünglichen Version entsprechen

@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.575Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Schaltflächen (Artefaktpaket-Assistent)</title>
+  <keywords>
+    <keyword>Schaltflächen (Artefaktpaket-Assistent)(inkl. Tastenkürzel)</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Schaltflächen (Artefaktpaket-Assistent)</para>
+    </header>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="18" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:40px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:137px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img11.png" scale="59.00%" width="19" height="19" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Speichern &amp; Schließen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [H]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Speichert die Änderungen im Artefaktpaket-Assistenten als Change bzw. Change Set und schließt den Dialog.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Beachten Sie, dass eine eventuell bereits gespeicherte Paketdatei </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_45b3577393e3" styleclass="Hyperlink">[Link]</link><text style="font-size:8pt;"> zum Change/Change Set </text><text styleclass="Strong" style="font-size:8pt;">nicht</text><text style="font-size:8pt;"> automatisch gelöscht bzw. aktualisiert wird. Wenn Sie Änderungen an der Artefakt-Zusammenstellung vorgenommen haben, müssen Sie die Paketerstellung erneut ausführen, damit das Paket die Änderungen enthält.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img12.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Speichern</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [S]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Speichert die Änderungen im Artefaktpaket-Assistenten als Change bzw. Change Set.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Beachten Sie, dass eine eventuell bereits gespeicherte Paketdatei </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_45b3577393e3" styleclass="Hyperlink">[Link]</link><text style="font-size:8pt;"> zum Change/Change Set </text><text styleclass="Strong" style="font-size:8pt;">nicht</text><text style="font-size:8pt;"> automatisch gelöscht bzw. aktualisiert wird. Wenn Sie Änderungen an der Artefakt-Zusammenstellung vorgenommen haben, müssen Sie die Paketerstellung erneut ausführen, damit das Paket die Änderungen enthält.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img13.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Löschen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [D]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Löscht den Change/das Change Set nach der Bestätigung einer Sicherheitsabfrage dauerhaft aus der Datenbank des TRMS.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Auf IKAROS-Systeme, in denen der Change/das Change Set bereits installiert wurde, hat das Löschen keinen Einfluss.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Wenn ein Change oder Change Set in einem Transportauftrag zugewiesen ist, wird das Löschen verhindert. Changes können zudem nicht gelöscht werden, wenn sie in einem Change Set enthalten sind.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img14.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Quellsystem auswählen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Q]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet den Dialog zum Anmelden an ein System, um das IKAROS-System, aus dem die Artefakte gewählt werden sollen, neu festzulegen.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">In bereits gespeicherten Changes oder Change Sets kann das Quellsystem nicht mehr geändert werden, weshalb die Schaltfläche dann deaktiviert ist.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img15.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">In anderes TRMS transportieren</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Alt] + [i]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet zunächst einen Dialog zur Auswahl der Zielsysteme und startet anschließend die Übertragung des Changes/des Change Sets in die Ziel-TRMS-Systeme (wo sie als </text><text styleclass="Strong" style="font-size:8pt;">schreibgeschützte</text><text style="font-size:8pt;"> Changes/Change Sets angelegt werden </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_8c4e9fbfe746" styleclass="Hyperlink">[Link]</link><text style="font-size:8pt;">).</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img16.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Transportieren</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [i]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Leitet den Transport eines Artefaktpakets in ein oder mehrere IKAROS-Systeme ein.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">In </text><text styleclass="Strong" style="font-size:8pt;">Changes/Change Sets</text><text style="font-size:8pt;">: Öffnet zunächst einen Dialog zur Auswahl der Zielsysteme und beginnt dann mit dem Transport und der Installation des Changes/Change Sets in diesen Systemen. Wenn mehrere Zielsysteme ausgewählt sind, erfolgt der Transport sequenziell nacheinander und für jedes Zielsystem wird ein eigenes Protokoll geschrieben.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Im Menüpunkt „</text><text styleclass="Strong" style="font-size:8pt;">Pakete</text><text style="font-size:8pt;">“: Öffnet zunächst einen Dialog zum Hochladen eines vorhandenen „.trms4“-Pakets und anschließend den Assistenten zum Transportieren und Installieren der Inhalte aus dem Paket in ein oder mehrere Zielsysteme </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_16a832b9966f" styleclass="Hyperlink">[Link]</link><text style="font-size:8pt;">. Wenn mehrere Zielsysteme ausgewählt sind, erfolgt der Transport sequenziell nacheinander und für jedes Zielsystem wird ein eigenes Protokoll geschrieben.</text></li>
+          </list>
+          <para styleclass="Normal"><text style="font-size:8pt;">Das Protokoll hierzu können Sie im Menüpunkt „Transportprotokolle“ öffnen.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: in allen Modi</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img17.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Erstellen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [P]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Startet die Erstellung der Paketdatei und leitet am Ende den Download im Webbrowser ein. Der Artefaktpaket-Assistent bleibt weiterhin geöffnet.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">In </text><text styleclass="Strong" style="font-size:8pt;">Changes/Change Sets</text><text style="font-size:8pt;">: Die Paketdatei wird immer auch binär in der Datenbank gespeichert; das lokale Herunterladen ist optional.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Im Menüpunkt „</text><text styleclass="Strong" style="font-size:8pt;">Pakete</text><text style="font-size:8pt;">“: Sie müssen die Datei speichern, andernfalls geht sie verloren (sie wird nicht in der Datenbank gespeichert).</text></li>
+          </list>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img18.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Herunterladen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [E]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Startet den Download des „.trms4“-Pakets zum Change/Change Set. Dies ist nur möglich, wenn zuvor ein Paket erstellt wurde.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img19.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Markierungen</text><text style="font-size:8pt;">“</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Gemäß Filter setzen</text><text style="font-size:8pt;">“</text></li>
+          </list>
+          <para styleclass="Einzug1"><text style="font-size:8pt;">[Strg] + [Alt] + [A]</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Gemäß Filter entfernen</text><text style="font-size:8pt;">“</text></li>
+          </list>
+          <para styleclass="Einzug1"><text style="font-size:8pt;">[Strg] + [Alt] + [B]</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Alle in Liste entfernen</text><text style="font-size:8pt;">“</text></li>
+          </list>
+          <para styleclass="Einzug1"><text style="font-size:8pt;">[Strg] + [Alt] + [C]</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Listenübergreifend entfernen</text><text style="font-size:8pt;">“</text></li>
+          </list>
+          <para styleclass="Einzug1"><text style="font-size:8pt;">[Strg] + [Alt] + [D]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Bei Klick wir die Schaltfläche aufgeklappt und besitzt drei verschiedene Optionen:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Gemäß Filter setzen</text><text style="font-size:8pt;">“: Setzt in der geöffneten Listenansicht bei allen Artefakten, die den aktuell eingestellten Filterkriterien entsprechen, das „Ausgewählt“-Häkchen.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Gemäß Filter entfernen</text><text style="font-size:8pt;">“: Entfernt bei den gefilterten Artefakten das „Ausgewählt“-Häkchen.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Alle in Liste entfernen</text><text style="font-size:8pt;">“: Entfernt bei allen Artefakten desselben Typs das „Ausgewählt“ Häkchen (ungeachtet des aktuellen Filters).</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Listenübergreifend entfernen</text><text style="font-size:8pt;">“: Entfernt nach der Bestätigung einer Sicherheitsabfrage bei allen Artefakten im gesamten Paket (über alle Gruppen und Arten hinweg) das „Ausgewählt“-Häkchen sowie die Transportvorgaben, &#160;sodass im gesamten Paket anschließend kein Artefakt mehr angehakt ist.</text></li>
+          </list>
+          <para styleclass="Normal"><text style="font-size:8pt;">Beachten Sie, dass die Filterung nicht nur die sichtbaren Einträge betrifft, sondern auch solche, die erst beim Scrollen in der Liste nachgeladen werden.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img20.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Alles aufklappen</text><text style="font-size:8pt;">“</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet in der Baumansicht der Artefakte alle Knoten, sodass jeder Knoten sichtbar ist.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi (ausgeblendet in Change Sets, wenn Registerkarte „Change“ im Vordergrund)</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img21.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Alles einklappen</text><text style="font-size:8pt;">“</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Schließt in der Baumansicht der Artefakte alle Knoten, sodass nur noch die Gruppenknoten angezeigt werden.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi (ausgeblendet in Change Sets, wenn Registerkarte „Change“ im Vordergrund)</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img22.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Übersicht anzeigen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [U]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet den Dialog mit einer Übersicht aller aktuell gewählten Artefakte über alle Gruppen und Artefakt-Typen hinweg </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_d84060bf97c3" styleclass="Hyperlink">[Link]</link><text style="font-size:8pt;">.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Zudem können Sie hier für jedes gewählte Artefakt die Transportvorgaben prüfen und bearbeiten.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img23.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Ersetzen aus Datei</text><text style="font-size:8pt;">“</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Erlaubt das Ersetzen eines Artefakts in der Paketdatei mithilfe der beiden dazugehörigen XML-Dateien, die Sie im Menüpunkt [</text><text styleclass="Systemzitat" style="font-size:8pt;">Transportsystem -&gt; Artefakte</text><text style="font-size:8pt;">] für das Artefakt exportieren können.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Schaltfläche ist immer aktiv, sobald im Change/Change Set eine Paketdatei gespeichert ist.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Unterschiede bestimmter Artefakt-Typen</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Alle </text><text styleclass="Strong" style="font-size:8pt;">außer</text><text style="font-size:8pt;"> SQL-Skripten:</text></li>
+          </list>
+          <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+            <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:8pt;">Nach dem Betätigen der Schaltfläche erscheinen nacheinander zwei Datei-Hochlade-Dialoge. Im ersten müssen Sie die Datei mit dem Artefakt selbst hochladen, im zweiten die dazugehörige „‑Content.xml“-Datei.</text></li>
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:8pt;">Durch das Ersetzen werden sowohl das Artefakt selbst als auch dessen Transportvorgaben in der Paketdatei ersetzt.</text></li>
+            </list>
+          </list>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">SQL-Skripte:</text></li>
+          </list>
+          <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+            <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:8pt;">Nach dem Betätigen der Datei erscheint ein Datei-Hochlade-Dialog, wo Sie die „.sql“-Datei auswählen müssen. Eine „‑Content.xml“-Datei ist für diesen Artefakt-Typ nicht erforderlich.</text></li>
+              <li styleclass="Aufzählung2" style="tabstops:none;"><text style="font-size:8pt;">Wichtig dabei: Die hochgeladene Datei und die zu ersetzende Datei müssen denselben Dateinamen haben.</text></li>
+            </list>
+          </list>
+          <para styleclass="Normal"><text style="font-size:8pt;">Es ist nicht erforderlich, das gewünschte Artefakt im Paketassistenten vorher zu markieren, sondern das TRMS ermittelt es automatisch anhand der hochgeladenen Informationen.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Das zu ersetzende Artefakt muss im Change/Change Set bereits das „Ausgewählt“-Häkchen besitzen, andernfalls erhalten Sie nach dem Ersetzungsversuch die Fehlermeldung, dass das Artefakt gar nicht im Paket enthalten ist. Dieser Fehler tritt auch auf, wenn das Artefakt zwar nachträglich als „Ausgewählt“ angehakt wurde, die Paketdatei jedoch veraltet ist und das Artefakt deshalb noch nicht enthält.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img24.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Ersetzen aus Quellsystem</text><text style="font-size:8pt;">“</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Erlaubt das Aktualisieren eines Artefakts in der gespeicherten Paketdatei durch die aktuellste Version aus dem Quellsystem.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Schaltfläche ist nur aktiviert, wenn eine Paketdatei im Change/Change Set gespeichert ist und zudem momentan ein als „Ausgewählt“ markiertes Artefakt selektiert ist.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Falls das selektierte Artefakt trotz „Ausgewählt“-Häkchen nicht in der gespeicherten Paketdatei enthalten sein sollte, erhalten Sie eine entsprechende Fehlermeldung.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Durch das Ersetzen wird nur das Artefakt selbst in der Paketdatei ausgetauscht; die Transportvorgaben hingegen bleiben unverändert.</text></para>
+          <para styleclass="Normal"><text styleclass="Strong" style="font-size:8pt;">Hinweis</text><text style="font-size:8pt;">: Workflow-Pakete und SQL-Skripte können nur per „Ersetzen aus Datei“ ersetzt werden.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img25.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Transportvorgaben</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [E]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet für das markierte Artefakt einen Dialog zum Einstellen der Transportvorgaben. Mit diesen kann das Verhalten sowohl für die Paketgenerierung (z. B. automatisches Integrieren abhängiger Datensätze) als auch die spätere Installation (überschreiben, falls schon vorhanden?) festgelegt werden.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Die möglichen Vorgaben unterscheiden sich je nach Typ des Artefakts.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi, wenn weder „Datenbankobjekt“ noch „Datenbankskript“ als Artefakt-Typ ausgewählt sind.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img26.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Hinzufügen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Alt] + [A]</text></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet einen Dateiauswahldialog, um ein Workflow-Aktualisierungspaket &#160;(nur „.wfu4“-Dateien) hochzuladen und unverändert in das Paket zu integrieren.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi, wenn die Gruppe „Workflow-Aktualisierungs-Pakete“ ausgewählt ist.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img27.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:137px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Reihenfolge</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Alt] + [R]</text></para>
+          <para styleclass="Normal"></para>
+        </td>
+        <td style="vertical-align:top; width:374px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet einen Dialog, in welchem Sie die Installationsreihenfolge für SQL-Skripte, Datenbankobjekte bzw. Workflow-Artefakte festlegen können. Dies kann erforderlich sein, falls Artefakte in einer bestimmten Reihenfolge in das Zielsystem eingespielt werden müssen.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbar: in allen Modi, wenn einer der Knoten „Datenmodell“, „Datenbankobjekt“, „Datenbankskript“ oder „Workflow-Aktualisierungs-Paket“ ausgewählt ist.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">Registerkarte „Transportkontrollskripte“</para>
+    <para styleclass="Normal">Im Artefaktpaket-Assistenten in den Menüpunkten „Pakete“, „Changes“ und „Change Sets“ finden Sie im Menüband die Registerkarte „Transportkontrollskripte“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_11ed2b9082ce" styleclass="Hyperlink">[Link]</link> mit jeweils drei Schaltflächen pro Skript:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Skript <text styleclass="Strong">anzeigen</text> (Code schreibgeschützt anzeigen, falls vorhanden)</li>
+      <li styleclass="Aufzählung1">Skript <text styleclass="Strong">bearbeiten</text> (Code bearbeiten bzw. anlegen)</li>
+      <li styleclass="Aufzählung1">Skript <text styleclass="Strong">löschen</text> (Skript aus dem Paket/Change/Change Set entfernen)</li>
+    </list>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="10" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:409px;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img28.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Anzeigen</text><text style="font-size:8pt;">“ (Prerequisite)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Alt] + [P]</text></para>
+        </td>
+        <td rowspan="3" style="vertical-align:top; width:409px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet einen Dialog, in dem Sie den Code des jeweiligen Skripts schreibgeschützt einsehen können.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img29.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Anzeigen</text><text style="font-size:8pt;">“ (Initialisierung)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Alt] + [I]</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img30.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Anzeigen</text><text style="font-size:8pt;">“ (Finalisierung)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Alt] + [F]</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img31.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Bearbeiten</text><text style="font-size:8pt;">“ (Prerequisite)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [E]</text></para>
+        </td>
+        <td rowspan="3" style="vertical-align:top; width:409px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet einen Dialog, in dem Sie den Code des jeweiligen Skripts einsehen und bearbeiten können.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Wenn das Skript gelöscht bzw. noch nie bearbeitet wurde, öffnet sich der Dialog mit leerem Code-Editor.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Die Bearbeitung des Skript-Codes ist auch möglich, wenn noch keine Artefakte ausgewählt wurden.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Falls die Paketdatei eines Changes/Change Sets bereits in der Datenbank vorliegt, wird dort automatisch die neueste Skriptversion hinterlegt, ohne dass die Paketdatei neu erzeugt werden muss.</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img32.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Bearbeiten</text><text style="font-size:8pt;">“ (Initialisierung)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [I]</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img33.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Bearbeiten</text><text style="font-size:8pt;">“ (Finalisierung)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [F]</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img34.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Löschen</text><text style="font-size:8pt;">“ (Prerequisite)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [D]</text></para>
+        </td>
+        <td rowspan="3" style="vertical-align:top; width:409px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Löscht den Code des Skripts, sodass es nicht mehr in das trms4-Paket aufgenommen wird.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Changes und Change Sets müssen Sie zusätzlich noch speichern, damit das Löschen des Skriptcodes auch endgültig in der Datenbank erfolgt.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Falls die Paketdatei eines Changes/Change Sets bereits in der Datenbank vorliegt, wird dort automatisch die neueste Skriptversion hinterlegt, ohne dass die Paketdatei neu erzeugt werden muss.</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img35.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Löschen</text><text style="font-size:8pt;">“ (Initialisierung)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [J]</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img36.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:102px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Löschen</text><text style="font-size:8pt;">“ (Finalisierung)</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [Umschalt] + [G]</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">Registerkarte „Dokumentation“</para>
+    <para styleclass="Normal">Auf der Registerkarte Dokumentation finden Sie Schaltflächen zum Hinzufügen einer Datei als kundenspezifischen Dokumentation für den Change/das Change Set.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Hinweis</text>: Die generelle Hilfe/Dokumentation zum TRMS an sich können Sie durch Klick auf das Fragezeichen-Symbol rechts oben im Dialog aufrufen.</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="3" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:40px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:87px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:424px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img37.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:87px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Hinzufügen</text><text style="font-size:8pt;">“</text></para>
+        </td>
+        <td style="vertical-align:top; width:424px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet einen Dateiauswahldialog, mit dem Sie dem Change/Change Set ein separates Dokument anhängen können. Hiermit können Sie sowohl für sich selbst Informationen über die Änderungen dokumentieren als auch eventuell gesetzlichen Dokumentationspflichten nachkommen.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Hinweis: Die Dokumentation befindet sich nur in der Datenbank des TRMS und wird nicht in der Paketdatei gespeichert bzw. transportiert.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img38.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:87px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Herunterladen</text><text style="font-size:8pt;">“</text></para>
+        </td>
+        <td style="vertical-align:top; width:424px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Lädt die Dokumentationsdatei lokal auf den Rechner herunter.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Es ist nicht möglich, das Dokument zur Bearbeitung zu öffnen. Sie können es jedoch herunterladen, ändern und dem Change/Change Set erneut hinzufügen, um die vorherige Version zu ersetzen.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Hinweis: Die Dokumentation befindet sich nur in der Datenbank des TRMS und wird nicht in der Paketdatei gespeichert bzw. transportiert.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Verfügbarkeit: Nur im erweiterten Modus</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Notwendige Benutzer, Rollen und Claims in IKAROS und im TRMS</title>
+<meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="../LinksExt/TRMS.css" />
+<script src="../js/nethelp.redirector.js" type="text/javascript"></script>
+<link rel="prev" href="fs_c6bbe91d22bd.html" /><link rel="next" href="fs_bc555f65d818.html" />
+<meta name="Generator" content="Doc-To-Help v.6.0.0.7152" />
+</head>
+<body data-c1-topic-id="8f0c505b-7638-4787-a188-0f455067fd59">
+<h3 style="tab-stops: 0pt"><a name="_Ref149814987" id="_Ref149814987">Notwendige Benutzer, Rollen und 
+Claims in IKAROS und im TRMS</a></h3>
+<p class="MsoNormal">IKAROS und das TRMS sind architektonisch voneinander getrennt 
+und kommunizieren mittels Webservices.</p>
+<div style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 1pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; BORDER-LEFT: medium none; MARGIN: 9pt 14.2pt 3pt 0pt; PADDING-RIGHT: 0pt">
+<p class="berschriftEinfachGross" style="MARGIN-BOTTOM: 0pt; MARGIN-TOP: 0pt">IKAROS-seitig</p></div>
+<p class="MsoNormal"><strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">IKAROS</span></strong> stellt 
+Webservices bereit, mit denen die einzelnen Artefakte (z. B. Vorgangvorlagen) 
+aus dem IKAROS-System exportiert bzw. in das System importiert werden.</p>
+<p class="MsoNormal">Die Kommunikation zwischen dem TRMS und IKAROS geschieht 
+immer mittels eines einzigen technischen Benutzers (Stichwort „Identität des 
+AppPools“ oder „AppPool-Benutzer“). Aus IKAROS-Sicht ist es daher egal, welcher 
+konkrete Nutzer das TRMS gerade bedient – es sind die Rechte dieses technischen 
+Nutzers, die für Transport-Möglichkeiten relevant sind.</p>
+<p class="MsoNormal">Damit Transporte möglich sind, muss daher Folgendes 
+eingerichtet sein:</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  In der <strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Benutzerverwaltung für 
+IKAROS</span></strong> muss es einen eigenen Benutzer geben, mit dem sich der 
+technische Benutzer des TRMS-AppPools an IKAROS anmelden kann.</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Dieser <strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">IKAROS-Nutzer</span></strong> muss 
+folgende Rechte-Ressourcen für IKAROS besitzen (im Standard sind dieser in der 
+IKAROS-Rolle „CustomizingTransport“ zusammengefasst):</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>Customizing_Import</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>Customizing_Export</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_Workflow_Change</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_Workflow_Read</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_WorkflowContract_Change</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_WorkflowExpression_Read</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_WorkflowUpdate_Export</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_WorkflowUpdate_Import</p>
+<p class="Aufzhlung2" style="tab-stops: 35.15pt"><span style="FONT-FAMILY: &quot;Arial&quot;,sans-serif">-     
+</span>MasterData_WorkflowManagement_WorkflowUpdate_Read</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Diesem IKAROS-Benutzer muss außerdem 
+eine <strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Dummy-Rolle</span></strong> 
+zugeordnet sein, die genauso heißen muss wie die Rechte-Rolle in der 
+TRMS-Rechteverwaltung (im Standard „TRMS_Administration“). Diese Rolle darf 
+„leer“ sein, weil es hier nur um die Namensgleichheit mit der TRMS-Rolle 
+geht.</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Dieser IKAROS-Benutzer muss die 
+<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Claims für alle 
+Geschäftseinheiten</span></strong> besitzen, die in den 
+„IKAROS-Systeme“-Stammdaten im TRMS vorkommen. Informationen zum 
+Mehrfirmenbetrieb finden Sie in der IKAROS-Hilfe im Kapitel mit der ID 
+„fs_195e70441be6“.</p>
+<p class="MsoNormal"><strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Kurz</span></strong>: Legen Sie in 
+der IKAROS-Benutzerverwaltung einen Benutzer für den TRMS-AppPool-Benutzer an 
+und weisen Sie ihm sowohl die Standard-Rolle „CustomizingTransport“ (mit allen 
+für Transporte notwendigen IKAROS-Rechten) und die leere Dummy-Rolle 
+„TRMS_Administration“ zu. Falls Sie IKAROS-Systeme mit Mehrfirmenbetrieb nutzen, 
+benötigt dieser Nutzer außerdem die Claims für alle vom TRMS zu erreichenden 
+Geschäftseinheiten.</p>
+<div style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 1pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; BORDER-LEFT: medium none; MARGIN: 9pt 14.2pt 3pt 0pt; PADDING-RIGHT: 0pt">
+<p class="berschriftEinfachGross" style="MARGIN-BOTTOM: 0pt; MARGIN-TOP: 0pt">TRMS-seitig</p></div>
+<p class="MsoNormal">Im <strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">TRMS</span></strong> befindet sich 
+die Logik für den eigentlichen Transport von Artefakten zwischen Systemen sowie 
+für die Zusammenstellung von Artefaktpaketen.</p>
+<p class="MsoNormal">Damit ein individueller Nutzer das TRMS verwenden kann (z. B. 
+Changes anlegen, Transporte durchführen), muss ihm in der <strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Benutzerverwaltung für das 
+TRMS</span></strong> eine Rolle mit den geeigneten Rechten zugeordnet sein.</p>
+<p class="MsoNormal">Für das Ausführen von Transporten muss diese Rolle mindestens 
+die Ressource „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Transport_Execution</span></strong>“ 
+enthalten (dies wird unter [<span class="Systemzitat">Administration -&gt; Rechte 
+-&gt; Rollen</span>] <a title="Menüpunkt Rechte" class="topic-link" href="fs_c6bbe91d22bd.html">[Link]</a> im TRMS konfiguriert). Im Standard gilt 
+dies für die Rolle „TRMS_Administration“.</p><span id="related-topics"></span></body></html>

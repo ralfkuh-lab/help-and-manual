@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.589Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Menüpunkt „Systemeinstellungen“</title>
+  <keywords>
+    <keyword>Systemeinstellungen</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Menüpunkt „Systemeinstellungen“</para>
+    </header>
+    <para styleclass="Normal">Im TRMS unter [<text styleclass="Systemzitat">Administration -&gt; Systemeinstellungen</text>] finden Sie die Verwaltung der TRMS-Systemeinstellungen:</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img146.png" scale="80.00%" width="26" height="26" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 42: Systemeinstellungen des TRMS</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="2" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:81px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img147.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:81px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Suchen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [F]</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft eine Liste aller Systemeinstellungen auf, &#160;in der Systemeinstellungen nach verschiedenen Kriterien gesucht werden können.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">Systemeinstellungen des TRMS</para>
+    <para styleclass="ÜberschriftEinfach">Optionsunterpunkt „Dateien und Verzeichnisse“</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="2" colcount="2" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:212px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Systemeinstellung</text></para>
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">[interner Name]</text></para>
+        </td>
+        <td style="vertical-align:top; width:354px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:212px;">
+          <para styleclass="Normal"><text styleclass="Strong" style="font-size:9pt;">Temp-Verzeichnis für Datei-Upload (auf Web-Server)</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[DocumentTempUploadedPath]</text></para>
+        </td>
+        <td style="vertical-align:top; width:354px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Absoluter Pfad auf dem TRMS-</text><text styleclass="Strong" style="font-size:9pt;">Web-Server</text><text style="font-size:9pt;"> oder UNC-Pfad, in den Dateien vom Client temporär hochgeladen werden, bevor sie der Web-Server an den Anwendungs-Server weiterreicht (z. B. beim Hochladen einer trms4-Paketdatei unter „Pakete“).</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">(Textfeld, Standard-Wert: „c:\tmp“)</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach">Optionsunterpunkt „Technische Optionen“</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="4" colcount="2" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:211px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Systemeinstellung</text></para>
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">[interner Name]</text></para>
+        </td>
+        <td style="vertical-align:top; width:355px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:211px;">
+          <para styleclass="Normal"><text styleclass="Strong" style="font-size:9pt;">Maximale Dateigröße für manuellen Datei-Upload</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[MaxUploadSize]</text></para>
+        </td>
+        <td style="vertical-align:top; width:355px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Legt fest, wie viele Megabytes eine Datei maximal groß sein darf, damit ein Nutzer sie manuell mit dem Datei-Upload-Dialog in der Web-Oberfläche hochladen kann (z. B. trms4-Paketdateien im Menüpunkt „Pakete“). Überschreitet die Datei diese Größe, wird eine entsprechende Fehlermeldung angezeigt.</text></para>
+          <para styleclass="Einzug1"><text style="font-size:9pt;">Der effektive Wert wird intern in Bytes berechnet:</text></para>
+          <para styleclass="Einzug1"><text style="font-size:9pt;">&lt;Wert der Systemeinstellung&gt; * 1024 * 1024</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">(bei 25 MB also effektiv 26214400 Bytes)</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">(Zahlenfeld, Standard-Wert: 25)</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:9pt;">Administrative Hinweise</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Diese Systemeinstellung wird nur bei der manuellen Bedienung des TRMS ausgewertet. Bei automatisierten Prozessen ist stattdessen die Einstellung „maxAllowedContentLength“ in den „Web.config“-Dateien des Anwendungs- und Web-Servers des TRMS maßgeblich (ist diese nicht vorhanden, gilt als Standard eine Größe von ca. 25 MB).</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Der effektiv größte erlaubte Wert für die Systemeinstellung entspricht dem config-Wert. Ein höherer Wert in der Systemeinstellung ist wirkungslos, da die Größe auf den config-Wert gedeckelt wird. Wenn Sie den Wert in der Systemeinstellung erhöhen möchten, muss der config-Wert daher mindestens ebenso hoch sein.</text></li>
+          </list>
+          <para styleclass="Normal"><text style="font-size:9pt;">Der Datei-Upload-Dialog enthält einen Hinweistext mit der aktuellen Größenbeschränkung. Nach einer Änderung der Systemeinstellung kann es aufgrund von Caching sein, dass noch einige Zeit der vorherige Wert dort angezeigt wird, auch wenn der neue Wert bereits aktiv ist.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:211px;">
+          <para styleclass="Normal"><text styleclass="Strong" style="font-size:9pt;">Ton bei Fehlermeldungen</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[SoundErrorMessage]</text></para>
+        </td>
+        <td style="vertical-align:top; width:355px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Legt fest, ob beim Auftreten von Fehlern bei der manuellen Nutzung der TRMS-Weboberfläche der Windows-Fehlerton abgespielt werden soll.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">(Kontrollkästchen, Standard-Wert: Nein (Häkchen nicht gesetzt))</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:211px;">
+          <para styleclass="Normal"><text styleclass="Strong" style="font-size:9pt;">Umlautbehandlung in Filterausdrücken</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[leer].[ForceUmlautsNormalisation]</text></para>
+        </td>
+        <td style="vertical-align:top; width:355px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Legt fest, wie das TRMS Umlaute im Suchausdruck behandeln soll, wenn per Filter „unscharf“ gesucht wird (also mit Joker-Zeichen oder einem der Suchausdrücke „Enthält“, „Beginnt mit“, oder „Endet mit“).</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Möglich sind folgende Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Keine</text><text style="font-size:9pt;">“: Es erfolgt keine Sonderbehandlung von Umlauten. Eine Suche nach „Mül*“ findet somit nur z. B. „Müller“, aber nicht „Mueller“ oder „Muller“. (interner Wert „NoSubstitution“)</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Suche um Basisbuchstabe erweitern</text><text style="font-size:9pt;">“: Der Suchausdruck wird intern so erweitert, dass bei einem Umlaut zusätzlich auch der zugehörige Basisbuchstabe (z. B. „u“ für „ü“) gefunden würde. Eine Suche nach „Mül*“ findet damit z. B. „Müller“ und „Muller“, aber nicht „Mueller“. (interner Wert: „OnlyBaseSubstitutionWithoutWildcard“)</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Suche um Basisbuchstabe und Folgezeichen erweitern</text><text style="font-size:9pt;">“: Der Suchausdruck wird intern so erweitert, dass bei einem Umlaut zusätzlich auch der zugehörige Basisbuchstabe zuzüglich beliebiger, darauf folgender Zeichen gesucht wird. Der Ausdruck „MÜL*“ würde sinngemäß zu folgender Suche führen: „</text><text styleclass="Systemzitat" style="font-size:9pt;">&apos;M&apos;, gefolgt von &apos;Ü&apos; oder &apos;U&apos;, gefolgt von beliebigen Zeichen bis zum &apos;L&apos;, gefolgt von beliebigen Zeichen</text><text style="font-size:9pt;">“.</text></li>
+          </list>
+          <para styleclass="Einzug1"><text style="font-size:9pt;">Dies bedeutet, dass eine Suche nach „Mül*“ nicht nur somit z. B. „Müller“, „Muller“ und &#160;„Mueller“ findet, sondern auch „Murler“ oder auch „Müzzeler“. Dies liegt an technischen Einschränkungen in SQL, deren Umgehung zu Performance-Einbußen führen würde. Deshalb wird die Möglichkeit falsch-positiver Treffer wie „Müzzeler“ bei einer Suche nach „Mül*“ in Kauf genommen. (interner Wert: „FullSubstitutionWithWildcard“)</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:9pt;">Hinweise</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Die Groß-/Kleinschreibung hat grundsätzlich keinen Einfluss auf die Suchergebnisse.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:9pt;">Es werden nur folgende Umlaute/Sonderzeichen beachtet: ä, ö, ü und ß. Das bedeutet, dass beispielsweise Buchstabenvarianten mit Akzenten (z. B. é, è, ê) keine Sonderbehandlung erhalten.</text></li>
+          </list>
+          <para styleclass="Normal"><text style="font-size:9pt;">(Listenfeld, Standard-Wert: „Suche um Basisbuchstabe erweitern“)</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

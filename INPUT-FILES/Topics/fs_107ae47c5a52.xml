@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:51.871Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Notwendige Benutzer, Rollen und Claims in IKAROS und im TRMS</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Notwendige Benutzer, Rollen und Claims in IKAROS und im TRMS</para>
+    </header>
+    <para styleclass="Normal">IKAROS und das TRMS sind architektonisch voneinander getrennt und kommunizieren mittels Webservices.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">IKAROS-seitig</para>
+    <para styleclass="Normal"><text styleclass="Strong">IKAROS</text> stellt Webservices bereit, mit denen die einzelnen Artefakte (z. B. Vorgangvorlagen) aus dem IKAROS-System exportiert bzw. in das System importiert werden.</para>
+    <para styleclass="Normal">Die Kommunikation zwischen dem TRMS und IKAROS geschieht immer mittels eines einzigen technischen Benutzers (Stichwort „Identität des AppPools“ oder „AppPool-Benutzer“). Aus IKAROS-Sicht ist es daher egal, welcher konkrete Nutzer das TRMS gerade bedient – es sind die Rechte dieses technischen Nutzers, die für Transport-Möglichkeiten relevant sind.</para>
+    <para styleclass="Normal">Damit Transporte möglich sind, muss daher Folgendes eingerichtet sein:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">In der <text styleclass="Strong">Benutzerverwaltung für IKAROS</text> muss es einen eigenen Benutzer geben, mit dem sich der technische Benutzer des TRMS-AppPools an IKAROS anmelden kann.</li>
+      <li styleclass="Aufzählung1">Dieser <text styleclass="Strong">IKAROS-Nutzer</text> muss folgende Rechte-Ressourcen für IKAROS besitzen (im Standard sind dieser in der IKAROS-Rolle „CustomizingTransport“ zusammengefasst):</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:12pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:10pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Customizing_Import</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Customizing_Export</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_Workflow_Change</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_Workflow_Read</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_WorkflowContract_Change</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_WorkflowExpression_Read</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_WorkflowUpdate_Export</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_WorkflowUpdate_Import</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">MasterData_WorkflowManagement_WorkflowUpdate_Read</li>
+      </list>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Diesem IKAROS-Benutzer muss außerdem eine <text styleclass="Strong">Dummy-Rolle</text> zugeordnet sein, die genauso heißen muss wie die Rechte-Rolle in der TRMS-Rechteverwaltung (im Standard „TRMS_Administration“). Diese Rolle darf „leer“ sein, weil es hier nur um die Namensgleichheit mit der TRMS-Rolle geht.</li>
+      <li styleclass="Aufzählung1">Dieser IKAROS-Benutzer muss die <text styleclass="Strong">Claims für alle Geschäftseinheiten</text> besitzen, die in den „IKAROS-Systeme“-Stammdaten im TRMS vorkommen. Informationen zum Mehrfirmenbetrieb finden Sie in der IKAROS-Hilfe im Kapitel mit der ID „fs_195e70441be6“.</li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Strong">Kurz</text>: Legen Sie in der IKAROS-Benutzerverwaltung einen Benutzer für den TRMS-AppPool-Benutzer an und weisen Sie ihm sowohl die Standard-Rolle „CustomizingTransport“ (mit allen für Transporte notwendigen IKAROS-Rechten) und die leere Dummy-Rolle „TRMS_Administration“ zu. Falls Sie IKAROS-Systeme mit Mehrfirmenbetrieb nutzen, benötigt dieser Nutzer außerdem die Claims für alle vom TRMS zu erreichenden Geschäftseinheiten.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">TRMS-seitig</para>
+    <para styleclass="Normal">Im <text styleclass="Strong">TRMS</text> befindet sich die Logik für den eigentlichen Transport von Artefakten zwischen Systemen sowie für die Zusammenstellung von Artefaktpaketen.</para>
+    <para styleclass="Normal">Damit ein individueller Nutzer das TRMS verwenden kann (z. B. Changes anlegen, Transporte durchführen), muss ihm in der <text styleclass="Strong">Benutzerverwaltung für das TRMS</text> eine Rolle mit den geeigneten Rechten zugeordnet sein.</para>
+    <para styleclass="Normal">Für das Ausführen von Transporten muss diese Rolle mindestens die Ressource „<text styleclass="Strong">Transport_Execution</text>“ enthalten (dies wird unter [<text styleclass="Systemzitat">Administration -&gt; Rechte -&gt; Rollen</text>] <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_c6bbe91d22bd" styleclass="Hyperlink">[Link]</link> im TRMS konfiguriert). Im Standard gilt dies für die Rolle „TRMS_Administration“.</para>
+  </body>
+</topic>

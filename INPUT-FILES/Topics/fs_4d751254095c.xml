@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:52.370Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Die Funktion „ImportSingleArtefact“</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Die Funktion „ImportSingleArtefact“</para>
+    </header>
+    <para styleclass="Normal">Über die „ImportSingleArtefact“-Methode erfolgt der Transport eines einzelnen Artefakts (in Form eines Paars aus einer .xml“-, „.sql“- oder „.wfu4“--Datei und einer dazugehörigen „...-Content.xml“-Datei) in ein Zielsystem sowie die anschließende Installation des Artefakts in dieses System. Dies entspricht einem Transport im TRMS-Menüpunkt [<text styleclass="Systemzitat">Artefakte</text>].</para>
+    <para styleclass="Normal">Ein solches Dateienpaar können Sie im TRMS-Menüpunkt „Artefakte“ exportieren.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Parameter</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="28" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:177px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Parameter</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Werte</text></para>
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">(Standard-Wert in Klammern)</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">BusinessUnit</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Bestimmt die anzusteuernde IKAROS-Geschäftseinheit in einem Mehrfirmen-Szenario.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">ImportFilePath</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Pfad der zu transportierenden Artefakt-Datei („.xml“, „.sql“ oder „.wfu4“).</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Wichtig: Die zugehörige „...-Content.xml“-Datei muss sich ebenfalls in dem gleichen Verzeichnis befinden wie die angegebene Datei.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">LoggingInTRMS</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Gibt an, ob für den Transportvorgang im TRMS ein Transportprotokoll angelegt werden soll.</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">true</text><text style="font-size:8pt;">“: Es wird im TRMS ein Transportprotokoll angelegt. Sie müssen dafür den weiteren Parameter „TrmsServiceHostAddress“ angeben.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">false</text><text style="font-size:8pt;">“ (Default): Der Transport in das Zielsystem wird komplett ohne Beteiligung des TRMS ausgeführt. Das Protokoll wird daher als Datei geschrieben (vgl. Parameter „TransportLogOutputPath“)</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">true, false</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemApiClientKey</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Wert aus dem Feld „API-Schlüssel“ eines virtuellen „Benutzers“ aus den IKAROS-Stammdaten unter [</text><text styleclass="Systemzitat" style="font-size:8pt;">Administration -&gt; API-Clients</text><text style="font-size:8pt;">]. Dies sollte eine GUID sein.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Weitere Informationen zum Daemon-Benutzer finden Sie in der IKAROS-Hilfe im Kapitel mit der ID „fs_29b57d418a77“.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Wenn kein API-Client-Schlüssel angegeben ist, wird ein technischer Daemon-Nutzer verwendet:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Keycloak: der Keycloak-Nutzer &quot;service-account-ikaros-api&quot; (Standardmäßig „Daemon“)</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Anderer Identitätsanbieter: gemäß der OIDC-Claim-Transformation für den „DaemonUser“ in IKAROS</text></li>
+          </list>
+          <para styleclass="Normal"><text style="font-size:8pt;">Weitere Informationen zum Daemon-Benutzer finden Sie in der IKAROS-Hilfe im Kapitel mit der ID „fs_00a4bbc3d336“.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette (GUID)</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemAuthenticationType</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Kürzel für die Kombination aus Service-Kommunikationstechnik und Authentifizierungs-Technik des IKAROS-Zielsystems:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">FSSTS_ADFS</text><text style="font-size:8pt;">“ (Default): Authentifizierung per AD FS bzw. FS-STS. Mit Service-Kommunikationstechnik WCF. Die „TargetSystemOpenId...“-Einstellungen sind bei dieser Art irrelevant.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">gRPC</text><text style="font-size:8pt;">“: Verwendung der Service-Kommunikationstechnik gRPC, zusammen mit der Authentifizierungstechnik OpenID Connect. Bei dieser Art müssen sowohl die „TargetSystemOpenId...“- als auch die „TargetSystemCertificate...“-Einstellungen angegeben werden.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">OpenID_Connect</text><text style="font-size:8pt;">“: Verwendung der OpenID-basierten Authentifizierung. Mit Service-Kommunikationstechnik WCF. Bei dieser Art müssen die „TargetSystemOpenId...“-Einstellungen angegeben werden.</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„FSSTS_ADFS“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„gRPC“, oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„OpenID_Connect“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemCertificateLocation</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Speicherort, wo das Zertifikat &lt;TargetSystemCertificateName&gt; zu finden ist.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Nur relevant, wenn „TargetSystemAuthenticationType“ gleich „gRPC“ ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„CurrentUser“ oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„LocalMachine“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemCertificateName</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Name des Zertifikats für die Anmeldung an ein IKAROS mit Service-Kommunikationstechnik gRPC.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Nur relevant, wenn „TargetSystemAuthenticationType“ gleich „gRPC“ ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemCertificateStore</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Zertifikatsspeicher, wo das Zertifikat &lt;TargetSystemCertificateName&gt; zu finden ist.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Nur relevant, wenn „TargetSystemAuthenticationType“ gleich „gRPC“ ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„AddressBook“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„My“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„Root“ oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„TrustedPublisher“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemOpenIdApiResource</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Von der Anwendung genutzte und registrierte API-Ressource für die Anmeldung am Zielsystem.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Beispiel</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">https://ztu.fst2.lan/IkarosApi/.default</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemOpenIdAuthority</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">URL des IDPs, um ein Token zu erhalten für die Anmeldung am Zielsystem.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Beispiel</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">https://login.microsoftonline.com/8e74c461-xxxx-xxxx-xxxx-130d6ebc2f7e/oauth2/v2.0/token</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemOpenIdClientId</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">ID der registrierten Anwendung (hier: Die Ziel-IKAROS-Umgebung) beim IDP für die Anmeldung am Zielsystem.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemOpenIdProvider</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Name des verwendeten Identitäts-Providers (IDP) für die Anmeldung am Zielsystem.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(ADFS, AzureAd, EntraID, Keycloak)</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemOpenIdSecret</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Geheimnis der registrierten Anwendung beim IDP für die Anmeldung am Zielsystem.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Hinweis</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Das OpenID-Secret kann nur in verschlüsselter Form als Parameter übergeben werden. Mittels der Funktion „EncryptPassword“ lässt sich der Wert des Parameters verschlüsseln.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemPassword</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Das verschlüsselte Password für die Anmeldung am IKAROS-System.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Nutzen Sie vorab die Funktion „EncryptPassword“ </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_f277925f2d56" styleclass="Hyperlink">[Link]</link><text style="font-size:8pt;">, um die verschlüsselte Zeichenkette für ein Passwort zu generieren.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemServiceHostAddress</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Adresse des IKAROS-Anwendungs-Servers (ServiceHost).</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemStsAddress</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Adresse des Security Token Services der IKAROS-Instanz (AD FS oder FS-STS)</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TargetSystemUserName</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Benutzername für die Anmeldung am IKAROS-System.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Ist dieser Parameter nicht gesetzt, werden für die Anmeldung die aktuellen Benutzerinformationen verwendet.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TransportLogOutputPath</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Wenn Sie nicht den Parameter „LoggingInTRMS“ (mitsamt der erforderlichen Anmeldedaten) nutzen, schreibt die ausführende „TrmsCLI.exe“ bzw. das Automations-Framework die vom Service zurückgelieferten Ergebnisse in eine Datei.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mit dem Parameter „TransportLogOutputPath“ können Sie den Pfad sowie Dateinamen dieser Protokolldatei bestimmen. Falls Sie ihn nicht angeben, wird die Datei im selben Ordner abgelegt, in dem auch die ausführende exe-Datei liegt, und hat einen Dateinamen nach folgendem Schema:</text></para>
+          <para styleclass="Einzug1"><text styleclass="Systemzitat" style="font-size:8pt;">transport-&lt;Datum&gt;-&lt;Uhrzeit&gt;.log</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Die ausführende exe-Datei muss Schreibrechte in dem betreffenden Ordner haben.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Datei ist eine einfache Textdatei im XML-Format. Es handelt sich um denselben XML-Inhalt, der auch intern verwendet würde, wenn die Protokollinformationen direkt im TRMS gespeichert würden.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Hinweise</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Es ist nicht möglich, sowohl im TRMS zu protokollieren als auch die Datei anzulegen. Ist beides aktiviert, erfolgt das Logging im TRMS.</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">Die Protokolldatei wird erst am Ende des Transports im Ganzen geschrieben. Es ist somit nicht möglich, den Fortschritt während des Transports in der Datei nachzuverfolgen.</text></li>
+          </list>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsCertificateLocation</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Speicherort, wo das Zertifikat &lt;TrmsCertificateName&gt; zu finden ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„CurrentUser“ oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„LocalMachine“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsCertificateName</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Name des Zertifikats für die Anmeldung an ein TRMS mit Service-Kommunikationstechnik gRPC.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsCertificateStore</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Zertifikatsspeicher, wo das Zertifikat &lt;TrmsCertificateName&gt; zu finden ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„AddressBook“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„My“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„Root“ oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„TrustedPublisher“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdApiResource</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Von der Anwendung genutzte und registrierte API-Ressource für die Anmeldung am TRMS.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Beispiel</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">https://ztu.fst2.lan/IkarosApi/.default</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdAuthority</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">URL des IDPs, um ein Token zu erhalten für die Anmeldung am TRMS.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Beispiel</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">https://login.microsoftonline.com/8e74c461-xxxx-xxxx-xxxx-130d6ebc2f7e/oauth2/v2.0/token</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdClientId</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">ID der registrierten Anwendung (hier: Die TRMS-Umgebung) beim IDP für die Anmeldung am TRMS.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdProvider</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Name des verwendeten Identitäts-Providers (IDP) für die Anmeldung am TRMS.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(ADFS, AzureAd, EntraID, Keycloak)</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdSecret</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Geheimnis der registrierten Anwendung beim IDP für die Anmeldung am TRMS.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Hinweis</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Das OpenID-Secret kann nur in verschlüsselter Form als Parameter übergeben werden. Mittels der Funktion „EncryptPassword“ lässt sich der Wert des Parameters verschlüsseln.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:177px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsServiceHostAddress</text></para>
+        </td>
+        <td style="vertical-align:top; width:251px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Adresse des TRMS-Anwendungs-Servers (Fs.Trms.ServiceHost).</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Dieser Parameter ist nur relevant, wenn „/LoggingInTRMS“ übergeben wird.</text></para>
+        </td>
+        <td style="vertical-align:top; width:123px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach_Gross">Beispiel (Konsolenaufruf, CMD)</para>
+    <para styleclass="Normal">Mit diesem Beispielaufruf wird eine Artefakt-Datei (die dazugehörige „...‑Content.xml“-Datei muss im selben Ordner liegen) in ein IKAROS-Zielsystem transportiert. Das Transportprotokoll wird im TRMS angelegt.</para>
+    <para styleclass="Quellcode_Konsole" style="tabstops:19px left,38px left,57px left,76px left,95px left,113px left,132px left,151px left,170px left,189px left ;">.\TrmsCli.exe ^<br/>/Function=ImportSingleArtefact ^<br/>/ImportFilePath=&quot;C:\TRMS-Pakete\804c681e-376e-4d0e-bce9-514378395f58.xml&quot; ^<br/>/LoggingInTrms=true ^<br/>/TargetSystemServiceHostAddress=&quot;dev.ika.lan:43300&quot; ^<br/>/TargetSystemAuthenticationType=&quot;grpc&quot; ^<br/>/TargetSystemOpenIdProvider=&quot;Keycloak&quot; ^<br/>/TargetSystemOpenIdAuthority=&quot;https://keycloak.ika.lan:443/auth/realms/ikaros/protocol/openid-connect/token&quot; ^<br/>/TargetSystemOpenIdClientId=&quot;ikaros-api&quot; ^<br/>/TargetSystemOpenIdSecret=&quot;xxxxxxxx1EpDgY7I89xxxxxxxxSMD6MWVxxxxxxxxEb2kaxxxxxxxxxae8UaQ59G&quot; ^<br/>/TargetSystemOpenIdApiResource=&quot;profile email&quot; ^<br/>/TargetSystemCertificateName=&quot;CN=ika.dev.lan, OU=QS, O=Mustermann GmbH, L=Lippstadt, S=NRW, C=DE&quot; ^<br/>/TargetSystemCertificateStore=&quot;My&quot; ^<br/>/TargetSystemCertificateLocation=&quot;LocalMachine&quot;<br/>/TrmsServiceHostAddress=&quot;trms.ika.lan:43307&quot; ^<br/>/TrmsOpenIdProvider=&quot;keycloak&quot; ^<br/>/TrmsOpenIdAuthority=&quot;https://keycloak.ika.lan:443/auth/realms/ikaros/protocol/openid-connect/token&quot; ^<br/>/TrmsOpenIdClientId=&quot;trms-api&quot; ^<br/>/TrmsOpenIdSecret=&quot;RYEtixxxxxxxx3QyH376xxxxxxxx5KxjexxxxxxxxfAo4mPxxxxxxxx5uHRr2FR2&quot; ^<br/>/TrmsOpenIdApiResource=&quot;profile email&quot; ^<br/>/TrmsCertificateName=&quot;CN=trms.ika.lan, OU=QS, O=Mustermann GmbH, L=Lippstadt, S=NRW, C=DE&quot; ^<br/>/TrmsCertificateStore=&quot;My&quot; ^<br/>/TrmsCertificateLocation=&quot;LocalMachine&quot;</para>
+  </body>
+</topic>

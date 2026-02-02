@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.557Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Menüpunkt „Transportplanung“</title>
+  <keywords>
+    <keyword>Transport<keyword>Planung</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Menüpunkt „Transportplanung“</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Zusammenhänge</para>
+    <para styleclass="Normal">Der Menüpunkt „Transportplanung“ im TRMS soll Sie dabei unterstützen, Transporte und somit Installationen von Artefakten in Zielsystemen zu organisieren.</para>
+    <para styleclass="Normal">Dafür können Sie für jeden Auftrag jeweils ein Zielsystem und ein Change oder Change Set festlegen, wobei einem Transportauftrag immer genau entweder ein Change oder ein Change Set zugewiesen sein muss.</para>
+    <para styleclass="Normal">Transportaufträge können Sie nur für Changes und Change Sets definieren. Der Transport von lokal vorliegenden „.trms4“-Paketen muss entweder manuell im Menüpunkt „Pakete“ oder automatisiert mithilfe des Kommandozeilenprogramms „TrmsCli.exe“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_a8403dc39138" styleclass="Hyperlink">[Link]</link> erfolgen.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Beachten Sie</text>: In der aktuellen Ausbaustufe des TRMS ist die bereits geplante Anbindung an automatisierte Scheduler noch nicht umgesetzt. Daher dienen die Angaben in der Transportplanung derzeit vorrangig der manuellen Planung und Organisation von Transporten.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Die Listenansicht der Transportaufträge</para>
+    <para styleclass="Normal">Die Liste zum Anlegen und Verwalten von Transportaufträgen finden Sie im Regiezentrum unter „Transportplanung“.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img103.png" scale="63.00%" width="20" height="20" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 31: Menüpunkt „Transportplanung“</para>
+    <para styleclass="Normal">Die Ansicht ist aufgeteilt auf eine Listenansicht mit den Transportaufträgen links und eine Liste mit den darin enthalten Artefakten/Changes rechts. Die Liste mit den Artefakten/Changes dient nur der Übersicht und kann nicht bearbeitet werden.</para>
+    <para styleclass="Normal">Wenn Sie einen Transportauftrag aufrufen, öffnet sich der Bearbeitungsdialog für den Auftrag.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="6" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:81px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img84.png" scale="119.00%" width="38" height="38" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:81px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Neu</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Einfg]</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet den Dialog zum Anlegen eines neuen Transportauftrags.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img16.png" scale="119.00%" width="38" height="38" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:81px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Transport</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [i]</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet einen Dialog zur Anmeldung am Zielsystem und startet den Transportprozess für den markierten Transportauftrag.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Das Protokoll dazu können Sie im Menüpunkt „Transportprotokolle“ öffnen.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img90.png" scale="79.00%" width="25" height="25" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:81px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Filtern</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Leertaste]</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft den Filterdialog für die Auswahlliste auf.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img91.png" scale="79.00%" width="25" height="25" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:81px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Aufheben</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [R]</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Hebt die aktuellen Filtereinstellungen auf.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img92.png" scale="119.00%" width="38" height="38" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:81px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Sichten</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[F6]</text></para>
+        </td>
+        <td style="vertical-align:top; width:420px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft den Verwaltungsdialog für benutzerdefinierte Sichten auf.</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

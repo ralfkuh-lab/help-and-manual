@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:49.713Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Der Dialog des Artefaktpaket-Assistenten</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Der Dialog des Artefaktpaket-Assistenten</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img9.png" scale="41.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 9: Der Dialog des Artefaktpaket-Assistenten (erweiterter Modus)</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Rahmen „Kerndaten“</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Bezeichnung</text>“ [*]: Ein maximal 50 Zeichen langer, eindeutiger Name für den Change/das Change Set. Dieser Name erscheint in den diversen Listen für Changes/Change Sets. Zudem wird die Bezeichnung in den Namen der Paketdatei, die für den Transport generiert wird, aufgenommen.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Beschreibung</text>“ [*]: Eine Beschreibung für den Change/das Change Set. Sie wird z. B. im Dialog für Transportaufträge angezeigt.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Quellsystem-Name</text>“: Der Name des Systems (gemäß den „Systeme“-Stammdaten im TRMS), dessen Artefakte im Artefaktpaket-Assistenten angeboten werden. Sie können den Wert hier nicht ändern, er wird nach der Anmeldung an ein System (bei Start des Artefaktpaket-Assistenten bzw. nach Ausführen von „Quellsystem wählen“) automatisch eingetragen.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Quellsystem-Version</text>“: Der IKAROS-Versionsstand, auf dem sich das Quellsystem gemäß den „Systeme“-Stammdaten des TRMS befindet. Wird bei der Anmeldung aus der Datenbank des Quellsystems ermittelt und kann nicht bearbeitet werden. Es handelt sich um die Versionsnummer zum Zeitpunkt der Paketdateierstellung.</li>
+      <li styleclass="Aufzählung1">Datumsfeld „<text styleclass="Strong">Startdatum</text>“ [*]: Dient als organisatorischer Hinweis, wann Sie mit der Zusammenstellung dieses Changes/Change Sets begonnen haben. Das Datum hat derzeit keine technischen Auswirkungen.</li>
+      <li styleclass="Aufzählung1">Datumsfeld „<text styleclass="Strong">Enddatum</text>“ [*]: Dient als organisatorischer Hinweis, wann die Arbeiten an dem Change/Change Set als abgeschlossen gelten sollen. Das Datum hat derzeit keine technischen Auswirkungen.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Verantwortlicher</text>“ [*]: Eine maximal 50 Zeichen lange Zeichenkette. Beispielsweise um festzuhalten, wer für die Zusammenstellung des Artefaktpakets technisch oder fachlich verantwortlich ist.</li>
+    </list>
+    <para styleclass="Normal">[*] Diese Felder sind nur im erweiterten Artefaktpaket-Assistenten unter „Changes“ und „Change Sets“ verfügbar.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Rahmen „Artefakte“</para>
+    <para styleclass="Normal">Der Rahmen „Artefakte“ enthält eine Baumansicht aller Artefakt-Gruppen und darin der unterschiedlichen Artefakt-Typen, aus denen Sie einzelne Artefakte auswählen können <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_0cc83015b201" styleclass="Hyperlink">[Link]</link>. Aus allen ausgewählten Artefakten ergibt sich die individuelle Zusammenstellung des Artefaktpakets.</para>
+    <para styleclass="Einzug1"><text styleclass="Strong">Hinweis</text>: Es ist nicht möglich, im selben Paket Artefakte aus mehreren Quellsystemen zusammenzustellen. Es stehen immer nur die Artefakte aus dem aktuell gewählten Quellsystem zur Auswahl.</para>
+    <para styleclass="Normal">Wenn Sie einen Knoten anklicken, wird in der Auswahlliste rechts neben der Baumsicht die Liste mit allen individuellen Artefakten des jeweiligen Typs geladen.</para>
+    <para styleclass="Normal">Die Anzahl der als „Ausgewählt“ markierten Artefakte dieses Typs wird in der Baumansicht in Klammern neben der Artbezeichnung angezeigt (z. B. „Kontaktvorgangsvorlagen (6)“).</para>
+    <para styleclass="ÜberschriftEinfach">Artefakt-Typen und -Gruppen als Favoriten markieren</para>
+    <para styleclass="Normal">In der Baumansicht der Artefakt-Gruppen und -Typen können Sie einzelne Arten oder auch ganze Gruppen als Favoriten markieren, indem Sie einen Rechtsklick auf den gewünschten Eintrag machen und im Kontextmenü der Baumansicht den Eintrag „<text styleclass="Strong">Zu Favoriten hinzufügen</text>“ wählen. Wenn der Eintrag bereits ein Favorit ist, bleibt der Punkt im Kontextmenü für ihn ausgegraut.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;">&#32;<image src="_HelpPlusManual_TRMS_img10.png" scale="63.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 10: Einen Artefakt-Typ den Favoriten hinzufügen</para>
+    <para styleclass="Normal">Um einen Eintrag aus den Favoriten zu löschen, machen Sie einen Rechtsklick auf den entsprechenden Eintrag unter „Favoriten“ und wählen „<text styleclass="Strong">Aus Favoriten entfernen</text>“.</para>
+    <para styleclass="Normal">Das Hinzufügen und Entfernen von Favoriten wird sofort übernommen, wobei die Favoritenzusammenstellung für jeden Benutzer individuell in der TRMS-Datenbank gespeichert ist.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Rahmen mit der Listenansicht der Artefakte</para>
+    <para styleclass="Normal">Die Listenansicht in diesem Rahmen enthält alle Artefakte des in der Baumansicht gewählten Artefakt-Typs. Sie können durch Klick auf das Kontrollkästchen in der Spalte „<text styleclass="Strong">Ausgewählt</text>“ festlegen, ob das Artefakt im Paket enthalten sein soll oder nicht.</para>
+    <para styleclass="Normal">Sie können das Häkchen auch mit den Schaltflächen „Gemäß Filter setzen“ und „Gemäß Filter entfernen“ massenhaft in dem geöffneten Artefakt-Typ setzen bzw. entfernen.</para>
+    <para styleclass="Normal">Sobald ein Artefakt angehakt ist, können Sie individuell für dieses mit der Schaltfläche „Transportvorgaben“ einen Dialog öffnen, wo Sie die Einstellungen für sowohl für die Paketgenerierung aus dem Quellsystem als auch die Installation im Zielsystem für dieses Artefakt einstellen können.</para>
+    <para styleclass="ÜberschriftEinfach">Hinweis zur Reihenfolge von Artefakten</para>
+    <para styleclass="Normal">Beim Auswählen von Artefakten müssen Sie <text styleclass="Strong">nicht</text> auf eine bestimmte Reihenfolge achten (außer bei „Datenmodell“-Artefakten und „Workflow-Aktualisierungs-Paketen“ untereinander <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_ef9609a3fd0b" styleclass="Hyperlink">[Link]</link>).</para>
+    <para styleclass="Normal">Das TRMS stellt beim Verpacken der Artefakte automatisch sicher, dass die technisch notwendige Reihenfolge z. B. von Workflow-Paketen und darin vorausgesetzten Vorgangsvorlagen, sichergestellt ist. Somit ist es z. B. möglich, sowohl neue Vorgangsvorlagen als auch Workflows, die diese einbinden, mit demselben TRMS-Paket in ein IKAROS-System einzuspielen.</para>
+    <para styleclass="Normal">Die Regeln für die automatische Bestimmung der Reihenfolge sind zu komplex, um sie hier zu beschreiben. Sie haben jedoch technische Ursachen und stellen die reibungslose Transportierbarkeit von Artefaktpaketen sicher.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Rahmen „Changes“</para>
+    <para styleclass="Normal">Der Rahmen „Changes“ ist nur in Change Sets vorhanden. Hier können Sie vorhandene Changes auswählen und sie dem Change Set auf diese Weise hinzufügen und mit diesem zusammen transportieren.</para>
+    <para styleclass="Normal">Es können nur Changes ausgewählt werden, deren Quellsystem dasselbe ist wie das des Change Sets.</para>
+    <para styleclass="ÜberschriftEinfach">Hinweise</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Ein Change Set darf nur je ein Transportprotokollskript pro Skript-Typ enthalten (Prerequisite, Initialisierung und Finalisierung <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_11ed2b9082ce" styleclass="Hyperlink">[Link]</link>). Falls hinzugefügte Changes selbst solche Skripte umfassen, wird dies zu Problemen beim Transport führen.</li>
+      <li styleclass="Aufzählung1">Schreibgeschützte Changes können hier nicht ausgewählt werden.</li>
+    </list>
+  </body>
+</topic>

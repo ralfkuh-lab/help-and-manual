@@ -1,0 +1,82 @@
+# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp29_chm
+PP_DESCRIPTION=CHM Skin (HM 6, 7, 8, 9)
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=Keine Einträge in diesem Topic$T$
+ATOC_BTNTIP_ON=Themen in diesem Topic$T$
+ATOC_TIP=Gehe zu:&nbsp;$H$
+ATOC_TITLE=Themen$T$
+ATOC_TOP=Zum Seitenanfang$T$
+ATOC_TOPTIP=Scrolle zum Seitenanfang$T$
+
+[Breadcrumb Trail]
+BREAD_LABEL=Navigation:$T$
+BREAD_NOTOPIC=Keine übergeordneten Topics$T$
+
+[Button Texts]
+BTNTEXT_CHAPTERTIP=Zum Top-Topic$T$
+BTNTEXT_HOMETIP=Zum Anfang$T$
+BTNTEXT_MENU=Menü$T$
+BTNTEXT_MENUTIP=Weitere Funktionen$T$
+BTNTEXT_NEXT=Vor$T$
+BTNTEXT_NEXTNONE=Keine weiteren Topics$T$
+BTNTEXT_NEXTTIP=Zum nächsten Topic$T$
+BTNTEXT_PREV=Zurück$T$
+BTNTEXT_PREVTIP=Zum vorherigen Topic$T$
+BTNTEXT_PREVNONE=Dies ist das erste Topic$T$
+
+[Mail Feedback]
+FB_BODY=Hallo Support-Team,$T$
+FB_NOJS=Feedback%20zur%20Dokumentation$T$
+FB_SUBJ=Feedback zu:$T$
+FB_TIP=Schicke eine E-Mail an Support zu diesem Topic$T$
+
+[Topic Menu]
+MENU_FEEDBACK=E-Mail-Feedback$T$
+MENU_FEEDBACKTIP=Schicke eine E-Mail an Support zu diesem Topic$T$
+MENU_PRINT=Topic drucken$T$
+MENU_PRINTTIP=Druckversion für dieses Topic$T$
+MENU_TOGGLES=Aufklapp-Texte auf/zu$T$
+MENU_TOGGLESOFFTIP=Keine Aufklapp-Texte auf der Seite$T$
+MENU_TOGGLESTIP=Aufklapp-Texte auf dieser Seite auf/zu$T$
+MENU_TOP=Zum Anfang scrollen$T$
+MENU_TOPTIP=Zum Anfang dieser Seite scrollen$T$
+
+[Sortable Tables]
+SORT_SORTTIP=Klicken, um auf diese Spalte zu sortieren$T$
+
+[Header Components]
+HD_LOGOTEXT=EC Software website$T$
+
+[Misc. Settings]
+CODESAMPLE_NOCOPY=Dieser Browser kann nicht in die Zwischenablage kopieren!$T$
+CODESAMPLE_COPIED=Kopiert!$T$
+PRINT_CLOSE=Druckvorschau schliessen$T$
+ZOOM_TIP=Klicken, um Bild zu zoomen$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=ab aber als also am an auch auf aus bald bei beim bin bis bis bzw ca da dann das dass dazu daß dem den denn der des die etc fuer für gar ggf ggfs hin im in ins ist ja je mal man mit nie noch nun nur ob oben oder oft ohne per pro sich sie so sog um umso und usw vom von vor war was weg wem wen wer wie will wir wird wo wohl zu zum zur zwar$T$
+WORD_JOINERS=.-_'$T$

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.603Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Dialog für die Transportkonfiguration von Workflows und Workflow-Ausdrücken</title>
+  <keywords>
+    <keyword>Transportkonfigurationen (Workflow, Workflow-Ausdrücke)</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Dialog für die Transportkonfiguration von Workflows und Workflow-Ausdrücken</para>
+    </header>
+    <para styleclass="Normal">Bei Artefakten der Typen „Workflows“ und „Workflow-Ausdrücke“ können Sie in einer sogenannten „<text styleclass="Strong">Transportkonfiguration</text>“ festlegen, welche Workflow-Aktualisierungsaktionen beim Installieren des Artefakts in IKAROS ausgeführt werden sollen.</para>
+    <para styleclass="Normal">Es handelt sich um eine angepasste Variante des Assistenten für Workflow-Aktualisierungspakete in IKAROS. Ausführliche Informationen dazu finden Sie in der Hilfe <text styleclass="Strong">von IKAROS</text> im Kapitel mit der ID „fs_b607ff7c1ca1“.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img50.png" scale="71.00%" width="23" height="23" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 21: Dialog zur Transportkonfiguration von Workflow-Artefakten</para>
+    <para styleclass="Normal">Beim Auswählen eines Workflows oder Workflow-Ausdrucks als Artefakt wird im Hintergrund automatisch eine Standard-Transportaktion angelegt: Bei Arbeitskopien „Transportieren“, bei freigegebenen Versionen „Transportieren und freigeben“.</para>
+    <para styleclass="ÜberschriftEinfach">Hinweise</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Wenn Sie das „Ausgewählt“-Häkchen eines Workflow-Artefakts entfernen, werden sowohl dessen Transportvorgaben als auch dessen Transportkonfiguration verworfen.</li>
+      <li styleclass="Aufzählung1">Für Workflow-Verträge kann keine Transportkonfiguration definiert werden. </li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Unterschiede im Vergleich zu IKAROS</para>
+    <para styleclass="Normal">Im TRMS bezieht sich der Dialog immer nur auf genau dasjenige Artefakt, für das die Transportkonfiguration geöffnet wurde. Es ist nicht möglich, mehrere Workflows/Workflow-Ausdrücke im selben Dialog zu konfigurieren. Daraus ergeben sich einige Unterschiede im Vergleich zum Assistenten für Workflow-Aktualisierungspakete in IKAROS:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Schaltflächen</text>: Der Dialog enthält nur Schaltflächen für das aktuelle Artefakt.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Workflows</text>: Im Dialog zur Konfiguration der Transportaktion „<text styleclass="Strong">Ersetzen</text>“ ist als „Einzusetzender Workflow“ fest der aktuelle Workflow eingetragen und die Einstellung „Zustandszuordnung“ steht fest auf „Alle“.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Workflow-Ausdrücke</text>: Im Dialog zur Konfiguration der Transportaktion „<text styleclass="Strong">Ersetzen</text>“ ist als „Einzusetzender Workflow-Ausdruck“ fest der aktuelle Workflow-Ausdruck eingetragen.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="5" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:40px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:138px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:373px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img51.png" scale="59.00%" width="19" height="19" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:138px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Übernehmen &amp; Schließen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">[Strg] + [H]</text></para>
+        </td>
+        <td style="vertical-align:top; width:373px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Übernimmt die Transportkonfiguration temporär.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Um sie dauerhaft zu speichern, muss der Change bzw. das Change Set gespeichert bzw. das Artefakt/Paket exportiert werden.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img52.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img53.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:138px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Transportieren</text><text style="font-size:8pt;">“ </text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(Workflow-Ausdrücke: [Strg] + [Umschalt] + [C])</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(Workflows: [Strg] + [C])</text></para>
+        </td>
+        <td style="vertical-align:top; width:373px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Ändert die Transportaktion für den gewählten Workflow/Workflow-Ausdruck auf „Transportieren“.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">D. h. das Artefakt wird beim späteren Transport in IKAROS nur als Arbeitskopie installiert.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Pro Artefakt ist entweder „Transportieren“ oder „Transportieren und freigeben“ möglich. Die jeweils andere Option wird automatisch ersetzt, falls vorhanden.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img54.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img55.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:138px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Transportieren und freigeben</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(Workflow-Ausdrücke: [Strg] + [Umschalt] + [A])</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(Workflows: [Strg] + [A])</text></para>
+          <para styleclass="Normal"></para>
+        </td>
+        <td style="vertical-align:top; width:373px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Ändert die Transportaktion für den gewählten Workflow/Workflow-Ausdruck auf „Transportieren und freigeben“.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">D. h. das Artefakt wird beim späteren Transport in IKAROS installiert und automatisch freigegeben.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Pro Artefakt ist entweder „Transportieren“ oder „Transportieren und freigeben“ möglich. Die jeweils andere Option wird automatisch ersetzt, falls vorhanden.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:40px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img56.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img57.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:138px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">„</text><text styleclass="Strong" style="font-size:8pt;">Ersetzen</text><text style="font-size:8pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(Workflow-Ausdruck: [Strg] + [Alt] + [R])</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(Workflows: [Strg] + [Umschalt] + [X])</text></para>
+        </td>
+        <td style="vertical-align:top; width:373px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Öffnet den Assistenten, um zu konfigurieren, dass beim Transport im IKAROS-Zielsystem ein anderer Workflow/Workflow-Ausdruck durch den gerade konfigurierten ersetzt wird.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Eine Transportkonfiguration kann pro Artefakt mehrere „Ersetzen“-Aktionen enthalten.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Schaltfläche ist deaktiviert, wenn der Workflow/Workflow-Ausdruck eine Arbeitskopie ist.</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Informationen zum Ersetzen finden Sie in der Hilfe in IKAROS im Kapitel mit der ID „fs_13f000a4cbaf“ (Workflows) bzw. „fs_f79a16655443“ (Workflow-Ausdrücke).</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.529Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Menüpunkt „IKAROS-Systeme“</title>
+  <keywords>
+    <keyword>IKAROS-Systeme<keyword>Verbindungsdaten</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Menüpunkt „IKAROS-Systeme“</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Zusammenhänge</para>
+    <para styleclass="Normal">Das TRMS ist eine von IKAROS architektonisch getrennte Anwendung mit eigenen Servern und eigener Web-Oberfläche. Daher müssen Sie im TRMS Stammdaten für IKAROS-Systeme verwalten, die in der Oberfläche des TRMS als Quell- oder Zielsysteme angeboten werden sollen. Für jedes IKAROS-System müssen Sie einen eindeutigen Namen sowie die URLs zum Anwendungs- und Authentifizierungs-Server des Systems angeben.</para>
+    <para styleclass="Normal">Das Anlegen und Bearbeiten von Systemstammdaten setzt voraus, dass sich der aktuelle Nutzer mit seinen eigenen Daten oder mit abweichendem Nutzername und Passwort an dem jeweiligen System anmelden kann.</para>
+    <para styleclass="Normal">Falls noch gar kein IKAROS-System im TRMS angelegt ist, erscheint bei der ersten Aktion, die eine Anmeldung erfordert, automatisch der Bearbeitungsdialog für IKAROS-Systeme <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_ae147e301e50" styleclass="Hyperlink">[Link]</link>, mit dem Sie den ersten Systemeintrag anlegen können.</para>
+    <para styleclass="Normal">Die Verbindungsdaten für TRMS-Systeme werden separat im Menüpunkt [<text styleclass="Systemzitat">Administration -&gt; TRMS-Systeme</text>] verwaltet <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_79693aea93bb" styleclass="Hyperlink">[Link]</link>.</para>
+    <para styleclass="ÜberschriftEinfach">Benutzer in IKAROS-Zielsystem erforderlich</para>
+    <para styleclass="Normal">Es genügt für einen Transport nicht, nur ein neues IKAROS-System im TRMS hinzufügen. Damit das TRMS überhaupt auf die Dienste dieses Zielsystems zugreifen darf, muss es in der Benutzerverwaltung des Zielsystems einen eigenen IKAROS-Benutzer mit den erforderlichen Rechten für den technischen „AppPool-Benutzer“ des TRMS geben <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_107ae47c5a52" styleclass="Hyperlink">[Link]</link>.</para>
+    <para styleclass="Normal">Bei Mehrfirmenbetrieb in den IKAROS-Umgebungen müssen Sie beachten, dass Sie für jede Geschäftseinheit einen separaten „IKAROS-System“-Eintrag im TRMS brauchen. Außerdem müssen Sie, wegen der getrennten Datenbanken der Geschäftseinheiten, auch die Rechte-Rollen und -Ressourcen einzeln in der jeweiligen Geschäftseinheit konfigurieren.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Die Auswahlliste</para>
+    <para styleclass="Normal">Sie finden Sie Stammdaten für IKAROS-Systeme im TRMS unter [<text styleclass="Systemzitat">Administration -&gt; IKAROS-Systeme</text>].</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img121.png" scale="78.00%" width="25" height="25" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 35: Die Liste der „Systeme“-Stammdaten</para>
+    <para styleclass="ÜberschriftEinfach">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="6" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:84px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:417px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img84.png" scale="119.00%" width="38" height="38" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:84px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Neu</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Einfg]</text></para>
+        </td>
+        <td style="vertical-align:top; width:417px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet den Bearbeitungsdialog für Systeme, um die Verbindungsdaten zu einem weiteren IKAROS-System zu speichern.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img90.png" scale="79.00%" width="25" height="25" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:84px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Filtern</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Leertaste]</text></para>
+        </td>
+        <td style="vertical-align:top; width:417px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft den Filterdialog für die Auswahlliste auf.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img91.png" scale="79.00%" width="25" height="25" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:84px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Aufheben</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [R]</text></para>
+        </td>
+        <td style="vertical-align:top; width:417px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Hebt die aktuellen Filtereinstellungen auf.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img92.png" scale="119.00%" width="38" height="38" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:84px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Sichten</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[F6]</text></para>
+        </td>
+        <td style="vertical-align:top; width:417px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft den Verwaltungsdialog für benutzerdefinierte Sichten auf.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img126.png" scale="79.00%" width="25" height="25" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:84px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Cache leeren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[F10]</text></para>
+        </td>
+        <td style="vertical-align:top; width:417px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Setzt den Stammdaten-Cache des TRMS zurück.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Dies ist nur notwendig, wenn Sie direkt per SQL Änderungen an den „Systeme“-Stammdaten oder TRMS-Systemeinstellungen vorgenommen haben.</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

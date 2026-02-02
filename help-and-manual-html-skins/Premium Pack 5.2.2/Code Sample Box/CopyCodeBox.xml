@@ -1,0 +1,37 @@
+﻿<topic modified="2021-05-25T11:30:36.754+02:00" lasteditedby="Tim">
+  <body>
+    <para styleclass="CodeSampleToggleHeader"><image src="hmtoggle_arrow0.gif" scale="100.00%" styleclass="CodeSampleToggleHeader"></image><tab /><toggle type="dropdown" print-expanded="true" help-expanded="false" defaultstyle="false" translate="true" src-collapsed="hmtoggle_arrow0.gif" src-expanded="hmtoggle_arrow1.gif" styleclass="CodeSampleToggleHeader"><caption translate="true"><![CDATA[Code Sample Box Toggle Header]]></caption></toggle></para>
+    <para styleclass="Normal"><table styleclass="CodeSampleTable" rowcount="2" colcount="2">
+      <thead style="vertical-align:middle">
+        <td>
+          <para styleclass="CodeSampleTitle"><text styleclass="CodeSampleTitle" translate="true">Code Sample</text></para>
+        </td>
+        <td>
+          <para styleclass="CodeSampleLink"><text styleclass="CodeSampleLink" translate="true">Copy Code</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td colspan="2" style="background-color:#aaeeff;">
+          <para styleclass="Code Example"><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">Using the Code Sample Box</text></para>
+          <para styleclass="Code Example"></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Code Example" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">Use Toolbox to import the </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">CodeSample</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> paragraph and table styles to your project. These styles are assigned to this snippet and you can format it by editing them in your project after importing them.</text></li>
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">Edit the text in the toggle link and table header as you wish.</text></li>
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">The </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">CodeSampleLink</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> paragraph style for the Copy Code text in the header is </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; text-decoration:underline; color:#000000;" translate="true">essential</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">! The box will not work correctly without it.</text></li>
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">The </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">CodeSampleTable</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> table style is defined with rounded corners in the Premium Pack skins. See the Premium Pack help for details.</text></li>
+          </list>
+          <para styleclass="Code Example"></para>
+          <para styleclass="Code Example"><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">Requirements</text></para>
+          <para styleclass="Code Example"></para>
+          <list id="1" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Code Example" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">The table must have </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">one</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> header row and </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">one</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> code row. Additional rows will be ignored. </text></li>
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">The header row must have </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">two</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> columns: one for the title and one for the </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">Copy Code</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> paragraph. The code row must have only </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">one</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> column.</text></li>
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">The </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">Copy Code</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true"> text in the header row must be formatted with a paragraph style called </text><text styleclass="Code Example" style="font-weight:bold; font-style:normal; color:#000000;" translate="true">CodeSampleLink</text><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">. Nothing will work without this style name.</text></li>
+            <li styleclass="Code Example"><text styleclass="Code Example" style="font-weight:normal; font-style:normal; color:#000000;" translate="true">The box does not have to be in a toggle, but it&apos;s practical.</text></li>
+          </list>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

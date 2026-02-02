@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:52.306Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Die Funktion „ClearAllCacheRegions“</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Die Funktion „ClearAllCacheRegions“</para>
+    </header>
+    <para styleclass="Normal">Setzt den Stammdaten-Cache des TRMS Anwendungs-Servers zurück, damit per SQL durchgeführte Änderungen an den „Systeme“-Stammdaten oder Systemeinstellungen im TRMS wirksam werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Parameter</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="10" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:131px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Parameter</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">Werte</text></para>
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-size:8pt; font-weight:bold; color:#ffffff;">(Standard-Wert in Klammern)</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsCertificateLocation</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Speicherort, wo das Zertifikat &lt;TrmsCertificateName&gt; zu finden ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„CurrentUser“ oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„LocalMachine“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsCertificateName</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Name des Zertifikats für die Anmeldung an ein TRMS mit Service-Kommunikationstechnik gRPC.</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsCertificateStore</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Zertifikatsspeicher, wo das Zertifikat &lt;TrmsCertificateName&gt; zu finden ist.</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Mögliche Werte:</text></para>
+          <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„AddressBook“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„My“,</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„Root“ oder</text></li>
+            <li styleclass="Aufzählung1"><text style="font-size:8pt;">„TrustedPublisher“</text></li>
+          </list>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdProvider</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Der Name des verwendeten Identitäts-Providers (IDP) für die Anmeldung am TRMS.</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">(ADFS, AzureAd, EntraID, Keycloak)</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdAuthority</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">URL des IDPs, um ein Token zu erhalten für die Anmeldung am TRMS.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Beispiel</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">https://login.microsoftonline.com/8e74c461-xxxx-xxxx-xxxx-130d6ebc2f7e/oauth2/v2.0/token</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdClientId</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">ID der registrierten Anwendung (hier: Die TRMS-Umgebung) beim IDP für die Anmeldung am TRMS.</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdSecret</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Geheimnis der registrierten Anwendung beim IDP für die Anmeldung am TRMS. </text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Hinweis</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">Das OpenID-Secret kann nur in verschlüsselter Form als Parameter übergeben werden. Mittels der Funktion „EncryptPassword“ lässt sich der Wert des Parameters verschlüsseln.</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsOpenIdApiResource</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Von der Anwendung genutzte und registrierte API-Ressource für die Anmeldung am TRMS.</text></para>
+          <para styleclass="ÜberschriftEinfach"><text style="font-size:8pt;">Beispiel</text></para>
+          <para styleclass="Normal"><text style="font-size:8pt;">https://ztu.fst2.lan/IkarosApi/.default</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:131px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">TrmsServiceHostAddress</text></para>
+        </td>
+        <td style="vertical-align:top; width:292px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Die Adresse des TRMS-Anwendungs-Servers (Fs.Trms.ServiceHost).</text></para>
+        </td>
+        <td style="vertical-align:top; width:128px;">
+          <para styleclass="Normal"><text style="font-size:8pt;">Zeichenkette</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="ÜberschriftEinfach">Beispiel (Konsolenaufruf, CMD)</para>
+    <para styleclass="Quellcode_Konsole" style="tabstops:19px left,38px left,57px left,76px left,95px left,113px left,132px left,151px left,170px left,189px left ;">.\TrmsCli.exe ^<br/>/Function=ClearAllCacheRegions ^<br/>/TrmsServiceHostAddress=&quot;trms.ika.lan:43307&quot; ^<br/>/TrmsOpenIdProvider=&quot;keycloak&quot; ^<br/>/TrmsOpenIdAuthority=&quot;https://keycloak.ika.lan:443/auth/realms/ikaros/protocol/openid-connect/token&quot; ^<br/>/TrmsOpenIdClientId=&quot;trms-api&quot; ^<br/>/TrmsOpenIdSecret=&quot;RYEtixxxxxxxx3QyH376xxxxxxxx5KxjexxxxxxxxfAo4mPxxxxxxxx5uHRr2FR2&quot; ^<br/>/TrmsOpenIdApiResource=&quot;profile email&quot; ^<br/>/TrmsCertificateName=&quot;CN=trms.ika.lan, OU=QS, O=Mustermann GmbH, L=Lippstadt, S=NRW, C=DE&quot; ^<br/>/TrmsCertificateStore=&quot;My&quot; ^<br/>/TrmsCertificateLocation=&quot;LocalMachine&quot;</para>
+  </body>
+</topic>

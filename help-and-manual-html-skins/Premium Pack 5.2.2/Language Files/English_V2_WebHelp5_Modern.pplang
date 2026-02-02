@@ -1,0 +1,187 @@
+# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp39_webhelp
+PP_DESCRIPTION=V2 WebHelp and WebHelp/EWriter skins PP5 Modern version (HM 7, 8 and 9)
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=No contents entries on this page$T$
+ATOC_BTNTIP_ON=Display/hide topic directory$T$
+ATOC_TIP=Jump to:&nbsp;$H$
+ATOC_TITLE=Contents$T$
+ATOC_TOP=Scroll to Top of Page$T$
+ATOC_TOPTIP=Jump to top of page$T$
+
+[Breadcrumb Trail]
+BREAD_LABEL=Navigation:$T$
+BREAD_NOTOPIC=No topics above this level$T$
+BREAD_TOC=Click here to display Table of Contents$T$
+
+[Button Texts]
+BTNTEXT_CHAPTERTIP=Go to Parent Chapter$T$
+BTNTEXT_CONTENTSNOJS=Contents$T$
+BTNTEXT_FB=Feedback$T$
+BTNTEXT_FBTIP=Email us feedback on the current topic$T$
+BTNTEXT_HOME=Home$T$
+BTNTEXT_HOMETIP=Go to home topic$T$
+BTNTEXT_INDEXNOENTRY=No index entries starting with$T$
+BTNTEXT_INDEXTABTIP=Keyword Index$T$
+BTNTEXT_MENU=Header$T$
+BTNTEXT_MENUTIP=Show/hide page header and menu$T$
+BTNTEXT_NEWTAB=New Tab$T$
+BTNTEXT_NEWTABTIP=Open current topic in a new tab$T$
+BTNTEXT_NEWTABTIPOFF=Select main tab to activate this function$T$
+BTNTEXT_NEXT=Next$T$
+BTNTEXT_NEXTTIP=Go to next topic$T$
+BTNTEXT_PREV=Previous$T$
+BTNTEXT_PREVTIP=Go to previous topic$T$
+BTNTEXT_PRINT=Print$T$
+BTNTEXT_PRINTTIP=Print the current topic$T$
+BTNTEXT_QSEARCH=Quick Search:$T$
+BTNTEXT_SEARCH=Search$T$
+BTNTEXT_SEARCHTIP=Search help topics$T$
+BTNTEXT_SHARE=Share$T$
+BTNTEXT_SHARETIP=Show social sharing buttons$T$
+BTNTEXT_SHARETIP_OFF=Share button disabled - no web server$T$
+BTNTEXT_TABLEFTTIP=Next tab left$T$
+BTNTEXT_TABRIGHTTIP=Next tab right$T$
+BTNTEXT_TABSMENUTIP=Tabs Menu$T$
+BTNTEXT_TOGGLE=Show/Hide$T$
+BTNTEXT_TOGGLETIP=Show/hide hidden text in current topic$T$
+BTNTEXT_TOPICTAB=Browse$T$
+BTNTEXT_TOPICTABTIP=Select main topic tab$T$
+BTNTEXT_UNDOCK=Undock$T$
+BTNTEXT_UNDOCKTIP=Undock Current Tab$T$
+HELP_URL_TITLE=Permalink$T$
+
+[Social Sharing]
+BTNTEXT_SHARE=Share$T$
+BTNTEXT_SHARETIP=Show social sharing buttons$T$
+BTNTEXT_SHARETIP_OFF=Share button disabled - no web server$T$
+SHARING_FACEBOOKTIP=Share on Facebook$T$
+SHARING_LINKEDINTIP=Share on LinkedIn$T$
+SHARING_MAILTIP=Share by Email$T$
+SHARING_TWITTERTIP=Share on Twitter$T$
+
+[Tab Texts]
+TABTEXT_CONTENTSNOJS=Contents$T$
+TABTEXT_CURRTOPIC=Current Topic$T$
+TABTEXT_INDEXNOJS=Index$T$
+TABTEXT_INDEXTAB=Keyword Index$T$
+TABTEXT_INDEXTABTIP=Double-click to undock Index tab$T$
+TABTEXT_NOUNDOCKTIP=You can\'t undock the main tab!$T$
+TABTEXT_SEARCHTAB=Search$T$
+TABTEXT_SEARCHTABTIP=Double-click to undock Search tab$T$
+TABTEXT_TABCLOSETIP=Close this tab$T$
+TABTEXT_TABOPENTIP=This topic is already open in an additional tab!$T$
+TABTEXT_TOPICTAB=Topic Text$T$
+TABTEXT_WEBFILE=Web File$T$
+
+[Mail Feedback]
+FB_BODY=Dear Support Staff,$T$
+FB_NOJS=Documentation%20Feedback$T$
+FB_SUBJ=Feedback on:$T$
+FB_TIP=Mail us feedback on this topic!$T$
+
+[Permalink]
+HELP_URL_BOOKMARK=Bookmark Topic$T$
+HELP_URL_CLOSE=Close Dialog$T$
+HELP_URL_COPIED=Permalink copied to clipboard:$T$
+HELP_URL_COPY=Copy permalink to current topic$T$
+HELP_URL_MANCOPY=Auto-copy not supported in your browser configuration.\r\nPlease right-click on the permalink to copy.$H$
+HELP_URL_NOSERVER=No web server. Please right-click on the selected permalink below to copy.$T$
+HELP_URL_SELECT=Copy Permalink$T$
+HELP_URL_SERVER=This page is stored locally. You can only bookmark pages on a web server!$T$
+HELP_URL_SORRY=Sorry, your browser can't bookmark pages using this function. Right-click to copy the permalink, then press Ctrl+D to bookmark the topic with the copied permalink.$T$
+HELP_URL_TITLE=Permalink$T$
+
+[TOC, Index and Search]
+BTNTEXT_INDEXFIRSTSEARCH=First Word$T$
+BTNTEXT_INDEXFULLSEARCH=Full Text Search$T$
+BTNTEXT_INDEXSEARCH=Search Keywords$T$
+BTNTEXT_INDEXSEARCHTIP=Click again or press ENTER to scroll to the next highlighted item$T$
+BTNTEXT_INDEXTAB=Index$T$
+BTNTEXT_INDEXWORDSEARCH=Word Anywhere$T$
+BTNTEXT_KWINSTANTSEARCH=Instant Search$T$
+NAVPANE_HIDETIP=Hide contents pane$T$
+NAVPANE_SHOWTIP=Show contents pane$T$
+SEARCH_INSTRUCTIONS=Enter one or more keywords to search ('*' and '?' wildcards are supported):$T$
+SEARCH_JSTIP=You must have JavaScript enabled to use WebHelp search$T$
+SUBTITLE=Premium Pack 5.0$T$
+
+[Misc. Interface Elements]
+CODESAMPLE_COPIED=Copied!$T$
+CODESAMPLE_NOCOPY=Sorry, cannot copy to clipboard with this browser!$T$
+ZOOM_TIP=Click to view full size image$T$
+
+[Sortable Tables]
+SORT_SORTTIP=Click to sort on this column$T$
+
+[Google Analytics]
+GA_EXITLABEL=exit_link$T$
+GA_FILELABEL=file_link$T$
+GA_SEARCHCLICKLABEL=search_click$T$
+GA_SEARCHLABEL=search_term$T$
+GA_TOCCLICKLABEL=toc_click$T$
+GA_TOCWEBLABEL=toc_weblink$T$
+GA_TOPICLINKLABEL=topic_link$T$
+GA_WEBLABEL=web_link$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=and or the it is an on we us to of has be all for in as so are that can you at its by have with into$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_ANY_OF_TERMS=Any terms$T$
+STR_CAT_SUMMARY=Search in a category:$T$
+STR_DIDYOUMEAN=Did you mean:$T$
+STR_FORM_ALL_SEARCH_WORDS=all search words$T$
+STR_FORM_ANY_SEARCH_WORDS=any search words$T$
+STR_FORM_MATCH=Match:$T$
+STR_FORM_RESULTS_PER_PAGE=Results per page:$T$
+STR_FORM_SEARCHFOR=Search for:$T$
+STR_FORM_SUBMIT_BUTTON=Submit$T$
+STR_NO_QUERY=No search query entered.$T$
+STR_NO_RESULTS=No results$T$
+STR_PAGES_OF_RESULTS=pages of results.$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=Your search query contained too many common words to return the entire set of results available. Please try again with a more specific query for better results.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=You can possibly get more results searching for$T$
+STR_RESULT=result$T$
+STR_RESULTS=results$T$
+STR_RESULTS_FOR=Search results for:$T$
+STR_RESULT_PAGES=Result Pages:$T$
+STR_RESULT_PAGES_NEXT=Next$T$
+STR_RESULT_PAGES_PREVIOUS=Previous$T$
+STR_RESULT_SCORE=Score:$T$
+STR_RESULT_TERMS_MATCHED=Terms matched:$T$
+STR_RESULT_URL=URL:$T$
+STR_SKIPPED_FOLLOWING_WORDS=The following word(s) are in the skip word list and have been omitted from your search:$T$
+STR_SKIPPED_PHRASE=Note that you can not search for exact phrases beginning with a skipped word$T$
+STR_SORTBY_DATE=Sort by date$T$
+STR_SORTBY_RELEVANCE=Sort by relevance$T$
+STR_SORTEDBY_DATE=Sorted by date$T$
+STR_SORTEDBY_RELEVANCE=Sorted by relevance$T$
+STR_SUMMARY_FOUND=found.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=found containing all search terms.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=found containing some search terms.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=No results found.$T$

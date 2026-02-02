@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <theme>
+    <name>FSNetHelpTheme</name>
+    <predefined>false</predefined>
+  </theme>
+  <contextSensitive>
+    <strings>
+      <title>Endroits pour "#{key}": "#{value}"</title>
+      <notfound>Aucuns sujets trouvés.</notfound>
+      <notsupported>Le mot-clé "#{key}" n'est pas pris en charge.</notsupported>
+    </strings>
+  </contextSensitive>
+  <accessibility>
+    <akLinksMenuHeader>#{count} endroits trouvés.</akLinksMenuHeader>
+    <toc>
+      <closedBook>Le livre ne contient aucuns sujets.</closedBook>
+      <openBook>Le livre ne contient aucuns sujets.</openBook>
+      <closedBookTopic>Le livre n'est pas ouvert.</closedBookTopic>
+      <openBookTopic>Livre ouvert</openBookTopic>
+      <topic>Chapitre</topic>
+    </toc>
+    <collapsibleSections>
+      <collapsed>Cliquer pour déplier.</collapsed>
+      <expanded>Cliquer pour minimer.</expanded>
+    </collapsibleSections>
+  </accessibility>
+  <buttons>
+    <prev>
+      <label>Chapitre précédent</label>
+    </prev>
+    <next>
+      <label>Prochain chapitre</label>
+    </next>
+    <home>
+      <label>Page d'accueil</label>
+    </home>
+    <print>
+      <label>Imprimer</label>
+    </print>
+    <collapseTocEntries>
+      <label name="Label" type="string" description="Réduit toutes les entrées de la table des matières, sauf celle qui est active.">Nettoyer l'arborescence</label>
+    </collapseTocEntries>
+    <openChapterById>
+      <label name="Label" type="string" description="Ouvre une boîte de dialogue pour la recherche d'un ID de chapitre.">Ouvrir un chapitre par ID</label>
+    </openChapterById>
+    <loadAllSubchapters>
+      <label name="Label" type="string" description="Charge tous les sous-chapitres du chapitre actuel.">Charger des sous-chapitres</label>
+    </loadAllSubchapters>
+  </buttons>
+  <topic>
+    <strings>
+      <notfoundText>Le chapitre n'a pa pu être chargé.</notfoundText>
+      <notfoundTitle>Le chapitre n'a pa pu être chargé.</notfoundTitle>
+    </strings>
+    <spinner>
+      <messageText>Chargez l'aide ...</messageText>
+    </spinner>
+  </topic>
+  <index>
+    <label>Répertoire des mots-clés</label>
+    <strings>
+      <filterTooltip>Recherchez des mots-clés.</filterTooltip>
+      <notfound>Aucuns endroits trouvés.</notfound>
+      <more>Voir aussi ...</more>
+    </strings>
+  </index>
+  <search>
+    <label>Recherche</label>
+    <strings>
+      <filterTooltip>Rechercher des termes/sujets. Tuyau: Mettrez un astérisque "*" avant et/ou après le mot-clé pour trouver plus.</filterTooltip>
+      <helpMessage>Methode de recherche standard: exact mot.&lt;br /&gt;
+     	&lt;strong&gt;Tuyau1&lt;/strong&gt;: Mettrez un astérisque "*" avant et/ou après le mot-clé pour trouver plus.&lt;br /&gt;
+     	&lt;strong&gt;Tuyau2&lt;/strong&gt;: Vous pouvez aussi utiliser des opérateurs logiques: ET, OU, PAS. Exemple: Créancier OU contrat de frais ET PAS de commission.&lt;br /&gt;
+     	&lt;strong&gt;Remarque1&lt;/strong&gt;: Des espaces sont traités comme ET. Si des espaces doivent être traités comme une partie de l'expression de recherche, cette expression doit être mise entre guillemets. Par ex. "dossier solidaire".&lt;br /&gt;
+     	&lt;strong&gt;Remarque2&lt;/strong&gt;: Quelques caractères comme le point sont ignorés lors de la recherche et c'est pourquoi ils sont automatiquement supprimés de l'expression de recherche.</helpMessage>
+      <loading>Chargez la fonctionnalité de recherche …</loading>
+      <loaderror>La fonctionnalité de recherche n'a pas pu être chargée.</loaderror>
+      <disabled>La recherche est désactivée.</disabled>
+      <notfound>Aucuns endroits trouvés.</notfound>
+      <found>#{count} endroits trouvés.</found>
+      <correcting>Avez-vous pensé à: #{query}</correcting>
+      <more>Autres …</more>
+    </strings>
+    <buttons>
+      <go>
+        <label>Recherche</label>
+      </go>
+      <help>
+        <label>Aide</label>
+      </help>
+      <highlight>
+        <label>Faire ressortir en couleur les endroits trouvés</label>
+      </highlight>
+    </buttons>
+  </search>
+  <toc>
+    <label>Aide</label>
+  </toc>
+  <splitter>
+    <strings>
+      <sideShowTooltip>Afficher la barre latérale</sideShowTooltip>
+      <sideHideTooltip>Replier la barre latérale</sideHideTooltip>
+    </strings>
+  </splitter>
+</settings>

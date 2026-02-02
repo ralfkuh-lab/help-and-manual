@@ -1,0 +1,818 @@
+/* start standard styles with margin override*/
+P.Einzug2berschrift {MARGIN: 9pt 0pt 0pt 35.45pt !important; }
+P.Einzug1berschrift {MARGIN: 9pt 0pt 0pt 17.6pt !important; }
+P.Abbildung {MARGIN: 6pt 0pt 0pt 73.7pt !important;  TEXT-INDENT: -36.85pt !important; }
+P.Inhaltskopf {MARGIN: 6pt 0pt 3pt !important;  tab-stops: 51.05pt right 453.6pt !important; }
+P.QuellcodeEingerckt {tab-stops: 56.7pt 113.4pt 170.1pt !important; }
+P.QuellcodeEingercktCxSpFirst {tab-stops: 56.7pt 113.4pt 170.1pt !important; }
+P.QuellcodeEingercktCxSpLast, P.QuellcodeEingercktCxSpMiddle {MARGIN: 0pt 5.65pt 6pt 22.7pt !important; tab-stops: 56.7pt 113.4pt 170.1pt !important; }
+P.Einzug3 {MARGIN: 3pt 0pt 3pt 53pt !important; }
+P.Inhalt {MARGIN: 12pt 0pt !important; }
+P.Einzug2 {MARGIN: 3pt 0pt 3pt 35.45pt !important; }
+P.berschriftEinfachGross {MARGIN: 9pt 14.2pt 3pt 0pt !important;}
+P.Einzug1 {MARGIN: 3pt 0pt 3pt 17.6pt !important; }
+P.Verknpfung {MARGIN: 9pt 0pt 0pt !important;  TEXT-INDENT: 35.45pt !important;  tab-stops: 70.9pt !important; }
+P.StandardBigTables {MARGIN: 0pt 0pt 0pt 5.65pt !important; }
+P.Quellcode {MARGIN: 6pt 5.65pt !important; tab-stops: 56.7pt 113.4pt 170.1pt !important; }
+P.QuellcodeCxSpFirst {MARGIN: 6pt 5.65pt 0pt !important; tab-stops: 56.7pt 113.4pt 170.1pt !important; }
+P.QuellcodeCxSpMiddle, P.QuellcodeCxSpLast {MARGIN: 0pt 5.65pt !important; tab-stops: 56.7pt 113.4pt 170.1pt !important; }
+P.StandardKeinAbstand {MARGIN: 3pt 0pt !important; }
+P.StandardKeinAbstandCxSpFirst {MARGIN: 3pt 0pt 0pt !important; }
+P.StandardKeinAbstandCxSpLast {MARGIN: 0pt 0pt 3pt !important; }
+P.StandardKeinAbstandCxSpMiddle {MARGIN: 0pt !important; }
+P.Aufzhlung2Eingerckt {MARGIN: 3pt 0pt 3pt 53.05pt !important;  TEXT-INDENT: -17.6pt !important;  tab-stops: list 35.15pt !important; }
+P.Aufzhlung1Eingerckt {MARGIN: 3pt 0pt 3pt 35.2pt !important;  TEXT-INDENT: -17.85pt !important; }
+P.Uebertitel, P.MsoTitle, P.Untertitel {MARGIN: 0pt !important}
+P.Einzug3berschrift {MARGIN: 9pt 0pt 0pt 53pt !important; }
+P.Beschr-Abb {MARGIN: 0pt 0pt 9pt 36.85pt !important; }
+P.berschriftEinfach {MARGIN: 9pt 0pt 3pt !important; }
+P.berschriftEinfachNichtFett {MARGIN: 9pt 14.2pt 3pt 0pt !important;}
+P.Meldungstext {MARGIN: 3pt 56.7pt 3pt 35.45pt !important; }
+P.MeldungstextCxSpFirst {MARGIN: 3pt 56.7pt 0pt 35.45pt !important; }
+P.MeldungstextCxSpLast, P.MeldungstextCxSpMiddle {MARGIN: 0pt 56.7pt 3pt 35.45pt !important; }
+div>p.Meldungstext-Kopfzeile { margin: 5pt 0 0 0 !important; }
+*[class*="Meldungstext"] {background: #d9d9d9; }
+*[class*="Meldungstext"] + *[class*="Meldungstext"] {MARGIN-TOP: 0px !important; MARGIN-BOTTOM: 0px !important; }
+P.Aufzhlung3 {MARGIN: 3pt 0pt 3pt 52.75pt !important;  TEXT-INDENT: -17.6pt !important;  tab-stops: list 52.75pt !important; }
+P.Aufzhlung2 {MARGIN: 3pt 0pt 3pt 35.15pt !important;  TEXT-INDENT: -17.6pt !important;  tab-stops: list 35.15pt !important; }
+P.Aufzhlung1 {MARGIN: 3pt 0pt 3pt 17.85pt !important;  TEXT-INDENT: -17.85pt !important; }
+h1, h2, h3, h4, h5 { page-break-before: avoid !important; page-break-after: avoid !important}
+
+/* start IKAROS HTML-Help special */
+.c1buttonset{
+    border-left: 1px solid #ccc !important;
+}
+
+button[data-c1-role*="buttons."] > span {
+    left: 13px;
+    width: 32px;
+    top: -8px !important;
+}
+
+#fs-ribbonGroup-navigation, #fs-ribbonGroup-actions, #fs-ribbonGroup-chapters {
+    position: absolute;
+    top: 80px;
+    z-index: 99;
+    text-align: right;
+    color: #738399;
+    font-weight: normal;
+    padding-left: 1em;
+    font-size: 0.8em;
+	z-index: 999;
+}
+
+#fs-ribbonGroup-navigation{
+    left: 130px;
+}
+
+#fs-ribbonGroup-actions {
+    left: 510px;
+}
+
+#fs-ribbonGroup-chapters {
+    left: 385px;
+}
+
+#fs-chapter-id-input-dialog, #fs-message-dialog{
+    display: block;
+    padding: 10% 40%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(87, 91, 96, 0.3);
+    z-index: 9999;
+}
+
+#fs-chapter-id-input-dialog-frame, #fs-message-dialog-frame {
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width:  400px;
+    height: 150px;
+    background-color: #e8e8e8;
+}
+
+#fs-chapter-id-controls-form {
+    width: 97%;
+    height: 77%;
+    margin: 0 5px 5px 5px;
+    border: 1px solid #c5c5c5;
+    background-color: white;
+}
+
+#fs-chapter-id-input-dialog-title:before {
+    content: url('../../themes/FSNetHelpTheme/images/search.png');
+    padding: 3px 3px 3px 3px;
+}
+
+#fs-message-dialog-message-node {
+    position: relative;
+    margin: 0 0 0 5px;
+    padding: 3px;
+    width: 95.5%;
+    height: 74.5%;
+    border: 1px solid #c5c5c5;
+    background-color: white;
+}
+
+#fs-message-dialog-message-node:before {
+    position: relative;
+    display: block;
+    float: left;
+    content: url('../../themes/FSNetHelpTheme/images/info_32x32.png');
+    margin: 3px 10px 3px 3px;    
+    top: 4px;
+    height: 100%;
+}
+
+#fs-chapter-id-input-dialog-title, #fs-message-dialog-title {
+    padding: 0.5em 0.3em 0.3em 0.3em;
+    background-image: linear-gradient(to bottom, #EEF3FA, #EEF3FA);
+    border-color: #B8CBDE;
+    color: #444444;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+#fs-chapter-id-input-label, #fs-chapter-id-input {
+    margin: 1em;
+    float: left;
+}
+
+#fs-chapter-id-input {
+    position: relative;
+    border: 1px solid #d4d4d4;
+    width: 57%;
+}
+
+#fs-chapter-id-cancel-button, #fs-chapter-id-confirm-button, #fs-message-dialog-confirm-button {
+    width: 130px;
+    height: 23px;
+    box-sizing: border-box !important;
+    color: #444444;
+    border-color: #c7c7c7;
+    background-image: linear-gradient(to bottom, #FFFFFF, #DFE9F5);
+    margin: 0 4px;
+    float:enabled;
+    border: 1px solid #d4d4d4;
+}
+
+#fs-chapter-id-input-buttons-frame {
+    float: enabled;
+    position: relative;
+    top: 38px;
+    left: 100px;
+}
+
+#fs-message-dialog-confirm-button {
+    position: relative;
+    top: -30px;
+    left: 200px;
+}
+
+#c1topBar{
+    position: relative;
+    margin-left: 2px;
+    min-height: 94px;
+	height:2.7em;
+    border-radius: 4px;
+    overflow: visible !important;
+    background: linear-gradient(#FFF, #DFEAF7);
+	z-index: 999;
+}
+
+#c1topBar button {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    float: left;
+    padding-top: 8px;
+    margin-left: 4px;
+}
+
+#c1topBar button .ui-button-text {
+    position: relative;
+    display: block;
+    clear: both;
+    margin: 5px 10px 10px -5px;
+    min-width: 40px;
+    text-indent: 0px !important;
+}
+
+.topic-only #fs-ribbonGroup-actions, .topic-only #fs-ribbonGroup-navigation, .topic-only #fs-ribbonGroup-chapters {
+    display: none;
+}
+
+.topic-only #c1contentInner {
+    top: -5em;
+}
+
+.topic-only .related-topics-header {
+    display: none;
+}
+
+*[class*="Quellcode"]:first-child{
+    padding-top: 6px;
+}
+
+*[class*="Quellcode"]:last-child{
+    padding-bottom: 6px;
+}
+
+.visited-search-highlight {
+	outline: 1px dashed grey;
+}
+
+#c1searchFilterBlock {
+	float: left;
+	width: 75%;
+}
+
+#fs-search-feature-jump-to-previous, #fs-search-feature-jump-to-next {
+	display: block;
+    position: absolute;
+}
+
+#c1searchButtonGo {
+	right: 64px !important;
+}
+
+#c1searchButtonHelp {
+	right: 48px !important;
+}
+
+#c1searchButtonHighlight {
+	right: 32px !important;
+}
+
+table[class*="TabelleKopfOben"] thead tr *, table[class*="Matrix"] thead tr *, table[class*="Matrix"] tbody tr td:first-child, table[class*="Matrix"] tbody tr td:first-child *, table[class*="TabelleKopfLinks"] td:first-child, table[class*="TabelleKopfLinks"] td:first-child * {
+    background: #E1EAF6 !important;
+    color: black !important;
+    font-family: "Segoe UI",Arial,sans-serif !important;
+    text-align: left !important;
+    text-shadow: 1px 1px 1px grey !important;
+}
+
+table[class*="TabelleKopf"] * td, table[class*="TabelleMatrix"] * td {
+    border: 1px solid lightgray !important;
+}
+
+*[style*="Segoe UI Semibold"], strong{
+    text-shadow: 1px 1px 1px grey !important;
+}
+
+img[alt*="IKAROS help start page banner image"] {
+	min-width: 100%;
+	max-width: 100%;
+    border-radius: 10px;
+}
+
+img {
+	object-fit: contain;
+	max-width: 700px;
+	max-height: 450px;
+}
+
+span.Icon img {
+	object-fit: contain;
+	max-width: 40px;
+}
+
+span.SmallIcon img {
+	object-fit: contain;
+	max-width: 20px;
+}
+
+*[class*="Caption"] {
+	font-size: 1em !important;
+	line-height: 1em !important;
+}
+
+#c1side li span.c1-toc-text {
+    padding-left: 3px;
+}
+
+#c1tabToc * ul a{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden !important;
+}
+
+#c1side, #c1sideInner, #c1sideTabs, #c1tabToc {
+    overflow-x: visible;
+}
+
+#c1toc>li{	
+	margin:1px 0;
+	border-top:2px solid #E1EAF6
+}
+
+#c1toc>li[class*="c1-toc-item-expanded"]:hover {	
+	margin:1px 0;
+	background-color:#f1f5fa;	
+	border-top:2px solid #E1EAF6
+}
+
+div.related-topics-header a.topic-link {
+	font-size: 1em !important;
+	padding-left: 0.3em;
+}
+
+div.related-topics-header a.topic-link:after{
+    content: "";
+}
+
+table[class*="TabelleKopfOben"], table[class*="TabelleMatrix"], table[class*="TabelleNurRahmenlinien"] {
+		width: auto !important;
+		min-width: 50%;
+		max-width: 90%;
+}
+
+table[class*="TabelleKopfOben"] *, table[class*="TabelleMatrix"] *, table[class*="TabelleNurRahmenlinien"] *  {
+	width: auto !important;
+}
+
+button span:first-child {
+    display: none;
+}
+
+button[data-c1-role="buttons.home"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/home.png');
+}
+
+button[data-c1-role="buttons.next"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/next.png');
+}
+
+button[data-c1-role="buttons.prev"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/previous.png');
+}
+
+button[data-c1-role="buttons.print"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/printer.png');
+}
+
+button[data-c1-role="buttons.collapseTocEntries"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/CollapseTableOfContents_32x32.png');
+}
+
+button[data-c1-role="buttons.openChapterById"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/Search_32x32.png');
+}
+
+button[data-c1-role="buttons.loadAllSubchapters"] span:before {
+    display: block;
+    content: url('../../themes/FSNetHelpTheme/images/LoadAllSubChapters_32x32.png');
+}
+
+#c1topicPanel {
+    margin-top: 68px;
+	top:2.55em;
+}
+
+#c1side {
+    margin-top: 100px;
+	margin-left: 0px;
+}
+
+#c1content {
+    overflow: visible !important;
+    margin-left: -0.9em;
+}
+
+[dir="rtl"] #c1content{
+    right:318px;
+}
+
+#c1toc>li>a>span.c1-toc-text{
+    font-size: 1.3em;
+}
+
+#c1toc > li > ul > li.c1-toc-item {
+    margin-left: -1em;
+}
+
+#c1toc > li:first-child > a .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/Help2.png") " ";
+}
+
+/* IKAROS: Willkommenseite und Doku Web-Oberfläche */
+
+.c1-toc-item a[href*="fs_ded6f7f656e3.html"] + ul > li > a .c1-toc-icon  {
+    display: none;
+}
+
+.c1-toc-item a[href*="fs_052273a8d625.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/home_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_99b7309ff4d7.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/windowDialog_16x16.png") " ";
+}
+
+/* IKAROS: Aktenbearbeitung */
+
+.c1-toc-item a[href*="fs_3caff64b7ebb.html"] .c1-toc-icon{
+    display:none;
+}
+
+.c1-toc-item a[href*="fs_3caff64b7ebb.html"] + ul {
+	margin-left: 3em;
+}
+
+.c1-toc-item a[href*="fs_3caff64b7ebb.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/CaseManagement_32x32.png") " ";
+}
+
+/* IKAROS: Beteiligte  */
+
+.c1-toc-item a[href*="fs_71b3e69b7aa4.html"] + ul {
+	margin-left: 3em;
+}
+
+.c1-toc-item a[href*="fs_71b3e69b7aa4.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/Parties_32x32.png") " ";
+}
+
+
+/* IKAROS: Finanzmodule (Buchungserfassung, Fibu-Export, Abrechnung, E-Banking, SEPA-Lastschrift-Mandate) */
+
+.c1-toc-item a[href*="fs_988fc4e42aa4.html"] + ul > li > a .c1-toc-icon  {
+    display: none;
+}
+
+.c1-toc-item a[href*="fs_988fc4e42aa4.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/FinanceModules_32x32.png") " ";
+}
+
+.c1-toc-item a[href*="fs_f1782985b5eb.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/BookingBatch_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_d354e75a6fc3.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/GeneralLedgerExport_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_a88809648780.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/Clearing_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_6dec80530b19.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/Ebanking_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_a887079230e6.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/Apps_16x16.png") " ";
+}
+
+/* IKAROS: Datenaustausch (Import, Auskunfteien, GMV, ERV, Apps */
+
+.c1-toc-item a[href*="fs_8f6571e99c58.html"] + ul > li > a .c1-toc-icon  {
+    display: none;
+}
+
+.c1-toc-item a[href*="fs_8f6571e99c58.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/DataExchange_32x32.png") " ";
+}
+
+.c1-toc-item a[href*="fs_0d25b1ea8239.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/Import_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_d17861b4d164.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/CreditAgency_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_ffa74c47a115.html"] .c1-toc-text:before, .c1-toc-item a[href*="fs_d50fe5dd9520.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/JudicialDunningProcedure_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_f05c59cac885.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/Elt_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_5002487f437f.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/Apps_16x16.png") " ";
+}
+
+/* IKAROS: Zusatzmodule (Output-Management, Dokumente ins DMS übertragen */
+
+.c1-toc-item a[href*="fs_bbf42722d95f.html"] + ul > li > a .c1-toc-icon  {
+    display: none;
+}
+
+.c1-toc-item a[href*="fs_bbf42722d95f.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/AdditionalModules_32x32.png") " ";
+}
+
+.c1-toc-item a[href*="fs_bfe990f275b6.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/OutputManagement_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_370a42251c42.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/OutputManagementSystem_16x16.png") " ";
+    margin-left: -1.6em;
+}
+
+.c1-toc-item a[href*="fs_ba56237b249a.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/PrinterSpoolerJobOverview_16x16.png") " ";
+    margin-left: -1.6em;
+}
+
+.c1-toc-item a[href*="fs_bc1587084304.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/PrinterSpooler_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_6110edb10bc4.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/DmsMigrator_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_673489a26a32.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/ExpertSystem_16x16.png") " ";
+}
+
+/* IKAROS: Stammdatenbearbeitung */
+
+.c1-toc-item a[href*="fs_70fe5f590760.html"] + ul {
+	margin-left: 3em;
+}
+
+.c1-toc-item a[href*="fs_70fe5f590760.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/MasterDataManagement_32x32.png") " ";
+}
+
+/* Custom Code: 6-0 = Programmierhandbuch, 6-1 = Dokumentengenerierung G4*/
+
+.c1-toc-item a[href*="fs_4558dfe46399.html"] + ul {
+	margin-left: 3em;
+}
+
+.c1-toc-item a[href*="fs_4558dfe46399.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/CustomCodeIde_32x32.png") " ";
+}
+
+/* IKAROS: Administration (Administrationsmodul, Installationsanleitung) */
+.c1-toc-item a[href*="fs_bf7de1f48af7.html"] + ul > li > a .c1-toc-icon  {
+    display: none;
+}
+
+.c1-toc-item a[href*="fs_bf7de1f48af7.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/AdministrationModule_32x32.png") " ";
+}
+
+.c1-toc-item a[href*="fs_79bbd6cdb333.html"] .c1-toc-text:before  {
+    content: url("../../themes/FSNetHelpTheme/images/AdministrationModule_16x16.png") " ";
+}
+
+.c1-toc-item a[href*="fs_a9d6e4621b0e.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/installation_16x16.png") " ";
+}
+
+/* Service-Schnittstellen */
+.c1-toc-item a[href*="fs_092b4eb86811.html"] .c1-toc-text:before {
+    content: url("../../themes/FSNetHelpTheme/images/ServiceInterfaces_16x16.png") " ";
+}
+
+#c1side li > ul{
+    padding-left: 4px;
+}
+
+#c1toc > li > .inner > .c1-toc-text{
+    top:8px;
+    position:relative;
+    display: block;
+    margin-left:20px;
+    margin-bottom: 10px;
+}
+
+.c1-toc-text, .c1-index-text, .c1-search-text {
+    color: #1E395B !important;
+}
+
+h3[role="tab"] a {
+    color: black;
+}
+
+button[role="button"] {
+    overflow: hidden;
+}
+
+.ui-button-text {
+    color: #385070;
+}
+
+#c1toc > li > .inner > .c1-toc-text:before{
+    margin-left:-40px;
+    float:left;
+    top: -8px;
+    position: relative
+}
+
+#c1tabSearchLabel:before {
+	content: url("../../themes/FSNetHelpTheme/images/search.png") " ";
+}
+
+#c1tabTocLabel:before {
+	content: url("../../themes/FSNetHelpTheme/images/help.png") " ";
+}
+
+#c1index {
+    counter-reset: index-matches;
+}
+
+.c1-index-item .c1-index-text{
+      counter-increment: index-matches;
+}
+
+#c1index > li:first-child {
+    margin-top: 1em;
+}
+
+#c1index > li:last-child:after {
+    content: "(" counter(index-matches) ")";
+    display: block;
+    color: grey;
+    position: absolute;
+    top: 0;
+}
+
+#c1tabIndexLabel:before {
+	content: url("../../themes/FSNetHelpTheme/images/index.png") " ";
+}
+
+#c1tabTocLabel, #c1tabIndexLabel, #c1tabSearchLabel  {
+	font-size: 1.3em;
+}
+
+#c1tabSearchLabel:before {
+	content: url("../../themes/FSNetHelpTheme/images/search.png") " ";
+}
+
+#c1tabTocLabel:before {
+	content: url("../../themes/FSNetHelpTheme/images/help.png") " ";
+}
+
+#c1tabIndexLabel:before {
+	content: url("../../themes/FSNetHelpTheme/images/index.png") " ";
+}
+
+#c1sideInner,#c1contentInner{	
+	border-collapse: collapse;
+	border-right: 1px solid #AAA;
+}
+
+.c1-index-selected,.c1-search-selected{
+    display:block;
+    outline:1px solid #9cadf6;
+	overflow:hidden;
+	background-color: #cbe1fc;
+    font-weight:normal;
+}
+
+a.topic-link:after,
+a.topiclink:after {
+    content: " " url('../../themes/FSNetHelpTheme/images/hyperlink.png');
+}
+
+a.topic-link, a.topic-link span[style*="FONT-SIZE"],
+a.topiclink, a.topiclink span[style*="FONT-SIZE"] {
+        font-size: 0px !important;
+}
+
+@media screen {
+    .fs-open-in-new-window:after {
+		content: " " url('../../themes/FSNetHelpTheme/images/hyperlink_OpenInNewWindow.png');
+	}
+
+	.fs-open-in-new-window {
+        font-size: 0px !important;
+	}
+	
+    #c1contentInner #c1topic {
+        padding: 0 3em;
+    }	
+}
+
+@media print{
+	#c1topic a, #c1topic a span{
+		color: inherit !important;
+		text-decoration: none;
+	}
+    
+	#c1topic a:after{    
+        filter: grayscale(1);
+    }
+	
+	#fs-ribbonGroup-navigation, #fs-ribbonGroup-actions, #fs-ribbonGroup-chapters {
+		display: none;
+	}
+    
+	p, tr, thead, th {
+		page-break-inside: avoid;
+	}
+    
+	table * {
+		font-size: 1em !important;
+	}
+	
+	div[id*="c1"] {
+		border-right: none !important;
+	}
+}
+
+/* end IKAROS HTML-Help special */
+
+
+/* Global styles */
+body {
+    font-family: "Segoe UI",Arial,sans-serif !important;
+    font-size: 0.8em !important;
+	background: #dfeaf7;
+}
+
+/* Page header styles */
+#c1headerLogoCell {
+    display:none;
+	padding:0 20px 0 0;
+}
+
+#c1headerLogoCell > img {
+    display:none;
+    z-index:1;
+}
+
+#c1headerTextCell {
+    /*vertical-align: middle;*/
+    /*padding-left: 40%;*/
+}
+
+#c1headerText {
+    margin: 0;
+    z-index:2;
+    color: #9ac5ff;
+    text-shadow: 1px 1px #5d5d5d;
+    padding-left: 1%;
+}
+
+#c1header{
+	height:50px;
+	width:100%;
+	border:none;	
+	background:linear-gradient(to right,#E1EAF6,#FFF,#E1EAF6);	
+}
+
+#c1headerPanel{
+	width:100%
+}
+
+#c1splitter {
+    margin-left: 0.1em;
+}
+
+#c1splitter:hover {
+    background-color: unset !important;
+}
+
+#c1splitterIcon {
+    border: 1px solid grey;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1px 2px 1px grey;
+}
+
+#c1splitterIconHide, #c1splitterIconShow, #c1splitterButton {
+    display: none !important;
+}
+
+/* Links styles */
+#c1topicPanel a[href],
+#c1topicPanel a[data-ref],
+.topic-popup a[href],
+.topic-popup a[data-ref],
+.aklinks-menu a {
+    color: rgba(0, 85, 185, 1);
+    text-decoration: none;
+}
+#c1topicPanel a[href]:hover,
+#c1topicPanel a[data-ref]:hover,
+.topic-popup a[href]:hover,
+.topic-popup a[data-ref]:hover,
+.aklinks-menu a:hover {
+    text-decoration: underline;
+}
+
+span.MsoHyperlink {text-decoration: none !important; color: inherit !important;}
+
+/* Breadcrumbs styles */
+#c1breadcrumbs {
+    font-size: 0.9em;
+}
+
+/* Side tabs block styles */
+#c1sideTabs {
+    font-size: 0.9em;
+}

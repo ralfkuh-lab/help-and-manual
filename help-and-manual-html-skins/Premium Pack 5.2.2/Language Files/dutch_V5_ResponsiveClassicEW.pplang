@@ -1,0 +1,141 @@
+﻿# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp49_responsiveclassicew
+PP_DESCRIPTION=V5 Responsive Classic eWriter skins (HM 7, 8 and 9)
+
+[General Settings]
+ERROR_NOTFOUND=FOUT Topic Niet Gevonden$T$
+NOJS_WARNING=Schakel javascript in, in uw Internet Explorer Opties om deze documentatie te bekijken.$T$
+CODESAMPLE_NOCOPY=Sorry, kan niet kopiëren naar het klembord met deze browser!$T$
+CODESAMPLE_COPIED=Gekopieerd!$T$
+
+[Header & Footer]
+HEADERLOGO_TITLE=Help & Manual Website$T$
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=Geen inhoudsopgave voor deze topic$T$
+ATOC_BTNTIP_ON=Inhoudsopgave van de topic$T$
+ATOC_TIP=Ga naar:&nbsp;$T$
+ATOC_TITLE=Schuiven$T$
+ATOC_TOP=Schuif naar begin van pagina$T$
+ATOC_TOPTIP=Spring naar begin van pagina$T$
+
+[Topic Pane]
+BREAD_LABEL=Navigatie:$T$
+BREAD_NOTOPIC=Geen topics boven dit niveau$T$
+BREAD_NOTOCENTRY=No TOC entry for this topic$T$
+
+[Button Texts]
+BTNTEXT_LTABLE=Tik om de tabel te bekijken$T$
+BTNTEXT_NEXTTIP=Naar de volgende topic$T$
+BTNTEXT_NEXT=Volgende$T$
+BTNTEXT_NEXTNO=Dit is de laatste topic$T$
+BTNTEXT_PREVTIP=Naar de vorige topic$T$
+BTNTEXT_PREV=Vorige$T$
+BTNTEXT_PREVNO=Dit is de eerste topic$T$
+BTNTEXT_HOMETIP=Ga naar de startpagina$T$
+BTNTEXT_HOME=Startpagina$T$
+BTNTEXT_HOMENO=Geen topics boven dit niveau$T$
+
+[Hamburger Menu]
+HMBTEXT_TOGGLES=Toon/Verberg Uitvouwbare Tekst$T$
+HMBTEXT_TOGGLES_SHOW=Toon Uitvouwbare Tekst$T$
+HMBTEXT_TOGGLES_HIDE=Verberg Uitvouwbare Tekst$T$
+HMBTEXT_TOGGLESTIP=Toon/Verberg Uitvouwbare Tekstblokken op Pagina$T$
+HMBTEXT_HEADER=Toon/Verberg Paginakoptekst$T$
+HMBTEXT_HEADER_SHOW=Toon Paginakoptekst$T$
+HMBTEXT_HEADER_SHOWTIP=Toon de banner hoofding bovenaan de pagina$T$
+HMBTEXT_HEADER_HIDE=Verberg Paginakoptekst$T$
+HMBTEXT_HEADER_HIDETIP=Verberg de banner hoofding bovenaan de pagina$T$
+HMBTEXT_TEXTMINUS=Kleinere Tekst$T$
+HMBTEXT_TEXTPLUS=Grotere tekst$T$
+HMBTEXT_TEXTPLUSTIP=Tekengrootte vergroten$T$
+HMBTEXT_TEXTMINUSTIP=Tekengrootte verkleinen$T$
+HMBTEXT_PRINT=Afdrukbare Versie$T$
+HMBTEXT_PRINTTIP=Een afdrukbarer versie van huidige topic weergeven$T$
+HMBTEXT_MAIL=E-mail Feedback versturen$T$
+HMBTEXT_MAILTIP=Verstuur E-Mail met Feedback over deze Topic$T$
+HMBTEXT_TITLE=Meer$T$
+HMBTEXT_TITLETIP=Menu Bijkomende Functies$T$
+
+[TOC, Index and Search]
+IDXTEXT_CLICKTIP=Selecteer sub-trefwoorden van deze invoer om verwijzingen te zien naar$T$
+IDXTEXT_NOTFOUND=Niet gevonden!$T$
+IDXTEXT_SEARCHMODE=Vanaf begin van woord$T$
+IDXTEXT_SEARCHBUTTON=Zoek:$T$
+SEARCH_HOWTO=Een of meer trefwoorden opgeven om te zoeken ('*' en '?' jokertekens worden ondersteund):$T$
+SEARCH_JSWARN=JavaScript moet zijn ingeschakeld om te zoeken in deze documentatie.$T$
+
+[Tab Texts]
+TABTEXT_TOCTAB=Inhoud$T$
+TABTEXT_TOCTABTIP=Inhoudsopgave$T$
+TABTEXT_NAVPANE=Toon/Verberg Inhoud$T$
+TABTEXT_INDEXTAB=Index$T$
+TABTEXT_INDEXTABTIP=Trefwoordindex$T$
+TABTEXT_SEARCHTAB=Zoeken$T$
+TABTEXT_SEARCHTABTIP=Zoeken in Topics$T$
+
+[Mail Feedback]
+FB_BODY=Beste Ondersteuningsteam,$T$
+FB_NOJS=Documentatie%20Feedback$T$
+FB_REF=Referte:$T$
+FB_SUBJ=Feedback over:$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=and or the it is an on we us to of has be all for in as so are that can you at its by have with into$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_FORM_SEARCHFOR=Zoek naar:$T$
+STR_FORM_SUBMIT_BUTTON=Verzend$T$
+STR_FORM_RESULTS_PER_PAGE=Resultaten per pagina:$T$
+STR_FORM_MATCH=Overeenkomsten:$T$
+STR_FORM_ANY_SEARCH_WORDS=ieder trefwoord$T$
+STR_FORM_ALL_SEARCH_WORDS=alle trefwoorden$T$
+STR_NO_QUERY=Geen trefwoorden ingevoerd.$T$
+STR_RESULTS_FOR=Gevonden resultaten voor:$T$
+STR_NO_RESULTS=Geen resultaten$T$
+STR_RESULT=resultaat$T$
+STR_RESULTS=resultaten$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=De volgende zin bevat vrij vaak in deze website gebruikte woorden. Het resultaat is dat er teveel zoekresultaten getoond worden. Geef a.u.b. een meer verfijnde zoekvraag voor betere resultaten.$T$
+STR_SKIPPED_FOLLOWING_WORDS=De (Het) volgende woord(en) worden overgeslagen:$T$
+STR_SKIPPED_PHRASE=Opgelet: U kunt geen zoekvraag beginnen met een woord welke overgeslagen wordt.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=Geen resultaten gevonden.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=Gevonden, bevattend alle trefwoorden.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=Gevonden, bevattend enkele trefwoorden.$T$
+STR_SUMMARY_FOUND=Gevonden.$T$
+STR_PAGES_OF_RESULTS=Pagina's met resultaten.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=U krijgt waarschijnlijk meer, en/of betere, resultaten als u zoekt op$T$
+STR_ANY_OF_TERMS=ieder trefwoord apart$T$
+STR_DIDYOUMEAN=Bedoelt u misschien:$T$
+STR_SORTEDBY_RELEVANCE=Gesorteerd op relevantie$T$
+STR_SORTBY_RELEVANCE=Gesorteerd op relevantie$T$
+STR_SORTBY_DATE=Gesorteerd op datum$T$
+STR_SORTEDBY_DATE=Gesorteerd op datum &#9660;$T$
+STR_RESULT_TERMS_MATCHED=trefwoorden komen overeen: $T$
+STR_RESULT_SCORE=Score: $T$
+STR_RESULT_URL=URL:$T$
+STR_RESULT_PAGES=Pagina's met resultaten:$T$
+STR_RESULT_PAGES_PREVIOUS=Vorige$T$
+STR_RESULT_PAGES_NEXT=Volgende$T$

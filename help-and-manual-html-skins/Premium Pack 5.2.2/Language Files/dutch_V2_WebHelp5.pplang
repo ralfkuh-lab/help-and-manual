@@ -1,0 +1,190 @@
+﻿# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+# Dutch translation by Jacques Deseure - 29/02/2016
+
+[Premium Pack Skin Type]
+PP_TYPE=pp29_webhelp
+PP_DESCRIPTION=V2 WebHelp and WebHelp/EWriter skins PP5 (HM 7, 8 and 9)
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=Geen inhoudsopgave op deze pagina$T$
+ATOC_BTNTIP_ON=Toon/verberg inhoudsopgave$T$
+ATOC_TIP=Ga naar:&nbsp;$H$
+ATOC_TITLE=Inhoudsopgave$T$
+ATOC_TOP=Naar begin van de pagina schuiven$T$
+ATOC_TOPTIP=Naar begin van de pagina springen$T$
+
+[Breadcrumb Trail]
+BREAD_LABEL=Navigatie:$T$
+BREAD_NOTOPIC=Geen onderwerpen boven dit niveau$T$
+BREAD_TOC=Hier klikken om de Inhoudsopgave weer te geven$T$
+
+[Button Texts]
+BTNTEXT_CHAPTERTIP=Naar bovenliggend hoofdstuk$T$
+BTNTEXT_CONTENTSNOJS=Inhoud$T$
+BTNTEXT_FB=Feedback$T$
+BTNTEXT_FBTIP=Feedback e-mailen over dit onderwerp$T$
+BTNTEXT_HOME=Startpagina$T$
+BTNTEXT_HOMETIP=Naar de Startpagina$T$
+BTNTEXT_INDEXNOENTRY=Geen indexingangen die beginnen met$T$
+BTNTEXT_INDEXTABTIP=Trefwoordindex$T$
+BTNTEXT_MENU=Paginakoptekst$T$
+BTNTEXT_MENUTIP=Toon/verberg paginakoptekst$T$
+BTNTEXT_NEWTAB=Nieuw tabblad$T$
+BTNTEXT_NEWTABTIP=Open dit onderwerp in een nieuw tabblad$T$
+BTNTEXT_NEWTABTIPOFF=Hoofdtabblad selecteren om deze functie te activeren$T$
+BTNTEXT_NEXT=Volgende$T$
+BTNTEXT_NEXTTIP=Naar volgend onderwerp$T$
+BTNTEXT_PREV=Vorige$T$
+BTNTEXT_PREVTIP=Naar vorig onderwerp$T$
+BTNTEXT_PRINT=Afdrukken$T$
+BTNTEXT_PRINTTIP=Huidig onderwerp afdrukken$T$
+BTNTEXT_QSEARCH=Snel zoeken:$T$
+BTNTEXT_SEARCH=Zoeken$T$
+BTNTEXT_SEARCHTIP=Zoeken in helponderwerpen$T$
+BTNTEXT_SHARE=Delen$T$
+BTNTEXT_SHARETIP=Toon knoppen voor sociaal delen$T$
+BTNTEXT_SHARETIP_OFF=Knop delen uitgeschakeld - geregistreerde server niet gevonden$T$
+BTNTEXT_TABLEFTTIP=Volgend tabblad links$T$
+BTNTEXT_TABRIGHTTIP=Volgend tabblad rechts$T$
+BTNTEXT_TABSMENUTIP=Menu tabbladen$T$
+BTNTEXT_TOGGLE=Weergeven/Verbergen$T$
+BTNTEXT_TOGGLETIP=Toon/Verberg uitvouwbare tekst in dit onderwerp$T$
+BTNTEXT_TOPICTAB=Bladeren$T$
+BTNTEXT_TOPICTABTIP=Tabblad voor hoofdonderwerp selecteren$T$
+BTNTEXT_UNDOCK=Loskoppelen$T$
+BTNTEXT_UNDOCKTIP=Dit tabblad loskoppelen$T$
+HELP_URL_TITLE=Permalink$T$
+
+[Social Sharing]
+BTNTEXT_SHARE=Delen$T$
+BTNTEXT_SHARETIP=Toon knoppen voor sociaal delen$T$
+BTNTEXT_SHARETIP_OFF=Knop delen uitgeschakeld - geregistreerde server niet gevonden$T$
+SHARING_MAILTIP=Deel per e-mail$T$
+SHARING_TWITTERTIP=Deel op Twitter$T$
+SHARING_FACEBOOKTIP=Deel op Facebook$T$
+SHARING_LINKEDINTIP=Deel op LinkedIn$T$
+
+[Tab Texts]
+TABTEXT_CONTENTSNOJS=Inhoudsopgave$T$
+TABTEXT_CURRTOPIC=Huidig onderwerp$T$
+TABTEXT_INDEXNOJS=Index$T$
+TABTEXT_INDEXTAB=Trefwoordindex$T$
+TABTEXT_INDEXTABTIP=Dubbelklikken om tabblad Index los te koppelen$T$
+TABTEXT_NOUNDOCKTIP=U kunt het hoofdtabblad (niet) loskoppelen$T$
+TABTEXT_SEARCHTAB=Zoeken$T$
+TABTEXT_SEARCHTABTIP=Dubbelklikken om het tabblad Zoeken los te koppelen$T$
+TABTEXT_TABCLOSETIP=Dit tabblad sluiten$T$
+TABTEXT_TABOPENTIP=Dit onderwerp is al geopend in een bijkomend tabblad$T$
+TABTEXT_TOPICTAB=Onderwerptekst$T$
+TABTEXT_WEBFILE=Webbestand$T$
+
+[Mail Feedback]
+FB_BODY=Beste Ondersteuningsteam,$T$
+FB_NOJS=Documentatie%20Feedback$T$
+FB_SUBJ=Feedback over:$T$
+FB_TIP=Feedback e-mailen over dit onderwerp$T$
+
+[Permalink]
+HELP_URL_BOOKMARK=Onderwerp bookmarken$T$
+HELP_URL_CLOSE=Dialoogvenster sluiten$T$
+HELP_URL_COPIED=Permalink gekopieerd naar het klembord:$T$
+HELP_URL_COPY=Kopieer permalink over dit onderwerp$T$
+HELP_URL_MANCOPY=Automatisch kopiëren niet ondersteund in uw browserconfiguratie. <br />Rechtsklikken op de permalink om te kopiëren.$H$
+HELP_URL_NOSERVER=Geen webserver. Rechtsklikken op de geselecteerde permalink hieronder om te kopiëren.$T$
+HELP_URL_SELECT=Permalink kopiëren$T$
+HELP_URL_SERVER=Deze pagina is lokaal opgeslagen. U kunt alleen pagina's op een webserver bookmarken.$T$
+HELP_URL_SORRY=Uw browser kan geen pagina's bookmarken met deze functie. Rechtsklikken om de permalink te kopiëren, vervolgens op Ctrl+D drukken om het onderwerp te bookmarken met de gekopieerde permalink.$T$
+HELP_URL_TITLE=Permalink$T$
+
+[TOC, Index and Search]
+BTNTEXT_INDEXFIRSTSEARCH=Eerste woord$T$
+BTNTEXT_INDEXFULLSEARCH=Tekst geheel doorzoeken$T$
+BTNTEXT_INDEXSEARCH=Zoektrefwoorden$T$
+BTNTEXT_INDEXSEARCHTIP=Opnieuw klikken of drukken op Enter om naar het volgende gemarkeerde item te schuiven$T$
+BTNTEXT_INDEXTAB=Index$T$
+BTNTEXT_INDEXWORDSEARCH=Woord om het even waar$T$
+BTNTEXT_KWINSTANTSEARCH=Direct zoeken$T$
+NAVPANE_HIDETIP=Verberg inhoudsdeelvenster$T$
+NAVPANE_SHOWTIP=Toon inhoudsdeelvenster$T$
+SEARCH_INSTRUCTIONS=Een of meer trefwoorden opgeven om te zoeken ('*' en '?' jokertekens worden ondersteund):$T$
+SEARCH_JSTIP=JavaScript moet ingeschakeld zijn om in deze documentatie te zoeken.$T$
+SUBTITLE=Premium Pack 5$T$
+
+[Misc. Interface Elements]
+CODESAMPLE_COPIED=Gekopieerd!$T$
+CODESAMPLE_NOCOPY=Sorry, kan niet kopiëren naar het klembord met deze browser$T$
+ZOOM_TIP=Klikken om afbeelding op ware grootte weer te geven$T$
+
+[Sortable Tables]
+SORT_SORTTIP=Klikkenn om deze kolom te sorteren$T$
+
+[Google Analytics]
+GA_EXITLABEL=exit_link$T$
+GA_FILELABEL=file_link$T$
+GA_SEARCHCLICKLABEL=search_click$T$
+GA_SEARCHLABEL=search_term$T$
+GA_TOCCLICKLABEL=toc_click$T$
+GA_TOCWEBLABEL=toc_weblink$T$
+GA_TOPICLINKLABEL=topic_link$T$
+GA_WEBLABEL=web_link$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=en of de het is een op wij ons naar van hebben zijn alle voor in als zo dat kan kunnen jij door met in$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_ALL_CATS=All categories$T$
+STR_ANY_OF_TERMS=ieder trefwoord apart$T$
+STR_CAT_SUMMARY=Search in a category:$T$
+STR_DIDYOUMEAN=Bedoelt u misschien:$T$
+STR_FORM_ALL_SEARCH_WORDS=alle trefwoorden$T$
+STR_FORM_ANY_SEARCH_WORDS=ieder trefwoord$T$
+STR_FORM_MATCH=Overeenkomsten:$T$
+STR_FORM_RESULTS_PER_PAGE=Resultaten per pagina:$T$
+STR_FORM_SEARCHFOR=Zoek naar:$T$
+STR_FORM_SUBMIT_BUTTON=Verzend$T$
+STR_NO_QUERY=Geen trefwoorden ingevoerd.$T$
+STR_NO_RESULTS=Geen resultaten$T$
+STR_PAGES_OF_RESULTS=Pagina's met resultaten.$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=De volgende zin bevat vrij vaak in deze website gebruikte woorden. Het resultaat is dat er teveel zoekresultaten getoond worden. Geef a.u.b. een meer verfijnde zoekvraag voor betere resultaten.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=U krijgt waarschijnlijk meer, en/of betere, resultaten als u zoekt op$T$
+STR_RESULT=resultaat$T$
+STR_RESULTS=resultaten$T$
+STR_RESULTS_FOR=Gevonden resultaten voor:$T$
+STR_RESULT_PAGES=Pagina's met resultaten:$T$
+STR_RESULT_PAGES_NEXT=Volgende$T$
+STR_RESULT_PAGES_PREVIOUS=Vorige$T$
+STR_RESULT_SCORE=Score: $T$
+STR_RESULT_TERMS_MATCHED=trefwoorden komen overeen: $T$
+STR_RESULT_URL=URL:$T$
+STR_SKIPPED_FOLLOWING_WORDS=De (Het) volgende woord(en) worden overgeslagen:$T$
+STR_SKIPPED_PHRASE=Opgelet: U kunt geen zoekvraag beginnen met een woord welke overgeslagen wordt.$T$
+STR_SORTBY_DATE=Gesorteerd op datum$T$
+STR_SORTBY_RELEVANCE=Gesorteerd op relevantie$T$
+STR_SORTEDBY_DATE=Gesorteerd op datum &#9660;$T$
+STR_SORTEDBY_RELEVANCE=Gesorteerd op relevantie$T$
+STR_SUMMARY_FOUND=Gevonden.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=Gevonden, bevattend alle trefwoorden.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=Gevonden, bevattend enkele trefwoorden.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=Geen resultaten gevonden.$T$

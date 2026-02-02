@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.608Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Dialoge für Transportvorgaben</title>
+  <keywords>
+    <keyword>Transportvorgaben</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Dialoge für Transportvorgaben</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Zusammenhänge</para>
+    <para styleclass="Normal"><text styleclass="Strong">Transportvorgaben</text> sind Einstellungen, die das Verhalten für folgende Bestandteile des Transportprozesses festlegen:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Extrahieren der Artefakte aus dem Quellsystem beim Generieren von Paketdateien („Export“ aus dem Quellsystem)</li>
+      <li styleclass="Aufzählung1">Installieren der Artefakte in das Zielsystem („Import“ in das IKAROS-Zielsystem)</li>
+    </list>
+    <para styleclass="Normal">Die Vorgaben sind notwendig, da die Artefakte in Massenprozessen gesammelt und installiert werden und das TRMS und IKAROS dabei nicht für jeden Zweifelsfall (z. B. abhängige Objekte mit ins Paket aufnehmen?) oder Konfliktfall (vorhandenes Objekt überschreiben?) eine Meldung anzeigen sollen.</para>
+    <para styleclass="Normal">Für jedes einzelne Artefakt werden vom TRMS zunächst die Standard-Transportvorgaben eingestellt, Sie können diese jedoch für jedes Artefakt manuell ändern. Mit der Schaltfläche „<text styleclass="Strong">Für alle übernehmen</text>“ können Sie die angezeigten Transportvorgaben auf alle gegenwärtig als ausgewählt markierten Artefakte derselben Gruppe übertragen (auf danach neu ausgewählte Artefakte wirkt sich dies hingegen nicht aus. Die Schaltfläche ist nicht verfügbar, wenn die Transportvorgaben aus der Übersicht der gewählten Artefakte heraus <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_d84060bf97c3" styleclass="Hyperlink">[Link]</link> aufgerufen werden).</para>
+    <para styleclass="Normal">Welche Vorgaben Sie im Dialog für die Transportvorgaben einstellen können, hängt vom Typ des Artefakts ab.</para>
+    <para styleclass="Normal">Sie können den Dialog mit den Transportvorgaben für ein Artefakt an zwei Stellen aufrufen und die Vorgaben bearbeiten:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Per Schaltfläche „<text styleclass="Strong">Transportvorgaben</text>“ im Artefaktpaket-Assistenten sowie</li>
+      <li styleclass="Aufzählung1">durch Aufruf eines bestimmten Artefakts im Dialog mit der Übersicht der Artefakte (Schaltfläche „<text styleclass="Strong">Übersicht anzeigen</text>“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_d84060bf97c3" styleclass="Hyperlink">[Link]</link>).</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Gruppe „Weitere Artefakte“</para>
+    <para styleclass="Normal">Die folgenden Vorgaben sind für alle Artefakte verfügbar, zu denen in der Logikschicht von IKAROS („Business Objekt Model“) eigene Objektklassen existieren (z. B. Vorgangsvorlagen, EP-Verträge usw.).</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img41.png" scale="100.00%" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 12: Vorgaben für Artefakte, zu denen Objektklassen in der IKAROS-Logik existieren</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Unter-Artefakte beim Export einschließen</text>“ (oder ähnlich lautend): Legt fest, dass zu einem Artefakt gehörige abhängige Artefakte automatisch mit transportiert werden sollen (beispielsweise bei Aktenvorgangsvorlagen die Aktenvorgangsvorlagenkategorien oder bei Kostentabellen die dazugehörigen Einträge).</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Falls alle Unterartefakte fest zum Artefakt gehören, werden diese immer mittransportiert. Das Kontrollkästchen ist in diesem Fall deaktiviert, aber gefüllt. Dies gilt auch für Artefakte, deren Unterartefakte lediglich Übersetzungen sind.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Ob im Kontrollkästchen ein Häkchen voreingestellt ist, unterscheidet sich zwischen Artefakt-Type. Beispielsweise bei Corporate Designs ist das Häkchen standardmäßig <text styleclass="Strong">nicht</text> gesetzt, bei Aktenvorgangsvorlagen hingegen schon.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Bei einigen Artefakten ist das Kontrollkästchen individueller beschriftet. Beispielsweise bei Kalendern „<text styleclass="Strong">Die Sachbearbeiter, die zum Kalender zugewiesen sind, beim Export einschließen</text>“. Funktional ist das Kontrollkästchen identisch.</li>
+      </list>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Artefakt beim Import überschreiben, wenn schon vorhanden</text>“: Legt fest, ob das Artefakt überschrieben werden soll, falls es bereits im Zielsystem vorhanden ist. Hierbei werden für die Gleichheitsprüfung sowohl technische Primärschlüssel (meistens GUIDs) als auch sprechende Schlüssel (z. B. Kürzel wie bei Vorgangsvorlagen) herangezogen.</li>
+    </list>
+    <para styleclass="Einzug1">Umgang mit Unterartefakten beim Überschreiben: Falls das Überschreiben aktiviert ist, wird das Artefakt selbst im Zielsystem aktualisiert. Das Verhalten im Umgang mit <text styleclass="Strong">Unterartefakten</text> im Zielsystem hängt von der Transportvorgabe „<text styleclass="Strong">Unterartefakte beim Export einschließen</text>“ ab:</para>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;"><text styleclass="Strong">Unterartefakte eingeschlossen</text> (Häkchen gesetzt): Alle Unterartefakt aus dem Zielsystem werden so angepasst (aktualisiert, hinzugefügt oder gelöscht), dass sie dem Zustand aus dem transportierten Paket entsprechen. D. h. eventuell vorhandene werden gelöscht oder geändert und neue werden ergänzt.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;"><text styleclass="Strong">Keine Unterartefakte</text> (kein Häkchen): Es wird nur das übergeordnete Artefakt aktualisiert. Zum Beispiel bei einem Kostenvertrag würden dadurch alle Vertragspositionen im Zielsystem unverändert bleiben (keine Änderungen, Löschungen oder Ergänzungen).</li>
+      </list>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Typ „Listenansichten“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img42.png" scale="100.00%" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 13: Transportvorgaben für Listenansichten</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen ‚<text styleclass="Strong">Eigenschaft „Standard-Ansicht für Bereich‘ übernehmen, falls aktiv.</text>‘ und ‚<text styleclass="Strong">Eigenschaft „Standard für ‘Favoriten‚ und ‘Zuletzt besuchte Einträge‚ übernehmen, falls aktiv.</text>‘: Legt fest, dass der jeweilige Standard-Status auch im Zielsystem zum transportierten Artefakt verschoben wird, falls das Artefakt auch im Quellsystem diesen Status hat. Wenn die Option nicht angehakt ist (oder das Artefakt gar nicht den Standard-Status hat), wird das Artefakt ebenfalls transportiert, aber im Zielsystem nicht zum jeweiligen Standard gemacht.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Typ „Dialog-Layouts“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img43.png" scale="100.00%" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 14: Transportvorgaben für Dialog-Layouts</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen ‚<text styleclass="Strong">Eigenschaft „Standard-Layout für Dialog‘ übernehmen, falls aktiv.</text>‘: Legt fest, dass der jeweilige Standard-Status auch im Zielsystem zum transportierten Artefakt verschoben wird, falls das Artefakt auch im Quellsystem diesen Status hat. Wenn die Option nicht angehakt ist (oder das Artefakt gar nicht den Standard-Status hat), wird das Artefakt ebenfalls transportiert, aber im Zielsystem nicht zum jeweiligen Standard gemacht.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Typ „Expertensystem-Experten“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img44.png" scale="100.00%" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 15: Transportvorgaben für Expertensystem-Experten</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Unterartefakte beim Export einschließen</text>“ ist immer ausgewählt, weil die Merkmale und Klassen, die in der Expertendefinition verwendet werden, immer mit transportiert werden.</li>
+    </list>
+    <para styleclass="Einzug2">Hinweis: Das Generierungsprotokoll des Experten wird nie transportiert, weil es für die eigentliche Verwendung nicht erforderlich ist und es außerdem Verknüpfungen zu Akten enthalten könnte, die es im Zielsystem des Transports gar nicht gibt.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Experten-Selektion beim Export einschließen.</text>“: Legt fest, ob die im Experten definierten Filterkriterien („Selektion“) mittransportiert werden sollen. Diese sind nur für das initiale Lernen/Generieren des Experten relevant. Für seine tatsächliche Verwendung in Akten nach der Generierung sind sie nicht erforderlich.</li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Artefakt beim Import überschreiben, wenn schon vorhanden</text>“: Legt fest, ob der Experte im Zielsystem überschrieben werden soll, wenn er dort schon vorhanden ist. Dabei werden nicht nur die Merkmale und Klassen des Experten überschrieben, sondern es werden auch eventuell schon generierte Dateien (z. B. LearningData.csv) gelöscht.</li>
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Generierte Expertendaten beim Export einschließen.</text>“: Legt fest, ob die gelernte, fertige Datenbasis des Experten (quasi sein „Wissen“) mit transportiert werden soll.</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;"><text styleclass="Strong">Kein Häkchen</text> (Standard): Das TRMS legt den Experten im Zielsystem mit Status „Angelegt“ an und das Lernen/die Generierung muss im Zielsystem neu durchgeführt werden, bevor eine Verwendung in Akten möglich ist. Das Neu-Generieren ist insbesondere dann empfehlenswert, falls die Aktenkonstellationen im Zielsystem so stark vom Quellsystem des Experten abweichen, dass das „Wissen“ des Experten für das Zielsystem keine ausreichende Aussagekraft besitzt.</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;"><text styleclass="Strong">Häkchen gesetzt</text>: Das TRMS transportiert auch die produktiven Expertendaten (sein gelerntes „Wissen“) in Form der Dateien „DecisionTree.joblib“ und „DecisionTree.pmml“. Der Experte kann im Zielsystem ohne erneuten Lern-/Generierungsprozess eingesetzt werden.</li>
+      </list>
+    </list>
+    <para styleclass="Einzug3"><text styleclass="Strong">Voraussetzung für den Transport der Expertendaten</text>: Der AppPoolBenutzer des TRMS-Anwendungs-Servers (TRMS-ServiceHost) muss direkten Schreibzugriff auf dasjenige Verzeichnis haben, dass in der <text styleclass="Strong">IKAROS</text>-Systemeinstellung „Verzeichnis für das Expertensystem“ sowohl im jeweiligen Quell- als im Zielsystem hinterlegt ist.</para>
+    <para styleclass="Einzug3">Hinweis: Die „rohen“ Lerndaten („LearningData.csv“) werden aufgrund ihrer potenziellen Größe nie transportiert.</para>
+    <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung2" style="tabstops:none;">Kontrollkästchen „<text styleclass="Strong">Sicherungskopie von generierten Expertendaten beim Überschreiben.</text>“: Diese Option ist nur aktiviert, wenn „Generierte Expertendaten beim Export einschließen.“ angehakt ist.„. Sie legt dann fest, ob für eventuell im Zielsystem vorhandene Expertendaten Sicherungskopien erhalten bleiben sollen, indem alle vorhandenen Dateien nach dem Muster “&lt;Dateiname&gt;_BACKUP&quot; umbenannt werden.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Typ „Expertensystem-Merkmale“</para>
+    <para styleclass="Normal">Artefakte des Typs „Expertensystem-Merkmale“ können auch einzeln transportiert werden (also nicht nur als Unterartefakt von „Expertensystem-Experten“).</para>
+    <para styleclass="Normal">Die Transportvorgaben beim Einzeltransport sind die beiden Standard-Optionen für die Gruppe „Weitere Artefakte“ <link displaytype="text" defaultstyle="true" type="topiclink" href="Ref213396220">Abb. 12</link>.</para>
+    <para styleclass="Normal">Verhalten der Option „<text styleclass="Strong">Unterartefakte beim Export einschließen</text>“:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Kein Häkchen</text> (Standard): Es wird nur das Merkmal selbst mit seinen Eigenschaften und seiner Custom-Code-Programmierung transportiert wird – aber <text styleclass="Strong">ohne</text> die Verweise, in welchen Experten es im Quellsystem genutzt wird.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Häkchen gesetzt</text>: Wenn Sie die Option hingegen anhaken, sind die Verweise im TRMS-Paket enthalten. Aber sie werden im Zielsystem nur angelegt, wenn die betreffenden Experten dort tatsächlich vorhanden sind. Falls nicht, wird das Merkmal trotzdem transportiert und fehlende Verweise werden im Transprotokoll notiert.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Gruppe „Dateien aus Dateisystem“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img45.png" scale="100.00%" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 16: Transportvorgaben für Dateien</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Datei beim Import überschreiben</text>“: Legt fest, ob die Datei, falls eine gleichnamige im Zielsystem bereits vorhanden ist, überschrieben werden soll. Ist diese Option nicht angehakt, wird die Datei nicht ins Zielsystem importiert, falls eine gleichnamige bereits vorhanden ist.</li>
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Mit Sicherungskopie</text>“: Soll, falls eine vorhandene Datei überschrieben wird, eine Sicherungskopie von der ursprünglichen Datei angelegt werden? Diese Option kann nur aktiviert werden, wenn das Überschreiben aktiviert ist.</li>
+    </list>
+    <para styleclass="Einzug1">Hinweis: Die Sicherungskopie wird im selben Ordner wie die ersetzte Datei abgelegt und erhält immer denselben Dateinamen: Den Namen der ersetzten Datei mit eingefügtem Ausdruck „<text styleclass="Systemzitat">_BACKUP</text>“ vor der Dateiendung (z. B. „Fs.Ikaros.Core.CustomCode.Udt.Data_BACKUP.dll“). D. h. wenn Sie den Transport einer bestimmten Datei wiederholt durchführen, wird ihre schon vorhandene Sicherungskopie wiederholt überschrieben. Vorherige Sicherungskopien gehen somit verloren.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Hinweis</text>: Beachten Sie, dass transportierte Dateien immer nur in einem Zwischenordner „\TRMS“ in der Zielumgebung abgelegt werden (Pfad: IKAROS-Systemeinstellung „Dateiablageverzeichnis des Anwendungs-Servers“ zzgl. „\TRMS“) und manuell in die produktiven Ordner verschoben werden müssen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Gruppe „Reports (MS Reporting Services)“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img46.png" scale="84.00%" width="27" height="27" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 17: Transportvorgaben für Report-Definitionen</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Artefakt beim Import überschreiben, wenn schon vorhanden</text>“: Soll der Report beim Installieren in den Zielsystemen überschrieben werden, falls er dort schon existiert?</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Reihenfolge: Datenmodell und Workflow-Artefakte</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img47.png" scale="85.00%" width="27" height="27" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 18: Reihenfolgedialog für Artefakte</para>
+    <para styleclass="Normal">Als Transportvorgabe für Datenbankobjekte, Datenbankskripte und Workflow-Artefakte können Sie in einem Dialog die Reihenfolge festlegen, in der die zugrundeliegenden SQL-Skripte/Pakete beim Transport in der Zieldatenbank ausgeführt werden.</para>
+    <para styleclass="Normal">Wenn Sie den übergeordneten Knoten „Datenmodell“ markieren und den Dialog öffnen, können Sie darin übergreifend die Reihenfolge sowohl von SQL-Skripten als auch Datenbankobjekten bestimmen.</para>
+    <para styleclass="Normal">Die Reihenfolge gilt absteigend: Zuerst wird das oberste Artefakt im Zielsystem installiert, danach das darunter usw.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Gruppe „Custom Code“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img48.png" scale="70.00%" width="22" height="22" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 19: Transportvorgaben für Custom-Code-Artefakte</para>
+    <para styleclass="Normal">Die Transportvorgaben für Custom-Code-Einrichtungen entsprechen den Optionen, die auch beim manuellen „Massenimport“ von Custom-Code-Einrichtungen in IKAROS gewählt werden können (s. Kapitel mit ID „fs_893cf53319b7“ in der IKAROS-Hilfe).</para>
+    <para styleclass="Normal">Kontrollkästchen „<text styleclass="Strong">Erforderliche Custom-Code-Module beim Export einschließen</text>“: Die Vorgabe, ob die in den Artefakten verwendete Custom-Code-Module („requiredModul()“) automatisch mitexportiert werden sollen, wird beim Export in IKAROS per Abfrage durch den Nutzer bestimmt. Im TRMS entscheidet darüber die Transportvorgabe „<text styleclass="Strong">Erforderliche Custom-Code-Module beim Export einschließen</text>“. Das Häkchen ist standardmäßig nicht gesetzt, sodass kein automatischer Export/Transport erfolgt. Module, deren Namensraum mit „Fs.“ beginnt, werden grundsätzlich nicht exportiert, weil sie in jedem IKAROS-System zum Lieferumfang gehören und nicht kundenspezifisch geändert werden können.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Gruppe „Workflow-Management“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img49.png" scale="75.00%" width="24" height="24" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 20: Transportvorgaben für Workflow-Aktualisierungs-Pakete</para>
+    <para styleclass="Normal">Die Transportvorgaben für Workflow-Artefakte entsprechen den Optionen, die auch beim manuellen Einspielen von Workflow-Paketen in IKAROS gewählt werden können (s. Kapitel mit ID „fs_46b745011973“ in der IKAROS-Hilfe).</para>
+    <para styleclass="Normal">Je nach Typ des Workflow-Artefakts sind einige der Einstellungen nicht anwendbar, weshalb die entsprechenden Optionen im Dialog deaktiviert sind.</para>
+  </body>
+</topic>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.539Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Klärungen von Begriffen aus dem TRMS-Kontext</title>
+  <keywords>
+    <keyword>Artefakt</keyword>
+    <keyword>Transport<keyword>Begriffsklärung</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Klärungen von Begriffen aus dem TRMS-Kontext</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross"> „Artefakt“</para>
+    <para styleclass="Normal">Das TRMS ist nicht dafür vorgesehen, sogenannte „Bewegungsdaten“ austauschen. D. h. um beispielsweise Akten oder Kontakte zu übertragen, müssen Sie das Importmodul von IKAROS verwenden.</para>
+    <para styleclass="Normal">Beim TRMS dreht sich, ganz im Gegenteil, alles um Elemente, die im weitesten Sinne zur kundenspezifisch beeinflussbaren technischen und fachlichen Konfiguration des IKAROS-Systems gehören (Customizing). Dies sind unter anderem:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Stammdaten (wie z. B. Verträge, Vorgangsvorlagen oder Workflows),</li>
+      <li styleclass="Aufzählung1">veränderbare Programmierungen (in Datenbank und Custom Code),</li>
+      <li styleclass="Aufzählung1">Änderungen am Datenmodell (UDFs und UDTs in der Datenbank)</li>
+      <li styleclass="Aufzählung1">Report-Definitionen</li>
+      <li styleclass="Aufzählung1">Funktionale Dateien wie DLLs</li>
+      <li styleclass="Aufzählung1">die Konfiguration der Nutzerrechte in IKAROS</li>
+    </list>
+    <para styleclass="Normal">Ein solches Element, das als kleinste Einheit per TRMS übertragen werden kann, heißt in dieser Dokumentation „Customizing-Artefakt“ oder kurz „Artefakt“.</para>
+    <para styleclass="Normal">Der Name drückt aus, dass es sich um eine abgegrenzte Einheit handelt, die sich aufgrund kundenspezifischer Anpassungen („Customizing“) potenziell zwischen verschiedenen IKAROS-Systemen unterscheiden kann.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">„Change“</para>
+    <para styleclass="Normal">Unter „Change“ wird eine Zusammenstellung von inhaltlich zusammengehörigen Artefakten verstanden. Beispielsweise von Stammdaten und Programmierungen für einen bestimmten Typ von Mandanten.</para>
+    <para styleclass="Normal">Ein Change ist die kleine Organisationseinheit für Artefakte und bietet sich an, um inhaltlich zusammenhängende Änderungen zusammenzufassen, z. B. die Elemente für die Umsetzung einer einzelnen Anforderung.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">„Change Set“</para>
+    <para styleclass="Normal">Bei einem sogenannten „Change Set“ handelt es sich im TRMS um eine Zusammenstellung, die aus Changes oder auch einzelnen Artefakten bestehen kann.</para>
+    <para styleclass="Normal">Change Sets sind als größere Organisationseinheit sowohl für Artefakte als auch beliebig viele Changes konzipiert. In einem Change Set könnten Sie alle Änderungen bündeln, die für die Umsetzung komplexerer Anforderungen notwendig sind – zum Beispiel das gesamte Customizing für bestimmte Mandantengruppen, Länder oder Geschäftseinheiten.</para>
+    <para styleclass="Normal">Alle Artefakte und Changes in einem Change Sets müssen aus demselben Quellsystem stammen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">„Paket“</para>
+    <para styleclass="Normal">Das Übertragen von Artefaktpaketen (d. h. lose oder zu Changes und Change Sets gebündelten Artefakten) erfolgt immer mittels „.trms4“-Paketdateien.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">„Transport“</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Transport <text styleclass="Strong">in ein IKAROS-System</text>: Ein „Transport“ in ein IKAROS-System besteht aus folgenden Schritten:</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Dem <text styleclass="Strong">Abfragen und Extrahieren von Artefakten</text> aus einem <text styleclass="Strong">Quellsystem</text>,</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">dem <text styleclass="Strong">Übertragen dieser Artefakte als Paketdatei</text> in eines oder mehrere IKAROS-<text styleclass="Strong">Zielsysteme</text>&#32;</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">sowie abschließend der tatsächlichen <text styleclass="Strong">Installation der Artefakte</text> in den <text styleclass="Strong">Zielsystemen</text>.</li>
+      </list>
+    </list>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Transport <text styleclass="Strong">in ein TRMS</text>: Bei einem „Transport“ in ein TRMS wird kein IKAROS-System beeinflusst, sondern es werden die Artefakt-Pakete als Changes bzw. Change Sets in dem TRMS angelegt – allerdings <text styleclass="Strong">schreibgeschützt</text>, was zu Einschränkungen bei deren weiterer Verarbeitung/Bearbeitung führt <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_8c4e9fbfe746" styleclass="Hyperlink">[Link]</link>.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">Transportschnittstelle von IKAROS</para>
+    <para styleclass="Normal">Jedes IKAROS-System ab Version 2019.2 bietet dafür eine Web-Schnittstelle für folgende zwei TRMS-bezogene Aktionen:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Abfragen der im IKAROS-System verfügbaren Artefakte aus dem TRMS heraus.</li>
+      <li styleclass="Aufzählung1">Entgegennehmen von „.trms4“-Paketdateien und Installation der darin enthaltenen Artefakte.</li>
+    </list>
+    <para styleclass="Normal">Hinweis: Die Oberfläche von IKAROS selbst bietet keine Funktionalität, um Artefakte zu exportieren oder „.trms4“-Paketdateien zu installieren. Zur Ansteuerung der Funktionalität muss immer das TRMS bzw. das Kommandozeilenprogramm „TrmsCli.exe“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_a8403dc39138" styleclass="Hyperlink">[Link]</link> oder das Automations-Framework eingesetzt werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">„Transportauftrag“</para>
+    <para styleclass="Normal">Im TRMS können Sie zur Transportplanung beliebige sogenannte „Transportaufträge“ definieren. In diesen können Sie u. a. das Zielsystem sowie ein Startdatum oder Start-Ereignis festlegen. Zudem können Sie auch hier den Transport per Tastendruck starten.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Beachten Sie</text>: In der aktuellen Ausbaustufe des TRMS ist die bereits geplante Anbindung an automatisierte Scheduler noch nicht umgesetzt. Daher dienen die Angaben in der Transportplanung derzeit vorrangig der manuellen Planung und Organisation von Transporten.</para>
+  </body>
+</topic>

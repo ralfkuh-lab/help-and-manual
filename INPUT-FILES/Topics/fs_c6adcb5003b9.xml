@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:51.375Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Der Dialog für Transportprotokolle</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Der Dialog für Transportprotokolle</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img120.png" scale="48.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 34: Dialog mit einem Transportprotokoll</para>
+    <para styleclass="ÜberschriftEinfach">Rahmen „Kerndaten“</para>
+    <para styleclass="Normal">Enthält schreibgeschützt die Informationen zum Zielsystem des Transports sowie Zeitstempel und den allgemeinen Status der Transportaktion.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Name</text>“: Der Dateiname der Paketdatei bzw. der Name des transportierten Changes/Change Sets.</li>
+      <li styleclass="Aufzählung1">Die Angaben in „<text styleclass="Strong">Quellsystemtyp</text>“ und „<text styleclass="Strong">Quellsystem</text>“ identifizieren das TRMS bzw. IKAROS-System, aus dem das transportierte Paket stammt. Beim Transport von TRMS zu IKAROS „IKAROS“, beim Transport von TRMS zu TRMS entsprechend &quot;TRMS. </li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Zielsystemtyp</text>“, „<text styleclass="Strong">Zielsystem</text>“, „<text styleclass="Strong">Zielsystem-Version</text>“, „<text styleclass="Strong">Zielsystem Service Host</text>“ und „<text styleclass="Strong">Zielsystem-STS</text>“ identifizieren das IKAROS- bzw. TRMS-Zielsystem (analog zu den „Systeme“-Stammdaten im TRMS). Wenn beim Transport mehrere Zielsysteme ausgewählt wurden, liegt zu jedem Zielsystem ein eigenes Transportprotokoll vor.</li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Startzeit</text>“ zeigt an, wann der Transport gestartet wurde; an der „<text styleclass="Strong">Endzeit</text>“ ist erkennbar, wann die Installation im Zielsystem abgeschlossen bzw. der Transport abgebrochen wurde.</li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Status</text>“: Information, ob der Transportprozess an sich technisch abgeschlossen werden konnte (auch wenn dabei Fehler zurückgemeldet wurden).</li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Typ</text>“: Das Format des Artefaktpakets („Package“ (Paketdatei), „Change“ oder „Change Set“)</li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">Ergebnis</text>“: Information, ob alle Artefakte aus dem Paket im Zielsystem installiert werden konnten („Erfolgreich“) oder mindestens eines (oder mehrere oder alle) nicht („Fehler“).</li>
+      <li styleclass="Aufzählung1">Kontrollkästchen „<text styleclass="Strong">Automatische Ausführung</text>“: Zeigt ab, ob der Transport mit dem Kommandozeilenprogramm „TrmsCli.exe“ durchgeführt wurde. <text styleclass="Strong">Hinweis</text>: Damit in diesem Fall überhaupt ein Protokoll angelegt wird, müssen Sie dem Programm ausdrücklich den Parameter „/LoggingInTRMS“ sowie die notwendigen Verbindungsdaten zum TRMS übergeben.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">Rahmen „Artefakte“</para>
+    <para styleclass="Normal">Zeigt in einer alphabetisch sortierten Baumansicht die Artefakte an, die transportiert wurden. Wenn Sie ein Artefakt auswählen, können Sie im rechten Rahmen „Meldungen“ die zu diesem Artefakt protokollierten Meldungstexte ansehen.</para>
+    <para styleclass="Normal">Elemente, zu denen Fehler protokolliert wurden, erkennen Sie an einem roten X-Symbol. Wenn ein Artefakt zu einem Fehler geführt hat, werden weder es selbst noch seine Unterartefakte im Zielsystem installiert.</para>
+    <para styleclass="ÜberschriftEinfach">Rahmen „Meldungen“</para>
+    <para styleclass="Normal">Zeigt die protokollierten Meldungen zum aktuell in der Baumansicht markierten Knoten. Durch Aufrufen eines Eintrags können Sie den Text in einem Meldungsdialog anzeigen.</para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

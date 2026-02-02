@@ -1,0 +1,187 @@
+﻿# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp39_webhelp
+PP_DESCRIPTION=V2 WebHelp and WebHelp/EWriter skins PP5 Modern version (HM 7, 8 and 9)
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=Keine Einträge in diesem Topic$T$
+ATOC_BTNTIP_ON=Themen in diesem Topic$T$
+ATOC_TIP=Gehe zu:&nbsp;$H$
+ATOC_TITLE=Themen$T$
+ATOC_TOP=Zum Seitenanfang$T$
+ATOC_TOPTIP=Scrolle zum Seitenanfang$T$
+
+[Breadcrumb Trail]
+BREAD_LABEL=Navigation:$T$
+BREAD_NOTOPIC=Keine übergeordneten Topics$T$
+BREAD_TOC=Hier klicken um Inhaltsverzeichnis anzuzeigen$T$
+
+[Button Texts]
+BTNTEXT_CHAPTERTIP=Zum Top-Topic$T$
+BTNTEXT_CONTENTSNOJS=Inhalt$T$
+BTNTEXT_FB=Feedback$T$
+BTNTEXT_FBTIP=Schicke eine E-Mail an Support zu diesem Topic$T$
+BTNTEXT_HOME=Anfang$T$
+BTNTEXT_HOMETIP=Zum Anfang$T$
+BTNTEXT_INDEXNOENTRY=Keine Einträge mit Anfangsbuchstabe$T$
+BTNTEXT_INDEXTABTIP=Stichwortverzeichnis$T$
+BTNTEXT_MENU=Header$T$
+BTNTEXT_MENUTIP=Seiten-Header auf/zu$T$
+BTNTEXT_NEWTAB=Tab neu$T$
+BTNTEXT_NEWTABTIP=Topic in einem neuen Tab öffnen$T$
+BTNTEXT_NEWTABTIPOFF=Haupt-Tab wählen zum Aktivieren$T$
+BTNTEXT_NEXT=Vor$T$
+BTNTEXT_NEXTTIP=Zum nächsten Topic$T$
+BTNTEXT_PREV=Zurück$T$
+BTNTEXT_PREVTIP=Zum vorherigen Topic$T$
+BTNTEXT_PRINT=Druck$T$
+BTNTEXT_PRINTTIP=Dieses Topic drucken$T$
+BTNTEXT_QSEARCH=Schnellsuche:$T$
+BTNTEXT_SEARCH=Suchen$T$
+BTNTEXT_SEARCHTIP=Topics durchsuchen$T$
+BTNTEXT_SHARE=Teilen$T$
+BTNTEXT_SHARETIP=Sozialnetzwerk-Buttons zeigen$T$
+BTNTEXT_SHARETIP_OFF=Teilen aus - Server nicht gefunden$T$
+BTNTEXT_TABLEFTTIP=Tab links$T$
+BTNTEXT_TABRIGHTTIP=Tab rechts$T$
+BTNTEXT_TABSMENUTIP=Tabs Menü$T$
+BTNTEXT_TOGGLE=Auf/zu$T$
+BTNTEXT_TOGGLETIP=Aufklapp-Texte in diesem Topic auf/zu$T$
+BTNTEXT_TOPICTAB=Browsen$T$
+BTNTEXT_TOPICTABTIP=Haupt-Tab aktivieren$T$
+BTNTEXT_UNDOCK=Fenster$T$
+BTNTEXT_UNDOCKTIP=Aktuelles Tab in einem neuen Fenster$T$
+HELP_URL_TITLE=URL$T$
+
+[Social Sharing]
+BTNTEXT_SHARE=Teilen$T$
+BTNTEXT_SHARETIP=Sozialnetzwerk-Buttons zeigen$T$
+BTNTEXT_SHARETIP_OFF=Teilen aus - Server nicht gefunden$T$
+SHARING_MAILTIP=Teilen per Email$T$
+SHARING_TWITTERTIP=Teilen auf Twitter$T$
+SHARING_FACEBOOKTIP=Teilen auf Facebook$T$
+SHARING_LINKEDINTIP=Teilen auf LinkedIn$T$
+
+[Tab Texts]
+TABTEXT_CONTENTSNOJS=Inhalt$T$
+TABTEXT_CURRTOPIC=Aktuelles Topic$T$
+TABTEXT_INDEXNOJS=Index$T$
+TABTEXT_INDEXTAB=Stichwortverzeichnis$T$
+TABTEXT_INDEXTABTIP=Doppelklick für Index in neuem Fenster$T$
+TABTEXT_NOUNDOCKTIP=Haupt-Tab kann nicht im neuen Fenster geöffnet werden!$T$
+TABTEXT_SEARCHTAB=Suchen$T$
+TABTEXT_SEARCHTABTIP=Doppelklick für Suche in neuem Fenster$T$
+TABTEXT_TABCLOSETIP=Tab schliessenT$$T$
+TABTEXT_TABOPENTIP=Dieses Topic is schon offen in einem neuen Tab!$T$
+TABTEXT_TOPICTAB=Topic-Text$T$
+TABTEXT_WEBFILE=Web-Datei$T$
+
+[Mail Feedback]
+FB_BODY=Hallo Support-Team,$T$
+FB_NOJS=Feedback%20zur%20Dokumentation$T$
+FB_SUBJ=Feedback zu:$T$
+FB_TIP=Schicke eine E-Mail an Support zu diesem Topic$T$
+
+[Permalink]
+HELP_URL_TITLE=URL$T$
+HELP_URL_BOOKMARK=Zu Favoriten$T$
+HELP_URL_CLOSE=Schliessen$T$
+HELP_URL_COPIED=URL in Zwischenablage kopiert:$T$
+HELP_URL_COPY=URL des Topics kopieren$T$
+HELP_URL_MANCOPY=Automatisches Kopieren nicht möglich in Ihrem Browser.\r\nBitte Rechtsklick auf URL zum Kopieren.$H$
+HELP_URL_NOSERVER=Kein Webserver! Bitte Rechtsklick auf URL unten zum Kopieren.$T$
+HELP_URL_SELECT=URL kopieren$T$
+HELP_URL_SERVER=Diese Seite ist lokal gespeichert. Favoriten gelten nur für Online-Seiten.$T$
+HELP_URL_SORRY=Ihr Browser unterstützt die Favoriten-Funktion nicht. Bitte URL mit Rechtsklick kopieren, dann Strg+D um zu den Favoriten hinzufügen.$T$
+
+[TOC, Index and Search]
+BTNTEXT_INDEXFIRSTSEARCH=First Word$T$
+BTNTEXT_INDEXFULLSEARCH=Full Text Search$T$
+BTNTEXT_INDEXSEARCH=Search Keywords$T$
+BTNTEXT_INDEXSEARCHTIP=Click again or press ENTER to scroll to the next highlighted item$T$
+BTNTEXT_INDEXTAB=Index$T$
+BTNTEXT_INDEXWORDSEARCH=Word Anywhere$T$
+BTNTEXT_KWINSTANTSEARCH=Instant Search$T$
+NAVPANE_HIDETIP=Hide contents pane$T$
+NAVPANE_SHOWTIP=Show contents pane$T$
+SEARCH_INSTRUCTIONS=Enter one or more keywords to search ('*' and '?' wildcards are supported):$T$
+SEARCH_JSTIP=You must have JavaScript enabled to use WebHelp search$T$
+SUBTITLE=Premium Pack 5.0$T$
+
+[Misc. Interface Elements]
+CODESAMPLE_COPIED=Copied!$T$
+CODESAMPLE_NOCOPY=Sorry, cannot copy to clipboard with this browser!$T$
+ZOOM_TIP=Click to view full size image$T$
+
+[Sortable Tables]
+SORT_SORTTIP=Klicken, um auf diese Spalte zu sortieren$T$
+
+[Google Analytics]
+GA_EXITLABEL=exit_link$T$
+GA_FILELABEL=file_link$T$
+GA_SEARCHCLICKLABEL=search_click$T$
+GA_SEARCHLABEL=search_term$T$
+GA_TOCCLICKLABEL=toc_click$T$
+GA_TOCWEBLABEL=toc_weblink$T$
+GA_TOPICLINKLABEL=topic_link$T$
+GA_WEBLABEL=web_link$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=and or the it is an on we us to of has be all for in as so are that can you at its by have with into$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_ANY_OF_TERMS=einigen Ausdrücken$T$
+STR_CAT_SUMMARY=Verfeinern Sie Ihre Suche durch das Suchen in einer Kategorie:$T$
+STR_DIDYOUMEAN=Meinten Sie:$T$
+STR_FORM_ALL_SEARCH_WORDS=alle Suchwörter$T$
+STR_FORM_ANY_SEARCH_WORDS=einige Suchwörter$T$
+STR_FORM_MATCH=Übereinstimmung:$T$
+STR_FORM_RESULTS_PER_PAGE=Ergebnisse je Seite:$T$
+STR_FORM_SEARCHFOR=Suche nach:$T$
+STR_FORM_SUBMIT_BUTTON=Abschicken$T$
+STR_NO_QUERY=Keine Suchbedingung eingegeben.$T$
+STR_NO_RESULTS=Keine Ergebnisse$T$
+STR_PAGES_OF_RESULTS=Ergebnisseiten.$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=Der folgende Satz enthält sehr gebräuchliche Wörter und führt zu einem begrenzten Ergebnis. Bitte definieren sie eine präzisere Abfrage für ein besseres Ergebnis.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=Vielleicht bekommen Sie mehr Ergebnisse bei der Suche nach$T$
+STR_RESULT=Ergebnis$T$
+STR_RESULTS=Ergebnisse$T$
+STR_RESULTS_FOR=Suchergebnis für:$T$
+STR_RESULT_PAGES=Ergebnisseiten:$T$
+STR_RESULT_PAGES_NEXT=Nächste$T$
+STR_RESULT_PAGES_PREVIOUS=Vorherige$T$
+STR_RESULT_SCORE=Gewichtung: $T$
+STR_RESULT_TERMS_MATCHED=Treffer: $T$
+STR_RESULT_URL=URL:$T$
+STR_SKIPPED_FOLLOWING_WORDS=Die folgenden Wörter sind in der Liste der übersprungen Wörter und wurden deshalb nicht für die Suche verwendet:$T$
+STR_SKIPPED_PHRASE=Bitte beachten Sie: Sie können nicht nach exakten Sätzen suchen, die mit einem übersprungen Wort beginnen.$T$
+STR_SORTBY_DATE=Sortieren nach Datum$T$
+STR_SORTBY_RELEVANCE=Sortieren nach Relevanz$T$
+STR_SORTEDBY_DATE=Sortiert nach Datum &#9660;$T$
+STR_SORTEDBY_RELEVANCE=Sortiert nach Relevanz$T$
+STR_SUMMARY_FOUND=gefunden.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=gefunden, die alle Suchausdrücke enthielten.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=gefunden, die einige Suchausdrücke enthielten.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=Keine Ergebnisse gefunden.$T$

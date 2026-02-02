@@ -1,0 +1,144 @@
+﻿# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp49_responsivemodernew
+PP_DESCRIPTION=V5 Minimalist Modern eWriter skins (HM 7, 8 and 9)
+
+[General Settings]
+CODESAMPLE_COPIED=Kopiert!$T$
+CODESAMPLE_NOCOPY=Kopieren nicht möglich mit diesem Browser!$T$
+ERROR_NOTFOUND=FEHLER: Topic nicht gefunden!$T$
+NOJS_WARNING=JavaScript bitte einschalten für diese Dokumentation$T$
+
+[Header & Footer]
+HEADERLOGO_TITLE=EC Software Website$T$
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=Keine Einträge in diesem Topic$T$
+ATOC_BTNTIP_ON=Themen in diesem Topic$T$
+ATOC_TIP=Gehe zu:&nbsp;$T$
+ATOC_TITLE=Themen$T$
+ATOC_TOP=Zum Seitenanfang$T$
+ATOC_TOPTIP=Zum Seitenanfang$T$
+
+[Topic Pane]
+BREAD_LABEL=Navigation:$T$
+BREAD_NOTOCENTRY=Topic nicht im Inhaltsverzeichnis$T$
+BREAD_NOTOPIC=Keine übergeordneten Topics vorhanden$T$
+
+[Button Texts]
+BTNTEXT_HOME=Top$T$
+BTNTEXT_HOMENO=Keine übergeordneten Topics vorhanden$T$
+BTNTEXT_HOMETIP=Zum Top-Topic$T$
+BTNTEXT_LTABLE=Tabelle anzeigen...$T$
+BTNTEXT_NEXT=Vor$T$
+BTNTEXT_NEXTNO=Dies ist das letzte Topic$T$
+BTNTEXT_NEXTTIP=Zum nächsten Topic$T$
+BTNTEXT_PREV=Zurück$T$
+BTNTEXT_PREVNO=Dies ist das 1. Topic$T$
+BTNTEXT_PREVTIP=Zum vorherigen Topic$T$
+
+[Hamburger Menu]
+HMBTEXT_HEADER=Seiten-Header auf/zu$T$
+HMBTEXT_HEADER_HIDE=Seiten-Header zu$T$
+HMBTEXT_HEADER_HIDETIP=Seiten-Header oben zuklappen$T$
+HMBTEXT_HEADER_SHOW=Seiten-Header auf$T$
+HMBTEXT_HEADER_SHOWTIP=Seiten-Header oben aufklappen$T$
+HMBTEXT_MAIL=E-Mail-Feedback$T$
+HMBTEXT_MAILTIP=Schicke eine E-Mail an den Support zu diesem Topic$T$
+HMBTEXT_PRINT=Druckbare Topic-Ansicht$T$
+HMBTEXT_PRINTTIP=Druckbare Ansicht des aktuellen Topics$T$
+HMBTEXT_TEXTMINUS=Text kleiner$T$
+HMBTEXT_TEXTMINUSTIP=Schrift verkleinern$T$
+HMBTEXT_TEXTPLUS=Text größer$T$
+HMBTEXT_TEXTPLUSTIP=Schrift vergrößern$T$
+HMBTEXT_TITLE=Menü$T$
+HMBTEXT_TITLETIP=Zusätzliche Funktionen$T$
+HMBTEXT_TOGGLES=Aufklapptexte öffnen$T$
+HMBTEXT_TOGGLESTIP=Aufklapptexte alle auf/zu$T$
+HMBTEXT_TOGGLES_HIDE=Aufklapptexte schliessen$T$
+HMBTEXT_TOGGLES_SHOW=Aufklapptexte öffnen$T$
+
+[TOC, Index and Search]
+IDXTEXT_CLICKTIP=Einträge drunter wählen für Referenzen auf$T$
+IDXTEXT_NOTFOUND=Nichts gefunden!$T$
+IDXTEXT_SEARCHBUTTON=Suchen:$T$
+IDXTEXT_SEARCHMODE=Vom Anfang des Eintrags$T$
+SEARCH_HOWTO=Wort/Wörter zum Suchen eingeben (Platzhalter '*' und '?' sind Ok):$T$
+SEARCH_JSWARN=JavaScript muss aktiviert sein für die Suche!$T$
+
+[Tab Texts]
+TABTEXT_INDEXTAB=Index$T$
+TABTEXT_INDEXTABTIP=Keyword Index$T$
+TABTEXT_NAVPANE=Show/Hide Contents$T$
+TABTEXT_SEARCHTAB=Search$T$
+TABTEXT_SEARCHTABTIP=Search Topics$T$
+TABTEXT_TOCTAB=Contents$T$
+TABTEXT_TOCTABTIP=Table of Contents$T$
+
+[Mail Feedback]
+FB_BODY=Hallo Support-Team,$T$
+FB_NOJS=Feedback%20zur%20Dokumentation$T$
+FB_REF=Referenz:$T$
+FB_SUBJ=Feedback zu:$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=ab aber als also am an auch auf aus bald bei beim bin bis bis bzw ca da dann das dass dazu daß dem den denn der des die etc fuer für gar ggf ggfs hin im in ins ist ja je mal man mit nie noch nun nur ob oben oder oft ohne per pro sich sie so sog um umso und usw vom von vor war was weg wem wen wer wie will wir wird wo wohl zu zum zur zwar$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_ALL_CATS=allen Kategorien$T$
+STR_ANY_OF_TERMS=einigen Ausdrücken$T$
+STR_CAT_SUMMARY=Verfeinern Sie Ihre Suche durch das Suchen in einer Kategorie:$T$
+STR_DIDYOUMEAN=Meinten Sie:$T$
+STR_FORM_ALL_SEARCH_WORDS=alle Suchwörter$T$
+STR_FORM_ANY_SEARCH_WORDS=einige Suchwörter$T$
+STR_FORM_MATCH=Übereinstimmung:$T$
+STR_FORM_RESULTS_PER_PAGE=Ergebnisse je Seite:$T$
+STR_FORM_SEARCHFOR=Suche nach:$T$
+STR_FORM_SUBMIT_BUTTON=Abschicken$T$
+STR_NO_QUERY=Keine Suchbedingung eingegeben.$T$
+STR_NO_RESULTS=Keine Ergebnisse$T$
+STR_PAGES_OF_RESULTS=Ergebnisseiten.$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=Der folgende Satz enthält sehr gebräuchliche Wörter und führt zu einem begrenzten Ergebnis. Bitte definieren sie eine präzisere Abfrage für ein besseres Ergebnis.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=Vielleicht bekommen Sie mehr Ergebnisse bei der Suche nach$T$
+STR_RESULT=Ergebnis$T$
+STR_RESULTS=Ergebnisse$T$
+STR_RESULTS_FOR=Suchergebnis für:$T$
+STR_RESULT_PAGES=Ergebnisseiten:$T$
+STR_RESULT_PAGES_NEXT=Nächste$T$
+STR_RESULT_PAGES_PREVIOUS=Vorherige$T$
+STR_RESULT_SCORE=Gewichtung: $T$
+STR_RESULT_TERMS_MATCHED=Treffer: $T$
+STR_RESULT_URL=URL:$T$
+STR_SKIPPED_FOLLOWING_WORDS=Die folgenden Wörter sind in der Liste der übersprungen Wörter und wurden deshalb nicht für die Suche verwendet:$T$
+STR_SKIPPED_PHRASE=Bitte beachten Sie: Sie können nicht nach exakten Sätzen suchen, die mit einem übersprungen Wort beginnen.$T$
+STR_SORTBY_DATE=Sortieren nach Datum$T$
+STR_SORTBY_RELEVANCE=Sortieren nach Relevanz$T$
+STR_SORTEDBY_DATE=Sortiert nach Datum &#9660;$T$
+STR_SORTEDBY_DATE_ASC=Sortiert nach Datum &#9650;$T$
+STR_SORTEDBY_RELEVANCE=Sortiert nach Relevanz$T$
+STR_SUMMARY_FOUND=gefunden.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=gefunden, die alle Suchausdrücke enthielten.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=gefunden, die einige Suchausdrücke enthielten.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=Keine Ergebnisse gefunden.$T$

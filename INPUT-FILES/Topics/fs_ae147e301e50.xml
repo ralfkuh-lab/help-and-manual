@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:51.536Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Der Bearbeitungsdialog für IKAROS-Systeme</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Der Bearbeitungsdialog für IKAROS-Systeme</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img127.png" scale="66.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 36: Der Bearbeitungsdialog für ein IKAROS-System</para>
+    <para styleclass="ÜberschriftEinfach">Wichtig: Bereits verwendete Systeme können nur eingeschränkt geändert werden</para>
+    <para styleclass="Normal">Sobald ein System in einem Change, Change Set oder Transportauftrag eingetragen ist, können weder sein Name noch die URLs nachträglich verändert oder gelöscht werden – mit Ausnahme des „Client-Secret“ (bei Einsatz von OIDC). Dies soll sicherstellen, dass Quellsysteme/Zielsysteme nicht versehentlich oder mutwillig durch komplett andere IKAROS-Systeme ersetzt werden.</para>
+    <para styleclass="Normal">Falls Sie die URLs oder Ports eines IKAROS-Systems ändern oder einen anderen Namen verwenden möchten, müssen Sie daher einen neuen System-Eintrag dafür anlegen und alle Changes, Change Sets und Transportaufträge für das neue System erneut anlegen.</para>
+    <para styleclass="ÜberschriftEinfach">Die Felder im Dialog</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Name</text>“: Der maximal 50 Zeichen lange, eindeutige Name für das IKAROS-System. Er wird bei Wahl des Systems als Quell- oder Zielsystem in den Dialogen und Anmeldedialogen angezeigt.</li>
+      <li styleclass="Aufzählung1">Listenfeld „<text styleclass="Strong">Typ</text>“: Legt fest, mit welcher Service-Schnittstellen-Technologie und welcher Authentifizierungsmethode der Ziel-Service angesprochen werden soll. Sie müssen hier denjenigen Typen wählen, der vom IKAROS-Zielsystem verwendet wird. Weitere Informationen hierzu finden Sie in der Dokumentation des Menüpunkts [<text styleclass="Systemzitat">Administration -&gt; Services</text>] in IKAROS (Kapitel-ID „fs_a8c663c5abe7“).</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">ServiceHost-Adresse</text>“: Die URL zum IKAROS-Anwendungs-Server (ServiceHost) des IKAROS-Systems.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Version</text>“: Die IKAROS-Version des Systems. Sie wird nach erfolgreicher Ausführung von „Verbindung prüfen“ automatisch aus der Datenbank des Systems ermittelt und kann nicht manuell bearbeitet werden.</li>
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">Edition</text>“: Die IKAROS-Edition des Systems.</li>
+      <li styleclass="Aufzählung1">Listenfeld „<text styleclass="Strong">Geschäftseinheit</text>“: Die Geschäftseinheit aus dem IKAROS-Zielsystem, in die das TRMS die Transporte durchführen soll. Nur relevant, wenn das IKAROS-System für den Mehrfirmenbetrieb eingerichtet ist. Wenn dies zutrifft, wird bereits beim Aufrufen des Bearbeitungsdialogs eine Verbindung hergestellt, bei der unter anderem die Geschäftseinheiten des Zielsystems abgefragt werden. Falls bei dieser Verbindungsaufnahme festgestellt wird, dass der Mehrfirmenbetrieb im Zielsystem nicht (mehr) aktiv ist, erhalten Sie eine entsprechende Meldung Informationen zum Mehrfirmenbetrieb von IKAROS finden Sie in der Hilfe von <text styleclass="Strong">IKAROS</text> (nicht im TRMS) im Kapitel mit der ID „fs_ad5a9d815892“.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">Rahmen „Zertifikat (gRPC)“ und „OpenID Connect“</para>
+    <para styleclass="Normal">Die Felder in diesen Rahmen sind funktional identisch mit den gleichnamigen Feldern in den „Services“-Stammdaten in IKAROS. Weitere Informationen hierzu finden Sie in der Dokumentation des Menüpunkts [<text styleclass="Systemzitat">Administration -&gt; Services</text>] in IKAROS (Kapitel-ID in der IKAROS-Hilfe: „fs_a8c663c5abe7“).</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Textfeld „<text styleclass="Strong">API-Client Key</text>“: Legt optional den API-Schlüssel (eine GUID) desjenigen API-Clients aus dem IKAROS-Zielsystem fest, in dessen Benutzerkontext (IKAROS-Rechte, Claims usw.) der Transport und das Abfragen von Artefakten erfolgen kann. Falls leer, wird der „Daemon“-Benutzer des IKAROS-Systems verwendet. Die Verbindungsprüfung kann nur erfolgreich sein, wenn es im IKAROS-Zielsystem tatsächlich einen API-Client (in IKAROS unter [<text styleclass="Systemzitat">Administration -&gt; API-Clients</text>]) mit diesem Schlüssel gibt. Weitere Informationen hierzu finden Sie in der IKAROS-Hilfe im Kapitel mit der ID „fs_29b57d418a77“.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="5" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:108px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img11.png" scale="59.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Speichern &amp; Schließen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [H]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Speichert die Änderungen an den Systemverbindungsdaten und schließt den Dialog.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur aktiv, wenn Änderungen vorliegen und „</text><text styleclass="Strong" style="font-size:9pt;">Verbindung prüfen</text><text style="font-size:9pt;">“ erfolgreich ausgeführt wurde.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img12.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Speichern</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [S]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Speichert die Änderungen an den Systemverbindungsdaten.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur aktiv, wenn Änderungen vorliegen und „</text><text styleclass="Strong" style="font-size:9pt;">Verbindung prüfen</text><text style="font-size:9pt;">“ erfolgreich ausgeführt wurde.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img13.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Löschen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [D]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Löscht die Systemverbindungsdaten nach der Bestätigung einer Sicherheitsabfrage dauerhaft aus der Datenbank des TRMS.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Auf das tatsächliche IKAROS-System, auf das diese Daten verweisen, hat das Löschen keinen Einfluss.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Das Löschen ist nur möglich, wenn das System noch nicht in Changes, Change Sets oder Transportaufträgen eingetragen ist.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img131.png" scale="119.00%" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:108px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Verbindung prüfen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [K]</text></para>
+        </td>
+        <td style="vertical-align:top; width:393px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft den Anmeldedialog auf, um sich an dem System testweise anzumelden und so die Verbindungsdaten zu überprüfen.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">„System“-Datensätze können erst gespeichert werden, wenn die Verbindungsprüfung erfolgreich war.</text></para>
+        </td>
+      </tr>
+    </table></para>
+  </body>
+</topic>

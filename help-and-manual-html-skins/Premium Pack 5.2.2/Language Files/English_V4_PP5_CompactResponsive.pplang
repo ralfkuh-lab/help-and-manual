@@ -1,0 +1,113 @@
+# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp49_compactresponsive
+PP_DESCRIPTION=V4 Compact Responsive skins (HM 7, 8 and 9)
+
+[General Settings]
+ERROR_NOTFOUND=ERROR, page not found:$T$
+CODESAMPLE_NOCOPY=Sorry, cannot copy to clipboard with this browser!$T$
+CODESAMPLE_COPIED=Copied!$T$
+NOJS_WARNING=Please enable JavaScript to view this site$T$
+ASPXOPENMOBILE=Open WebHelp$T$
+
+[Page, Header & Footer Layout]
+HEADERLOGO_TITLE=EC Software website$T$
+
+[Chapter Contents Drop-Down]
+CHPTEXT_CHAPTERS=Chapter Selection$T$
+CHPTEXT_CHAPTERSBAR=Chapter Contents$T$
+CHPTEXT_CLOSECHAPTERS_TIP=Show chapter contents$T$
+CHPTEXT_OPENCHAPTERS_TIP=Hide chapter contents$T$
+
+[Google Analytics]
+GA_EXITLABEL=exit_link$T$
+GA_FILELABEL=file_link$T$
+GA_SEARCHCLICKLABEL=search_click$T$
+GA_SEARCHLABEL=search_term$T$
+GA_TOCCLICKLABEL=toc_click$T$
+GA_TOCWEBLABEL=toc_weblink$T$
+GA_TOPICLINKLABEL=topic_link$T$
+GA_WEBLABEL=web_link$T$
+
+[TOC and Search]
+SEARCH_HOWTO=Enter one or more keywords to search ('*' and '?' wildcards are supported):$T$
+SEARCH_JSWARN=You must have JavaScript enabled to view this documentation$T$
+SEARCH_BUTTONTEXT=Search$T$
+SEARCH_BUTTONTIP=Search Topics$T$
+
+[Mail Feedback]
+BUTTONTEXT_FEEDBACK=Feedback$T$
+BUTTONTIP_FEEDBACK=Feedback on the current topic$T$
+FB_BODY=Dear Support Staff,$T$
+FB_NOJS=Documentation%20Feedback$T$
+FB_REF=Reference:$T$
+FB_SUBJ=Feedback on:$T$
+
+[Links & Social Sharing]
+BUTTONTEXT_LINK1=Free Trial$T$
+BUTTONTIP_LINK1=Download a free trial$T$
+BUTTONTEXT_LINK2=Contact Us$T$
+BUTTONTIP_LINK2=Contact EC Software$T$
+SHARING_MAILTIP=Share topic by email$T$
+SHARING_TWITTERTIP=Tweet link to topic$T$
+SHARING_FACEBOOKTIP=Share topic on Facebook$T$
+SHARING_LINKEDINTIP=Share topic on LinkedIn$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=and or the it is an on we us to of has be all for in as so are that can you at its by have with into$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_FORM_SEARCHFOR=Search for:$T$
+STR_FORM_SUBMIT_BUTTON=Submit$T$
+STR_FORM_RESULTS_PER_PAGE=Results per page:$T$
+STR_FORM_MATCH=Match:$T$
+STR_FORM_ANY_SEARCH_WORDS=any search words$T$
+STR_FORM_ALL_SEARCH_WORDS=all search words$T$
+STR_NO_QUERY=No search query entered.$T$
+STR_RESULTS_FOR=Search results for:$T$
+STR_NO_RESULTS=No results$T$
+STR_RESULT=result$T$
+STR_RESULTS=results$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=Your search query contained too many common words to return the entire set of results available. Please try again with a more specific query for better results.$T$
+STR_SKIPPED_FOLLOWING_WORDS=The following word(s) are in the skip word list and have been omitted from your search:$T$
+STR_SKIPPED_PHRASE=Note that you can not search for exact phrases beginning with a skipped word$T$
+STR_SUMMARY_NO_RESULTS_FOUND=No results found.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=found containing all search terms.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=found containing some search terms.$T$
+STR_SUMMARY_FOUND=found.$T$
+STR_PAGES_OF_RESULTS=pages of results.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=You can possibly get more results searching for$T$
+STR_ANY_OF_TERMS=any of the terms$T$
+STR_DIDYOUMEAN=Did you mean:$T$
+STR_SORTEDBY_RELEVANCE=Sorted by relevance$T$
+STR_SORTBY_RELEVANCE=Sort by relevance$T$
+STR_SORTBY_DATE=Sort by date$T$
+STR_SORTEDBY_DATE=Sorted by date &#9660;$T$
+STR_RESULT_TERMS_MATCHED=Terms matched: $T$
+STR_RESULT_SCORE=Score: $T$
+STR_RESULT_URL=URL:$T$
+STR_RESULT_PAGES=Result Pages:$T$
+STR_RESULT_PAGES_PREVIOUS=Previous$T$
+STR_RESULT_PAGES_NEXT=Next$T$

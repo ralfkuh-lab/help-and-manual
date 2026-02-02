@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:49.403Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Prüfungen bei Paketerstellung und Transport</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Prüfungen bei Paketerstellung und Transport</para>
+    </header>
+    <para styleclass="Normal">Sowohl beim Erzeugen von Paketdateien aus den im TRMS zusammengestellten Artefaktpaketen als auch beim Installieren von Artefakten in einem IKAROS-System werden Prüfungen durchgeführt, ob die Datensätze gemäß den Vorgaben von IKAROS valide sind (z. B. alle erforderlichen Eigenschaften zulässige Werte besitzen).</para>
+    <para styleclass="Normal">Während diese Validierungen von IKAROS selbst vorgenommen werden, ist das Verhalten für Konfliktfälle bei der Installation von Artefakten (z. B. überschreiben oder nicht?) bereits als Transportvorgabe im Artefaktpaket festgelegt und darin in Steuerungsdateien festgehalten.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Transportkontrollskripte für paketspezifische Bedingungsprüfungen</para>
+    <para styleclass="Normal">Jedem Paket können Sie des Weiteren Programmcode für sogenannte Transportkontrollskripte beifügen, mit dem vor, während und nach dem Transport Prüfungen im Zielsystem durchgeführt werden können <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_11ed2b9082ce" styleclass="Hyperlink">[Link]</link>. Mit einem solchen Skript ist es sowohl möglich, Hinweise und Fehler im Transportprotokoll festzuhalten, als auch den Transport ohne Änderungen am Zielsystem zu verhindern.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Auslösung von BOM-Triggern</para>
+    <para styleclass="Normal">Da die Artefakte beim Installieren im Zielsystem die IKAROS-Validierungen durchlaufen, werden dadurch eventuell im Zielsystem auch BOM-Trigger mit dem Auslöser „OnSaving“ für Objekte, die dies unterstützen, ausgelöst; z. B. für EP-Verträge („PcommContract“) oder Aktenvorgangsvorlagen („EventTemplate“).</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Fehlermeldungen bei Generierung von Paketen</para>
+    <para styleclass="Normal">Wenn das TRMS aus einem Artefaktpaket eine Paketdatei erzeugt, können Fehler auftreten. Die Paketdatei wird in diesem Fall nicht erzeugt.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Falls es sich um einen technischen Fehler handelt (z. B. fehlende Rechte oder Verbindungsabbruch), erscheint eine entsprechende Fehlermeldung.</li>
+      <li styleclass="Aufzählung1">Sollten die Fehler hingegen aus der Zusammenstellung des Artefaktpakets selbst resultieren, erhalten Sie einen Dialog mit einer Auflistung der aufgetretenen Fehler:</li>
+    </list>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img2.png" scale="58.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 2: Dialog mit Auflistung von Fehlern, die bei der Paketdateierstellung aufgetreten sind</para>
+    <para styleclass="Normal">Drücken Sie die Schaltfläche „<text styleclass="Strong">Als CSV exportieren</text>“, um die Einträge als CSV-Datei herunterladen. „<text styleclass="Strong">OK</text>“ schließt den Dialog.</para>
+  </body>
+</topic>

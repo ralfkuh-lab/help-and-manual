@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:12:50.150Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Dialog mit Übersicht der gewählten Artefakte</title>
+  <body>
+    <header>
+      <para styleclass="Heading1">Dialog mit Übersicht der gewählten Artefakte</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img40.png" scale="59.00%" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 11: Übersicht der explizit als „Ausgewählt“ markierten Artefakte im Artefaktpaket</para>
+    <para styleclass="Normal">Der Übersichtsdialog enthält eine Liste mit allen ausdrücklich als „Ausgewählt“ markierten Artefakten über alle Artefakt-Typen hinweg.</para>
+    <para styleclass="Einzug1"><text styleclass="Strong">Beachten Sie hierbei</text>: Wenn zu den Artefakten noch Unter-Artefakte gehören (die je nach Transportvorgaben eventuell mit ins Paket aufgenommen werden), sind diese hier <text styleclass="Strong">nicht</text> zu sehen.</para>
+    <para styleclass="ÜberschriftEinfach">Bearbeitungsmöglichkeiten</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Aufzählung1">Wenn Sie einen der Einträge aufrufen, öffnet sich der Dialog für die Transportvorgaben <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_ef9609a3fd0b" styleclass="Hyperlink">[Link]</link> für das individuelle Artefakt. Dieser unterscheidet sich je nach Typ des Artefakts. Um Änderungen zu akzeptieren, müssen Sie auf „Übernehmen“ klicken.</li>
+      <li styleclass="Aufzählung1">Wenn Sie bei Artefakten im Kontrollkästchen „Ausgewählt“ das Häkchen entfernen und mit Klick auf „Übernehmen“ bestätigen, sind die betreffenden Artefakte auch im Paket nicht mehr ausgewählt. Bei Changes und Change Sets müssen Sie diese nach dem Übernehmen ebenfalls noch speichern, damit das Entfernen endgültig durchgeführt wird.</li>
+    </list>
+  </body>
+</topic>

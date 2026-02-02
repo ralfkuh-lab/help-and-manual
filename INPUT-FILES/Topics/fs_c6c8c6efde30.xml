@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.599Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Dialog für die Anmeldung an ein System</title>
+  <keywords>
+    <keyword>Systeme<keyword>Anmeldung</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Dialog für die Anmeldung an ein System</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Elemente des Anmeldungsdialogs</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Listenfeld „<text styleclass="Strong">Zielsysteme</text>“: Erlaubt die Auswahl eines oder mehrerer Systeme, in denen ein Paket, Change oder Change Set installiert werden soll. Das Feld wird nur im Zusammenhang mit Transportaktionen angezeigt.</li>
+      <li styleclass="Aufzählung1">Listenfeld „<text styleclass="Strong">Quellsystem</text>“: Erlaubt die Auswahl desjenigen Systems, aus dem die Artefakte zur Auswahl angeboten werden sollen. Das Feld wird bei Aufruf des Artefaktpaket-Assistenten bzw. vor der Auswahl eines Quellsystems angezeigt.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Varianten des Anmeldedialogs</para>
+    <para styleclass="ÜberschriftEinfach">Anmeldung an ein Quellsystem</para>
+    <para styleclass="Normal">Dialog zur Anmeldung an ein <text styleclass="Strong">Quellsystem</text> (z. B. beim Aufrufen des Artefaktpaket-Assistenten). Das Feld „Quellsystem“ ist deaktiviert, wenn der Change oder das Change Set bereits gespeichert sind.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img58.png" scale="94.00%" width="30" height="30" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 22: Dialog für Anmeldung an ein Quellsystem</para>
+    <para styleclass="ÜberschriftEinfach">Systemwahl bei Transport in Zielsystem</para>
+    <para styleclass="Normal">Dialog zur Anmeldung an einem oder mehreren <text styleclass="Strong">Zielsystemen</text> (z. B. beim Transport von Paketdateien, Changes oder Change Sets):</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img59.png" scale="94.00%" width="30" height="30" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 23: Dialog für die Anmeldung an Zielsysteme</para>
+    <para styleclass="Normal">Beim Transport von <text styleclass="Strong">Transportaufträgen</text> (Menüpunkt „Transportplanung“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_7c02462359d9" styleclass="Hyperlink">[Link]</link>) wird das Zielsystem aus dem Transportauftrag übernommen und kann nicht geändert werden.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img60.png" scale="94.00%" width="30" height="30" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 24: Dialog für die Anmeldung bei Transport eines Transportauftrags</para>
+  </body>
+</topic>

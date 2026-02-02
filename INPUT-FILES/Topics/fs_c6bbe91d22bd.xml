@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.596Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Menüpunkt „Rechte“</title>
+  <keywords>
+    <keyword>Rechteverwaltung<keyword>Rollen</keyword><keyword>Ressourcen</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Menüpunkt „Rechte“</para>
+    </header>
+    <para styleclass="Normal">Sowohl für die Bedienung und Administration des TRMS per Web-Oberfläche als für die Ansteuerung der Service-API setzt das TRMS Zugriffsrechte auf bestimmte Rechte-Ressourcen voraus.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Im Menüpunkt „<text styleclass="Strong">Ressourcen</text>“ werden die einzelnen Ressourcen verwaltet.</li>
+      <li styleclass="Aufzählung1">Unter „<text styleclass="Strong">Rollen</text>“ können die Ressourcen zu verschiedenen Rechtepaketen gebündelt werden, die dann konkreten TRMS-Benutzern zugewiesen werden können, um ihnen die Rechte effektiv zu gewähren.</li>
+      <li styleclass="Aufzählung1">Unter „<text styleclass="Strong">Claim-Transformationen (OIDC)</text>“ können Sie Einfluss auf empfangene Authentifizierungs-Claims nehmen.</li>
+    </list>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#167;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Wingdings; font-size:8pt; color:#000000;">
+      <list id="1" level="1" type="ul" listtype="bullet" formatstring="&#45;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung2" style="tabstops:none; font-family:Arial; font-size:8pt; color:#000000;">
+        <li styleclass="Aufzählung2" style="tabstops:none;">Ausführliche Informationen hierzu finden Sie in der Dokumentation des Menüpunkts [<text styleclass="Systemzitat">Administration -&gt; Rechte -&gt; Claim-Transformationen (OIDC)</text>] <text styleclass="Strong">in IKAROS</text> (Kapitel-ID in der IKAROS-Hilfe: „fs_087dc0cd8785“).</li>
+        <li styleclass="Aufzählung2" style="tabstops:none;">Weitere Informationen zur Verwendung von OIDC in einer IKAROS-Landschaft finden Sie in der IKAROS-Installationsanleitung „Installation_IKAROS_Identitäts-Provider“.</li>
+      </list>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Menüpunkte „Rollen“ und „Ressourcen“</para>
+    <para styleclass="Normal">Die Bedienung und die verfügbaren Schaltflächen in den Menüpunkten „Rollen“ und „Ressourcen“ im TRMS sind genauso wie in IKAROS. Weitere Informationen finden Sie in Hilfe der <text styleclass="Strong">IKAROS</text>-Web-Oberfläche im Kapitel mit der ID „fs_b56322097626“.</para>
+    <para styleclass="ÜberschriftEinfach">Menüpunkt „Rollen“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img143.png" scale="47.00%" width="15" height="15" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 39: Liste der Rollen im TRMS</para>
+    <para styleclass="ÜberschriftEinfach">Menüpunkt „Ressourcen“</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img144.png" scale="83.00%" width="27" height="27" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 40: Liste der Ressourcen im TRMS</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Benutzerverwaltung für das TRMS</para>
+    <para styleclass="Normal">Das TRMS bietet <text styleclass="Strong">keine eigene</text> Benutzerverwaltung. Daher gilt Folgendes:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Im TRMS</text> verwalten Sie die TRMS-spezifischen <text styleclass="Strong">Ressourcen</text> und stellen sich, ebenfalls im TRMS, <text styleclass="Strong">Rollen</text> mit bestimmten Ressourcenzuordnungen zusammen (falls Ihnen die vorhandene Standard-Rolle „TRMS_Administration“ nicht genügt).</li>
+      <li styleclass="Aufzählung1">Die Bearbeitung der <text styleclass="Strong">Benutzer</text>, denen Sie die TRMS-Rollen zuordnen, muss in derjenigen Benutzerverwaltung geschehen, die auch für IKAROS verwendet wird.</li>
+    </list>
+    <para styleclass="Normal">Bei Einsatz von Keycloak ist die Verwaltung direkt in IKAROS unter [<text styleclass="Systemzitat">Administration -&gt; Benutzer</text>] möglich:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Dort müssen Sie konkreten Nutzern die gewünschten TRMS-Rollen zuweisen. Dazu sollten sie auch in IKAROS gleichnamige Rollen anlegen. Hierbei geht es ausschließlich um den <text styleclass="Strong">Namen der Rolle</text> (sie muss mit dem Rollennamen aus dem TRMS identisch sein). IKAROS-Ressourcen darin werden vom TRMS ignoriert, weshalb die Rolle in IKAROS „leer“ sein darf.</li>
+    </list>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img145.png" scale="44.00%" width="14" height="14" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 41: Ablauf zur Zuweisung einer TRMS-Rolle in IKAROS (mit Keycloak-Anbindung)</para>
+  </body>
+</topic>

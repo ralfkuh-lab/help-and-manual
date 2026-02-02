@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.533Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Erstellung von „.trms4“-Paketdateien</title>
+  <keywords>
+    <keyword>Artefaktpaket<keyword>trms4-Paketdatei</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Erstellung von „.trms4“-Paketdateien</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Zusammenhänge</para>
+    <para styleclass="Normal">Der Transport von Artefakten in Zielsysteme erfolgt immer, indem eine „.trms4“-Paketdatei per Webservice an den IKAROS-Anwendungs-Server des Zielsystems übermittelt wird. Die eigentliche Installation der Artefakte erfolgt dann durch IKAROS selbst.</para>
+    <para styleclass="Normal">Daher muss zum Starten des Transports eine solche Paketdatei vorliegen.</para>
+    <para styleclass="Normal">Um eine solche Paketdatei zu generieren, sendet das TRMS eine Anfrage an das IKAROS-Quellsystem, woraufhin IKAROS die im Artefakt-Paketassistenten gewählten Artefakte extrahiert und an das TRMS zurücksendet. Das TRMS fasst sie dann in einer „.trms4“-Paketdatei zusammen und speichert sie in der TRMS-Datenbank bzw. startet den lokalen Download. D. h. diese Paketdateien enthalten die Artefakte im Ganzen, nicht bloß Referenzen darauf.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Hinweis</text>: Im Menüpunkt „Artefakte“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_c54c03a52f57" styleclass="Hyperlink">[Link]</link> können Sie Artefakte (außer SQL-Skripten) auch einzeln als Paar aus einer Artefakt-Datei (Typ je nach Artefakt-Typ) und einer XML-Datei mit den Transportvorgaben exportieren. Es handelt sich dabei um die gleichen Dateien, wie sie auch in den „trms4-“-Paketen gebündelt werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Manuelle Generierung von Paketen</para>
+    <para styleclass="Normal">In den Menüpunkten „Changes“ und „Change Sets“ sowie im Artefaktpaket-Assistenten können Sie die Schaltfläche „Erstellen“ betätigen.</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Im einfachen Assistenten <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_95ffca161df8" styleclass="Hyperlink">[Link]</link> im Menüpunkt „<text styleclass="Strong">Pakete</text>“ wird dadurch eine flüchtige „.trms4“-Paketdatei erzeugt, die Sie lokal herunterladen müssen, da sie sonst nirgendwo gespeichert wird.</li>
+    </list>
+    <para styleclass="Einzug1">Der Dateiname der Paketdatei hat standardmäßig folgenden Aufbau: </para>
+    <para styleclass="Einzug1"><text styleclass="Systemzitat">&lt;ISO-Zeitstempel&gt;.trms4</text> (z. B. „2019-12-10T15-00-29.trms4“)</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Bei <text styleclass="Strong">Changes</text> und <text styleclass="Strong">Change Sets</text> hingegen wird die erzeugte „.trms4“-Paketdatei direkt binär in der TRMS-Datenbank gespeichert. Der automatisch zum Abschluss eingeleitete Download im Browser ist optional, falls Sie eine lokale Kopie der Paketdatei benötigen.</li>
+    </list>
+    <para styleclass="Einzug1">Der Dateiname der Paketdatei setzt sich wie folgt zusammen: </para>
+    <para styleclass="Einzug1"><text styleclass="Systemzitat">&lt;Bezeichnung des Changes/Change Sets&gt;_&lt;ISO-Zeitstempel&gt;.trms4</text></para>
+    <para styleclass="Einzug1">(z. B. „Change Aktenbearbeitung_2019-12-10T14-33-41.trms4“)</para>
+    <para styleclass="Normal">Zur Generierung einer Paketdatei ist eine Anmeldung an demjenigen Quellsystem erforderlich, aus dem die Artefakte ausgelesen werden sollen.</para>
+    <para styleclass="Normal">Da die Generierung länger dauern kann und sich zudem seit einer eventuell vorangegangenen Paketerstellung Änderungen an den Artefakten im Quellsystem ergeben haben könnten, müssen Sie vor der wiederholten Paketerstellung eine Sicherheitsabfrage bestätigen:</para>
+    <para styleclass="Meldungstext-Kopfzeile">TRMS</para>
+    <para styleclass="Meldungstext">Ein Paket wurde schon erstellt. Möchten Sie dieses ersetzen?</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Automatische Generierung von Paketen</para>
+    <para styleclass="Normal">Falls beim Start des Transports eines Changes/Change Sets noch keine dazugehörige Paketdatei im TRMS gespeichert ist, generiert das TRMS sie automatisch. Das TRMS muss sich dafür jedoch zunächst noch einmal mit dem Quellsystem verbinden, um daraus die Artefakte gemäß der Zusammenstellung im Change/Change Set in eine Paketdatei zu schreiben und diese binär in der Datenbank des TRMS zu speichern.</para>
+    <para styleclass="Normal">Durch diesen zusätzlichen Schritt vor dem Transport können einerseits Fehler auftreten (z. B. wenn das Quellsystem aktuell nicht erreichbar ist oder der aktuelle Nutzer keine Zugriffsrechte auf das Quellsystem besitzt). Andererseits kann die Paketerstellung den Transportprozess auch zusätzlich spürbar verlängern. Des Weiteren kann dies bedeuten, dass die Artefakte in einem neueren Zustand aus dem Quellsystem abgefragt werden, als dies bei der Zusammenstellung des Changes/Change Sets der Fall war.</para>
+    <para styleclass="Normal">Es ist daher sinnvoll, die Pakete durch Klick auf die Schaltfläche „Erstellen“ bereits vor dem Transport generieren zu lassen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Austausch von Artefakten in bereits erstellten Pakten in Changes und Change Sets</para>
+    <para styleclass="Normal">Nach dem Generieren der Paketdatei für ein Change oder Change Set kann der Bedarf entstehen, gezielt bestimmte Artefakte durch eine neuere Version von sich selbst zu ersetzen, ohne die anderen Artefakte, die auf dem enthaltenen Stand bleiben sollen, in der Paketdatei zu aktualisieren. Dafür bietet der Artefaktpaket-Assistent in Changes und Change Sets die Schaltfläche „<text styleclass="Strong">Ersetzen aus Datei</text>“ und „<text styleclass="Strong">Ersetzen aus Quellsystem</text>“ <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_a5410b5feeef" styleclass="Hyperlink">[Link]</link>.</para>
+    <para styleclass="Normal">Beispielsweise könnten Sie, wenn Sie nach Paketerstellung eine geänderte Version eines einzelnen Custom-Code-Ereignisskripts entwickelt haben, gezielt nur dieses Artefakt im Paket austauschen, ohne andere Artefakte zu beeinflussen.</para>
+    <para styleclass="Normal">Der Dateiname des Pakets bleibt auch nach Durchführung solcher Ersetzungen gleich.</para>
+    <para styleclass="ÜberschriftEinfach">Bitte beachten Sie Folgendes:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Sie können nur Artefakte ersetzen, die im Quellsystem selbst enthalten und daher im Artefaktpaket-Assistenten auswählbar sind (eventuell jedoch in anderer Version). Es ist <text styleclass="Strong">nicht</text> möglich, gänzlich andere Artefakte aus anderen Systemen hinzuzufügen.</li>
+      <li styleclass="Aufzählung1">Derzeit sind solche Ersetzungen von Artefakten in der Paketdatei in Changes und Change Sets nicht erkennbar; der Artefaktpaket-Assistent zeigt immer die aktuellste Version des Artefakts aus dem Quellsystem an. Falls Sie also von dieser Funktionalität Gebrauch machen, müssen Sie derzeit noch selbst mit anderen Mitteln nachverfolgen, ob und welche Artefakte ausgetauscht wurden.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Formate im „.trms4“-Paket je nach Artefakt-Typ</para>
+    <para styleclass="Normal">Die konkreten Artefakte werden mittels Paketdateien (Dateiendung „.trms4“) ausgetauscht, welche alle notwendigen Informationen und die konkreten Datensätze enthalten. Je nach Typ des Artefakts sind die dazugehörigen Daten intern im Paket in einem bestimmten Format gespeichert:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Datensätze, die im „<text styleclass="Strong">Business Object Model</text>“ (BOM) von IKAROS eigene Objektklassen besitzen (z. B. Vorgangsvorlagen, Kostenverträge usw.) liegen im Paket im XML-Format vor. Zudem gilt bei diesen Objekten die Besonderheit, dass auch alle abhängigen Objekte (z. B. Vorgangsvorlagenkategorien bei einer Aktenvorgangsvorlage) automatisch zusammen in das Artefaktpaket integriert werden. Ob auch die abhängigen im Zielsystem tatsächlich installiert werden, muss durch sogenannte „Transportvorgaben“ festgelegt werden.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Objekte aus der Datenbank</text> werden in Form von SQL-Skripten im Paket gespeichert. UDFs können direkt als Artefakte im TRMS gewählt werden (das TRMS generiert das erforderliche SQL-Skript selbst). UDTs, SQL-Funktionen, Indizes, Felder, Sichten usw. können auch transportiert werden, allerdings nur durch das Einfügen von Ihnen selbst erstellter SQL-Skripte. Hierbei ist zwingend darauf zu achten, dass die Namenskonventionen („UD“ am Anfang; z. B. „UDF_“ oder „UDT_“) eingehalten werden.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">SQL-Skripte</text>: Optional können einem Paket SQL-Skripte als separate „.sql“-Dateien hinzugefügt werden.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Reports</text>: Reports werden aus dem TRMS heraus via Anfrage an den Microsoft Reporting Service ermittelt und als XML-basierte „.rdl“-Dateien in das Paket eingefügt.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Workflow-Aktualisierungs-Pakete</text>: Aktualisierungs-Pakete für das Workflow-Management müssen in IKAROS erstellt werden und können als Dateien in „.trms4“-Paketdateien integriert werden.</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Dateien aus Dateisystem</text>: Beim Erstellen können auch Dateien aus einigen Dateipfaden des IKAROS-Systems ausgewählt und im Ganzen in ein Paket integriert werden (z. B. „ServiceHost/bin“ mit den „.dll“-Dateien für die UDT-Nutzung). Beim Import solcher Dateien ins Zielsystem werden sie jedoch nicht automatisch an den korrespondierenden Ursprungsort kopiert. Stattdessen liegen sie nach dem Import zunächst immer im Unterordner „TRMS“ des Verzeichnisses gemäß der IKAROS-Systemeinstellung „Dateiablageverzeichnis des Anwendungs-Servers“. Ein Administrator muss die Dateien dann manuell an die richtigen Stellen verschieben.</li>
+    </list>
+  </body>
+</topic>

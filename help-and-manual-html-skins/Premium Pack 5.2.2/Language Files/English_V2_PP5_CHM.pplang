@@ -1,0 +1,82 @@
+# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp29_chm
+PP_DESCRIPTION=CHM Skin (HM 6, 7, 8, 9)
+
+[Auto-TOC]
+ATOC_BTNTIP_OFF=No contents entries on this page$T$
+ATOC_BTNTIP_ON=Display/hide topic directory$T$
+ATOC_TIP=Jump to:&nbsp;$H$
+ATOC_TITLE=Contents$T$
+ATOC_TOP=Scroll to Top of Page$T$
+ATOC_TOPTIP=Jump to top of page$T$
+
+[Breadcrumb Trail]
+BREAD_LABEL=Navigation:$T$
+BREAD_NOTOPIC=No topics above this level$T$
+
+[Button Texts]
+BTNTEXT_CHAPTERTIP=Go to parent chapter$T$
+BTNTEXT_HOMETIP=Go to home topic$T$
+BTNTEXT_MENU=Menu$T$
+BTNTEXT_MENUTIP=Topic functions menu$T$
+BTNTEXT_NEXT=Next$T$
+BTNTEXT_NEXTNONE=This is the last topic$T$
+BTNTEXT_NEXTTIP=Go to next topic$T$
+BTNTEXT_PREV=Previous$T$
+BTNTEXT_PREVTIP=Go to previous topic$T$
+BTNTEXT_PREVNONE=This is the first topic$T$
+
+[Mail Feedback]
+FB_BODY=Dear Support Staff,$T$
+FB_NOJS=Documentation%20Feedback$T$
+FB_SUBJ=Feedback on:$T$
+FB_TIP=Mail us feedback on this topic!$T$
+
+[Topic Menu]
+MENU_FEEDBACK=Email Feedback$T$
+MENU_FEEDBACKTIP=Send feedback on this topic by email$T$
+MENU_PRINT=Print Topic$T$
+MENU_PRINTTIP=Print the current topic$T$
+MENU_TOGGLES=Show/Hide Expanders$T$
+MENU_TOGGLESOFFTIP=No expanding elements on this page$T$
+MENU_TOGGLESTIP=Expand/collapse expanding elements on page$T$
+MENU_TOP=Scroll to Top of Page$T$
+MENU_TOPTIP=Scroll to top of this topic$T$
+
+[Sortable Tables]
+SORT_SORTTIP=Click to sort on this column$T$
+
+[Header Components]
+HD_LOGOTEXT=EC Software website$T$
+
+[Misc. Settings]
+CODESAMPLE_NOCOPY=Sorry, cannot copy to clipboard with this browser!$T$
+CODESAMPLE_COPIED=Copied!$T$
+PRINT_CLOSE=Close Print Preview$T$
+ZOOM_TIP=Click to view full size image$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=and or the it is an on we us to of has be all for in as so are that can you at its by have with into$T$
+WORD_JOINERS=.-_'$T$

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.592Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Menüpunkt „Artefakte“</title>
+  <keywords>
+    <keyword>Artefakt<keyword>Einzelexport und -import</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Menüpunkt „Artefakte“</para>
+    </header>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img61.png" scale="56.00%" width="18" height="18" styleclass="Normal" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 25: Der Menüpunkt „Artefakte“</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Zusammenhänge</para>
+    <para styleclass="Normal">Beim Transport von Artefakten von einem Quellsystem in das TRMS und von dort in ein Zielsystem werden die Daten nicht direkt von Datenbank zu Datenbank kopiert. Stattdessen werden die Artefakte immer in Dateiform übertragen; typischerweise verpackt in eine trms4-Paketdatei.</para>
+    <para styleclass="Normal">Im Menüpunkt „<text styleclass="Strong">Artefakte</text>“ können Sie sich diese Dateien für einzelne Artefakte herunterladen. </para>
+    <para styleclass="Normal">Die Dateien könnten Sie beispielsweise in einem externen Versions-Management-System einchecken und historisieren.</para>
+    <para styleclass="Normal">Zudem können Sie die Dateien in Changes und Change Sets dazu nutzen, um gezielt Artefakte in bereits gespeicherten Paketdateien auszutauschen, ohne andere Artefakte in der Paketdatei zu beeinflussen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Typen von Artefakt-Dateien</para>
+    <para styleclass="Normal">Je nach Artefakt-Typ sind die Dateitypen für Artefakte unterschiedlich:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">xml</text>-Dateien für die Mehrheit der Artefakte (z. B. Vorgangsvorlagen, Custom-Code-Skripte, Vertragskonditionen, „MS Reporting Services“-Reports)</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">sql</text>-Dateien für Datenbankobjekte</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">wfu4</text>-Dateien für Workflow-Update-Pakete. Sowohl ganze, in IKAROS erstellte Workflow-Aktualisierungs-Pakete als auch einzeln im TRMS ausgewählte Workflow-Artefakte sind in wfu4-Dateien verpackt.</li>
+    </list>
+    <para styleclass="Normal">Artefakte des Typs „Datenbankskripte“ können in diesem Menüpunkt nicht exportiert bzw. transportiert werden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Artefakt-Dateienpaar</para>
+    <para styleclass="Normal">Beim Export eines einzelnen Artefakts müssen Sie immer zwei Dateien herunterladen:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Die Datei mit dem Artefakt selbst. Dies ist je nach Typ des Artefakts eine „.xml“, eine „.sql“ oder eine „.wfu4“-Datei.</li>
+      <li styleclass="Aufzählung1">Die XML-Datei mit den Transportvorgaben und einigen Metainformationen zum Artefakt, die genauso heißt wie die Artefaktdatei, mit angehängtem „-Content.xml“.</li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Strong">Wichtig: Diese beiden Dateien müssen Sie immer zusammenhalten!</text></para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Zum späteren Transport des Artefakts oder beim Einsetzen in schon vorhandene Paketdateien sind immer beide Dateien erforderlich.</li>
+      <li styleclass="Aufzählung1">Sowohl in der „Content“-Datei als auch in Paketdateien ist der ursprüngliche Dateiname der Artefaktdatei, wie sie vom TRMS beim Download benannt wurde, fest eingetragen. <text styleclass="Strong">Sie dürfen daher den Dateinamen in Windows nicht verändern!</text> Andernfalls erhalten Sie folgende Fehlermeldung beim Transportversuch:</li>
+    </list>
+    <para styleclass="Meldungstext-Kopfzeile">TRMS</para>
+    <para styleclass="Meldungstext">Die Datei, welche in der Content-Datei angegeben ist, passt nicht zu der hochgeladenen Artefakt-Datei.</para>
+    <para styleclass="Meldungstext">[OK]</para>
+    <para styleclass="Einzug1">Auch das Einsetzen von Artefakt-Dateien in bereits gespeicherte Paketdateien in Changes/Change Sets ist nicht mehr möglich, wenn die Dateinamen geändert wurden.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Bedienung des Menüpunkts „Artefakte“</para>
+    <para styleclass="ÜberschriftEinfach">„Transportieren“: Vorhandenes Artefakt-Dateienpaar transportieren</para>
+    <para styleclass="Normal">Sie können einerseits die Schaltfläche „<text styleclass="Strong">Transportieren</text>“ betätigen, um ein zuvor exportiertes Artefakt hochzuladen und in ein Zielsystem zu transportieren. Dabei erscheinen nacheinander <text styleclass="Strong">zwei Datei-Hochlade-Dialoge</text>:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Im ersten</text> müssen Sie die Datei mit dem Artefakt selbst angeben und hochladen (je nach Typ des Artefakts eine „.xml“, eine „.sql“ oder eine „.wfu4“-Datei).</li>
+      <li styleclass="Aufzählung1"><text styleclass="Strong">Im zweiten</text> müssen Sie die zum Artefakt gehörige „-Content.xml“-Datei angeben und hochladen.</li>
+    </list>
+    <para styleclass="Normal">Nach dem Hochladen der Dateien erscheint ein Dialog, in dem Sie das Zielsystem auswählen und die Anmeldeoptionen festlegen müssen. Nach Klick auf „Transportieren“ beginnt der Transport.</para>
+    <para styleclass="Normal">Das Protokoll zum Transport finden Sie wie gewohnt im Menüpunkt „Transportprotokolle“.</para>
+    <para styleclass="ÜberschriftEinfach">Hinweise</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Es ist nicht möglich, ein Artefakt aus den Listen sofort zu transportieren. Sie müssen für den Transport immer ein bereits exportiertes Artefakt-Dateipaar hochladen.</li>
+      <li styleclass="Aufzählung1">Im Anwendungsfall „Transportieren“ haben alle anderen Schaltflächen und Listen des Menüpunkts „Artefakte“ keine Bewandtnis.</li>
+    </list>
+    <para styleclass="ÜberschriftEinfach">„Exportieren“: Artefakt-Dateipaare exportieren</para>
+    <para styleclass="Normal">Sie können andererseits nach dem Aufruf des Menüpunkts die Schaltfläche „<text styleclass="Strong">Quellsystem wählen</text>“ betätigen, um sich an einem IKAROS-System anzumelden. Nach erfolgreicher Anmeldung werden die Listen der Artefakte wie im Artefaktpaket-Assistenten geladen. Anders als im Artefakt-Paketassistenten können Sie jedoch nicht mehrere Artefakte als „ausgewählt“ markieren, sondern die Funktionalität bezieht sich immer auf das aktuell markierte Artefakt.</para>
+    <para styleclass="Normal">Um ein Artefakt zu exportieren, müssen Sie es markieren, können bei Bedarf die Transportvorgaben anpassen und dann die Schaltfläche „<text styleclass="Strong">Exportieren</text>“ betätigen, um den Download des Dateipaares zum Artefakt einzuleiten.</para>
+    <para styleclass="Normal">Dabei erhalten Sie je nach Einstellung des Webbrowsers eventuell zwei aufeinander folgende Download-Dialoge, mit denen Sie beide Dateien zum Artefakt speichern müssen:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">Je nach Typ des Artefakts eine „.xml“, eine „.sql“ oder eine „.wfu4“-Datei mit dem jeweiligen Artefakt. Der Dateiname entspricht dem Artefakt-Schlüssel (je nach Artefakt-Typ ein Kürzel bzw. Name oder eine GUID).</li>
+      <li styleclass="Aufzählung1">Die „-Content.xml“-Datei zum Artefakt.</li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Strong">Wichtig</text>: Sie benötigen immer beide Dateien und Sie dürfen die Dateinamen nicht ändern! Stellen Sie dafür auch sicher, dass der Webbrowser die Dateinamen beim Speichern nicht ändert.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="6" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:132px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:369px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img14.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:132px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Quellsystem auswählen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + &#160;[Q]</text></para>
+        </td>
+        <td style="vertical-align:top; width:369px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet den Dialog zum Anmelden an demjenigen IKAROS-System, aus dem die Artefakte gewählt werden sollen.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img63.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:132px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Exportieren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [Umschalt] + [E]</text></para>
+        </td>
+        <td style="vertical-align:top; width:369px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Leitet den Download des Dateienpaars für das gewählte Artefakt ein (zwei aufeinanderfolgende Downloads im Webbrowser).</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Wichtig: Sie müssen </text><text styleclass="Strong" style="font-size:9pt;">beide</text><text style="font-size:9pt;"> Dateien speichern und zusammenhalten, wenn Sie das Artefakt später mit der exportierten Datei transportieren bzw. in Pakete einsetzen können möchten.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img16.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:132px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Transportieren</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [i]</text></para>
+        </td>
+        <td style="vertical-align:top; width:369px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Ruft zunächst zwei aufeinander folgende Dateiauswahldialoge auf. Im ersten müssen Sie die Datei mit dem Artefakt angeben, im zweiten die dazugehörige „-Content.xml“-Datei mit den Transportvorgaben.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Anschließend müssen Sie in einem Dialog ein Zielsystem wählen und den eigentlichen Transportprozess starten.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img65.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:132px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Hinzufügen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [Alt] + [A]</text></para>
+        </td>
+        <td style="vertical-align:top; width:369px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet einen Dateiauswahldialog, um ein Workflow-Update-Paket hochzuladen.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Beachten Sie im Menüpunkt „Artefakte“, dass immer nur ein Workflow-Paket ausgewählt sein kann und jedes weitere „Hinzufügen“ das vorhandene Paket ersetzt.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Der Anwendungsfall für das Hinzufügen und erneute Exportieren von Workflow-Update-Paketen im Menüpunkt „Artefakte“ ist es, eine zum Paket passende „-Content.xml“-Datei mit den Transportvorgaben zu generieren.</text></para>
+        </td>
+      </tr>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img25.png" scale="119.00%" width="38" height="38" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:132px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Transportvorgaben</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [E]</text></para>
+        </td>
+        <td style="vertical-align:top; width:369px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Öffnet den Dialog für Transportvorgaben </text><link displaytype="text" defaultstyle="true" type="topiclink" href="fs_ef9609a3fd0b" styleclass="Hyperlink">[Link]</link><text style="font-size:9pt;"> für das ausgewählte Artefakt.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Beachten Sie, dass die Einstellungen im Menüpunkt „Artefakte“ nicht zwischengespeichert werden. Wenn Sie ein anderes Artefakt auswählen, gehen die zuvor eingestellten Transportvorgaben verloren.</text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

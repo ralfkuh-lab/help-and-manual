@@ -1,0 +1,116 @@
+﻿# PREMIUM PACK SKIN LANGUAGE FILE #
+
+# Normally this file will be written and updated by the
+# PP Toolbox utility. You don't need to edit it directly.
+# To change values edit the variables in PP Toolbox and
+# save with the Language Files options in the File menu.
+# If you want to edit directly observe these rules:
+
+# RULES FOR EDITING THIS FILE DIRECTLY
+# + Do not delete entries or sections.
+# + Do not add new entries of your own.
+# + Do not change the names of variables or sections.
+# + No spaces before or after the equals sign in entries.
+# + No quotation marks around values.
+# + NEVER change or delete the PP_TYPE variable!!!!
+# + Use an editor that can save the file with UTF-8 encoding.
+
+# IDENTIFYING VARIABLES AS TEXT OR HTML.
+# + The values of HTML variables end with $H$.
+# + The values of text variables end with $T$.
+# + Values without a suffix are read as text.
+
+[Premium Pack Skin Type]
+PP_TYPE=pp49_compactresponsivetoc
+PP_DESCRIPTION=V4 Compact Responsive skins with full TOC (HM 7, 8 and 9)
+
+[General Settings]
+ASPXOPENMOBILE=WebHelp öffnen$T$
+CODESAMPLE_COPIED=Kopiert!$T$
+CODESAMPLE_NOCOPY=Sorry, ich kann nicht in die Zwischenablage kopieren mit diesem Browser!$T$
+ERROR_NOTFOUND=FEHLER: Topic nicht gefunden!$T$
+NOJS_WARNING=Diese Seite benötigt JavaScript$T$
+
+[Page, Header & Footer Layout]
+HEADERLOGO_TITLE=EC Software website$T$
+
+[Chapter Contents Drop-Down]
+CHPTEXT_CHAPTERS=Kapitel-Auswahl$T$
+CHPTEXT_CHAPTERSBAR=Kapitel-Inhalt$T$
+CHPTEXT_CHCONTENTS=Kapitel-Inhalt$T$
+CHPTEXT_CLOSECHAPTERS_TIP=Kapitel-Inhalt anzeigen$T$
+CHPTEXT_NOSUBS=Keine Unter-Topics$T$
+CHPTEXT_OPENCHAPTERS_TIP=Kapitel-Inhalt schließen$T$
+
+[Google Analytics]
+GA_EXITLABEL=exit_link$T$
+GA_FILELABEL=file_link$T$
+GA_TOCCLICKLABEL=toc_click$T$
+GA_TOCWEBLABEL=toc_weblink$T$
+GA_TOPICLINKLABEL=topic_link$T$
+GA_WEBLABEL=web_link$T$
+
+[TOC and Search]
+SEARCH_BUTTONTEXT=Suchen$T$
+SEARCH_BUTTONTIP=Dokumentation durchsuchen$T$
+SEARCH_HOWTO=Wort/Wörter zum Suchen eingeben (Platzhalter '*' und '?' sind Ok):$T$
+SEARCH_JSWARN=JavaScript muss aktiviert sein für die Suche!$T$e JavaScript enabled to view this documentation$T$
+
+[Mail Feedback]
+BUTTONTEXT_FEEDBACK=Feedback$T$
+BUTTONTIP_FEEDBACK=E-Mail-Feedback zu diesem Topic$T$
+FB_BODY=Hallo Support-Team,$T$
+FB_NOJS=Feedback%20zur%20Dokumentation$T$
+FB_REF=Referenz:$T$
+FB_SUBJ=Feedback zu:$T$
+
+[Links & Social Sharing]
+BUTTONTEXT_LINK1=Demoversion$T$
+BUTTONTEXT_LINK2=Kontakt$T$
+BUTTONTIP_LINK1=Demoversion herunterladen$T$
+BUTTONTIP_LINK2=Kontakt zu EC Software$T$
+SHARING_FACEBOOKTIP=Auf Facebook teilen$T$
+SHARING_LINKEDINTIP=Auft LinkedIn teilen$T$
+SHARING_MAILTIP=Per E-Mail teilen$T$
+SHARING_TWITTERTIP=Per Twitter teilen$T$
+
+[Zoom Search Settings]
+EXCLUDE_WORDS=ab aber als also am an auch auf aus bald bei beim bin bis bis bzw ca da dann das dass dazu daß dem den denn der des die etc fuer für gar ggf ggfs hin im in ins ist ja je mal man mit nie noch nun nur ob oben oder oft ohne per pro sich sie so sog um umso und usw vom von vor war was weg wem wen wer wie will wir wird wo wohl zu zum zur zwar$T$
+WORD_JOINERS=.-_'$T$
+
+[Zoom Language File]
+STR_ALL_CATS=allen Kategorien$T$
+STR_ANY_OF_TERMS=einigen Ausdrücken$T$
+STR_CAT_SUMMARY=Verfeinern Sie Ihre Suche durch das Suchen in einer Kategorie:$T$
+STR_DIDYOUMEAN=Meinten Sie:$T$
+STR_FORM_ALL_SEARCH_WORDS=alle Suchwörter$T$
+STR_FORM_ANY_SEARCH_WORDS=einige Suchwörter$T$
+STR_FORM_MATCH=Übereinstimmung:$T$
+STR_FORM_RESULTS_PER_PAGE=Ergebnisse je Seite:$T$
+STR_FORM_SEARCHFOR=Suche nach:$T$
+STR_FORM_SUBMIT_BUTTON=Abschicken$T$
+STR_NO_QUERY=Keine Suchbedingung eingegeben.$T$
+STR_NO_RESULTS=Keine Ergebnisse$T$
+STR_PAGES_OF_RESULTS=Ergebnisseiten.$T$
+STR_PHRASE_CONTAINS_COMMON_WORDS=Der folgende Satz enthält sehr gebräuchliche Wörter und führt zu einem begrenzten Ergebnis. Bitte definieren sie eine präzisere Abfrage für ein besseres Ergebnis.$T$
+STR_POSSIBLY_GET_MORE_RESULTS=Vielleicht bekommen Sie mehr Ergebnisse bei der Suche nach$T$
+STR_RESULT=Ergebnis$T$
+STR_RESULTS=Ergebnisse$T$
+STR_RESULTS_FOR=Suchergebnis für:$T$
+STR_RESULT_PAGES=Ergebnisseiten:$T$
+STR_RESULT_PAGES_NEXT=Nächste$T$
+STR_RESULT_PAGES_PREVIOUS=Vorherige$T$
+STR_RESULT_SCORE=Gewichtung: $T$
+STR_RESULT_TERMS_MATCHED=Treffer: $T$
+STR_RESULT_URL=URL:$T$
+STR_SKIPPED_FOLLOWING_WORDS=Die folgenden Wörter sind in der Liste der übersprungen Wörter und wurden deshalb nicht für die Suche verwendet:$T$
+STR_SKIPPED_PHRASE=Bitte beachten Sie: Sie können nicht nach exakten Sätzen suchen, die mit einem übersprungen Wort beginnen.$T$
+STR_SORTBY_DATE=Sortieren nach Datum$T$
+STR_SORTBY_RELEVANCE=Sortieren nach Relevanz$T$
+STR_SORTEDBY_DATE=Sortiert nach Datum &#9660;$T$
+STR_SORTEDBY_DATE_ASC=Sortiert nach Datum &#9650;$T$
+STR_SORTEDBY_RELEVANCE=Sortiert nach Relevanz$T$
+STR_SUMMARY_FOUND=gefunden.$T$
+STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS=gefunden, die alle Suchausdrücke enthielten.$T$
+STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS=gefunden, die einige Suchausdrücke enthielten.$T$
+STR_SUMMARY_NO_RESULTS_FOUND=Keine Ergebnisse gefunden.$T$

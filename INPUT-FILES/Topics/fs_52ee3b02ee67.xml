@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" modified="2026-01-30T13:34:52.536Z" lasteditedby="rakul" version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title>Menüpunkt „Dateizentrum“</title>
+  <keywords>
+    <keyword>Dateisystem</keyword>
+    <keyword>TrmsCli herunterladen</keyword>
+    <keyword>TrmsPackageConverter herunterladen</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1">Menüpunkt „Dateizentrum“</para>
+    </header>
+    <para styleclass="ÜberschriftEinfach_Gross">Zusammenhänge</para>
+    <para styleclass="Normal">Für das TRMS stehen zwei Hilfswerkzeuge zur Verfügung:</para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Aufzählung1" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">TrmsCli</text>“: Kommandozeilenprogramm, mit dem einige Funktionen des TRMS automatisiert werden können <link displaytype="text" defaultstyle="true" type="topiclink" href="fs_a8403dc39138" styleclass="Hyperlink">[Link]</link>.</li>
+      <li styleclass="Aufzählung1">„<text styleclass="Strong">TrmsPackageConverter</text>“: Kommandozeilenprogramm zum Migrieren von Paketen, die mit früheren TRMS-Versionen erstellt wurden. Für manche Artefakte kann es nach einem Versionssprung erforderlich sein, Zusatzdaten in Paketen zu ergänzen bzw. die Paketstruktur anzupassen, damit diese in neueren IKAROS-Versionen eingespielt werden können. Falls ein Transport wegen einer veralteten Paketstruktur scheitert, finden Sie eine entsprechende Meldung mit Verweis auf den „TrmsPackageConverter“ im Transportprotokoll.</li>
+    </list>
+    <para styleclass="Normal">Diese beiden Werkzeuge können direkt im TRMS im Menüpunkt „Dateisystem“ als Zip-Archive heruntergeladen werden.</para>
+    <para styleclass="Normal"><text styleclass="Strong">Spezielle Rechte</text>: Der Aufruf des Menüpunkts [<text styleclass="Systemzitat">Administration -&gt; Dateizentrum</text>] erfordert keine speziellen Rechte. Jeder Nutzer, der das TRMS aufrufen kann, sieht auch den Menüpunkt [<text styleclass="Systemzitat">Administration -&gt; Dateizentrum</text>] und kann die beiden Hilfswerkzeuge herunterladen.</para>
+    <para styleclass="ÜberschriftEinfach_Gross">Die Listenansicht</para>
+    <para styleclass="Normal">Im TRMS finden Sie unter „Administration“ den Menüpunkt „Dateizentrum“.</para>
+    <para styleclass="Verknüpfung" style="tabstops:95px left ;"><image src="_HelpPlusManual_TRMS_img148.png" scale="100.00%" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+    <para styleclass="caption">Abb. 43: Menüpunkt „Dateizentrum“ im TRMS</para>
+    <para styleclass="ÜberschriftEinfach">Schaltflächen</para>
+    <para styleclass="Normal" style="margin-left:8px;"><table rowcount="2" colcount="3" style="width:auto; cell-padding:6px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; border-collapse:collapse; cell-border-width:1px; border-color:#a6a6a6; border-style:solid; background-color:none; head-row-background-color:none; alt-row-background-color:none;">
+      <thead style="vertical-align:top">
+        <td style="vertical-align:top; width:50px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Symbol</text></para>
+        </td>
+        <td style="vertical-align:top; width:98px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Schaltfläche</text></para>
+        </td>
+        <td style="vertical-align:top; width:403px; background-color:#4f81bd;">
+          <para styleclass="Normal" style="text-align:center; page-break-after:avoid;"><text style="font-weight:bold; color:#ffffff;">Beschreibung</text></para>
+        </td>
+      </thead>
+      <tr style="vertical-align:top">
+        <td style="vertical-align:top; width:50px;">
+          <para styleclass="Normal"><image src="_HelpPlusManual_TRMS_img149.png" scale="119.00%" width="38" height="38" styleclass="ÜberschriftEinfach_Gross" figurelistinclude="0"></image></para>
+        </td>
+        <td style="vertical-align:top; width:98px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">„</text><text styleclass="Strong" style="font-size:9pt;">Herunterladen</text><text style="font-size:9pt;">“</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">[Strg] + [S]</text></para>
+        </td>
+        <td style="vertical-align:top; width:403px;">
+          <para styleclass="Normal"><text style="font-size:9pt;">Startet den Download der gewählten Datei(en) im Webbrowser.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Wenn mehrere Dateien markiert sind, werden sie dann auf dem Server in eine gemeinsame „.zip“-Datei verpackt und als „Download.zip“ heruntergeladen.</text></para>
+          <para styleclass="Normal"><text style="font-size:9pt;">Nur aktiviert, wenn eine Datei markiert ist. </text></para>
+        </td>
+      </tr>
+    </table></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>
