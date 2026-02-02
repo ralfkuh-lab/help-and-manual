@@ -14,14 +14,14 @@
 }
 
 /* Tabellen-Header: blauer Hintergrund, weiße Schrift */
-#c1topic thead th {
+thead th {
     background-color: #4F81BD !important;
 }
 
-#c1topic thead th,
-#c1topic thead th *,
-#c1topic thead th p,
-#c1topic thead th strong {
+thead th,
+thead th *,
+thead th p,
+thead th strong {
     color: #ffffff !important;
 }
 

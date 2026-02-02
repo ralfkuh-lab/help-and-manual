@@ -144,15 +144,23 @@ def extract_body_content(soup: BeautifulSoup) -> str:
 
 
 def get_page_title(soup: BeautifulSoup) -> str:
-    """Extrahiert den Seitentitel aus einer H&M HTML-Datei."""
-    title_tag = soup.find('title')
-    if title_tag:
-        return title_tag.get_text(strip=True)
+    """Extrahiert den Seitentitel aus einer H&M HTML-Datei.
 
-    # Fallback: H1 suchen
-    h1 = soup.find('h1')
+    H&M generiert Breadcrumb-Titel im <title> Tag (z.B. "Parent > Child").
+    Wir nehmen bevorzugt den einfachen Titel aus der H1 im Content.
+    """
+    # Bevorzugt: H1 im Content (hat den einfachen Titel)
+    h1 = soup.find('h1', class_='p_Heading1')
     if h1:
         return h1.get_text(strip=True)
+
+    # Fallback: Aus <title> Tag, aber nur den letzten Teil nach ">"
+    title_tag = soup.find('title')
+    if title_tag:
+        title = title_tag.get_text(strip=True)
+        if ' > ' in title:
+            return title.split(' > ')[-1].strip()
+        return title
 
     return "Untitled"
 
@@ -258,7 +266,7 @@ def create_nethelp_document(title: str, content: str, filename: str,
     prev_link = f'<link rel="prev" href="{prev_page}" />' if prev_page else ''
     next_link = f'<link rel="next" href="{next_page}" />' if next_page else ''
 
-    # H1-Titel am Anfang hinzufügen (wie im Original Doc-To-Help Format)
+    # H1-Titel am Anfang hinzufügen
     h1_title = f'<h1>{title}</h1>\n'
 
     html = f'''<?xml version="1.0" encoding="utf-8"?>
