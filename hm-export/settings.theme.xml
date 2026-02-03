@@ -1,6 +1,75 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <settings>
-  <references>
-    <join>settings.xml</join>
-  </references>
+  <theme>
+    <name>FSNetHelpTheme</name>
+    <predefined>false</predefined>
+    <baseTheme>Accordion</baseTheme>
+    <baseVersion>1.11.12</baseVersion>
+  </theme>
+  <toolbars>
+    <topicTop>
+      <align>left</align>
+      <content>prev, next, home, openChapterById | collapseTocEntries, loadAllSubchapters | print</content>
+    </topicTop>
+  </toolbars>
+  <general>
+    <rightToLeft>false</rightToLeft>
+    <favicon>images/FavIcon.ico</favicon>
+  </general>
+  <buttons>
+    <prev>
+      <icon>ui-icon ui-icon-circle-arrow-w</icon>
+      <showLabel>false</showLabel>
+    </prev>
+    <next>
+      <icon>ui-icon ui-icon-circle-arrow-e</icon>
+      <showLabel>false</showLabel>
+    </next>
+    <home>
+      <icon>ui-icon ui-icon-home</icon>
+      <showLabel>false</showLabel>
+    </home>
+    <print>
+      <showLabel>false</showLabel>
+   </print>
+    <collapseTocEntries>
+      <icon name="Icon" type="icon" description="Icon for the button. If empty, the icon is not shown." defaultValue="ui-icon ui-icon-star">ui-icon ui-icon-triangle-1-sw</icon>
+      <showLabel>false</showLabel>
+      <click name="Click" type="string" description="description">window.nethelp.ikarosExtensions.fs_collapseEntriesInTableOfContents()</click>
+    </collapseTocEntries>
+    <openChapterById>
+      <icon name="Icon" type="icon" description="Icon for the button. If empty, the icon is not shown." defaultValue="ui-icon ui-icon-star">ui-icon ui-icon-triangle-1-sw</icon>
+      <showLabel>false</showLabel>
+      <click name="Click" type="string" description="JavaScript code of the onclick event handler. Example: alert(&quot;Hello, World!&quot;);">window.nethelp.ikarosExtensions.fs_showChapterIdSearchDialog()</click>
+    </openChapterById>
+    <loadAllSubchapters>
+      <icon name="Icon" type="icon" description="Icon for the button. If empty, the icon is not shown." defaultValue="ui-icon ui-icon-star">ui-icon ui-icon-triangle-1-sw</icon>
+      <showLabel>false</showLabel>
+      <click name="Click" type="string" description="JavaScript code of the onclick event handler. Example: alert(&quot;Hello, World!&quot;);">window.nethelp.ikarosExtensions.fs_loadAllSubchaptersOfCurrentChapter()</click>
+    </loadAllSubchapters>
+  </buttons>
+  <topic>
+      <applyStylesheet>true</applyStylesheet>
+  </topic>
+  <index>
+    <strings>
+      <found />
+    </strings>
+  </index>
+ <search>
+   <operators>
+     <and>+</and>
+     <or>?</or>
+     <not>!</not>
+   </operators>
+ </search>
+  <pageHeader>
+    <visible>false</visible>
+    <showText>true</showText>
+    <height>40</height>
+  </pageHeader>
+  <splitter>
+    <disabled>false</disabled>
+    <position>350</position>
+  </splitter>
 </settings>
