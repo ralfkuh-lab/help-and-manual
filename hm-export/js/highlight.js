@@ -1,40 +1,8 @@
+﻿// Modified Version of highlight.js for Help+Manual Premium Pack Skins
 // ----------------------------------------------------------------------------
-// Zoom Search Engine 7.0 (10/Apr/2014)
-// Highlight & auto-scroll script (DOM version)
-//
-// email: zoom@wrensoft.com
-// www: http://www.wrensoft.com
-//
-// Copyright (C) Wrensoft 2014
-// ----------------------------------------------------------------------------
-// Use this script to allow your search matches to highlight and scroll to
-// the matched word on the actual web page where it was found.
-//
-// You will need to link to this JS file from each page of your site
-// which requires the "highlight/jump to matched word" feature.
-//
-// For example, you could paste the following HTML in your site's header or 
-// footer:
-//
-//   <style>.highlight { background: #FFFF40; }</style>
-//   <script type="text/javascript" src="highlight.js"></script>
-//
-// Note: You will need to specify the correct path to "highlight.js" depending
-// on where the file is located.
-//
-// You will then need to modify the BODY tag on your page to include an "onLoad" 
-// attribute, such as:
-//
-//   <body onload="highlight();">
-//
-// If for some reason you can not modify the body tag of your page, an alternative
-// would be to put the following line after the </body> tag of your page:
-//
-//   <script type="text/javascript">highlight();</script>
-//
-// For more information, consult the Users Guide and our support website at:
-// http://www.wrensoft.com/zoom/support
 
+
+function hlConstructor() {
 // ----------------------------------------------------------------------------
 // Script options
 // ----------------------------------------------------------------------------
@@ -76,8 +44,11 @@ function QueryString(key)
 
 function QueryString_Parse()
 {
-    var query = window.location.search.substring(1);
+	QueryString.keys = new Array();
+	QueryString.values = new Array();
+    var query = hmFlags.searchHighlight;
     var pairs = query.split("&");
+	
 
     for (var i=0;i<pairs.length;i++)
     {
@@ -91,11 +62,6 @@ function QueryString_Parse()
         }
     }
 }
-
-QueryString.keys = new Array();
-QueryString.values = new Array();
-
-QueryString_Parse();
 
 function getElement(id)
 {
@@ -225,19 +191,11 @@ function ZHighlightText(terms, text)
             var l = 0;
             re = new RegExp(terms[i], "gi");
             var count = 0; // just incase
-			
-			// Correction by Tim Green for bug with pointed brackets inside the hilighted text node
-			text = text.replace(/<(?![\/]?span)/g, "&lt;");
-			text = text.replace(">","&gt;");
-			text = text.replace(/span&gt;/g, 'span>');
-			text = text.replace(/"highlight"&gt;/g, '"highlight">');
-			// Correction end
-			
             text = ">" + text + "<"; // temporary tag marks
             do 
             {
                 l=text.length;
-                text=text.replace(re, '$1<span style="background:#FFFF40;" class="highlight" id="highlight" name="highlight">$2</span id="highlight">$3');
+                text=text.replace(re, '$1<span class="highlight" id="highlight" name="highlight">$2</span id="highlight">$3');
                 count++;
             }
             //while(re.lastIndex>0 && count<100); lastIndex not set properly under netscape
@@ -253,33 +211,25 @@ function ZHighlightText(terms, text)
 
 function jumpHL()
 {
-    var d = getElement("highlight");
-    if (d)
+    var $d = $("#highlight");
+    if ($d.length > 0)
     {
-        if (d.scrollIntoView)
-        {
-            d.scrollIntoView();
-        }
-        else
-        {
-	        var y = findPosY(d);
-	        // if element near top of page
-	        if (y < 100)
-	            window.scrollTo(0,0); // go to top of page
-	        else
-	            window.scrollTo(0,y-50); // show space of 50 above
-		}
+		var p = Math.round($d.position().top);
+		var t = p < 500 ? 300 : 600; 
+		var $scrollBox = hmDevice.phone ? $("main#topicbox") : $("div#hmpagebody_scroller");
+		$scrollBox.scrollTo($d,t, {axis: 'y', offset: {top:-7}});
     }
 }
 
+
 function ZHighlightReplace(q, node) 
 {
-	var node_value = node.nodeValue;  	
+	var node_value = node.nodeValue.replace(/\>/,"&gt;");  	
 	var newtext = ZHighlightText(q, node_value);
 	if (newtext != node_value)
 	{
-		var repl = document.createElement('span');  
-		repl.innerHTML = newtext;  
+		var repl = document.createElement('span');
+		repl.innerHTML = newtext;
 		node.parentNode.replaceChild(repl, node);
 	}
 }
@@ -287,7 +237,8 @@ function ZHighlightReplace(q, node)
 function ZHighlightSearch(q, root)
 {
 	if (!root) 
-		root = document.body.childNodes;
+		root = document.getElementById("hmpagebody_scroller").childNodes;
+		// root = document.body.childNodes;
 		
 	for (var i = 0, j = root.length; i < j; i++) 
 	{
@@ -314,13 +265,28 @@ function highlight()
 		return;    
 	if (document.body)
 	{
-		var terms = ZRetrieveQuery();    	
+		QueryString_Parse();
+		var terms = ZRetrieveQuery();   
 		if (terms != false)
 		{
 			IsZoomStop = 0;
 			ZHighlightSearch(terms);
-			if (JumpToFirstOccurance) 
-				jumpHL();
+			// Get all hidden toggles containing highlighted text items
+			var $hiToggles = $("div.dropdown-toggle-body:hidden").has("span.highlight");
+			if ($hiToggles.length > 0) {
+				var togObj = {toggles:$hiToggles,mode:"expand",speed:80 };
+				if (JumpToFirstOccurance)
+					togObj.scrolltarget = $("span.highlight").first();
+				var togArgs = {method: "hmToggleToggles", obj: togObj, doFlash: false };
+				hmWebHelp.extFuncs("hmDoToggle",togArgs);
+			} else if (JumpToFirstOccurance) 
+				jumpHL(); 
+			hmFlags.searchHighlight = "";
 		}
 	}
 }
+
+return highlight;
+}
+
+hmWebHelp.funcs["highlight"] = hlConstructor();

@@ -1,4 +1,4 @@
-// ----------------------------------------------------------------------------
+﻿// ----------------------------------------------------------------------------
 // Zoom Search Engine 7.0 (14/Jan/2014)
 //
 // This file (search.js) is the JavaScript search front-end for client side
@@ -433,7 +433,7 @@ if (typeof(LinkBackURL) == "undefined")
 }
 else
 {
-	SelfURL = LinkBackURL;	
+	SelfURL = LinkBackURL;
 }
 
 if (SelfURL.indexOf("?") != -1)
@@ -543,7 +543,7 @@ function ZoomInitSearch()
 		query = query.replace(/site\:/g, "[#@!]");
 		query = query.replace(/url\:/g, "[#@!]");
 		query = query.replace(/[\:]/g, " ");
-	
+
 		// We then restore it
 		query = query.replace(/\[\#\@\!\]/g, "site:");
 		query = query.replace(/\[\#\@\!\]/g, "url:");		
@@ -557,7 +557,7 @@ function ZoomInitSearch()
 
 	if (WordJoinChars.indexOf("\\") == -1)
 		query = query.replace(/[\\]/g, " ");
-	
+
 	if (WordJoinChars.indexOf("@") == -1)
 		query = query.replace(/[@]/g, " ");		
 
@@ -673,7 +673,7 @@ function ZoomInitSearch()
 		for (dci = 0; dci < PageDataArrayCount; dci++)
 			pagedata = pagedata.concat(window["pagedata"+dci]);
 	}
-	
+
 	searchUrlBuffer = "";
 
 	// Begin searching...
@@ -689,7 +689,7 @@ function ZoomInitSearch()
 			ExcludeTerm = 1;
 			exclude_count++;
 		}
-		
+
 		colonPos = 0;
 		if ((colonPos = searchWords[sw].indexOf(":")) > -1)
 		{
@@ -790,11 +790,12 @@ function ZoomInitSearch()
 		else
 			DisplayCatSummary = 0;
 	}
-		
+
 	var UseDateRange = false;
 	if (DateRangeSearch == 1)
 	{				
-		if (date_from.length > 0 && date_to.length > 0)
+		var dateOK = (/^\d{2}\/\d{2}\/\d{4}$/i.test(date_from) && /^\d{2}\/\d{2}\/\d{4}$/i.test(date_to));
+		if (dateOK && date_from.length > 0 && date_to.length > 0)
 		{			
 			var fromArray = date_from.split("/");
 			var toArray = date_to.split("/");
@@ -971,7 +972,7 @@ function ZoomInitSearch()
 					}
 				}
 			}
-						
+			
 			if (IsFiltered == false && DateRangeSearch == 1 && UseDateRange == true)
 			{
 				if (pageinfo[i][PAGEINFO_DATETIME] < from_datetime)
@@ -1077,7 +1078,7 @@ function ZoomShowFormStart()
 
 function ZoomShowSearchBox()
 {
-	document.writeln("<input type=\"text\" name=\"zoom_query\" size=\"15\" value=\"" + htmlspecialchars(query) + "\" id=\"zoom_searchbox\" class=\"zoom_searchbox\" autofocus=\"autofocus\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" />");
+	document.writeln("<input type=\"text\" name=\"zoom_query\" size=\"15\" autocapitalize=\"off\" autocorrect=\"off\" value=\"" + htmlspecialchars(query) + "\" id=\"zoom_searchbox\" class=\"zoom_searchbox\" />");
 }
 
 function ZoomShowSearchButton()
@@ -1201,11 +1202,11 @@ function ZoomShowMatchOptions()
 {
 	document.writeln("<span class=\"zoom_match\">" + STR_FORM_MATCH + " ");
 	if (andq == 0) {
-		document.writeln("<label for=\"zoom_match_any\" class=\"zoom_and_label\" id=\"zoom_and_label_any\"><input type=\"radio\" id=\"zoom_match_any\" name=\"zoom_and\" value=\"0\" checked=\"checked\" />" + STR_FORM_ANY_SEARCH_WORDS + "</label>");
-		document.writeln("<label for=\"zoom_match_all\" class=\"zoom_and_label\" id=\"zoom_and_label_all\"><input type=\"radio\" id=\"zoom_match_all\" name=\"zoom_and\" value=\"1\" />" + STR_FORM_ALL_SEARCH_WORDS) + "</label>";
+		document.writeln("<label for=\"radio_find_any\" class=\"radio_input\"><input type=\"radio\" name=\"zoom_and\" id=\"radio_find_any\" value=\"0\" checked=\"checked\" />" + STR_FORM_ANY_SEARCH_WORDS + "</label>");
+		document.writeln("<label for=\"radio_find_all\" class=\"radio_input\"><input type=\"radio\" name=\"zoom_and\" id=\"radio_find_all\" value=\"1\" />" + STR_FORM_ALL_SEARCH_WORDS + "</label>");
 	} else {
-		document.writeln("<label for=\"zoom_match_any\" class=\"zoom_and_label\" id=\"zoom_and_label_any\"><input type=\"radio\" id=\"zoom_match_any\" name=\"zoom_and\" value=\"0\" />" + STR_FORM_ANY_SEARCH_WORDS + "</label>");
-		document.writeln("<label for=\"zoom_match_all\" class=\"zoom_and_label\" id=\"zoom_and_label_all\"><input type=\"radio\" id=\"zoom_match_all\" name=\"zoom_and\" value=\"1\" checked=\"checked\" />" + STR_FORM_ALL_SEARCH_WORDS + "</label>");
+		document.writeln("<label for=\"radio_find_any\" class=\"radio_input\"><input type=\"radio\" name=\"zoom_and\" id=\"radio_find_any\" value=\"0\" />" + STR_FORM_ANY_SEARCH_WORDS + "</label>");
+		document.writeln("<label for=\"radio_find_all\" class=\"radio_input\"><input type=\"radio\" name=\"zoom_and\" id=\"radio_find_all\" value=\"1\" checked=\"checked\" />" + STR_FORM_ALL_SEARCH_WORDS + "</label>");
 	}
 	document.writeln("<br /><br /></span>");
 }
@@ -1314,7 +1315,6 @@ function ZoomShowResults()
 			document.writeln("<center><p><small>" + STR_POWEREDBY + " <a href=\"http://www.wrensoft.com/zoom/\" target=\"_blank\"><b>Zoom Search Engine</b></a></small></p></center>");
 		return;
 	}
-
 	document.writeln("<div class=\"results\">");
 	// determine current line of result from the output array
 	if (page == 1) {
@@ -1845,9 +1845,9 @@ function ZoomSearch()
 	ZoomShowRecommended();
 	ZoomShowSorting();
 	ZoomShowResults();
-
+	
 	ZoomShowPageNumbers();
-
+	
 	ZoomShowSearchTime();
 }
 
