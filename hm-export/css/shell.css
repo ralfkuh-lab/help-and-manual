@@ -18,7 +18,7 @@ html, body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 11pt;
     color: #333;
     background: #f5f5f5;
@@ -113,12 +113,16 @@ body {
     content: '\25BC';
 }
 
-/* Accordion Icon (black dot) */
+/* Accordion Icon */
 .accordion-icon {
     margin-right: 0.4rem;
-    font-size: 0.7rem;
     line-height: 1;
-    color: #000;
+}
+
+.accordion-icon img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
 }
 
 /* Accordion Label */
@@ -173,44 +177,28 @@ body {
 }
 
 .toc-item.active-item > .toc-link-wrapper {
-    background-color: #3399ff;
+    background-color: #cbe1fc;
+    outline: 1px solid #9cadf6;
 }
 
-/* Toggle button for expandable items */
+/* Toggle button for expandable items - HIDDEN per Referenz */
 .toc-toggle {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    cursor: pointer;
+    display: none;
 }
 
-.toc-toggle::before {
-    content: '▶';
-    font-size: 0.6rem;
-    color: #666;
-}
-
-.toc-item.expanded > .toc-link-wrapper .toc-toggle::before {
-    content: '▼';
-}
-
-/* Items without children - add spacing to align with toggle area */
+/* Items without children - same padding as with children (no toggle) */
 .toc-item:not(.has-children) > .toc-link-wrapper {
-    padding-left: calc(0.5rem + 20px);
+    padding-left: 0.5rem;
 }
 
-/* Circle color on active item */
+/* Circle color on active item - stays blue, not white */
 .toc-item.active-item > .toc-link-wrapper .toc-icon::before {
-    color: #fff;
+    color: #6699cc;
 }
 
 /* TOC Icon - light blue circles per Referenz design */
 .toc-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
     margin-right: 0.4rem;
     flex-shrink: 0;
     display: flex;
@@ -222,14 +210,14 @@ body {
 .toc-item.has-children > .toc-link-wrapper .toc-icon::before {
     content: '●';
     color: #6699cc;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
 }
 
 /* Hollow circle for leaf items */
 .toc-item:not(.has-children) > .toc-link-wrapper .toc-icon::before {
     content: '○';
     color: #6699cc;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
 }
 
 /* TOC Link */
@@ -247,12 +235,12 @@ body {
 }
 
 .toc-link.active {
-    color: #fff;
+    color: #1E395B;
     font-weight: normal;
 }
 
 .toc-link.active:hover {
-    color: #fff;
+    color: #1E395B;
 }
 
 /* Children container - hidden by default */
