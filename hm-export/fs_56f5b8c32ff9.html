@@ -6,6 +6,14 @@
 <meta charset="UTF-8" />
 <meta name="generator" content="Help+Manual" />
 <link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
 <link rel="prev" href="index.html" />
 <link rel="next" href="fs_0f91786ea1d0.html" />
 </head>
@@ -43,7 +51,7 @@
 <p class="p_Normal" style="page-break-inside: avoid;">Jedes IKAROS-System ab Version 2019.2 bietet dafür eine Web-Schnittstelle für folgende zwei TRMS-bezogene Aktionen:</p>
 <p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1">Abfragen der im IKAROS-System verfügbaren Artefakte aus dem TRMS heraus.</span></p>
 <p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1">Entgegennehmen von „.trms4“-Paketdateien und Installation der darin enthaltenen Artefakte.</span></p>
-<p class="p_Normal" style="page-break-inside: avoid;">Hinweis: Die Oberfläche von IKAROS selbst bietet keine Funktionalität, um Artefakte zu exportieren oder „.trms4“-Paketdateien zu installieren. Zur Ansteuerung der Funktionalität muss immer das TRMS bzw. das Kommandozeilenprogramm „TrmsCli.exe“ <span class="f_Hyperlink"><a href="fs_a8403dc39138.html" class="topiclink">UNREGISTERED EVALUATION VERSION</a></span> oder das Automations-Framework eingesetzt werden.</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Hinweis: Die Oberfläche von IKAROS selbst bietet keine Funktionalität, um Artefakte zu exportieren oder „.trms4“-Paketdateien zu installieren. Zur Ansteuerung der Funktionalität muss immer das TRMS bzw. das Kommandozeilenprogramm „TrmsCli.exe“ <span class="f_Hyperlink"><a href="fs_a8403dc39138.html" class="topiclink">[Link]</a></span> oder das Automations-Framework eingesetzt werden.</p>
 <p class="p_UeberschriftEinfach_Gross" style="page-break-inside: avoid; page-break-after: avoid; border-top: none; border-right: none; border-left: none;"><span class="f_UeberschriftEinfach_Gross">„Transportauftrag“</span></p>
 <p class="p_Normal" style="page-break-inside: avoid;">Im TRMS können Sie zur Transportplanung beliebige sogenannte „Transportaufträge“ definieren. In diesen können Sie u. a. das Zielsystem sowie ein Startdatum oder Start-Ereignis festlegen. Zudem können Sie auch hier den Transport per Tastendruck starten.</p>
 <p class="p_Normal" style="page-break-inside: avoid;"><span class="f_Strong">Beachten Sie</span>: In der aktuellen Ausbaustufe des TRMS ist die bereits geplante Anbindung an automatisierte Scheduler noch nicht umgesetzt. Daher dienen die Angaben in der Transportplanung derzeit vorrangig der manuellen Planung und Organisation von Transporten.</p>

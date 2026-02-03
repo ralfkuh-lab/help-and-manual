@@ -6,6 +6,14 @@
 <meta charset="UTF-8" />
 <meta name="generator" content="Help+Manual" />
 <link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
 <link rel="prev" href="fs_ca85463e4f46.html" />
 <link rel="next" href="fs_0cc83015b201.html" />
 </head>
@@ -87,7 +95,7 @@
 </td>
 <td style="vertical-align:top; width:23.3750rem; padding:0.3750rem; border:solid thin #a6a6a6;"><p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Leitet den Transport eines Artefaktpakets in ein oder mehrere IKAROS-Systeme ein.</span></p>
 <p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-size:0.80rem; font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">In </span><span class="f_Strong" style="font-size: 0.80rem;">Changes/Change Sets</span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">: Öffnet zunächst einen Dialog zur Auswahl der Zielsysteme und beginnt dann mit dem Transport und der Installation des Changes/Change Sets in diesen Systemen. Wenn mehrere Zielsysteme ausgewählt sind, erfolgt der Transport sequenziell nacheinander und für jedes Zielsystem wird ein eigenes Protokoll geschrieben.</span></p>
-<p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-size:0.80rem; font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">Im Menüpunkt „</span><span class="f_Strong" style="font-size: 0.80rem;">Pakete</span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">“: Öffnet zunächst einen Dialog zum Hochladen eines vorhandenen „.trms4“-Pakets und anschließend den Assistenten zum Transportieren und Installieren der Inhalte aus dem Paket in ein oder mehrere Zielsysteme </span><span class="f_Hyperlink"><a href="fs_16a832b9966f.html" class="topiclink">UNREGISTERED EVALUATION VERSION</a></span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">. Wenn mehrere Zielsysteme ausgewählt sind, erfolgt der Transport sequenziell nacheinander und für jedes Zielsystem wird ein eigenes Protokoll geschrieben.</span></p>
+<p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-size:0.80rem; font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">Im Menüpunkt „</span><span class="f_Strong" style="font-size: 0.80rem;">Pakete</span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">“: Öffnet zunächst einen Dialog zum Hochladen eines vorhandenen „.trms4“-Pakets und anschließend den Assistenten zum Transportieren und Installieren der Inhalte aus dem Paket in ein oder mehrere Zielsysteme </span><span class="f_Hyperlink"><a href="fs_16a832b9966f.html" class="topiclink">[Link]</a></span><span class="f_Aufzaehlung1" style="font-size: 0.80rem;">. Wenn mehrere Zielsysteme ausgewählt sind, erfolgt der Transport sequenziell nacheinander und für jedes Zielsystem wird ein eigenes Protokoll geschrieben.</span></p>
 <p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Das Protokoll hierzu können Sie im Menüpunkt „Transportprotokolle“ öffnen.</span></p>
 <p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Verfügbarkeit: in allen Modi</span></p>
 </td>

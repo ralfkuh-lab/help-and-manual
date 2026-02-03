@@ -6,6 +6,14 @@
 <meta charset="UTF-8" />
 <meta name="generator" content="Help+Manual" />
 <link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
 <link rel="prev" href="fs_f277925f2d56.html" />
 <link rel="next" href="fs_4d751254095c.html" />
 </head>
@@ -163,7 +171,7 @@
 <td style="vertical-align:top; width:11.0625rem; padding:0.3750rem; border:solid thin #a6a6a6;"><p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">TargetSystemPassword</span></p>
 </td>
 <td style="vertical-align:top; width:15.6875rem; padding:0.3750rem; border:solid thin #a6a6a6;"><p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Das verschlüsselte Password für die Anmeldung am IKAROS-System.</span></p>
-<p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Nutzen Sie vorab die Funktion „EncryptPassword“ </span><span class="f_Hyperlink"><a href="fs_f277925f2d56.html" class="topiclink">[Link]</a></span><span style="font-size: 0.80rem;">, um die verschlüsselte Zeichenkette für ein Passwort zu generieren.</span></p>
+<p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Nutzen Sie vorab die Funktion „EncryptPassword“ </span><span class="f_Hyperlink"><a href="fs_f277925f2d56.html" class="topiclink">UNREGISTERED EVALUATION VERSION</a></span><span style="font-size: 0.80rem;">, um die verschlüsselte Zeichenkette für ein Passwort zu generieren.</span></p>
 </td>
 <td style="vertical-align:top; width:7.6875rem; padding:0.3750rem; border:solid thin #a6a6a6;"><p class="p_Normal" style="page-break-inside: avoid;"><span style="font-size: 0.80rem;">Zeichenkette</span></p>
 </td>

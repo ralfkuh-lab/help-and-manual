@@ -6,6 +6,14 @@
 <meta charset="UTF-8" />
 <meta name="generator" content="Help+Manual" />
 <link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
 <link rel="prev" href="fs_3361362778f0.html" />
 <link rel="next" href="fs_a8403dc39138.html" />
 </head>

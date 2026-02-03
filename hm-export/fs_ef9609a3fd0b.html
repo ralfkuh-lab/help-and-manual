@@ -6,6 +6,14 @@
 <meta charset="UTF-8" />
 <meta name="generator" content="Help+Manual" />
 <link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
 <link rel="prev" href="fs_d84060bf97c3.html" />
 <link rel="next" href="fs_cf02b19e9b5e.html" />
 </head>
@@ -18,7 +26,7 @@
 <p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1">Extrahieren der Artefakte aus dem Quellsystem beim Generieren von Paketdateien („Export“ aus dem Quellsystem)</span></p>
 <p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1">Installieren der Artefakte in das Zielsystem („Import“ in das IKAROS-Zielsystem)</span></p>
 <p class="p_Normal" style="page-break-inside: avoid;">Die Vorgaben sind notwendig, da die Artefakte in Massenprozessen gesammelt und installiert werden und das TRMS und IKAROS dabei nicht für jeden Zweifelsfall (z. B. abhängige Objekte mit ins Paket aufnehmen?) oder Konfliktfall (vorhandenes Objekt überschreiben?) eine Meldung anzeigen sollen.</p>
-<p class="p_Normal" style="page-break-inside: avoid;">Für jedes einzelne Artefakt werden vom TRMS zunächst die Standard-Transportvorgaben eingestellt, Sie können diese jedoch für jedes Artefakt manuell ändern. Mit der Schaltfläche „<span class="f_Strong">Für alle übernehmen</span>“ können Sie die angezeigten Transportvorgaben auf alle gegenwärtig als ausgewählt markierten Artefakte derselben Gruppe übertragen (auf danach neu ausgewählte Artefakte wirkt sich dies hingegen nicht aus. Die Schaltfläche ist nicht verfügbar, wenn die Transportvorgaben aus der Übersicht der gewählten Artefakte heraus <span class="f_Hyperlink"><a href="fs_d84060bf97c3.html" class="topiclink">UNREGISTERED EVALUATION VERSION</a></span> aufgerufen werden).</p>
+<p class="p_Normal" style="page-break-inside: avoid;">Für jedes einzelne Artefakt werden vom TRMS zunächst die Standard-Transportvorgaben eingestellt, Sie können diese jedoch für jedes Artefakt manuell ändern. Mit der Schaltfläche „<span class="f_Strong">Für alle übernehmen</span>“ können Sie die angezeigten Transportvorgaben auf alle gegenwärtig als ausgewählt markierten Artefakte derselben Gruppe übertragen (auf danach neu ausgewählte Artefakte wirkt sich dies hingegen nicht aus. Die Schaltfläche ist nicht verfügbar, wenn die Transportvorgaben aus der Übersicht der gewählten Artefakte heraus <span class="f_Hyperlink"><a href="fs_d84060bf97c3.html" class="topiclink">[Link]</a></span> aufgerufen werden).</p>
 <p class="p_Normal" style="page-break-inside: avoid;">Welche Vorgaben Sie im Dialog für die Transportvorgaben einstellen können, hängt vom Typ des Artefakts ab.</p>
 <p class="p_Normal" style="page-break-inside: avoid;">Sie können den Dialog mit den Transportvorgaben für ein Artefakt an zwei Stellen aufrufen und die Vorgaben bearbeiten:</p>
 <p class="p_Aufzaehlung1" style="text-indent: 0; page-break-inside: avoid; padding-left: 1.5000rem; margin-left: 0;"><span class="f_Aufzaehlung1" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:1.5000rem;margin-left:-1.5000rem">&#8226;</span><span class="f_Aufzaehlung1">Per Schaltfläche „</span><span class="f_Strong">Transportvorgaben</span><span class="f_Aufzaehlung1">“ im Artefaktpaket-Assistenten sowie</span></p>

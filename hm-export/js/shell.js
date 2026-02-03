@@ -153,7 +153,8 @@
     }
 
     /**
-     * Load a topic via AJAX
+     * Load a topic via iframe + postMessage
+     * Works with both file:// and http:// protocols (CORS workaround)
      */
     function loadTopic(url) {
         if (!url) return;
@@ -168,53 +169,64 @@
         // Show loading state
         $('#content').addClass('loading');
 
-        $.ajax({
-            url: url,
-            dataType: 'html',
-            success: function(html) {
-                // Parse the HTML
-                const doc = $($.parseHTML(html, document, true));
+        // Remove old loader iframe
+        $('#topic-loader').remove();
 
-                // Extract body content
-                const body = doc.filter('body').add(doc.find('body'));
-                let content;
-                if (body.length > 0) {
-                    content = body.html();
-                } else {
-                    content = html;
-                }
+        // Create hidden iframe
+        const iframe = $('<iframe id="topic-loader">')
+            .attr('src', url)
+            .css({ position: 'absolute', left: '-9999px', width: '1px', height: '1px' })
+            .appendTo('body');
 
-                // Extract title
-                const title = doc.filter('title').add(doc.find('title')).text();
+        // One-time message handler
+        function onMessage(event) {
+            if (event.data && event.data.doc) {
+                window.removeEventListener('message', onMessage);
+                iframe.remove();
+
+                // Parse HTML and extract body
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(event.data.doc, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                const title = doc.title;
+
+                // Update content
+                $('#content').html(bodyContent).removeClass('loading');
                 if (title) {
                     document.title = title + ' - TRMS Hilfe';
                 }
 
-                // Update content
-                $('#content').html(content);
-
                 // Update navigation
-                updateNavigation(url, doc);
+                updateNavigation(url, $(doc));
 
                 // Update TOC highlighting
                 updateTocHighlight(url);
 
                 // Scroll to top
                 $('#content').scrollTop(0);
-            },
-            error: function(xhr, status, error) {
+            }
+        }
+
+        window.addEventListener('message', onMessage);
+
+        // iframe.onload -> Request content
+        iframe.on('load', function() {
+            iframe[0].contentWindow.postMessage('getContent', '*');
+        });
+
+        // Timeout for error handling
+        setTimeout(function() {
+            if ($('#topic-loader').length) {
+                window.removeEventListener('message', onMessage);
+                iframe.remove();
                 $('#content').html(
                     '<div class="error-message">' +
                     '<h2>Fehler beim Laden</h2>' +
                     '<p>Die Seite "' + url + '" konnte nicht geladen werden.</p>' +
-                    '<p>Fehler: ' + error + '</p>' +
                     '</div>'
-                );
-            },
-            complete: function() {
-                $('#content').removeClass('loading');
+                ).removeClass('loading');
             }
-        });
+        }, 5000);
     }
 
     /**
