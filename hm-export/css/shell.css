@@ -18,7 +18,7 @@ html, body {
 }
 
 body {
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
     color: #333;
     background: #f5f5f5;
@@ -113,11 +113,12 @@ body {
     content: '\25BC';
 }
 
-/* Accordion Icon (blue dot) */
+/* Accordion Icon (black dot) */
 .accordion-icon {
-    margin-right: 0.5rem;
-    font-size: 0.6rem;
+    margin-right: 0.4rem;
+    font-size: 0.7rem;
     line-height: 1;
+    color: #000;
 }
 
 /* Accordion Label */
@@ -172,7 +173,7 @@ body {
 }
 
 .toc-item.active-item > .toc-link-wrapper {
-    background-color: #1265ab;
+    background-color: #3399ff;
 }
 
 /* Toggle button for expandable items */
@@ -196,14 +197,39 @@ body {
     content: '▼';
 }
 
-/* Items without children - add spacing for alignment */
+/* Items without children - add spacing to align with toggle area */
 .toc-item:not(.has-children) > .toc-link-wrapper {
     padding-left: calc(0.5rem + 20px);
 }
 
-/* TOC Icon - hidden per Referenz design */
+/* Circle color on active item */
+.toc-item.active-item > .toc-link-wrapper .toc-icon::before {
+    color: #fff;
+}
+
+/* TOC Icon - light blue circles per Referenz design */
 .toc-icon {
-    display: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Filled circle for items with children */
+.toc-item.has-children > .toc-link-wrapper .toc-icon::before {
+    content: '●';
+    color: #6699cc;
+    font-size: 0.5rem;
+}
+
+/* Hollow circle for leaf items */
+.toc-item:not(.has-children) > .toc-link-wrapper .toc-icon::before {
+    content: '○';
+    color: #6699cc;
+    font-size: 0.5rem;
 }
 
 /* TOC Link */

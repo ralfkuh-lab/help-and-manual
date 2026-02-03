@@ -574,16 +574,9 @@
                 linkWrapper.append(toggle);
             }
 
-            // Icon
-            if (item.i0) {
-                const icon = $('<img class="toc-icon" alt="">');
-                icon.attr('src', item.i0);
-                icon.attr('data-closed', item.i0);
-                if (item.i1) {
-                    icon.attr('data-open', item.i1);
-                }
-                linkWrapper.append(icon);
-            }
+            // Icon (always show circle via CSS)
+            const icon = $('<span class="toc-icon"></span>');
+            linkWrapper.append(icon);
 
             // Link
             const link = $('<a class="toc-link"></a>');
