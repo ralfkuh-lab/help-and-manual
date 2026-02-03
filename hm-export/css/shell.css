@@ -174,7 +174,7 @@ body {
 }
 
 .toc-link-wrapper:hover {
-    background-color: #f0f4f8;
+    /* Keine Hintergrundfarbe bei Hover - nur Unterstreichung */
 }
 
 .toc-item.active-item > .toc-link-wrapper {
@@ -223,7 +223,7 @@ body {
 .toc-link {
     color: #1E395B;  /* Referenz: user.css:594 */
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.72rem;  /* = 11.52px (Referenz) */
     line-height: 1.3;
     flex: 1;
     word-wrap: break-word;
