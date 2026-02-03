@@ -43,6 +43,10 @@ git commit && git push    # Änderungen pushen
 ```
 Ferber.hmskin (ZIP)
 ├── Baggage/              # CSS, JS, Bilder (werden mit exportiert)
+│   ├── Help.html         # Shell-Einstiegspunkt
+│   ├── shell.js          # Shell-Logik (TOC, Navigation, Topic-Loading)
+│   ├── shell.css         # Shell-Styling
+│   └── ...
 ├── project.hmxp          # Hauptkonfiguration mit TOPICTEMPLATES
 ├── helpproject.xsl
 └── helpproject.xsd
@@ -56,12 +60,40 @@ Ferber.hmskin (ZIP)
 ## Aktueller Stand
 
 ### Was funktioniert
-- [x] Minimales Topic-Template (kein iframe, kein Navigation-Shell)
-- [x] H2-Überschrift mit `<%TOPIC_TITLE%>`
-- [x] `data-c1-topic-id` Attribut mit `<%TOPICID%>`
-- [x] Prev/Next Links
+- [x] Eigene Help-Shell (Help.html) mit Sidebar und Content-Bereich
+- [x] TOC-Baum aus H&M's hmcontent.js via `hmLoadTOC` Callback
+- [x] Topic-Loading via iframe + postMessage (funktioniert mit file:// und http://)
+- [x] Prev/Next Navigation aus `<link rel="prev/next">` Tags
+- [x] TOC-Highlighting und Auto-Expand bei Navigation
+- [x] Responsive Sidebar (Toggle auf Mobile)
 - [x] CSS: `trms_styles.css` mit Referenz-Styles + H&M-Klassenmappings
-- [x] `nethelp.redirector.js` eingebunden
+
+### Architektur
+
+```
+Help.html (Shell)
+    ├── Lädt jquery.js, shell.js, shell.css
+    ├── Lädt hmcontent.js (H&M-generiert, ruft hmLoadTOC auf)
+    │
+    └── shell.js
+        ├── hmLoadTOC(data) - Empfängt TOC-Daten von hmcontent.js
+        ├── buildTocTree()  - Baut TOC als <ul>/<li> Struktur
+        ├── loadTopic(url)  - Lädt Topic via iframe + postMessage
+        └── updateNavigation() - Aktualisiert Prev/Next Links
+
+Topic-Dateien (fs_*.html)
+    └── postMessage-Listener sendet HTML zurück an Shell
+```
+
+### Topic-Loading (iframe + postMessage)
+Löst das CORS-Problem bei `file://` Protokoll:
+
+1. Shell erstellt versteckte `<iframe src="topic.html">`
+2. iframe lädt Topic-HTML komplett
+3. Shell sendet `postMessage('getContent', '*')` an iframe
+4. Topic-Script im iframe antwortet mit `{ doc: outerHTML }`
+5. Shell parst HTML, extrahiert Body, zeigt Content an
+6. iframe wird entfernt
 
 ### Aktuelles Topic-Template
 ```html
@@ -73,11 +105,18 @@ Ferber.hmskin (ZIP)
 <meta charset="<%DOCCHARSET%>" />
 <meta name="generator" content="Help+Manual" />
 <link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
-<script src="./js/nethelp.redirector.js" type="text/javascript"></script>
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
 <IF_PREVIOUS_PAGE><link rel="prev" href="<%HREF_PREVIOUS_PAGE%>" /></IF_PREVIOUS_PAGE>
 <IF_NEXT_PAGE><link rel="next" href="<%HREF_NEXT_PAGE%>" /></IF_NEXT_PAGE>
 </head>
-<body data-c1-topic-id="<%TOPICID%>">
+<body data-topic-id="<%TOPICID%>">
 <h2><%TOPIC_TITLE%></h2>
 <%TOPIC_TEXT%>
 </body>
@@ -85,12 +124,14 @@ Ferber.hmskin (ZIP)
 ```
 
 ### Offene Punkte
-- [ ] NetHelp-Shell (Menu, Toolbar, Breadcrumb) - H&M exportiert nur Topic-Content, keine Shell
-- [ ] TOC-Navigation - H&M generiert eigene JS-basierte TOC, nicht NetHelp's toc.xml
-- [ ] Bildpfade könnten angepasst werden müssen (./images/ vs ../ImagesExt/)
+- [ ] Suche implementieren (H&M generiert zoom_index.js mit Suchdaten)
+- [ ] Index-Tab (H&M generiert hmkeywords.js)
+- [ ] Breadcrumb-Navigation
+- [ ] Print-Funktion
+- [ ] Styling-Feinschliff (Vergleich mit referenz-output/)
 
 ### Erkenntnisse
-- H&M WebHelp hat eigene Navigation-Shell (iframes) - wir haben diese entfernt
-- NetHelp-Shell benötigt: Help.html, js/nethelp.js, themes/, toc.xml, settings.xml
-- Diese Infrastruktur kann H&M nicht direkt generieren
-- Option: Separates Script das nach Export die NetHelp-Shell hinzufügt
+- H&M WebHelp hat eigene Navigation-Shell (iframes) - wir nutzen eigene Shell
+- H&M generiert TOC-Daten als JavaScript (hmcontent.js mit hmLoadTOC Callback)
+- AJAX funktioniert nicht bei `file://` - gelöst mit iframe + postMessage
+- Shell-Dateien (Help.html, shell.js, shell.css) werden via Baggage/ mit exportiert
