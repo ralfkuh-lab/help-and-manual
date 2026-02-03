@@ -16,8 +16,38 @@
         </header>
 
         <nav id="sidebar">
-            <div id="toc-container">
-                <!-- TOC wird hier von shell.js eingefuegt -->
+            <div id="sidebar-tabs">
+                <button class="sidebar-tab active" data-tab="toc">Hilfe</button>
+                <button class="sidebar-tab" data-tab="keywords">Schlagwortsuche</button>
+                <button class="sidebar-tab" data-tab="search">Volltextsuche</button>
+            </div>
+
+            <!-- Tab: Hilfe (TOC) -->
+            <div id="tab-toc" class="tab-content active">
+                <div id="toc-container">
+                    <!-- TOC wird von shell.js via hmLoadTOC eingefuegt -->
+                </div>
+            </div>
+
+            <!-- Tab: Schlagwortsuche -->
+            <div id="tab-keywords" class="tab-content">
+                <div id="keywords-filter">
+                    <input type="text" id="keywords-input" placeholder="Schlagwort filtern..." />
+                </div>
+                <div id="keywords-container">
+                    <!-- Keywords werden von shell.js via hmLoadIndex eingefuegt -->
+                </div>
+            </div>
+
+            <!-- Tab: Volltextsuche -->
+            <div id="tab-search" class="tab-content">
+                <div id="search-form">
+                    <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
+                    <button id="search-button">Suchen</button>
+                </div>
+                <div id="search-results">
+                    <!-- Suchergebnisse werden hier angezeigt -->
+                </div>
             </div>
         </nav>
 
@@ -37,9 +67,13 @@
 
     <!-- jQuery (von H&M exportiert) -->
     <script src="./js/jquery.js"></script>
+    <!-- Suchdaten fuer Volltextsuche (von H&M exportiert) -->
+    <script src="./zoom_pageinfo.js"></script>
     <!-- Shell-Logik -->
     <script src="./js/shell.js"></script>
     <!-- TOC-Daten (ruft hmLoadTOC auf) -->
     <script src="./js/hmcontent.js"></script>
+    <!-- Keyword-Index (ruft hmLoadIndex auf) -->
+    <script src="./js/hmkwindex.js"></script>
 </body>
 </html>

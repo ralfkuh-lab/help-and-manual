@@ -1,6 +1,6 @@
 ﻿/**
  * Shell.js - Modern Help Shell for H&M WebHelp Export
- * Uses hmcontent.js TOC data directly via hmLoadTOC callback
+ * Features: TOC (Hilfe), Schlagwortsuche, Volltextsuche
  */
 
 (function() {
@@ -8,12 +8,16 @@
 
     // Global state
     let tocData = null;
+    let keywordsData = null;
     let flatToc = [];  // Flattened TOC for prev/next navigation
     let currentTopic = null;
 
+    // ============================================
+    // TOC (Hilfe) - hmLoadTOC callback
+    // ============================================
+
     /**
      * Called by hmcontent.js with TOC data
-     * This is the entry point - hmcontent.js calls hmLoadTOC({items:[...]})
      */
     window.hmLoadTOC = function(data) {
         tocData = data.items;
@@ -35,11 +39,253 @@
         });
     }
 
+    // ============================================
+    // Schlagwortsuche - hmLoadIndex callback
+    // ============================================
+
+    /**
+     * Called by hmkwindex.js with keyword index data
+     */
+    window.hmLoadIndex = function(data) {
+        keywordsData = data.keywords;
+        buildKeywordsTree(keywordsData, $('#keywords-container'));
+        initKeywordsFilter();
+    };
+
+    /**
+     * Build keywords tree as nested ul/li
+     */
+    function buildKeywordsTree(items, container) {
+        if (!items || items.length === 0) return;
+
+        const ul = $('<ul class="keywords-list"></ul>');
+
+        items.forEach(function(item) {
+            const li = $('<li class="keywords-item"></li>');
+            const hasChildren = item.subkw && item.subkw.length > 0;
+            const hasLinks = item.hrefs && item.hrefs.length > 0;
+
+            if (hasChildren) {
+                li.addClass('has-children');
+            }
+
+            // Keyword wrapper
+            const wrapper = $('<div class="keywords-wrapper"></div>');
+
+            // Toggle for items with children
+            if (hasChildren) {
+                const toggle = $('<span class="keywords-toggle"></span>');
+                toggle.on('click', function(e) {
+                    e.stopPropagation();
+                    li.toggleClass('expanded');
+                });
+                wrapper.append(toggle);
+            }
+
+            // Keyword text/link
+            if (hasLinks) {
+                // Clickable keyword with link(s)
+                const link = $('<a class="keywords-link"></a>');
+                link.text(item.kw);
+                link.attr('href', '#' + item.hrefs[0]);
+                link.attr('title', item.captions[0] || '');
+                link.on('click', function(e) {
+                    e.preventDefault();
+                    loadTopic(item.hrefs[0]);
+                    if ($(window).width() < 768) {
+                        $('#sidebar').removeClass('open');
+                    }
+                });
+                wrapper.append(link);
+
+                // Multiple links indicator
+                if (item.hrefs.length > 1) {
+                    const more = $('<span class="keywords-more">(' + item.hrefs.length + ')</span>');
+                    wrapper.append(more);
+                }
+            } else {
+                // Non-clickable keyword (category)
+                const text = $('<span class="keywords-text"></span>');
+                text.text(item.kw);
+                wrapper.append(text);
+            }
+
+            li.append(wrapper);
+
+            // Build children recursively
+            if (hasChildren) {
+                const childContainer = $('<div class="keywords-children"></div>');
+                buildKeywordsTree(item.subkw, childContainer);
+                li.append(childContainer);
+            }
+
+            ul.append(li);
+        });
+
+        container.append(ul);
+    }
+
+    /**
+     * Initialize keywords filter
+     */
+    function initKeywordsFilter() {
+        $('#keywords-input').on('input', function() {
+            const filter = $(this).val().toLowerCase().trim();
+            filterKeywords(filter);
+        });
+    }
+
+    /**
+     * Filter keywords by search term
+     */
+    function filterKeywords(filter) {
+        if (!filter) {
+            // Show all, collapse all
+            $('.keywords-item').show();
+            $('.keywords-item').removeClass('expanded');
+            return;
+        }
+
+        $('.keywords-item').each(function() {
+            const $item = $(this);
+            const text = $item.find('> .keywords-wrapper').text().toLowerCase();
+            const matches = text.includes(filter);
+            const hasMatchingChild = $item.find('.keywords-item').filter(function() {
+                return $(this).find('> .keywords-wrapper').text().toLowerCase().includes(filter);
+            }).length > 0;
+
+            if (matches || hasMatchingChild) {
+                $item.show();
+                if (hasMatchingChild) {
+                    $item.addClass('expanded');
+                }
+            } else {
+                $item.hide();
+            }
+        });
+    }
+
+    // ============================================
+    // Volltextsuche - uses pagedata from zoom_pageinfo.js
+    // ============================================
+
+    /**
+     * Initialize fulltext search
+     */
+    function initFulltextSearch() {
+        $('#search-button').on('click', function() {
+            performSearch();
+        });
+
+        $('#search-input').on('keypress', function(e) {
+            if (e.which === 13) {
+                performSearch();
+            }
+        });
+    }
+
+    /**
+     * Perform fulltext search using pagedata
+     */
+    function performSearch() {
+        const query = $('#search-input').val().trim().toLowerCase();
+        const resultsContainer = $('#search-results');
+
+        if (!query) {
+            resultsContainer.html('<p class="search-hint">Bitte Suchbegriff eingeben.</p>');
+            return;
+        }
+
+        if (typeof pagedata === 'undefined') {
+            resultsContainer.html('<p class="search-error">Suchdaten nicht verfuegbar.</p>');
+            return;
+        }
+
+        // Search in pagedata: [url, title, description, image]
+        const results = [];
+        const queryWords = query.split(/\s+/);
+
+        pagedata.forEach(function(page) {
+            const url = page[0];
+            const title = page[1] || '';
+            const description = page[2] || '';
+            const searchText = (title + ' ' + description).toLowerCase();
+
+            // Check if all query words are found
+            const allWordsFound = queryWords.every(function(word) {
+                return searchText.includes(word);
+            });
+
+            if (allWordsFound) {
+                // Calculate simple relevance score
+                let score = 0;
+                queryWords.forEach(function(word) {
+                    if (title.toLowerCase().includes(word)) score += 10;
+                    if (description.toLowerCase().includes(word)) score += 1;
+                });
+
+                results.push({
+                    url: url.replace('./', ''),
+                    title: title,
+                    description: description,
+                    score: score
+                });
+            }
+        });
+
+        // Sort by score descending
+        results.sort(function(a, b) {
+            return b.score - a.score;
+        });
+
+        // Display results
+        if (results.length === 0) {
+            resultsContainer.html('<p class="search-no-results">Keine Ergebnisse fuer "' + escapeHtml(query) + '"</p>');
+        } else {
+            let html = '<p class="search-count">' + results.length + ' Ergebnis' + (results.length !== 1 ? 'se' : '') + '</p>';
+            html += '<ul class="search-results-list">';
+
+            results.forEach(function(result) {
+                const snippet = truncateText(result.description, 150);
+                html += '<li class="search-result-item">';
+                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">';
+                html += '<span class="search-result-title">' + escapeHtml(result.title) + '</span>';
+                if (snippet) {
+                    html += '<span class="search-result-snippet">' + escapeHtml(snippet) + '</span>';
+                }
+                html += '</a></li>';
+            });
+
+            html += '</ul>';
+            resultsContainer.html(html);
+
+            // Add click handlers
+            resultsContainer.find('.search-result-link').on('click', function(e) {
+                e.preventDefault();
+                const topic = $(this).data('topic');
+                loadTopic(topic);
+                if ($(window).width() < 768) {
+                    $('#sidebar').removeClass('open');
+                }
+            });
+        }
+    }
+
+    // ============================================
+    // Shell Initialization
+    // ============================================
+
     /**
      * Initialize the shell after TOC data is loaded
      */
     function initShell() {
         buildTocTree(tocData, $('#toc-container'));
+
+        // Initialize tabs
+        initTabs();
+
+        // Initialize fulltext search
+        initFulltextSearch();
 
         // Handle hash changes for navigation
         $(window).on('hashchange', function() {
@@ -56,6 +302,27 @@
             $('#sidebar').toggleClass('open');
         });
     }
+
+    /**
+     * Initialize tab switching
+     */
+    function initTabs() {
+        $('.sidebar-tab').on('click', function() {
+            const tabId = $(this).data('tab');
+
+            // Update tab buttons
+            $('.sidebar-tab').removeClass('active');
+            $(this).addClass('active');
+
+            // Update tab content
+            $('.tab-content').removeClass('active');
+            $('#tab-' + tabId).addClass('active');
+        });
+    }
+
+    // ============================================
+    // TOC Tree Building
+    // ============================================
 
     /**
      * Build TOC tree as nested ul/li
@@ -126,6 +393,10 @@
 
         container.append(ul);
     }
+
+    // ============================================
+    // Topic Loading
+    // ============================================
 
     /**
      * Get the first topic URL
@@ -228,6 +499,10 @@
             }
         }, 5000);
     }
+
+    // ============================================
+    // Navigation
+    // ============================================
 
     /**
      * Update prev/next navigation
@@ -350,6 +625,22 @@
                 container.scrollTop(container.scrollTop() + relativeTop - containerHeight / 3);
             }
         }
+    }
+
+    // ============================================
+    // Utility Functions
+    // ============================================
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function truncateText(text, maxLength) {
+        if (!text) return '';
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
     }
 
 })();

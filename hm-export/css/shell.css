@@ -72,18 +72,71 @@ body {
 }
 
 /* ============================================
-   SIDEBAR (TOC)
+   SIDEBAR
    ============================================ */
 #sidebar {
     grid-area: sidebar;
     background: #ffffff;
     border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ============================================
+   SIDEBAR TABS
+   ============================================ */
+#sidebar-tabs {
+    display: flex;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.sidebar-tab {
+    flex: 1;
+    padding: 0.6rem 0.5rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sidebar-tab:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.sidebar-tab.active {
+    background: #fff;
+    color: #1265ab;
+    border-bottom-color: #1265ab;
+    font-weight: 600;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
+.tab-content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   TAB: HILFE (TOC)
+   ============================================ */
 #toc-container {
     padding: 0.5rem 0;
+    flex: 1;
+    overflow-y: auto;
 }
 
 /* TOC List Styles */
@@ -91,10 +144,6 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.toc-list .toc-list {
-    /* Nested lists */
 }
 
 .toc-item {
@@ -198,6 +247,230 @@ body {
 }
 
 /* ============================================
+   TAB: SCHLAGWORTSUCHE (Keywords)
+   ============================================ */
+#keywords-filter {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+#keywords-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+#keywords-input:focus {
+    outline: none;
+    border-color: #1265ab;
+}
+
+#keywords-container {
+    padding: 0.5rem 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Keywords List Styles */
+.keywords-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.keywords-item {
+    /* Individual keyword items */
+}
+
+.keywords-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem 0.35rem 0.5rem;
+    transition: background-color 0.15s ease;
+}
+
+.keywords-wrapper:hover {
+    background-color: #f0f4f8;
+}
+
+/* Toggle for keywords with children */
+.keywords-toggle {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.keywords-toggle::before {
+    content: '';
+    border: solid #666;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+}
+
+.keywords-item.expanded > .keywords-wrapper .keywords-toggle::before {
+    transform: rotate(45deg);
+}
+
+/* Items without children */
+.keywords-item:not(.has-children) > .keywords-wrapper {
+    padding-left: calc(0.5rem + 18px);
+}
+
+/* Keyword link */
+.keywords-link {
+    color: #1265ab;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.keywords-link:hover {
+    text-decoration: underline;
+}
+
+/* Non-clickable keyword text */
+.keywords-text {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Multiple links indicator */
+.keywords-more {
+    color: #888;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+/* Children container */
+.keywords-children {
+    display: none;
+    padding-left: 1rem;
+}
+
+.keywords-item.expanded > .keywords-children {
+    display: block;
+}
+
+/* ============================================
+   TAB: VOLLTEXTSUCHE (Search)
+   ============================================ */
+#search-form {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+#search-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #1265ab;
+}
+
+#search-button {
+    padding: 0.5rem 1rem;
+    background: #1265ab;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.15s ease;
+}
+
+#search-button:hover {
+    background: #0d4a7a;
+}
+
+#search-results {
+    padding: 0.5rem 0.75rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Search hints/errors */
+.search-hint,
+.search-error,
+.search-no-results {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.search-error {
+    color: #c00;
+}
+
+/* Search result count */
+.search-count {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 0.75rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Search results list */
+.search-results-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-result-item {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-result-link:hover .search-result-title {
+    text-decoration: underline;
+}
+
+.search-result-title {
+    display: block;
+    color: #1265ab;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.search-result-snippet {
+    display: block;
+    color: #666;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* ============================================
    CONTENT AREA
    ============================================ */
 #content {
@@ -282,6 +555,11 @@ body {
     #shell {
         grid-template-columns: 240px 1fr;
     }
+
+    .sidebar-tab {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.25rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -312,7 +590,7 @@ body {
     }
 
     #sidebar.open {
-        display: block;
+        display: flex;
     }
 
     /* Overlay when sidebar is open */
