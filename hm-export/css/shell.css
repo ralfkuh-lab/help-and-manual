@@ -199,15 +199,20 @@ body {
     background-repeat: no-repeat;
 }
 
-/* Gefüllter Kreis für Items mit Kindern - klickbar für expand/collapse */
+/* Gefüllter Kreis für Items mit Kindern (zugeklappt) - 1. Symbol */
 .toc-item.has-children > .toc-link-wrapper .toc-icon {
     background-position: 0px -96px;
     cursor: pointer;
 }
 
-/* Hohler Kreis für Leaf-Items */
-.toc-item:not(.has-children) > .toc-link-wrapper .toc-icon {
+/* Hohler Kreis für aufgeklappte Items - 2. Symbol (dickerer Rand) */
+.toc-item.has-children.expanded > .toc-link-wrapper .toc-icon {
     background-position: -16px -96px;
+}
+
+/* Hohler Kreis für Leaf-Items - 3. Symbol (dünnerer Rand) */
+.toc-item:not(.has-children) > .toc-link-wrapper .toc-icon {
+    background-position: -32px -96px;
 }
 
 /* TOC Link */
