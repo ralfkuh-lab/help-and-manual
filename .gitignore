@@ -2,6 +2,9 @@
 test-output/
 fertige-hilfe/
 
+# hmskin Arbeitsverzeichnis
+hmskin-work/
+
 # Python
 __pycache__/
 *.py[cod]
