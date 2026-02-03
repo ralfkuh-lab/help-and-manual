@@ -172,7 +172,7 @@ body {
 }
 
 .toc-item.active-item > .toc-link-wrapper {
-    background-color: #e8f0f7;
+    background-color: #1265ab;
 }
 
 /* Toggle button for expandable items */
@@ -187,17 +187,13 @@ body {
 }
 
 .toc-toggle::before {
-    content: '';
-    border: solid #666;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(-45deg);
-    transition: transform 0.2s ease;
+    content: '▶';
+    font-size: 0.6rem;
+    color: #666;
 }
 
 .toc-item.expanded > .toc-link-wrapper .toc-toggle::before {
-    transform: rotate(45deg);
+    content: '▼';
 }
 
 /* Items without children - add spacing for alignment */
@@ -205,12 +201,9 @@ body {
     padding-left: calc(0.5rem + 20px);
 }
 
-/* TOC Icon */
+/* TOC Icon - hidden per Referenz design */
 .toc-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 0.5rem;
-    flex-shrink: 0;
+    display: none;
 }
 
 /* TOC Link */
@@ -228,8 +221,12 @@ body {
 }
 
 .toc-link.active {
-    color: #1265ab;
-    font-weight: 600;
+    color: #fff;
+    font-weight: normal;
+}
+
+.toc-link.active:hover {
+    color: #fff;
 }
 
 /* Children container - hidden by default */
