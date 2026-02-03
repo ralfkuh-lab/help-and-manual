@@ -10,15 +10,15 @@ um die alte Doc-To-Help-generierte Hilfe zu ersetzen.
 ## Verzeichnisstruktur
 ```
 help-and-manual/
-├── H&M_Projekt/          # H&M Quelldateien (.hmxp etc.)
-├── H&M-Output/           # WebHelp-Export von H&M
-├── DOCS/                 # Referenzmaterial
+├── hm-projekt/           # H&M Quelldateien (.hmxp etc.)
+├── hm-export/            # WebHelp-Export von H&M
+├── docs/                 # Referenzmaterial
 │   └── help-and-manual-html-skins/
-├── ARCHIV/
-│   └── postprocessing/     # Legacy-Ansatz (nicht mehr aktiv)
+├── archiv/
+│   └── postprocessing/   # Legacy-Ansatz (nicht mehr aktiv)
 │       ├── postprocess.py
 │       └── readme.md
-├── DESIRED-OUTPUT-FORMAT/  # Zielformat-Referenz
+├── referenz-output/      # Zielformat-Referenz
 ├── fertige-hilfe/        # Finaler Output
 ├── Ferber.hmskin         # Aktive Skin-Konfiguration
 └── CLAUDE.md
@@ -44,7 +44,7 @@ help-and-manual/
 
 ## Archivierte Erkenntnisse (Postprocessing-Ansatz)
 
-Der Postprocessing-Ansatz wurde archiviert. Details siehe `ARCHIV/postprocessing/readme.md`.
+Der Postprocessing-Ansatz wurde archiviert. Details siehe `archiv/postprocessing/readme.md`.
 
 ### Zusammenfassung:
 - **Funktionierte**: Styling-Anpassungen, Bullet-Points, Titel-Extraktion
