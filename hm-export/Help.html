@@ -1,13 +1,45 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="de">
 <head>
-    <meta charset="utf-8" />
-    <title> </title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />    
-    <script type="text/javascript" src="js/nethelp.connect.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TRMS Hilfe</title>
+    <link rel="stylesheet" href="./css/shell.css" />
+    <link rel="stylesheet" href="./css/trms_styles.css" />
 </head>
 <body>
-    <p id="c1noscript">The content is not shown because JavaScript is disabled.</p>
-    <script type="text/javascript">nethelpRender();</script>
+    <div id="shell">
+        <header id="header">
+            <button id="sidebar-toggle" aria-label="Menu">&#9776;</button>
+            <h1>TRMS Hilfe</h1>
+        </header>
+
+        <nav id="sidebar">
+            <div id="toc-container">
+                <!-- TOC wird hier von shell.js eingefuegt -->
+            </div>
+        </nav>
+
+        <main id="content">
+            <p>Laden...</p>
+        </main>
+
+        <footer id="nav-footer">
+            <a id="prev-link" href="#" class="disabled">
+                <span>&larr;</span> Zurueck
+            </a>
+            <a id="next-link" href="#" class="disabled">
+                Weiter <span>&rarr;</span>
+            </a>
+        </footer>
+    </div>
+
+    <!-- jQuery (von H&M exportiert) -->
+    <script src="./js/jquery.js"></script>
+    <!-- Shell-Logik -->
+    <script src="./js/shell.js"></script>
+    <!-- TOC-Daten (ruft hmLoadTOC auf) -->
+    <script src="./js/hmcontent.js"></script>
 </body>
 </html>
