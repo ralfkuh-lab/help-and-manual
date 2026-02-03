@@ -564,19 +564,11 @@
             // Create link wrapper
             const linkWrapper = $('<div class="toc-link-wrapper"></div>');
 
-            // Icon (always show circle via CSS)
-            // For items with children, clicking the icon expands/collapses
+            // Icon (circle via CSS, no click handler needed)
             const icon = $('<span class="toc-icon"></span>');
-            if (hasChildren) {
-                icon.on('click', function(e) {
-                    e.stopPropagation();
-                    e.preventDefault();
-                    li.toggleClass('expanded');
-                });
-            }
             linkWrapper.append(icon);
 
-            // Link
+            // Link - clicking navigates AND toggles expand for items with children
             const link = $('<a class="toc-link"></a>');
             link.text(item.cp);
             link.attr('href', '#' + item.hf);
@@ -584,6 +576,10 @@
             link.on('click', function(e) {
                 e.preventDefault();
                 loadTopic(item.hf);
+                // Toggle expand/collapse for items with children
+                if (hasChildren) {
+                    li.toggleClass('expanded');
+                }
                 // Close sidebar on mobile after selection
                 if ($(window).width() < 768) {
                     $('#sidebar').removeClass('open');

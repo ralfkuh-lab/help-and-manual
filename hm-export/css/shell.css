@@ -231,6 +231,7 @@ body {
 
 .toc-link:hover {
     color: #1265ab;
+    text-decoration: underline;
 }
 
 .toc-link.active {
