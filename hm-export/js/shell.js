@@ -50,6 +50,15 @@
         keywordsData = data.keywords;
         buildKeywordsTree(keywordsData, $('#keywords-container'));
         initKeywordsFilter();
+        updateKeywordsCount();
+    };
+
+    /**
+     * Update keywords count display
+     */
+    function updateKeywordsCount() {
+        const count = keywordsData ? keywordsData.length : 0;
+        $('#keywords-count').text('(' + count + ')');
     };
 
     /**
@@ -281,8 +290,8 @@
     function initShell() {
         buildTocTree(tocData, $('#toc-container'));
 
-        // Initialize tabs
-        initTabs();
+        // Initialize accordion
+        initAccordion();
 
         // Initialize fulltext search
         initFulltextSearch();
@@ -304,19 +313,20 @@
     }
 
     /**
-     * Initialize tab switching
+     * Initialize accordion panel switching
      */
-    function initTabs() {
-        $('.sidebar-tab').on('click', function() {
-            const tabId = $(this).data('tab');
+    function initAccordion() {
+        $('.accordion-header').on('click', function() {
+            const panel = $(this).closest('.accordion-panel');
+            const wasExpanded = panel.hasClass('expanded');
 
-            // Update tab buttons
-            $('.sidebar-tab').removeClass('active');
-            $(this).addClass('active');
+            // Alle Panels schliessen
+            $('.accordion-panel').removeClass('expanded');
 
-            // Update tab content
-            $('.tab-content').removeClass('active');
-            $('#tab-' + tabId).addClass('active');
+            // Geklicktes Panel oeffnen (wenn es vorher geschlossen war)
+            if (!wasExpanded) {
+                panel.addClass('expanded');
+            }
         });
     }
 

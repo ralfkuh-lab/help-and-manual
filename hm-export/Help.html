@@ -16,37 +16,51 @@
         </header>
 
         <nav id="sidebar">
-            <div id="sidebar-tabs">
-                <button class="sidebar-tab active" data-tab="toc">Hilfe</button>
-                <button class="sidebar-tab" data-tab="keywords">Schlagwortsuche</button>
-                <button class="sidebar-tab" data-tab="search">Volltextsuche</button>
-            </div>
-
-            <!-- Tab: Hilfe (TOC) -->
-            <div id="tab-toc" class="tab-content active">
-                <div id="toc-container">
-                    <!-- TOC wird von shell.js via hmLoadTOC eingefuegt -->
+            <!-- Accordion Panel: Hilfe -->
+            <div class="accordion-panel expanded" data-panel="toc">
+                <div class="accordion-header">
+                    <span class="accordion-toggle"></span>
+                    <span class="accordion-icon">&#128309;</span>
+                    <span class="accordion-label">Hilfe</span>
+                </div>
+                <div class="accordion-content">
+                    <div id="toc-container">
+                        <!-- TOC wird von shell.js via hmLoadTOC eingefuegt -->
+                    </div>
                 </div>
             </div>
 
-            <!-- Tab: Schlagwortsuche -->
-            <div id="tab-keywords" class="tab-content">
-                <div id="keywords-filter">
-                    <input type="text" id="keywords-input" placeholder="Schlagwort filtern..." />
+            <!-- Accordion Panel: Schlagwortsuche -->
+            <div class="accordion-panel" data-panel="keywords">
+                <div class="accordion-header">
+                    <span class="accordion-toggle"></span>
+                    <span class="accordion-label">Schlagwortsuche</span>
                 </div>
-                <div id="keywords-container">
-                    <!-- Keywords werden von shell.js via hmLoadIndex eingefuegt -->
+                <div class="accordion-content">
+                    <div id="keywords-filter">
+                        <input type="text" id="keywords-input" placeholder="Schlagwort filtern..." />
+                    </div>
+                    <div id="keywords-count"></div>
+                    <div id="keywords-container">
+                        <!-- Keywords werden von shell.js via hmLoadIndex eingefuegt -->
+                    </div>
                 </div>
             </div>
 
-            <!-- Tab: Volltextsuche -->
-            <div id="tab-search" class="tab-content">
-                <div id="search-form">
-                    <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
-                    <button id="search-button">Suchen</button>
+            <!-- Accordion Panel: Volltextsuche -->
+            <div class="accordion-panel" data-panel="search">
+                <div class="accordion-header">
+                    <span class="accordion-toggle"></span>
+                    <span class="accordion-label">Volltextsuche</span>
                 </div>
-                <div id="search-results">
-                    <!-- Suchergebnisse werden hier angezeigt -->
+                <div class="accordion-content">
+                    <div id="search-form">
+                        <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
+                        <button id="search-button">Suchen</button>
+                    </div>
+                    <div id="search-results">
+                        <!-- Suchergebnisse werden hier angezeigt -->
+                    </div>
                 </div>
             </div>
         </nav>
