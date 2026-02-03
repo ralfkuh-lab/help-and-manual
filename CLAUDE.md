@@ -65,8 +65,27 @@ Ferber.hmskin (ZIP)
 - [x] Topic-Loading via iframe + postMessage (funktioniert mit file:// und http://)
 - [x] Prev/Next Navigation aus `<link rel="prev/next">` Tags
 - [x] TOC-Highlighting und Auto-Expand bei Navigation
-- [x] Responsive Sidebar (Toggle auf Mobile)
 - [x] CSS: `trms_styles.css` mit Referenz-Styles + H&M-Klassenmappings
+- [x] Toolbar mit Navigation (Prev/Next/Home/Goto), Chapters (Collapse/Load) und Print
+- [x] Schlagwortsuche (Keywords) Panel mit Filter
+- [x] Volltextsuche Panel
+
+### Layout
+```
+┌─────────────────────────────────────────────────┐
+│ Toolbar: [<][>][Home][ID] | [Tree][Load] | [Print]
+├───────────────┬─────────────────────────────────┤
+│ Sidebar       │ Breadcrumb (leer)               │
+│ ┌───────────┐ │─────────────────────────────────│
+│ │ Hilfe     │ │                                 │
+│ │ (TOC)     │ │ Content                         │
+│ ├───────────┤ │                                 │
+│ │Schlagwort │ │                                 │
+│ ├───────────┤ │                                 │
+│ │Volltext   │ │                                 │
+│ └───────────┘ │                                 │
+└───────────────┴─────────────────────────────────┘
+```
 
 ### Architektur
 
@@ -74,12 +93,18 @@ Ferber.hmskin (ZIP)
 Help.html (Shell)
     ├── Lädt jquery.js, shell.js, shell.css
     ├── Lädt hmcontent.js (H&M-generiert, ruft hmLoadTOC auf)
+    ├── Lädt hmkeywords.js (H&M-generiert, ruft hmLoadIndex auf)
+    ├── Lädt zoom_pageinfo.js (H&M-generiert, Volltext-Suchdaten)
     │
     └── shell.js
-        ├── hmLoadTOC(data) - Empfängt TOC-Daten von hmcontent.js
-        ├── buildTocTree()  - Baut TOC als <ul>/<li> Struktur
-        ├── loadTopic(url)  - Lädt Topic via iframe + postMessage
-        └── updateNavigation() - Aktualisiert Prev/Next Links
+        ├── hmLoadTOC(data)     - Empfängt TOC-Daten von hmcontent.js
+        ├── hmLoadIndex(data)   - Empfängt Keywords von hmkeywords.js
+        ├── buildTocTree()      - Baut TOC als <ul>/<li> Struktur
+        ├── loadTopic(url)      - Lädt Topic via iframe + postMessage
+        ├── updateNavigation()  - Aktualisiert Prev/Next Links
+        ├── Accordion-Panel-Logik (Hilfe/Schlagwort/Volltext)
+        ├── Toolbar-Button-Handler (Navigation, Chapters, Print)
+        └── Volltextsuche (nutzt zoom_pageinfo.js Daten)
 
 Topic-Dateien (fs_*.html)
     └── postMessage-Listener sendet HTML zurück an Shell
