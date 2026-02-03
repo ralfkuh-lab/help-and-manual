@@ -195,7 +195,7 @@ body {
     height: 16px;
     margin-right: 0.4rem;
     flex-shrink: 0;
-    background-image: url('ui-icons_ikaros-help.png');
+    background-image: url('../images/ui-icons_ikaros-help.png');
     background-repeat: no-repeat;
 }
 
