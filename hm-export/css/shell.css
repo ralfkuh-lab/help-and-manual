@@ -168,7 +168,7 @@ body {
 .toc-link-wrapper {
     display: flex;
     align-items: center;
-    padding: 0.4rem 0.75rem 0.4rem 0.5rem;
+    padding: 0.15rem 0.75rem 0.15rem 0.5rem;  /* Kompakter Zeilenabstand wie Referenz */
     cursor: pointer;
     transition: background-color 0.15s ease;
 }
@@ -189,34 +189,25 @@ body {
     padding-left: 0.5rem;
 }
 
-/* Circle color on active item - stays blue, not white */
-.toc-item.active-item > .toc-link-wrapper .toc-icon::before {
-    color: #6699cc;
-}
-
-/* TOC Icon - light blue circles per Referenz design */
+/* TOC Icon - Sprites aus ui-icons_ikaros-help.png */
 .toc-icon {
-    width: 20px;
+    width: 16px;
+    height: 16px;
     margin-right: 0.4rem;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-image: url('ui-icons_ikaros-help.png');
+    background-repeat: no-repeat;
 }
 
-/* Filled circle for items with children - klickbar für expand/collapse */
-.toc-item.has-children > .toc-link-wrapper .toc-icon::before {
-    content: '●';
-    color: #6699cc;
-    font-size: 10px;  /* Größer als vorher 0.7rem */
+/* Gefüllter Kreis für Items mit Kindern - klickbar für expand/collapse */
+.toc-item.has-children > .toc-link-wrapper .toc-icon {
+    background-position: 0px -96px;
     cursor: pointer;
 }
 
-/* Hollow circle for leaf items */
-.toc-item:not(.has-children) > .toc-link-wrapper .toc-icon::before {
-    content: '○';
-    color: #6699cc;
-    font-size: 10px;  /* Größer als vorher 0.7rem */
+/* Hohler Kreis für Leaf-Items */
+.toc-item:not(.has-children) > .toc-link-wrapper .toc-icon {
+    background-position: -16px -96px;
 }
 
 /* TOC Link */
