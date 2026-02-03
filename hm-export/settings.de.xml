@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+ <theme>
+   <name>FSNetHelpTheme</name>
+   <predefined>false</predefined>
+ </theme>
+ <contextSensitive>
+   <strings>
+     <title>Stellen für &quot;#{key}&quot;: &quot;#{value}&quot;</title>
+     <notfound>Keine Kapitel gefunden.</notfound>
+     <notsupported>Das Schlüsselwort &quot;#{key}&quot; wird nicht unterstützt.</notsupported>
+   </strings>
+ </contextSensitive>
+ <accessibility>
+   <akLinksMenuHeader>#{count} Kapitel gefunden.</akLinksMenuHeader>
+   <toc>
+     <closedBook>Das Buch enthält keine Kapitel.</closedBook>
+     <openBook>Das Buch enthält keine Kapitel.</openBook>
+     <closedBookTopic>Das Buch ist nicht geöffnet.</closedBookTopic>
+     <openBookTopic>Geöffnetes Buch</openBookTopic>
+     <topic>Kapitel</topic>
+   </toc>
+   <collapsibleSections>
+     <collapsed>Klicken, um auzuklappen.</collapsed>
+     <expanded>Klicken, um zu minimieren.</expanded>
+   </collapsibleSections>
+ </accessibility>
+ <buttons>
+   <prev>
+     <label>Vorheriges Kapitel</label>
+   </prev>
+   <next>
+     <label>Nächstes Kapitel</label>
+   </next>
+   <home>
+     <label>Zur Startseite</label>
+   </home>
+   <print>
+     <label>Drucken</label>
+   </print>
+   <collapseTocEntries>
+     <label name="Label" type="string" description="Klappt alle Einträge im Inhaltsvzerzeichnis bis auf den aktiven ein.">Baumansicht aufräumen</label>
+   </collapseTocEntries>
+   <openChapterById>
+     <label name="Label" type="string" description="Öffnet einen Dialog zur Suche nach einer Kapitel-ID.">Kapitel per ID öffnen</label>
+   </openChapterById>
+   <loadAllSubchapters>
+     <label name="Label" type="string" description="Lädt alle Unterkapitel des aktuellen Kapitels.">Unterkapitel laden</label>
+   </loadAllSubchapters>
+ </buttons>
+ <topic>
+   <strings>
+     <notfoundText>Das Kapitel konnte nicht geladen werden.</notfoundText>
+     <notfoundTitle>Das Kapitel konnte nicht geladen werden.</notfoundTitle>
+   </strings>
+   <spinner>
+     <messageText>Lade Hilfe ...</messageText>
+   </spinner>
+ </topic>
+ <index>
+   <label>Schlagwortsuche</label>
+   <strings>
+     <filterTooltip>Nach Schlagworten suchen.</filterTooltip>
+     <notfound>Keine Schlagworteinträge gefunden.</notfound>
+     <more>Siehe auch ...</more>
+   </strings>
+ </index>
+ <search>
+   <label>Volltextsuche</label>
+   <strings>
+     <filterTooltip>Nach Begriffen/Themen suchen. Tipp: Setzen Sie ein Sternchen &quot;*&quot; vor und/oder hinter den Suchbegriff, um mehr zu finden.</filterTooltip>
+     <helpMessage>Standard-Suchmethode: Wort-exakt. &lt;br /&gt;
+     	&lt;strong&gt;Tipp1&lt;/strong&gt;: Setzen Sie ein Sternchen &quot;*&quot; vor und/oder hinter den Suchbegriff, um mehr zu finden.&lt;br /&gt;
+     	&lt;strong&gt;Tipp2&lt;/strong&gt;: Sie können auch logische Operatoren verwenden: #{and}, #{or}, #{not}.&lt;br /&gt; Beispiel: Gläubiger #{or} Rechtsanwalt #{and} Kosten #{not} Vertrag.&lt;br /&gt; 
+     	&lt;strong&gt;Hinweis1&lt;/strong&gt;: Leerzeichen werden als #{and} behandelt. Wenn Leerzeichen als Teil des Suchausdrucks behandelt werden sollen, muss der Suchausdruck in Anführungszeichen gesetzt werden. Z. B. &quot;gesamtschuldnerische Akte&quot;.&lt;br /&gt;
+     	&lt;strong&gt;Hinweis2&lt;/strong&gt;: Einige Zeichen wie der Punkt werden bei der Suche ignoriert und daher automatisch aus dem Suchausdruck entfernt.</helpMessage>
+     <loading>Lade die Volltextsuche ...</loading>
+     <loaderror>Die Volltextsuche konnte nicht geladen werden.</loaderror>
+     <disabled>Die Volltextsuche ist deaktiviert.</disabled>
+     <notfound>Keine Kapitel gefunden.</notfound>
+     <found>#{count} Kapitel gefunden.</found>
+     <correcting>Meinten Sie: #{query}</correcting>
+     <more>Weitere ...</more>
+   </strings>
+   <buttons>
+     <go>
+       <label>Volltextsuche ausführen</label>
+     </go>
+     <help>
+       <label>Hinweise zur Volltextsuche anzeigen</label>
+     </help>
+     <highlight>
+       <label>Gefundene Stellen farblich hervorheben</label>
+     </highlight>
+   </buttons>
+ </search>
+ <toc>
+   <label>Hilfe</label>
+ </toc>
+ <splitter>
+   <strings>
+     <sideShowTooltip>Seitenleiste anzeigen</sideShowTooltip>
+     <sideHideTooltip>Seitenleiste einklappen</sideHideTooltip>
+   </strings>
+ </splitter>
+</settings>
