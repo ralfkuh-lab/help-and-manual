@@ -19,7 +19,7 @@ html, body {
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 11pt;
+    font-size: 0.8em;  /* Referenz: user.css:732 */
     color: #333;
     background: #f5f5f5;
 }
@@ -88,7 +88,8 @@ body {
 }
 
 .accordion-panel.expanded > .accordion-header {
-    background: #cde4f7;
+    background: #c4ddfc;  /* Referenz: jquery-ui.css:986 */
+    border: 1px solid #cccccc;  /* Referenz: jquery-ui.css */
     color: #333;
 }
 
@@ -103,14 +104,14 @@ body {
 }
 
 .accordion-toggle::before {
-    content: '\25B6';
-    font-size: 0.65rem;
-    color: #666;
+    content: '\25B6';  /* Dreieck rechts - gefüllt */
+    font-size: 0.5rem;
+    color: #000;  /* Schwarz wie Referenz */
     transition: transform 0.2s ease;
 }
 
 .accordion-panel.expanded .accordion-toggle::before {
-    content: '\25BC';
+    content: '\25BC';  /* Dreieck unten - gefüllt */
 }
 
 /* Accordion Icon */
@@ -178,13 +179,10 @@ body {
 
 .toc-item.active-item > .toc-link-wrapper {
     background-color: #cbe1fc;
-    outline: 1px solid #9cadf6;
+    /* Kein Border/Outline - Referenz: user.css:669-675 nur einfarbig */
 }
 
-/* Toggle button for expandable items - HIDDEN per Referenz */
-.toc-toggle {
-    display: none;
-}
+/* Toggle button removed - Icon ist jetzt klickbar */
 
 /* Items without children - same padding as with children (no toggle) */
 .toc-item:not(.has-children) > .toc-link-wrapper {
@@ -206,23 +204,24 @@ body {
     justify-content: center;
 }
 
-/* Filled circle for items with children */
+/* Filled circle for items with children - klickbar für expand/collapse */
 .toc-item.has-children > .toc-link-wrapper .toc-icon::before {
     content: '●';
     color: #6699cc;
-    font-size: 0.7rem;
+    font-size: 10px;  /* Größer als vorher 0.7rem */
+    cursor: pointer;
 }
 
 /* Hollow circle for leaf items */
 .toc-item:not(.has-children) > .toc-link-wrapper .toc-icon::before {
     content: '○';
     color: #6699cc;
-    font-size: 0.7rem;
+    font-size: 10px;  /* Größer als vorher 0.7rem */
 }
 
 /* TOC Link */
 .toc-link {
-    color: #333;
+    color: #1E395B;  /* Referenz: user.css:594 */
     text-decoration: none;
     font-size: 0.9rem;
     line-height: 1.3;

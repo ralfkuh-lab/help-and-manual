@@ -564,18 +564,16 @@
             // Create link wrapper
             const linkWrapper = $('<div class="toc-link-wrapper"></div>');
 
-            // Toggle button for items with children
+            // Icon (always show circle via CSS)
+            // For items with children, clicking the icon expands/collapses
+            const icon = $('<span class="toc-icon"></span>');
             if (hasChildren) {
-                const toggle = $('<span class="toc-toggle"></span>');
-                toggle.on('click', function(e) {
+                icon.on('click', function(e) {
                     e.stopPropagation();
+                    e.preventDefault();
                     li.toggleClass('expanded');
                 });
-                linkWrapper.append(toggle);
             }
-
-            // Icon (always show circle via CSS)
-            const icon = $('<span class="toc-icon"></span>');
             linkWrapper.append(icon);
 
             // Link
