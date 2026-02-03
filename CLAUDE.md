@@ -160,3 +160,28 @@ window.addEventListener('message', function(e) {
 - H&M generiert TOC-Daten als JavaScript (hmcontent.js mit hmLoadTOC Callback)
 - AJAX funktioniert nicht bei `file://` - gelöst mit iframe + postMessage
 - Shell-Dateien (Help.html, shell.js, shell.css) werden via Baggage/ mit exportiert
+
+## Arbeitsweise für CSS-Änderungen
+
+### Workflow mit Verifikation
+1. **Vor Änderungen**: Referenz-CSS lesen (`referenz-output/themes/FSNetHelpTheme/`)
+2. **Nach Export**: Exportierte CSS lesen (`hm-export/css/shell.css`) um zu prüfen ob Änderungen angekommen sind
+3. **Vergleichen**: Systematisch Referenz vs. Export vergleichen
+4. **Kleine Schritte**: Eine Änderung → Testen → Nächste Änderung
+5. **Screenshots analysieren**: Genau hinschauen was Links (Referenz) vs. Rechts (Unser Output) zeigt
+
+### Referenz-CSS Dateien
+- `referenz-output/themes/FSNetHelpTheme/user.css` - Hauptstyles
+- `referenz-output/themes/FSNetHelpTheme/theme.css` - Theme-Grundlagen
+- `referenz-output/css/jquery-ui/FsG4Style/jquery-ui.css` - UI-Komponenten, Accordion
+- `referenz-output/css/nethelp.css` - TOC-Struktur (minifiziert)
+
+### Wichtige Referenz-Werte
+| Aspekt | Wert | Quelle |
+|--------|------|--------|
+| Font | `"Segoe UI",Arial,sans-serif` | user.css:731 |
+| Font-Size | `0.8em` | user.css:732 |
+| TOC Text-Farbe | `#1E395B` | user.css:594 |
+| Selektion-HG | `#cbe1fc` | user.css:673, jquery-ui.css:957 |
+| Aktiv-State HG | `#c4ddfc` | jquery-ui.css:986 |
+| Hilfe-Tab-Icon | `help.png` | user.css:621 |
