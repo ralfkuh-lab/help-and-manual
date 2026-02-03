@@ -185,3 +185,41 @@ window.addEventListener('message', function(e) {
 | Selektion-HG | `#cbe1fc` | user.css:673, jquery-ui.css:957 |
 | Aktiv-State HG | `#c4ddfc` | jquery-ui.css:986 |
 | Hilfe-Tab-Icon | `help.png` | user.css:621 |
+
+## .hmskin Kompatibilität (H+M Premium Pack)
+
+### Bekannte Probleme und Lösungen
+
+#### 1. Keine doppelten Dateinamen (case-insensitive)
+Windows ist case-insensitive - `favicon.ico` und `FavIcon.ico` sind dort dieselbe Datei.
+Solche Duplikate führen zum Fehler: *"Invalid project file: ungültige Daten auf Stammebene"*
+
+**Lösung**: Keine Dateien mit gleichem Namen aber unterschiedlicher Groß-/Kleinschreibung.
+
+#### 2. Kein UTF-8 BOM in Baggage-Dateien
+UTF-8 BOM (`EF BB BF`) am Dateianfang kann Probleme verursachen.
+
+**Lösung**: BOM aus allen `.html`, `.htm`, `.css`, `.js` Dateien im Baggage entfernen:
+```bash
+# BOM aus einer Datei entfernen
+sed -i '1s/^\xEF\xBB\xBF//' datei.html
+
+# Alle Dateien mit BOM finden
+for f in Baggage/*.{html,htm,css,js}; do
+    head -c 3 "$f" | grep -q $'\xef\xbb\xbf' && echo "$f"
+done
+```
+
+#### 3. Baggage-Dateien müssen in project.hmxp registriert sein
+Neue Dateien im Baggage/ müssen in `project.hmxp` unter `<files>` eingetragen werden:
+```xml
+<file href="Baggage/dateiname.png" build="ALL" filetype="baggage" />
+```
+
+**Tipp**: H+M Premium Pack registriert fehlende Dateien automatisch beim Speichern.
+
+### hmskin-pack.sh
+Das Pack-Script verwendet Python für Windows-kompatible ZIPs:
+- `create_system = 0` (MS-DOS/FAT statt Unix)
+- `external_attr = 0x10` für Verzeichnisse, `0x20` für Dateien
+- Keine Unix-spezifischen Extra-Felder
