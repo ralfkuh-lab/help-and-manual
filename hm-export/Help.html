@@ -65,18 +65,64 @@
             </div>
         </nav>
 
-        <main id="content">
-            <p>Laden...</p>
-        </main>
+        <main id="content-area">
+            <!-- Toolbar -->
+            <div id="toolbar">
+                <div class="toolbar-group" id="toolbar-navigation">
+                    <div class="toolbar-buttons">
+                        <button id="btn-prev" class="toolbar-btn" title="Vorheriges Kapitel" disabled>
+                            <img src="./previous.png" alt="" />
+                            <span>Vorheriges<br/>Kapitel</span>
+                        </button>
+                        <button id="btn-next" class="toolbar-btn" title="Nächstes Kapitel" disabled>
+                            <img src="./next.png" alt="" />
+                            <span>Nächstes<br/>Kapitel</span>
+                        </button>
+                        <button id="btn-home" class="toolbar-btn" title="Zur Startseite">
+                            <img src="./home.png" alt="" />
+                            <span>Zur<br/>Startseite</span>
+                        </button>
+                        <button id="btn-goto" class="toolbar-btn" title="Kapitel per ID öffnen">
+                            <img src="./Search_32x32.png" alt="" />
+                            <span>Kapitel per<br/>ID öffnen</span>
+                        </button>
+                    </div>
+                    <div class="toolbar-label">Navigation</div>
+                </div>
 
-        <footer id="nav-footer">
-            <a id="prev-link" href="#" class="disabled">
-                <span>&larr;</span> Zurueck
-            </a>
-            <a id="next-link" href="#" class="disabled">
-                Weiter <span>&rarr;</span>
-            </a>
-        </footer>
+                <div class="toolbar-group" id="toolbar-chapters">
+                    <div class="toolbar-buttons">
+                        <button id="btn-collapse-toc" class="toolbar-btn" title="Baumansicht aufräumen">
+                            <img src="./CollapseTableOfContents_32x32.png" alt="" />
+                            <span>Baumansicht<br/>aufräumen</span>
+                        </button>
+                        <button id="btn-load-subchapters" class="toolbar-btn" title="Unterkapitel laden">
+                            <img src="./LoadAllSubChapters_32x32.png" alt="" />
+                            <span>Unterkapitel<br/>laden</span>
+                        </button>
+                    </div>
+                    <div class="toolbar-label">Chapters</div>
+                </div>
+
+                <div class="toolbar-group" id="toolbar-print">
+                    <div class="toolbar-buttons">
+                        <button id="btn-print" class="toolbar-btn" title="Drucken">
+                            <img src="./printer.png" alt="" />
+                            <span>Drucken</span>
+                        </button>
+                    </div>
+                    <div class="toolbar-label">Print</div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb -->
+            <div id="breadcrumb"></div>
+
+            <!-- Content -->
+            <div id="content">
+                <p>Laden...</p>
+            </div>
+        </main>
     </div>
 
     <!-- jQuery (von H&M exportiert) -->

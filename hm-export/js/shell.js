@@ -296,6 +296,9 @@
         // Initialize fulltext search
         initFulltextSearch();
 
+        // Initialize toolbar
+        initToolbar();
+
         // Handle hash changes for navigation
         $(window).on('hashchange', function() {
             loadTopicFromHash();
@@ -310,6 +313,214 @@
         $('#sidebar-toggle').on('click', function() {
             $('#sidebar').toggleClass('open');
         });
+    }
+
+    /**
+     * Initialize toolbar buttons
+     */
+    function initToolbar() {
+        // Navigation buttons
+        $('#btn-prev').on('click', function() {
+            if (!$(this).prop('disabled')) {
+                navigatePrev();
+            }
+        });
+
+        $('#btn-next').on('click', function() {
+            if (!$(this).prop('disabled')) {
+                navigateNext();
+            }
+        });
+
+        $('#btn-home').on('click', function() {
+            loadTopic(getFirstTopic());
+        });
+
+        $('#btn-goto').on('click', function() {
+            openGotoDialog();
+        });
+
+        // Chapters buttons
+        $('#btn-collapse-toc').on('click', function() {
+            collapseToc();
+        });
+
+        $('#btn-load-subchapters').on('click', function() {
+            loadAllSubchapters();
+        });
+
+        // Print button
+        $('#btn-print').on('click', function() {
+            window.print();
+        });
+    }
+
+    /**
+     * Navigate to previous topic
+     */
+    function navigatePrev() {
+        const currentIndex = flatToc.findIndex(item => item.hf === currentTopic);
+        if (currentIndex > 0) {
+            loadTopic(flatToc[currentIndex - 1].hf);
+        }
+    }
+
+    /**
+     * Navigate to next topic
+     */
+    function navigateNext() {
+        const currentIndex = flatToc.findIndex(item => item.hf === currentTopic);
+        if (currentIndex < flatToc.length - 1) {
+            loadTopic(flatToc[currentIndex + 1].hf);
+        }
+    }
+
+    /**
+     * Open dialog to navigate to topic by ID
+     */
+    function openGotoDialog() {
+        const id = prompt('Topic-ID eingeben:');
+        if (id && id.trim()) {
+            // Try to find the topic by filename or partial match
+            const searchId = id.trim().toLowerCase();
+            const found = flatToc.find(item => {
+                const hf = item.hf.toLowerCase();
+                return hf === searchId ||
+                       hf === searchId + '.html' ||
+                       hf.includes(searchId);
+            });
+            if (found) {
+                loadTopic(found.hf);
+            } else {
+                alert('Topic "' + id + '" nicht gefunden.');
+            }
+        }
+    }
+
+    /**
+     * Collapse all TOC nodes
+     */
+    function collapseToc() {
+        $('.toc-item.expanded').removeClass('expanded');
+        updateTocIcons();
+    }
+
+    /**
+     * Load all subchapters of current topic into content area
+     */
+    function loadAllSubchapters() {
+        if (!currentTopic) return;
+
+        // Find current topic in TOC data
+        const tocItem = findTocItem(tocData, currentTopic);
+        if (!tocItem || !tocItem.items || tocItem.items.length === 0) {
+            alert('Keine Unterkapitel vorhanden.');
+            return;
+        }
+
+        // Collect all child topics
+        const childTopics = [];
+        collectChildTopics(tocItem.items, childTopics);
+
+        if (childTopics.length === 0) {
+            alert('Keine Unterkapitel vorhanden.');
+            return;
+        }
+
+        // Load all child topics and concatenate content
+        $('#content').addClass('loading');
+        loadMultipleTopics(childTopics);
+    }
+
+    /**
+     * Find a TOC item by URL
+     */
+    function findTocItem(items, url) {
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].hf === url) {
+                return items[i];
+            }
+            if (items[i].items && items[i].items.length > 0) {
+                const found = findTocItem(items[i].items, url);
+                if (found) return found;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Collect all child topic URLs recursively
+     */
+    function collectChildTopics(items, result) {
+        items.forEach(function(item) {
+            if (item.hf) {
+                result.push({ url: item.hf, title: item.cp });
+            }
+            if (item.items && item.items.length > 0) {
+                collectChildTopics(item.items, result);
+            }
+        });
+    }
+
+    /**
+     * Load multiple topics and concatenate their content
+     */
+    function loadMultipleTopics(topics) {
+        let loadedCount = 0;
+        const contents = [];
+
+        topics.forEach(function(topic, index) {
+            // Create hidden iframe for each topic
+            const iframe = $('<iframe class="topic-loader-multi">')
+                .attr('src', topic.url)
+                .css({ position: 'absolute', left: '-9999px', width: '1px', height: '1px' })
+                .appendTo('body');
+
+            function onMessage(event) {
+                if (event.data && event.data.doc) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(event.data.doc, 'text/html');
+                    const bodyContent = doc.body.innerHTML;
+
+                    contents[index] = {
+                        title: topic.title,
+                        content: bodyContent
+                    };
+
+                    loadedCount++;
+                    window.removeEventListener('message', onMessage);
+                    iframe.remove();
+
+                    if (loadedCount === topics.length) {
+                        // All topics loaded, combine content
+                        let combinedHtml = '';
+                        contents.forEach(function(c) {
+                            if (c) {
+                                combinedHtml += '<div class="subchapter">';
+                                combinedHtml += c.content;
+                                combinedHtml += '</div><hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">';
+                            }
+                        });
+                        $('#content').html(combinedHtml).removeClass('loading');
+                        $('#content').scrollTop(0);
+                    }
+                }
+            }
+
+            window.addEventListener('message', onMessage);
+
+            iframe.on('load', function() {
+                iframe[0].contentWindow.postMessage('getContent', '*');
+            });
+        });
+
+        // Timeout fallback
+        setTimeout(function() {
+            $('.topic-loader-multi').remove();
+            if (loadedCount < topics.length) {
+                $('#content').removeClass('loading');
+            }
+        }, 10000);
     }
 
     /**
@@ -515,7 +726,7 @@
     // ============================================
 
     /**
-     * Update prev/next navigation
+     * Update prev/next navigation and breadcrumb
      */
     function updateNavigation(url, doc) {
         // Try to get prev/next from link rel tags in the loaded document
@@ -533,45 +744,76 @@
         }
 
         // Fallback: use flatToc for navigation
-        if (!prevUrl || !nextUrl) {
-            const currentIndex = flatToc.findIndex(item => item.hf === url);
-            if (currentIndex > 0 && !prevUrl) {
-                prevUrl = flatToc[currentIndex - 1].hf;
-            }
-            if (currentIndex < flatToc.length - 1 && !nextUrl) {
-                nextUrl = flatToc[currentIndex + 1].hf;
-            }
+        const currentIndex = flatToc.findIndex(item => item.hf === url);
+        if (!prevUrl && currentIndex > 0) {
+            prevUrl = flatToc[currentIndex - 1].hf;
+        }
+        if (!nextUrl && currentIndex < flatToc.length - 1) {
+            nextUrl = flatToc[currentIndex + 1].hf;
         }
 
-        // Update prev link
-        const $prevLink = $('#prev-link');
-        if (prevUrl) {
-            $prevLink.attr('href', '#' + prevUrl).removeClass('disabled');
-            $prevLink.off('click').on('click', function(e) {
-                e.preventDefault();
-                loadTopic(prevUrl);
-            });
-        } else {
-            $prevLink.attr('href', '#').addClass('disabled');
-            $prevLink.off('click').on('click', function(e) {
-                e.preventDefault();
-            });
+        // Update prev button
+        $('#btn-prev').prop('disabled', !prevUrl);
+
+        // Update next button
+        $('#btn-next').prop('disabled', !nextUrl);
+
+        // Update breadcrumb
+        updateBreadcrumb(url);
+    }
+
+    /**
+     * Get the path from root to a topic in the TOC
+     */
+    function getTocPath(url) {
+        const path = [];
+
+        function findPath(items, targetUrl, currentPath) {
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const newPath = currentPath.concat([{ title: item.cp, url: item.hf }]);
+
+                if (item.hf === targetUrl) {
+                    return newPath;
+                }
+
+                if (item.items && item.items.length > 0) {
+                    const found = findPath(item.items, targetUrl, newPath);
+                    if (found) return found;
+                }
+            }
+            return null;
         }
 
-        // Update next link
-        const $nextLink = $('#next-link');
-        if (nextUrl) {
-            $nextLink.attr('href', '#' + nextUrl).removeClass('disabled');
-            $nextLink.off('click').on('click', function(e) {
-                e.preventDefault();
-                loadTopic(nextUrl);
-            });
-        } else {
-            $nextLink.attr('href', '#').addClass('disabled');
-            $nextLink.off('click').on('click', function(e) {
-                e.preventDefault();
-            });
+        return findPath(tocData, url, []) || [];
+    }
+
+    /**
+     * Update breadcrumb display
+     */
+    function updateBreadcrumb(url) {
+        const path = getTocPath(url);
+        if (path.length === 0) {
+            $('#breadcrumb').empty();
+            return;
         }
+
+        const html = path.map(function(item, i) {
+            if (i === path.length - 1) {
+                // Current page - no link
+                return '<span>' + escapeHtml(item.title) + '</span>';
+            }
+            return '<a href="#' + item.url + '" data-topic="' + item.url + '">' + escapeHtml(item.title) + '</a>';
+        }).join('<span class="separator">/</span>');
+
+        $('#breadcrumb').html(html);
+
+        // Add click handlers for breadcrumb links
+        $('#breadcrumb a').on('click', function(e) {
+            e.preventDefault();
+            const topic = $(this).data('topic');
+            loadTopic(topic);
+        });
     }
 
     /**
