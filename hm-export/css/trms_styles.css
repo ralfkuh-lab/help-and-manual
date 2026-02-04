@@ -343,16 +343,22 @@ div[align] table {
 }
 
 /* Tabellenkopf: Referenz = hellblau, schwarzer Text, linksbündig */
+/* !important nötig weil H&M Inline-Styles auf th generiert */
 th {
-  background: #E1EAF6;
-  color: #000000;
-  text-align: left;
-  font-weight: normal;
+  background-color: #E1EAF6 !important;
+  color: #000000 !important;
+  text-align: left !important;
+  font-weight: normal !important;
+}
+
+th p {
+  text-align: left !important;
 }
 
 th .f_Strong,
 th strong {
-  color: #000000;
+  color: #000000 !important;
+  font-weight: normal !important;
 }
 
 P.Tabelleninhalt,
