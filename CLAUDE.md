@@ -199,6 +199,7 @@ Solche Duplikate führen zum Fehler: *"Invalid project file: ungültige Daten au
 - Keine Symlinks als Workaround — Windows kann damit nicht umgehen
 - Beim Umbenennen immer auf lowercase normalisieren
 - Beim Hinzufügen neuer Dateien prüfen ob ein case-insensitiver Duplikat existiert
+- **Beim Umbenennen von Baggage-Dateien immer auch `project.hmxp` anpassen!** (Dateireferenzen unter `<files>`)
 
 **Lösung**: Alle Dateinamen lowercase halten. Keine Dateien mit gleichem Namen aber unterschiedlicher Groß-/Kleinschreibung.
 
