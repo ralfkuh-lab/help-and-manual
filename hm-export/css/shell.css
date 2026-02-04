@@ -21,7 +21,7 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 0.8em;  /* Referenz: user.css:732 */
     color: #333;
-    background: #f5f5f5;
+    background: #dfeaf7;  /* Referenz: hellblau statt grau */
 }
 
 /* ============================================

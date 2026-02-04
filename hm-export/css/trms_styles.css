@@ -6,11 +6,11 @@
    ============================================ */
 
 body {
-  font-size: 11pt;
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 8px;
-  color: #000000;
+  color: #333333;  /* Referenz: #333 statt #000 */
+  /* font-size: 11pt entfernt - wird von shell.css gesteuert (0.8em = 12.8px) */
 }
 
 /* ============================================
@@ -340,6 +340,19 @@ table {
 
 div[align] table {
   text-align: left;
+}
+
+/* Tabellenkopf: Referenz = hellblau, schwarzer Text, linksbündig */
+th {
+  background: #E1EAF6;
+  color: #000000;
+  text-align: left;
+  font-weight: normal;
+}
+
+th .f_Strong,
+th strong {
+  color: #000000;
 }
 
 P.Tabelleninhalt,
