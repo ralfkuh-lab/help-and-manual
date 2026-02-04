@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shell.js - Modern Help Shell for H&M WebHelp Export
  * Features: TOC (Hilfe), Schlagwortsuche, Volltextsuche
  */
@@ -54,10 +54,20 @@
     };
 
     /**
-     * Update keywords count display
+     * Update keywords count display (counts all items including sub-items)
      */
     function updateKeywordsCount() {
-        const count = keywordsData ? keywordsData.length : 0;
+        function countAll(items) {
+            if (!items) return 0;
+            let total = items.length;
+            items.forEach(function(item) {
+                if (item.subkw && item.subkw.length > 0) {
+                    total += countAll(item.subkw);
+                }
+            });
+            return total;
+        }
+        const count = keywordsData ? countAll(keywordsData) : 0;
         $('#keywords-count').text('(' + count + ')');
     };
 
@@ -75,21 +85,11 @@
             const hasLinks = item.hrefs && item.hrefs.length > 0;
 
             if (hasChildren) {
-                li.addClass('has-children');
+                li.addClass('has-children expanded');  // immer aufgeklappt
             }
 
             // Keyword wrapper
             const wrapper = $('<div class="keywords-wrapper"></div>');
-
-            // Toggle for items with children
-            if (hasChildren) {
-                const toggle = $('<span class="keywords-toggle"></span>');
-                toggle.on('click', function(e) {
-                    e.stopPropagation();
-                    li.toggleClass('expanded');
-                });
-                wrapper.append(toggle);
-            }
 
             // Keyword text/link
             if (hasLinks) {
@@ -121,7 +121,7 @@
 
             li.append(wrapper);
 
-            // Build children recursively
+            // Build children (always visible, no toggle)
             if (hasChildren) {
                 const childContainer = $('<div class="keywords-children"></div>');
                 buildKeywordsTree(item.subkw, childContainer);
@@ -149,9 +149,8 @@
      */
     function filterKeywords(filter) {
         if (!filter) {
-            // Show all, collapse all
+            // Show all
             $('.keywords-item').show();
-            $('.keywords-item').removeClass('expanded');
             return;
         }
 
@@ -165,9 +164,6 @@
 
             if (matches || hasMatchingChild) {
                 $item.show();
-                if (hasMatchingChild) {
-                    $item.addClass('expanded');
-                }
             } else {
                 $item.hide();
             }
@@ -251,18 +247,13 @@
         if (results.length === 0) {
             resultsContainer.html('<p class="search-no-results">Keine Ergebnisse fuer "' + escapeHtml(query) + '"</p>');
         } else {
-            let html = '<p class="search-count">' + results.length + ' Ergebnis' + (results.length !== 1 ? 'se' : '') + '</p>';
-            html += '<ul class="search-results-list">';
+            let html = '<ul class="search-results-list">';
+            html += '<li class="search-count">' + results.length + ' Kapitel gefunden.</li>';
 
             results.forEach(function(result) {
-                const snippet = truncateText(result.description, 150);
                 html += '<li class="search-result-item">';
-                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">';
-                html += '<span class="search-result-title">' + escapeHtml(result.title) + '</span>';
-                if (snippet) {
-                    html += '<span class="search-result-snippet">' + escapeHtml(snippet) + '</span>';
-                }
-                html += '</a></li>';
+                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">' + result.title + '</a>';
+                html += '</li>';
             });
 
             html += '</ul>';
