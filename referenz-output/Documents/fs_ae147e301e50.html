@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Der Bearbeitungsdialog für IKAROS-Systeme</title>
+<meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="../LinksExt/TRMS.css" />
+<script src="../js/nethelp.redirector.js" type="text/javascript"></script>
+<link rel="prev" href="fs_2ff526eec226.html" /><link rel="next" href="fs_79693aea93bb.html" />
+<meta name="Generator" content="Doc-To-Help v.6.0.0.7152" />
+</head>
+<body data-c1-topic-id="bd6ba3a9-db54-438d-b0a9-c090b2436273">
+<h3 style="tab-stops: 0pt">Der Bearbeitungsdialog für IKAROS-Systeme</h3>
+<p class="Verknpfung"><img src="../ImagesExt/image10_82.png" alt="" /></p>
+<p class="MsoCaption"><a name="_Ref36738972" id="_Ref36738972"></a><a name="_Ref36738971" id="_Ref36738971">Abb. </a>36: 
+Der Bearbeitungsdialog für ein IKAROS-System</p>
+<p class="berschriftEinfach">Wichtig: Bereits verwendete Systeme können nur 
+eingeschränkt geändert werden</p>
+<p class="MsoNormal">Sobald ein System in einem Change, Change Set oder 
+Transportauftrag eingetragen ist, können weder sein Name noch die URLs 
+nachträglich verändert oder gelöscht werden – mit Ausnahme des „Client-Secret“ 
+(bei Einsatz von OIDC). Dies soll sicherstellen, dass Quellsysteme/Zielsysteme 
+nicht versehentlich oder mutwillig durch komplett andere IKAROS-Systeme ersetzt 
+werden.</p>
+<p class="MsoNormal">Falls Sie die URLs oder Ports eines IKAROS-Systems ändern 
+oder einen anderen Namen verwenden möchten, müssen Sie daher einen neuen 
+System-Eintrag dafür anlegen und alle Changes, Change Sets und Transportaufträge 
+für das neue System erneut anlegen.</p>
+<p class="berschriftEinfach">Die Felder im Dialog</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Textfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Name</span></strong>“: Der maximal 50 
+Zeichen lange, eindeutige Name für das IKAROS-System. Er wird bei Wahl des 
+Systems als Quell- oder Zielsystem in den Dialogen und Anmeldedialogen 
+angezeigt.</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Listenfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Typ</span></strong>“: Legt fest, mit 
+welcher Service-Schnittstellen-Technologie und welcher Authentifizierungsmethode 
+der Ziel-Service angesprochen werden soll. Sie müssen hier denjenigen Typen 
+wählen, der vom IKAROS-Zielsystem verwendet wird. Weitere Informationen hierzu 
+finden Sie in der Dokumentation des Menüpunkts [<span class="Systemzitat">Administration -&gt; Services</span>] in IKAROS (Kapitel-ID 
+„fs_a8c663c5abe7“).</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Textfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">ServiceHost-Adresse</span></strong>“: 
+Die URL zum IKAROS-Anwendungs-Server (ServiceHost) des IKAROS-Systems.</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Textfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Version</span></strong>“: Die 
+IKAROS-Version des Systems. Sie wird nach erfolgreicher Ausführung von 
+„Verbindung prüfen“ automatisch aus der Datenbank des Systems ermittelt und kann 
+nicht manuell bearbeitet werden.</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Textfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Edition</span></strong>“: Die 
+IKAROS-Edition des Systems.</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Listenfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Geschäftseinheit</span></strong>“: 
+Die Geschäftseinheit aus dem IKAROS-Zielsystem, in die das TRMS die Transporte 
+durchführen soll. Nur relevant, wenn das IKAROS-System für den Mehrfirmenbetrieb 
+eingerichtet ist. Wenn dies zutrifft, wird bereits beim Aufrufen des 
+Bearbeitungsdialogs eine Verbindung hergestellt, bei der unter anderem die 
+Geschäftseinheiten des Zielsystems abgefragt werden. Falls bei dieser 
+Verbindungsaufnahme festgestellt wird, dass der Mehrfirmenbetrieb im Zielsystem 
+nicht (mehr) aktiv ist, erhalten Sie eine entsprechende Meldung Informationen 
+zum Mehrfirmenbetrieb von IKAROS finden Sie in der Hilfe von <strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">IKAROS</span></strong> (nicht im 
+TRMS) im Kapitel mit der ID „fs_ad5a9d815892“.</p>
+<p class="berschriftEinfach">Rahmen „Zertifikat (gRPC)“ und „OpenID Connect“</p>
+<p class="MsoNormal">Die Felder in diesen Rahmen sind funktional identisch mit den 
+gleichnamigen Feldern in den „Services“-Stammdaten in IKAROS. Weitere 
+Informationen hierzu finden Sie in der Dokumentation des Menüpunkts [<span class="Systemzitat">Administration -&gt; Services</span>] in IKAROS (Kapitel-ID in 
+der IKAROS-Hilfe: „fs_a8c663c5abe7“).</p>
+<p class="Aufzhlung1" style="tab-stops: 17.85pt"><img src="../ImagesExt/image10_1.png" alt="" />  Textfeld „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">API-Client Key</span></strong>“: Legt 
+optional den API-Schlüssel (eine GUID) desjenigen API-Clients aus dem 
+IKAROS-Zielsystem fest, in dessen Benutzerkontext (IKAROS-Rechte, Claims usw.) 
+der Transport und das Abfragen von Artefakten erfolgen kann. Falls leer, wird 
+der „Daemon“-Benutzer des IKAROS-Systems verwendet. Die Verbindungsprüfung kann 
+nur erfolgreich sein, wenn es im IKAROS-Zielsystem tatsächlich einen API-Client 
+(in IKAROS unter [<span class="Systemzitat">Administration -&gt; 
+API-Clients</span>]) mit diesem Schlüssel gibt. Weitere Informationen hierzu 
+finden Sie in der IKAROS-Hilfe im Kapitel mit der ID „fs_29b57d418a77“.</p>
+<div style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 1pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; BORDER-LEFT: medium none; MARGIN: 9pt 14.2pt 3pt 0pt; PADDING-RIGHT: 0pt">
+<p class="berschriftEinfachGross" style="MARGIN-BOTTOM: 0pt; MARGIN-TOP: 0pt">Schaltflächen</p></div>
+<table class="TabelleKopfOben" style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: medium none; MARGIN-LEFT: 5.65pt; BORDER-LEFT: medium none" cellspacing="0" cellpadding="0" border="1">
+  <thead>
+  <tr>
+    <td style="BORDER-TOP: gray 1pt solid; BORDER-RIGHT: gray 1pt solid; BACKGROUND: #4f81bd; BORDER-BOTTOM: gray 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: gray 1pt solid; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal" style="TEXT-ALIGN: center" align="center"><b><span style="COLOR: white">Symbol</span></b></p></td>
+    <td style="BORDER-TOP: gray 1pt solid; BORDER-RIGHT: gray 1pt solid; BACKGROUND: #4f81bd; BORDER-BOTTOM: gray 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal" style="TEXT-ALIGN: center" align="center"><b><span style="COLOR: white">Schaltfläche</span></b></p></td>
+    <td style="BORDER-TOP: gray 1pt solid; BORDER-RIGHT: gray 1pt solid; BACKGROUND: #4f81bd; BORDER-BOTTOM: gray 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal" style="TEXT-ALIGN: center" align="center"><b><span style="COLOR: white">Beschreibung</span></b></p></td></tr></thead>
+  <tbody>
+  <tr>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: #a6a6a6 1pt solid; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal"><span class="Icon"><img src="../ImagesExt/image10_11.png" alt="" /></span></p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">„<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Speichern &amp; 
+      Schließen</span></strong>“</p>
+      <p class="MsoNormal">[Strg] + [H]</p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">Speichert die Änderungen an den Systemverbindungsdaten 
+      und schließt den Dialog.</p>
+      <p class="MsoNormal">Nur aktiv, wenn Änderungen vorliegen und „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Verbindung 
+      prüfen</span></strong>“ erfolgreich ausgeführt wurde.</p></td></tr>
+  <tr>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: #a6a6a6 1pt solid; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal"><span class="Icon"><img src="../ImagesExt/image10_12.png" alt="" /></span></p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">„<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Speichern</span></strong>“</p>
+      <p class="MsoNormal">[Strg] + [S]</p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">Speichert die Änderungen an den 
+      Systemverbindungsdaten.</p>
+      <p class="MsoNormal">Nur aktiv, wenn Änderungen vorliegen und „<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Verbindung 
+      prüfen</span></strong>“ erfolgreich ausgeführt wurde.</p></td></tr>
+  <tr>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: #a6a6a6 1pt solid; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal"><span class="Icon"><img src="../ImagesExt/image10_13.png" alt="" /></span></p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">„<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Löschen</span></strong>“</p>
+      <p class="MsoNormal">[Strg] + [D]</p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">Löscht die Systemverbindungsdaten nach der Bestätigung 
+      einer Sicherheitsabfrage dauerhaft aus der Datenbank des TRMS.</p>
+      <p class="MsoNormal">Auf das tatsächliche IKAROS-System, auf das diese Daten 
+      verweisen, hat das Löschen keinen Einfluss.</p>
+      <p class="MsoNormal">Das Löschen ist nur möglich, wenn das System noch nicht 
+      in Changes, Change Sets oder Transportaufträgen eingetragen ist.</p></td></tr>
+  <tr>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: #a6a6a6 1pt solid; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal"><span class="Icon"><img src="../ImagesExt/image10_83.png" alt="" /></span></p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">„<strong><span style="FONT-FAMILY: &quot;Segoe UI&quot;,sans-serif">Verbindung 
+      prüfen</span></strong>“</p>
+      <p class="MsoNormal">[Strg] + [K]</p></td>
+    <td style="BORDER-TOP: medium none; BORDER-RIGHT: #a6a6a6 1pt solid; BORDER-BOTTOM: #a6a6a6 1pt solid; PADDING-BOTTOM: 2.85pt; PADDING-TOP: 2.85pt; PADDING-LEFT: 5.4pt; BORDER-LEFT: medium none; PADDING-RIGHT: 5.4pt" valign="top">
+      <p class="MsoNormal">Ruft den Anmeldedialog auf, um sich an dem System 
+      testweise anzumelden und so die Verbindungsdaten zu überprüfen.</p>
+      <p class="MsoNormal">„System“-Datensätze können erst gespeichert werden, 
+      wenn die Verbindungsprüfung erfolgreich war.</p></td></tr></tbody></table><span id="related-topics"></span></body></html>
