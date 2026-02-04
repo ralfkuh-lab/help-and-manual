@@ -194,7 +194,13 @@ window.addEventListener('message', function(e) {
 Windows ist case-insensitive - `favicon.ico` und `FavIcon.ico` sind dort dieselbe Datei.
 Solche Duplikate führen zum Fehler: *"Invalid project file: ungültige Daten auf Stammebene"*
 
-**Lösung**: Keine Dateien mit gleichem Namen aber unterschiedlicher Groß-/Kleinschreibung.
+**Gilt für ALLE Verzeichnisse** (Baggage/, referenz-output/, hm-export/ etc.):
+- Keine zwei Dateien die sich nur in Groß-/Kleinschreibung unterscheiden (z.B. `Index.png` + `index.png`)
+- Keine Symlinks als Workaround — Windows kann damit nicht umgehen
+- Beim Umbenennen immer auf lowercase normalisieren
+- Beim Hinzufügen neuer Dateien prüfen ob ein case-insensitiver Duplikat existiert
+
+**Lösung**: Alle Dateinamen lowercase halten. Keine Dateien mit gleichem Namen aber unterschiedlicher Groß-/Kleinschreibung.
 
 #### 2. Kein UTF-8 BOM in Baggage-Dateien
 UTF-8 BOM (`EF BB BF`) am Dateianfang kann Probleme verursachen.
