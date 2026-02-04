@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shell.css - Modern Help Shell Styles
  * CSS Grid layout with responsive design
  */
@@ -78,6 +78,7 @@ body {
     cursor: pointer;
     background: transparent;
     border: 1px solid transparent;
+    color: #454545;  /* Referenz: inactive header color */
     user-select: none;
     flex-shrink: 0;
 }
@@ -135,7 +136,7 @@ body {
     font-weight: 500;
 }
 
-/* Accordion Content */
+/* Accordion Content - animated via JS (jQuery slideToggle) */
 .accordion-content {
     display: none;
     flex: 1;
@@ -306,17 +307,19 @@ body {
 .keywords-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 2.3px;  /* Referenz: mainUl paddingLeft 2.304px */
+    font-size: 0.72rem;  /* = 11.52px wie Referenz */
+    line-height: 1.3em;  /* Referenz: 14.976px bei 11.52px font-size */
 }
 
 .keywords-item {
     list-style: none;
+    margin: 3.456px 0;  /* Referenz: li margin top/bottom */
 }
 
 .keywords-wrapper {
     display: flex;
     align-items: center;
-    padding: 0.15em 0.5em;  /* Referenz: kompakter Zeilenabstand */
     transition: background-color 0.15s ease;
 }
 
@@ -333,9 +336,9 @@ body {
 .keywords-link {
     color: #1E395B;  /* Referenz: user.css:594 */
     text-decoration: none;
-    font-size: inherit;  /* erbt 0.8em = 11.52px */
+    font-size: inherit;
     cursor: pointer;
-    line-height: 1;
+    line-height: inherit;
 }
 
 .keywords-link:hover {
@@ -346,7 +349,7 @@ body {
 .keywords-text {
     color: #1E395B;
     font-size: inherit;
-    line-height: 1;
+    line-height: inherit;
 }
 
 /* Multiple links indicator */
@@ -359,7 +362,8 @@ body {
 /* Children container - immer sichtbar */
 .keywords-children {
     display: block;
-    padding-left: 4px;  /* Referenz: user.css:582 */
+    padding-left: 4px;  /* Referenz: nestedUl paddingLeft */
+    margin-left: 15px;  /* Referenz: nestedUl marginLeft */
 }
 
 /* ============================================

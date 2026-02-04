@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shell.js - Modern Help Shell for H&M WebHelp Export
  * Features: TOC (Hilfe), Schlagwortsuche, Volltextsuche
  */
@@ -516,19 +516,31 @@
 
     /**
      * Initialize accordion panel switching
+     * - Immer genau ein Panel offen (wie Referenz)
+     * - Slide-Animation beim Wechsel
      */
     function initAccordion() {
+        var animDuration = 200;
+
         $('.accordion-header').on('click', function() {
-            const panel = $(this).closest('.accordion-panel');
-            const wasExpanded = panel.hasClass('expanded');
+            var panel = $(this).closest('.accordion-panel');
 
-            // Alle Panels schliessen
-            $('.accordion-panel').removeClass('expanded');
-
-            // Geklicktes Panel oeffnen (wenn es vorher geschlossen war)
-            if (!wasExpanded) {
-                panel.addClass('expanded');
+            // Bereits offen -> nicht schliessen (immer eins offen)
+            if (panel.hasClass('expanded')) {
+                return;
             }
+
+            // Altes Panel zuklappen mit Animation
+            var oldPanel = $('.accordion-panel.expanded');
+            if (oldPanel.length) {
+                oldPanel.find('> .accordion-content').slideUp(animDuration, function() {
+                    oldPanel.removeClass('expanded');
+                });
+            }
+
+            // Neues Panel aufklappen mit Animation
+            panel.addClass('expanded');
+            panel.find('> .accordion-content').hide().slideDown(animDuration);
         });
     }
 
