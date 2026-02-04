@@ -777,19 +777,20 @@
 
     /**
      * Update breadcrumb display
+     * Shows only parent path as clickable links (current page is excluded,
+     * matching the reference behavior where breadcrumb = parent navigation)
      */
     function updateBreadcrumb(url) {
         const path = getTocPath(url);
-        if (path.length === 0) {
+        // Only show parent items (exclude current page)
+        const parentPath = path.slice(0, -1);
+
+        if (parentPath.length === 0) {
             $('#breadcrumb').empty();
             return;
         }
 
-        const html = path.map(function(item, i) {
-            if (i === path.length - 1) {
-                // Current page - no link
-                return '<span>' + escapeHtml(item.title) + '</span>';
-            }
+        const html = parentPath.map(function(item) {
             return '<a href="#' + item.url + '" data-topic="' + item.url + '">' + escapeHtml(item.title) + '</a>';
         }).join('<span class="separator">/</span>');
 

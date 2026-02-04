@@ -445,6 +445,14 @@ SPAN.QuellcodeKommentar {
   letter-spacing: 0.5pt;
 }
 
+/* ============================================
+   INLINE FORMATTING - H&M Generated Classes
+   ============================================ */
+
+span.f_Strong {
+  font-weight: bold;
+}
+
 /* Hide trial version warning - can be removed in production */
 /*
 body > p:first-child {

@@ -162,7 +162,7 @@ body {
 }
 
 .toc-item {
-    /* Individual TOC items */
+    list-style: none;
 }
 
 .toc-link-wrapper {
@@ -306,7 +306,7 @@ body {
 }
 
 .keywords-item {
-    /* Individual keyword items */
+    list-style: none;
 }
 
 .keywords-wrapper {
