@@ -1,7 +1,7 @@
 # Help+Manual zu NetHelp Konvertierung
 
 ## Berechtigungen
-Voller Zugriff auf alle Dateien, Git-Operationen erlaubt
+Voller Zugriff auf alle Dateien, Git-Operationen erlaubt, voller Zugriff auf Playwright MCP
 
 ## WICHTIG: Keine Änderungen an hm-export/
 Das Verzeichnis `hm-export/` wird **ausschließlich** durch H&M's Export-Funktion erstellt.
