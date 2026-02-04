@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shell.js - Modern Help Shell for H&M WebHelp Export
  * Features: TOC (Hilfe), Schlagwortsuche, Volltextsuche
  */
