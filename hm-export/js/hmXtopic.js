@@ -6,7 +6,7 @@ hmProjectInfo = {
 	copyright: "© 2026 Enter your company name",
 	summary: "&nbsp;",
 	version: "1.0.0",
-	date: "Tuesday, February 3, 2026",
+	date: "Wednesday, February 4, 2026",
 	language: "en-us",
 	mainfile: "index.html"
 	}
