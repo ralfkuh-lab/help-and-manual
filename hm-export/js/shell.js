@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shell.js - Modern Help Shell for H&M WebHelp Export
  * Features: TOC (Hilfe), Schlagwortsuche, Volltextsuche
  */
@@ -674,6 +674,36 @@
                 if (title) {
                     document.title = title + ' - TRMS Hilfe';
                 }
+
+                // #11: Append "Themen:" section with child topic links
+                if (tocData) {
+                    var tocItem = findTocItem(tocData, url);
+                    if (tocItem && tocItem.items && tocItem.items.length > 0) {
+                        var themenHtml = '<div class="related-topics-header">';
+                        themenHtml += '<hr />';
+                        themenHtml += '<p>Themen:</p>';
+                        themenHtml += '<div class="related-topics">';
+                        tocItem.items.forEach(function(child) {
+                            if (child.hf) {
+                                themenHtml += '<p><span class="related-topic-icon"></span>' +
+                                    '<a class="topic-link" href="' +
+                                    child.hf + '">' + escapeHtml(child.cp) + '</a></p>';
+                            }
+                        });
+                        themenHtml += '</div></div>';
+                        $('#content').append(themenHtml);
+                    }
+                }
+
+                // #12: Make content links navigable within the shell
+                // Uses event delegation so dynamically added links (e.g. Themen) also work
+                $('#content').off('click.shellnav').on('click.shellnav', 'a[href]', function(e) {
+                    var href = $(this).attr('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('#')) {
+                        e.preventDefault();
+                        loadTopic(href);
+                    }
+                });
 
                 // Update navigation
                 updateNavigation(url, $(doc));

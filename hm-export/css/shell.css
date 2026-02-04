@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shell.css - Modern Help Shell Styles
  * CSS Grid layout with responsive design
  */
@@ -779,4 +779,44 @@ body {
         overflow: visible;
         padding: 0;
     }
+}
+
+/* ============================================
+   RELATED TOPICS (Themen)
+   ============================================ */
+.related-topics-header hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1em 0 0.5em 0;
+}
+
+.related-topics p {
+    margin: 0.3em 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.related-topic-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.3em;
+    vertical-align: middle;
+}
+
+.related-topic-icon::before {
+    content: "\00BB";
+    color: #4a7ab5;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+a.topic-link {
+    text-decoration: none;
+    color: #1E395B;
+}
+
+a.topic-link:hover {
+    text-decoration: underline;
+    color: #2a5a8f;
 }
