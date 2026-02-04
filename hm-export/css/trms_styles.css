@@ -8,7 +8,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
-  padding: 8px;
+  padding: 0;  /* Referenz: kein Body-Padding */
   color: #333333;  /* Referenz: #333 statt #000 */
   /* font-size: 11pt entfernt - wird von shell.css gesteuert (0.8em = 12.8px) */
 }
@@ -348,7 +348,7 @@ th {
   background-color: #E1EAF6 !important;
   color: #000000 !important;
   text-align: left !important;
-  font-weight: normal !important;
+  text-shadow: 1px 1px 1px grey !important;
 }
 
 th p {
@@ -358,7 +358,11 @@ th p {
 th .f_Strong,
 th strong {
   color: #000000 !important;
-  font-weight: normal !important;
+}
+
+/* Tabellenzellen-Hintergrund: Referenz = alle Zellen hellblau */
+td {
+  background-color: #E1EAF6 !important;
 }
 
 P.Tabelleninhalt,
@@ -470,6 +474,17 @@ SPAN.QuellcodeKommentar {
 
 span.f_Strong {
   font-weight: bold;
+}
+
+/* Referenz user.css:259 - text-shadow für alle Bold/Semibold-Elemente */
+*[style*="Segoe UI Semibold"],
+strong,
+span.f_Strong,
+.p_UeberschriftEinfach,
+.p_UeberschriftEinfach_Gross,
+span.f_UeberschriftEinfach,
+span.f_UeberschriftEinfach_Gross {
+  text-shadow: 1px 1px 1px grey !important;
 }
 
 /* Hide trial version warning - can be removed in production */

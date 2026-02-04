@@ -32,7 +32,7 @@ body {
     grid-template-areas:
         "toolbar toolbar"
         "sidebar content-area";
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 344px 1fr;  /* Referenz: ~344px */
     grid-template-rows: auto 1fr;
     height: 100vh;
     overflow: hidden;
@@ -503,6 +503,8 @@ body {
     flex-direction: column;
     overflow: hidden;
     background: #ffffff;
+    border: 1px solid #aaa;  /* Referenz: Content-Panel Border */
+    border-radius: 6px;      /* Referenz: ui-corner-all */
 }
 
 /* ============================================
@@ -567,7 +569,8 @@ body {
 
 .toolbar-btn span {
     font-size: 0.7rem;
-    color: #333;
+    font-family: "Segoe UI", Arial, sans-serif;  /* Referenz: Segoe UI statt Arial */
+    color: #454545;  /* Referenz: #454545 */
     text-align: center;
     line-height: 1.2;
 }
