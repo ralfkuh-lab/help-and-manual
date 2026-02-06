@@ -342,6 +342,18 @@ div[align] table {
   text-align: left;
 }
 
+/* Tabellenbreite: responsive wie Referenz (min 50%, max 90%) */
+#content table {
+  width: auto !important;
+  min-width: 50%;
+  max-width: 90%;
+}
+
+#content table td,
+#content table th {
+  width: auto !important;
+}
+
 /* Tabellenkopf: Referenz = hellblau, schwarzer Text, linksbündig */
 /* !important nötig weil H&M Inline-Styles auf th generiert */
 th {
@@ -502,7 +514,14 @@ body > hr:first-of-type {
    (ehemals custom_topic_styles.css)
    ============================================ */
 
-a.topiclink {color: blue; text-decoration: underline;}
+/* Topic-Links: Icon statt Text, wie Referenz */
+a.topiclink {
+  font-size: 0px !important;
+  text-decoration: none !important;
+}
+a.topiclink:after {
+  content: " " url('../images/hyperlink.png');
+}
 a.topiclink:visited {color: blue;}
 a.topiclink:hover {color: blue; }
 a.weblink {color: blue; text-decoration: underline;}
