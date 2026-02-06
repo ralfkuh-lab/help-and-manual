@@ -121,6 +121,17 @@ p.p_Aufzaehlung3 {
   text-indent: -17.6pt;
 }
 
+/* Listenpunkte: Quadrat statt runder Bullet (Referenz: image10_1.png) */
+span.f_Aufzaehlung1[style*="display:inline-block"] {
+  font-size: 0 !important;
+  line-height: 1;
+}
+span.f_Aufzaehlung1[style*="display:inline-block"]::before {
+  content: "\25A0";
+  font-size: 7pt;
+  color: #000;
+}
+
 P.MsoListBullet,
 P.MsoListBullet2,
 P.MsoListBullet3,
@@ -513,9 +524,7 @@ span.f_Strong {
 strong,
 span.f_Strong,
 .p_UeberschriftEinfach,
-.p_UeberschriftEinfach_Gross,
-span.f_UeberschriftEinfach,
-span.f_UeberschriftEinfach_Gross {
+span.f_UeberschriftEinfach {
   text-shadow: 1px 1px 1px grey !important;
 }
 
