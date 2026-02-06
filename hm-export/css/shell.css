@@ -546,15 +546,25 @@ body {
 }
 
 /* ============================================
+   TOPIC BAR (Wrapper für Breadcrumb, wie Referenz c1topicBar)
+   ============================================ */
+#topic-bar {
+    padding: 5px 20px 0;
+    flex-shrink: 0;
+}
+
+#topic-bar:has(#breadcrumb:empty) {
+    display: none;
+}
+
+/* ============================================
    BREADCRUMB
    ============================================ */
 #breadcrumb {
-    padding: 2px 1rem;
-    background: transparent;
-    border-bottom: 1px solid #ddd;
+    padding: 2px 0;
+    border-bottom: 1px solid;
     font-size: 0.9em;
     color: #1265ab;
-    flex-shrink: 0;
 }
 
 #breadcrumb:empty {
@@ -727,7 +737,7 @@ body {
 
     #sidebar,
     #toolbar,
-    #breadcrumb {
+    #topic-bar {
         display: none;
     }
 

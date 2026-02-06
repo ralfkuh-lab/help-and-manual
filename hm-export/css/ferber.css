@@ -13,6 +13,13 @@ body {
   /* font-size: 11pt entfernt - wird von shell.css gesteuert (0.8em = 12.8px) */
 }
 
+/* H&M generiert font-size: 0.80rem (=12.8px) inline auf Spans.
+   Referenz nutzt 11pt (=14.67px) via CSS-Klasse auf <p>.
+   Override: Spans erben font-size vom Parent-Paragraph. */
+#content [style*="font-size: 0.80rem"] {
+  font-size: inherit !important;
+}
+
 /* ============================================
    HEADINGS
    ============================================ */
@@ -375,6 +382,19 @@ th strong {
 /* Tabellenzellen-Hintergrund: weiß (Standard), nur Header hellblau */
 td {
   background-color: #FFFFFF !important;
+}
+
+/* Tabellen ohne <thead>: erste Zeile = Header (H&M generiert manchmal td statt th) */
+table:not(:has(thead)) > tbody > tr:first-child > td {
+  background-color: #E1EAF6 !important;
+  color: #000000 !important;
+  text-align: left !important;
+  text-shadow: 1px 1px 1px grey !important;
+}
+
+table:not(:has(thead)) > tbody > tr:first-child > td .f_Strong,
+table:not(:has(thead)) > tbody > tr:first-child > td strong {
+  color: #000000 !important;
 }
 
 P.Tabelleninhalt,
