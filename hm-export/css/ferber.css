@@ -128,8 +128,9 @@ span.f_Aufzaehlung1[style*="display:inline-block"] {
 }
 span.f_Aufzaehlung1[style*="display:inline-block"]::before {
   content: "\25A0";
-  font-size: 7pt;
+  font-size: 9pt;
   color: #000;
+  vertical-align: middle;
 }
 
 P.MsoListBullet,
@@ -170,9 +171,9 @@ p.p_UeberschriftEinfach_Gross {
   border-top: medium none;
   font-family: "Segoe UI Semibold", sans-serif;
   border-right: medium none;
-  border-bottom: medium none;
+  border-bottom: 1pt solid;  /* Referenz: windowtext 1pt solid auf Wrapper-Div */
   page-break-after: avoid;
-  padding-bottom: 0pt;
+  padding-bottom: 1pt;
   padding-top: 0pt;
   padding-left: 0pt;
   border-left: medium none;
