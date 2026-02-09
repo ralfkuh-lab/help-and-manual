@@ -44,7 +44,7 @@ body {
 #sidebar {
     grid-area: sidebar;
     background: #f5fafe;  /* Referenz: ui-widget-header Hintergrund */
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #aaa;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -57,7 +57,7 @@ body {
     grid-area: splitter;
     width: 5px;
     cursor: col-resize;
-    background: #ddd;
+    background: #dfeaf7;
     transition: background-color 0.15s ease;
     z-index: 10;
 }
@@ -508,17 +508,17 @@ body.splitter-dragging * {
     grid-area: toolbar;
     display: flex;
     gap: 0;
-    padding: 0.5rem;
+    padding: 0.2rem;
+    margin-bottom: 5px;
     background: linear-gradient(to bottom, #fff, #dfeaf7);
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
+    border-radius: 6px;
     flex-shrink: 0;
 }
 
 .toolbar-group {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #c0c0c0;
-    padding-right: 0.75rem;
     margin-right: 0.75rem;
 }
 
@@ -531,6 +531,13 @@ body.splitter-dragging * {
 .toolbar-buttons {
     display: flex;
     gap: 0.25rem;
+    border-right: 1px solid #c0c0c0;
+    padding-right: 0.75rem;
+}
+
+.toolbar-group:last-child .toolbar-buttons {
+    border-right: none;
+    padding-right: 0;
 }
 
 .toolbar-btn {
@@ -543,6 +550,7 @@ body.splitter-dragging * {
     border-radius: 4px;
     cursor: pointer;
     min-width: 70px;
+    font-size: inherit;
 }
 
 .toolbar-btn:hover:not(:disabled) {
@@ -562,7 +570,7 @@ body.splitter-dragging * {
 }
 
 .toolbar-btn span {
-    font-size: 0.7rem;
+    font-size: 0.8em;
     font-family: "Segoe UI", Arial, sans-serif;  /* Referenz: Segoe UI statt Arial */
     color: #454545;  /* Referenz: #454545 */
     text-align: center;
@@ -570,12 +578,10 @@ body.splitter-dragging * {
 }
 
 .toolbar-label {
-    font-size: 0.7rem;
+    font-size: 0.8em;
     color: #738399;
     text-align: center;
-    padding-top: 0.25rem;
-    border-top: 1px solid #c0c0c0;
-    margin-top: 0.25rem;
+    margin-top: auto;
 }
 
 /* ============================================
