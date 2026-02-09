@@ -76,7 +76,7 @@ body {
     align-items: center;
     padding: .5em .5em .5em .7em;  /* Referenz: jquery-ui.css:186 */
     cursor: pointer;
-    background: transparent;
+    background: transparent;  /* Referenz: ui-state-default = transparent, Sidebar-Weiß scheint durch */
     border: 1px solid transparent;
     color: #454545;  /* Referenz: inactive header color */
     user-select: none;
@@ -99,6 +99,9 @@ body {
     height: 16px;
     margin-right: 0.3em;
     display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 1px;
     background-image: url('../images/ui-icons_ikaros-help.png');
     background-repeat: no-repeat;
     background-position: -32px -16px;  /* triangle-1-e (rechts) */
@@ -123,17 +126,17 @@ body {
 }
 
 .accordion-icon-index::before {
-    content: url('../images/index.png');
+    content: url('../images/Index.png');  /* H&M exportiert mit Großbuchstabe */
 }
 
 .accordion-icon-search::before {
-    content: url('../images/search.png');
+    content: url('../images/Search.png');  /* H&M exportiert mit Großbuchstabe */
 }
 
 /* Accordion Label */
 .accordion-label {
     font-size: 1.3em;  /* Referenz: user.css:648 */
-    font-weight: 500;
+    font-weight: normal;
 }
 
 /* Accordion Content - animated via JS (jQuery slideToggle) */

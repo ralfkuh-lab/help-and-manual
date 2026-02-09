@@ -520,7 +520,7 @@
      * - Slide-Animation beim Wechsel
      */
     function initAccordion() {
-        var animDuration = 200;
+        var animDuration = 300;
 
         $('.accordion-header').on('click', function() {
             var panel = $(this).closest('.accordion-panel');
@@ -530,7 +530,7 @@
                 return;
             }
 
-            // Altes Panel zuklappen mit Animation
+            // Altes und neues Panel gleichzeitig animieren (wie jQuery UI Accordion)
             var oldPanel = $('.accordion-panel.expanded');
             if (oldPanel.length) {
                 oldPanel.find('> .accordion-content').slideUp(animDuration, function() {
@@ -538,7 +538,6 @@
                 });
             }
 
-            // Neues Panel aufklappen mit Animation
             panel.addClass('expanded');
             panel.find('> .accordion-content').hide().slideDown(animDuration);
         });
