@@ -43,7 +43,7 @@ body {
    ============================================ */
 #sidebar {
     grid-area: sidebar;
-    background: #ffffff;
+    background: #f5fafe;  /* Referenz: ui-widget-header Hintergrund */
     border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
@@ -101,7 +101,7 @@ body {
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    top: 1px;
+    top: 5px;
     background-image: url('../images/ui-icons_ikaros-help.png');
     background-repeat: no-repeat;
     background-position: -32px -16px;  /* triangle-1-e (rechts) */
