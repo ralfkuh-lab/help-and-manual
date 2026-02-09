@@ -691,9 +691,21 @@
     function loadTopicFromHash() {
         const hash = window.location.hash;
         if (hash && hash.length > 1) {
-            const topic = hash.substring(1);
-            // Remove any query string
-            const topicUrl = topic.split('?')[0];
+            const query = hash.substring(1); // e.g. "?id=13111" or "fs_xxx.html"
+
+            // Context-ID call: #?id=13111
+            if (query.startsWith('?')) {
+                const params = new URLSearchParams(query);
+                const contextId = params.get('id');
+                if (contextId && typeof hmContextIds !== 'undefined' && hmContextIds[contextId]) {
+                    loadTopic(hmContextIds[contextId]);
+                    return true;
+                }
+                return false;
+            }
+
+            // Direct filename: #fs_xxx.html
+            const topicUrl = query.split('?')[0];
             loadTopic(topicUrl);
             return true;
         }
