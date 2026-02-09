@@ -290,6 +290,9 @@
         // Initialize toolbar
         initToolbar();
 
+        // Initialize splitter
+        initSplitter();
+
         // Handle hash changes for navigation
         $(window).on('hashchange', function() {
             loadTopicFromHash();
@@ -303,6 +306,78 @@
         // Setup sidebar toggle
         $('#sidebar-toggle').on('click', function() {
             $('#sidebar').toggleClass('open');
+        });
+    }
+
+    /**
+     * Initialize draggable splitter between sidebar and content
+     */
+    function initSplitter() {
+        var splitter = document.getElementById('splitter');
+        var shell = document.getElementById('shell');
+        if (!splitter || !shell) return;
+
+        var STORAGE_KEY = 'help-sidebar-width';
+        var MIN_WIDTH = 200;
+        var MAX_RATIO = 0.5;
+
+        // Restore saved width
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            var px = parseInt(saved, 10);
+            if (px >= MIN_WIDTH && px <= window.innerWidth * MAX_RATIO) {
+                shell.style.setProperty('--sidebar-width', px + 'px');
+            }
+        }
+
+        // Pointer Events for drag (works for mouse + touch)
+        var dragging = false, startX, startWidth;
+
+        splitter.addEventListener('pointerdown', function(e) {
+            if (e.button !== 0) return;
+            e.preventDefault();
+            dragging = true;
+            startX = e.clientX;
+            startWidth = document.getElementById('sidebar').offsetWidth;
+            document.body.classList.add('splitter-dragging');
+            splitter.classList.add('dragging');
+            splitter.setPointerCapture(e.pointerId);
+        });
+
+        splitter.addEventListener('pointermove', function(e) {
+            if (!dragging) return;
+            var w = Math.max(MIN_WIDTH, Math.min(
+                startWidth + e.clientX - startX,
+                window.innerWidth * MAX_RATIO
+            ));
+            shell.style.setProperty('--sidebar-width', w + 'px');
+        });
+
+        splitter.addEventListener('pointerup', function(e) {
+            if (!dragging) return;
+            dragging = false;
+            document.body.classList.remove('splitter-dragging');
+            splitter.classList.remove('dragging');
+            try { localStorage.setItem(STORAGE_KEY, document.getElementById('sidebar').offsetWidth); } catch(ex) {}
+        });
+
+        splitter.addEventListener('lostpointercapture', function() {
+            if (!dragging) return;
+            dragging = false;
+            document.body.classList.remove('splitter-dragging');
+            splitter.classList.remove('dragging');
+            try { localStorage.setItem(STORAGE_KEY, document.getElementById('sidebar').offsetWidth); } catch(ex) {}
+        });
+
+        // Clamp width on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) return;
+            var cur = document.getElementById('sidebar').offsetWidth;
+            var max = window.innerWidth * MAX_RATIO;
+            if (cur > max) {
+                shell.style.setProperty('--sidebar-width', max + 'px');
+                try { localStorage.setItem(STORAGE_KEY, Math.round(max)); } catch(ex) {}
+            }
         });
     }
 

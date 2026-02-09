@@ -30,9 +30,9 @@ body {
 #shell {
     display: grid;
     grid-template-areas:
-        "toolbar toolbar"
-        "sidebar content-area";
-    grid-template-columns: 344px 1fr;  /* Referenz: ~344px */
+        "toolbar toolbar toolbar"
+        "sidebar splitter content-area";
+    grid-template-columns: var(--sidebar-width, 344px) 5px 1fr;
     grid-template-rows: auto 1fr;
     height: 100vh;
     overflow: hidden;
@@ -48,6 +48,32 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+/* ============================================
+   SPLITTER (draggable between sidebar & content)
+   ============================================ */
+#splitter {
+    grid-area: splitter;
+    width: 5px;
+    cursor: col-resize;
+    background: #ddd;
+    transition: background-color 0.15s ease;
+    z-index: 10;
+}
+
+#splitter:hover,
+#splitter.dragging {
+    background: #b8d4f0;
+}
+
+body.splitter-dragging {
+    cursor: col-resize !important;
+    user-select: none;
+}
+
+body.splitter-dragging * {
+    cursor: col-resize !important;
 }
 
 /* ============================================
@@ -146,7 +172,7 @@ body {
     overflow: hidden;
     flex-direction: column;
     background: #ffffff;
-    transition: flex-grow 300ms ease;
+    transition: flex-grow 600ms ease;
 }
 
 .accordion-panel.expanded .accordion-content {
@@ -635,7 +661,7 @@ body {
    ============================================ */
 @media (max-width: 900px) {
     #shell {
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: var(--sidebar-width, 240px) 5px 1fr;
     }
 
     .accordion-header {
@@ -663,6 +689,10 @@ body {
             "content-area";
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
+    }
+
+    #splitter {
+        display: none;
     }
 
     #sidebar {
@@ -743,6 +773,7 @@ body {
     }
 
     #sidebar,
+    #splitter,
     #toolbar,
     #topic-bar {
         display: none;
