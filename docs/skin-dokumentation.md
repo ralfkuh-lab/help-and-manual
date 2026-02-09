@@ -72,12 +72,12 @@ Baggage/
 ├── Help.html          → hm-export/Help.html       (Einstiegspunkt)
 ├── shell.js           → hm-export/js/shell.js
 ├── shell.css          → hm-export/css/shell.css
-├── trms_styles.css    → hm-export/css/trms_styles.css
+├── ferber.css         → hm-export/css/ferber.css
 ├── jquery.js          → hm-export/js/jquery.js
 ├── *.png/*.svg/...    → hm-export/images/
 ├── *.css              → hm-export/css/
 ├── *.js               → hm-export/js/
-└── *.woff/woff2       → hm-export/fonts/ oder css/
+└── *.html             → hm-export/ (HTML-Komponenten)
 ```
 
 ### Kategorisierte Dateiliste
@@ -89,43 +89,23 @@ Baggage/
 | `Help.html` | Shell-Einstiegspunkt — lädt alle Scripts und CSS, enthält das gesamte UI-Gerüst |
 | `shell.js` | Shell-Logik — TOC, Navigation, Suche, Accordion, Topic-Loading |
 | `shell.css` | Shell-Styling — Grid-Layout, Toolbar, Sidebar, Accordion, TOC, Suche |
-| `trms_styles.css` | Topic-Content-Styling — Headings, Listen, Code, Tabellen (basiert auf Referenz) |
+| `ferber.css` | Topic-Content-Styling — Headings, Listen, Code, Tabellen (basiert auf Referenz) |
 
-**CSS (H+M-Standard + Anpassungen):**
-
-| Datei | Beschreibung |
-|-------|-------------|
-| `jquery-ui.css` | jQuery UI Styles für Accordion und andere UI-Komponenten |
-| `user.css` | IKAROS-spezifische Anpassungen (Margins, Sonderstyles) |
-| `theme.css` | Theme-Grundlagen |
-| `topic.css` | Topic-spezifische Styles |
-| `custom-icons.css` | Custom Icon-Styles |
-| `custom_topic_styles.css` | Weitere Topic-Anpassungen |
-| `GoogleFonts.css` | Google Fonts Einbindung |
-| `nethelp.css` | NetHelp-Kompatibilitätsstyles |
-| `hm_popup.css` | Popup-Styles |
-| `hmwebhelp_*.css` | H+M Standard-Styles (Desktop, Tablet, Phone) für TOC, Index, Search |
-
-**JavaScript (H+M-Standard):**
+**JavaScript:**
 
 | Datei | Beschreibung |
 |-------|-------------|
 | `jquery.js` | jQuery-Bibliothek |
-| `jquery-ui.js` | jQuery UI |
-| `hm_webhelp.js` | H+M WebHelp-Kernlogik |
-| `hm_tocscript.js` | TOC-Rendering-Script |
-| `hm_indexscript.js` | Index-Rendering-Script |
-| `hm_searchscript.js` | Such-Script |
-| `hm_tocprescript.js` | TOC-Vorab-Script |
-| `hm_indexprescript.js` | Index-Vorab-Script |
-| `hm_searchprescript.js` | Such-Vorab-Script |
-| `hm_pagescript.js` | Seiten-Script |
-| `hm_pageprescript.js` | Seiten-Vorab-Script |
-| `highlight.js` | Such-Highlighting |
-| `zoom_search.js` | Zoom-Search-Engine |
-| `search-addons.js` | Zusätzliche Such-Features |
-| `hm_autotoc.js` | Automatisches Inhaltsverzeichnis |
-| `nethelp.js`, `nethelp.connect.js`, `nethelp.redirector.js` | NetHelp-Kompatibilität |
+| `hm_tocscript.js` | TOC-Rendering-Script (H+M) |
+| `hm_indexscript.js` | Index-Rendering-Script (H+M) |
+| `hm_searchscript.js` | Such-Script (H+M) |
+| `hm_tocprescript.js` | TOC-Vorab-Script (H+M) |
+| `hm_indexprescript.js` | Index-Vorab-Script (H+M) |
+| `hm_searchprescript.js` | Such-Vorab-Script (H+M) |
+| `hm_pagescript.js` | Seiten-Script (H+M) |
+| `hm_pageprescript.js` | Seiten-Vorab-Script (H+M) |
+| `getUrlParams.js` | URL-Parameter-Handling (H+M) |
+| `postloadFuncs.js` | Post-Load-Funktionen (H+M) |
 
 **Bilder — Shell-UI:**
 
@@ -141,16 +121,21 @@ Baggage/
 | `help.png` | Hilfe-Panel-Icon |
 | `index.png` | Schlagwort-Panel-Icon |
 | `search.png` | Volltextsuche-Panel-Icon |
+| `hyperlink.png` | Hyperlink-Icon |
 | `ui-icons_ikaros-help.png` | Sprite-Sheet für TOC-Icons und Accordion-Pfeile |
+| `$HMSKINPREVIEW.png` | Vorschaubild für den Skin in H+M |
 | `favicon.ico` | Browser-Tab-Icon |
 
-**Bilder — IKAROS-Modul-Icons (16x16 / 32x32):**
+**H+M-interne HTML-Komponenten:**
 
-Zahlreiche Modul-Icons für die TRMS/IKAROS-Dokumentation, z.B. `CaseManagement_16x16.png`, `Clearing_32x32.png`, `Parties_16x16.png` etc. Diese werden in Topic-Inhalten referenziert.
-
-**Fonts (Open Sans):**
-
-12 Font-Dateien (`open-sans-v29-latin-*.woff/woff2`) in den Varianten Regular, Italic, 500, 500italic, 600, 600italic.
+| Datei | Beschreibung |
+|-------|-------------|
+| `_google_webfonts.html` | Google Webfonts Einbindung (H+M) |
+| `_svgicons.html` | SVG-Icon-Definitionen (H+M) |
+| `_topicfooter.html` | Topic-Footer-Template (H+M) |
+| `HM_HEADERBOX.html` | Header-Box-Template (H+M) |
+| `HM_HEADERMENU.html` | Header-Menü-Template (H+M) |
+| `KEYINFO.html` | Keyboard-Info-Template (H+M) |
 
 
 ## 4. Layout und Bereiche
@@ -260,7 +245,7 @@ Das Layout basiert auf CSS Grid:
 ```html
 <!-- CSS (im <head>) -->
 <link rel="stylesheet" href="./css/shell.css" />
-<link rel="stylesheet" href="./css/trms_styles.css" />
+<link rel="stylesheet" href="./css/ferber.css" />
 
 <!-- JavaScript (am Ende von <body>) -->
 <script src="./js/jquery.js"></script>           <!-- jQuery-Bibliothek -->
@@ -273,7 +258,7 @@ Das Layout basiert auf CSS Grid:
 ### Ladereihenfolge
 
 1. Browser lädt `Help.html`
-2. CSS wird geladen (`shell.css`, `trms_styles.css`)
+2. CSS wird geladen (`shell.css`, `ferber.css`)
 3. jQuery wird geladen
 4. `zoom_pageinfo.js` wird geladen — definiert die globale Variable `pagedata` (Array mit Seitendaten für Volltextsuche)
 5. `shell.js` wird geladen — registriert die globalen Callback-Funktionen `hmLoadTOC()` und `hmLoadIndex()`
@@ -422,17 +407,16 @@ Ablauf von `loadTopic()`:
 
 ### Andere JS-Dateien
 
-Von H+M mitgelieferte Scripts im Baggage, die primär für H+M's eigene Navigation gedacht sind:
+Von H+M mitgelieferte Scripts im Baggage (Pre-/Post-Scripts für H+M's eigene Seitenlogik):
 
 | Datei | Beschreibung |
 |-------|-------------|
-| `hm_webhelp.js` | H+M WebHelp-Kernlogik (wird von unserer Shell nicht direkt verwendet) |
-| `hm_tocscript.js` / `hm_indexscript.js` / `hm_searchscript.js` | Rendering-Scripts für H+M's eigene TOC/Index/Search-Seiten |
+| `hm_tocscript.js` / `hm_tocprescript.js` | TOC-Rendering und Vorab-Initialisierung |
+| `hm_indexscript.js` / `hm_indexprescript.js` | Index-Rendering und Vorab-Initialisierung |
+| `hm_searchscript.js` / `hm_searchprescript.js` | Such-Rendering und Vorab-Initialisierung |
 | `hm_pagescript.js` / `hm_pageprescript.js` | Seiten-Initialisierung |
-| `highlight.js` | Such-Term-Highlighting in Topics |
-| `zoom_search.js` | Such-Engine von Zoom Search |
-| `nethelp.js` / `nethelp.connect.js` / `nethelp.redirector.js` | NetHelp-Kompatibilitätsschicht |
-| `hmXtopic.js` / `hmEmbeddedPopups.js` / `hmSmartPopup.js` | Topic-Cross-Reference und Popup-Handling |
+| `getUrlParams.js` | URL-Parameter-Handling |
+| `postloadFuncs.js` | Post-Load-Funktionen |
 
 
 ## 7. CSS-Architektur
@@ -457,9 +441,9 @@ Steuert das gesamte Seitenlayout und die Shell-UI-Komponenten:
 | Responsive | 3 Breakpoints: 900px, 768px, 480px |
 | Print | Sidebar und Toolbar ausblenden |
 
-### trms_styles.css — Topic-Content-Styling (499 Zeilen)
+### ferber.css — Topic-Content-Styling
 
-Styles für den Topic-Inhalt, basiert auf den Referenz-CSS-Dateien (`D2H_Handbuch_HTML.css`, `TRMS.css`):
+Styles für den Topic-Inhalt, basiert auf den Referenz-CSS-Dateien (`D2H_Handbuch_HTML.css`, `TRMS.css`). Enthält auch die ehemals separaten Styles aus `jquery-ui.css` und `user.css`, die beim Baggage-Cleanup konsolidiert wurden.
 
 | Abschnitt | Beschreibung |
 |-----------|-------------|
@@ -475,21 +459,11 @@ Styles für den Topic-Inhalt, basiert auf den Referenz-CSS-Dateien (`D2H_Handbuc
 | Links | Blaue Unterstreichung |
 | Inline-Formatting | `.f_Strong` mit text-shadow |
 
-### jquery-ui.css
-
-jQuery UI Styles (aus H+M). Wird für Farbwerte und Accordion-Sprites referenziert:
-- Active-State: `#c4ddfc`
-- Hover-State: `#cbe1fc`
-
-### user.css
-
-IKAROS-spezifische Margin-Overrides mit `!important`. Korrigiert Abstände für zahlreiche Paragraph-Klassen.
-
 ### Wichtige Referenz-Werte
 
 | Aspekt | Wert | Quelle |
 |--------|------|--------|
-| Hauptfont | `"Segoe UI", Arial, sans-serif` | shell.css, trms_styles.css |
+| Hauptfont | `"Segoe UI", Arial, sans-serif` | shell.css, ferber.css |
 | Basis-Fontgröße | `0.8em` (≈ 12.8px) | shell.css body |
 | TOC-Textfarbe | `#1E395B` | shell.css .toc-link |
 | TOC-Fontgröße | `0.72rem` (≈ 11.52px) | shell.css .toc-link |
@@ -499,8 +473,8 @@ IKAROS-spezifische Margin-Overrides mit `!important`. Korrigiert Abstände für 
 | Content-Hintergrund | `#ffffff` | shell.css #content-area |
 | Shell-Hintergrund | `#dfeaf7` | shell.css body |
 | Toolbar-Label-Farbe | `#738399` | shell.css .toolbar-label |
-| Link-Farbe (Content) | `blue` | trms_styles.css a |
-| Code-Hintergrund | `#e1eaf6` (Standard), `#d9d9d9` (Konsole) | trms_styles.css |
+| Link-Farbe (Content) | `blue` | ferber.css a |
+| Code-Hintergrund | `#e1eaf6` (Standard), `#d9d9d9` (Konsole) | ferber.css |
 
 
 ## 8. Zusammenspiel mit H+M-Export
@@ -528,8 +502,6 @@ H+M sortiert Baggage-Dateien beim Export automatisch in Unterverzeichnisse:
 | `Baggage/shell.css` | `css/shell.css` | CSS-Dateien → `css/` |
 | `Baggage/home.png` | `images/home.png` | Bilder → `images/` |
 | `Baggage/favicon.ico` | `favicon.ico` | ICO → Wurzelverzeichnis |
-| `Baggage/*.woff` | Font-Verzeichnis | Fonts → entsprechendes Verzeichnis |
-| `Baggage/context.xml` | `context.xml` | XML → Wurzelverzeichnis |
 
 ### Datenfluss
 
@@ -627,7 +599,7 @@ Das Topic-Template in `project.hmxp` definiert, wie jede Topic-HTML-Datei aussie
 <head>
     <title><%TOPIC_TITLE%></title>
     <meta charset="<%DOCCHARSET%>" />
-    <link rel="stylesheet" href="./css/trms_styles.css" />
+    <link rel="stylesheet" href="./css/ferber.css" />
     <script>/* postMessage-Listener */</script>
     <IF_PREVIOUS_PAGE>
         <link rel="prev" href="<%HREF_PREVIOUS_PAGE%>" />
@@ -644,7 +616,7 @@ Das Topic-Template in `project.hmxp` definiert, wie jede Topic-HTML-Datei aussie
 ```
 
 Wichtige Aspekte:
-- Topics laden nur `trms_styles.css` (nicht `shell.css`) — sie werden im Content-Bereich der Shell angezeigt
+- Topics laden nur `ferber.css` (nicht `shell.css`) — sie werden im Content-Bereich der Shell angezeigt
 - Der `postMessage`-Listener ermöglicht das iframe-basierte Loading
 - `<link rel="prev/next">` wird von der Shell für die Navigation ausgelesen
 - `data-topic-id` enthält die H+M Topic-ID

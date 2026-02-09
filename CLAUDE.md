@@ -46,6 +46,7 @@ Ferber.hmskin (ZIP)
 │   ├── Help.html         # Shell-Einstiegspunkt
 │   ├── shell.js          # Shell-Logik (TOC, Navigation, Topic-Loading)
 │   ├── shell.css         # Shell-Styling
+│   ├── ferber.css        # Topic-Content-Styling
 │   └── ...
 ├── project.hmxp          # Hauptkonfiguration mit TOPICTEMPLATES
 ├── helpproject.xsl
@@ -65,7 +66,7 @@ Ferber.hmskin (ZIP)
 - [x] Topic-Loading via iframe + postMessage (funktioniert mit file:// und http://)
 - [x] Prev/Next Navigation aus `<link rel="prev/next">` Tags
 - [x] TOC-Highlighting und Auto-Expand bei Navigation
-- [x] CSS: `trms_styles.css` mit Referenz-Styles + H&M-Klassenmappings
+- [x] CSS: `ferber.css` mit Referenz-Styles + H&M-Klassenmappings
 - [x] Toolbar mit Navigation (Prev/Next/Home/Goto), Chapters (Collapse/Load) und Print
 - [x] Schlagwortsuche (Keywords) Panel mit Filter
 - [x] Volltextsuche Panel
@@ -129,7 +130,7 @@ Löst das CORS-Problem bei `file://` Protokoll:
 <title><%TOPIC_TITLE%></title>
 <meta charset="<%DOCCHARSET%>" />
 <meta name="generator" content="Help+Manual" />
-<link rel="stylesheet" type="text/css" href="./css/trms_styles.css" />
+<link rel="stylesheet" type="text/css" href="./css/ferber.css" />
 <script>
 // postMessage listener for iframe-based loading (file:// CORS workaround)
 window.addEventListener('message', function(e) {
@@ -149,17 +150,36 @@ window.addEventListener('message', function(e) {
 ```
 
 ### Offene Punkte
-- [ ] Suche implementieren (H&M generiert zoom_index.js mit Suchdaten)
-- [ ] Index-Tab (H&M generiert hmkeywords.js)
-- [ ] Breadcrumb-Navigation
+- [x] Suche implementieren (Volltextsuche über zoom_pageinfo.js)
+- [x] Index-Tab (Schlagwortsuche über hmkeywords.js)
+- [x] Breadcrumb-Navigation
 - [ ] Print-Funktion
-- [ ] Styling-Feinschliff (Vergleich mit referenz-output/)
+- [ ] Titelmenu-Überarbeitung
 
 ### Erkenntnisse
 - H&M WebHelp hat eigene Navigation-Shell (iframes) - wir nutzen eigene Shell
 - H&M generiert TOC-Daten als JavaScript (hmcontent.js mit hmLoadTOC Callback)
 - AJAX funktioniert nicht bei `file://` - gelöst mit iframe + postMessage
 - Shell-Dateien (Help.html, shell.js, shell.css) werden via Baggage/ mit exportiert
+
+## Vergleich Output vs. Referenz — Bekannte Fallstricke
+
+Beim visuellen und technischen Vergleich zwischen `hm-export/` (unser Output) und `referenz-output/` (Ziel) auf folgende Punkte achten:
+
+### H&M generiert andere HTML-Elemente als erwartet
+- **Tabellenheader**: H&M nutzt manchmal `<td>` statt `<th>` für Header-Zeilen, und manchmal fehlt `<thead>`. CSS-Regeln nur auf `th` reichen nicht → `table:not(:has(thead)) > tbody > tr:first-child > td` als Fallback nötig.
+- **Inline-Styles**: H&M setzt `font-size: 0.80rem` direkt auf `<span>`-Elemente, was CSS-Klassen-Styles überschreibt. Gegenmaßnahme: `#content [style*="font-size: 0.80rem"] { font-size: inherit !important; }`.
+- Generell: Immer den **generierten HTML-Quelltext** in `hm-export/` prüfen, nicht nur die CSS-Regeln.
+
+### Referenz-Layout-Details die leicht übersehen werden
+- **Breadcrumb-Strich**: Endet nicht am Rand — `padding: 5px 20px 0` auf dem Wrapper (`#topic-bar`), Border nur auf innerem `#breadcrumb`.
+- **Tabellen**: Referenz hat responsive Breite (`width: auto, min-width: 50%, max-width: 90%`), nicht 100%.
+- **Font-Size-Kette**: Shell body `0.8em` (12.8px) → Content-Paragraphs `11pt` (14.67px). Inline-Spans von H&M können diese Kette brechen.
+
+### Vergleichs-Methode
+1. **Browser DevTools** → Computed Styles vergleichen (nicht nur geschriebene Rules)
+2. **HTML-Quelltext lesen** → `hm-export/fs_*.html` direkt lesen um zu sehen welche Elemente H&M tatsächlich generiert
+3. **Selektiv prüfen** → Nicht nur die "heilen" Tabellen, sondern auch Tabellen ohne `<thead>` oder mit unerwarteten Strukturen testen
 
 ## Arbeitsweise für CSS-Änderungen
 
