@@ -96,15 +96,6 @@ Baggage/
 | Datei | Beschreibung |
 |-------|-------------|
 | `jquery.js` | jQuery-Bibliothek |
-| `hm_tocscript.js` | TOC-Rendering-Script (H+M) |
-| `hm_indexscript.js` | Index-Rendering-Script (H+M) |
-| `hm_searchscript.js` | Such-Script (H+M) |
-| `hm_tocprescript.js` | TOC-Vorab-Script (H+M) |
-| `hm_indexprescript.js` | Index-Vorab-Script (H+M) |
-| `hm_searchprescript.js` | Such-Vorab-Script (H+M) |
-| `hm_pagescript.js` | Seiten-Script (H+M) |
-| `hm_pageprescript.js` | Seiten-Vorab-Script (H+M) |
-| `getUrlParams.js` | URL-Parameter-Handling (H+M) |
 
 **Bilder — Shell-UI:**
 
@@ -125,16 +116,6 @@ Baggage/
 | `$HMSKINPREVIEW.png` | Vorschaubild für den Skin in H+M |
 | `favicon.ico` | Browser-Tab-Icon |
 
-**H+M-interne HTML-Komponenten:**
-
-| Datei | Beschreibung |
-|-------|-------------|
-| `_google_webfonts.html` | Google Webfonts Einbindung (H+M) |
-| `_svgicons.html` | SVG-Icon-Definitionen (H+M) |
-| `_topicfooter.html` | Topic-Footer-Template (H+M) |
-| `HM_HEADERBOX.html` | Header-Box-Template (H+M) |
-| `HM_HEADERMENU.html` | Header-Menü-Template (H+M) |
-| `KEYINFO.html` | Keyboard-Info-Template (H+M) |
 
 
 ## 4. Layout und Bereiche
@@ -403,18 +384,6 @@ Ablauf von `loadTopic()`:
 |----------|-------------|
 | `escapeHtml(text)` | XSS-sichere HTML-Escaping via `textContent`/`innerHTML` |
 | `truncateText(text, maxLength)` | Kürzt Text mit "..." |
-
-### Andere JS-Dateien
-
-Von H+M mitgelieferte Scripts im Baggage (Pre-/Post-Scripts für H+M's eigene Seitenlogik):
-
-| Datei | Beschreibung |
-|-------|-------------|
-| `hm_tocscript.js` / `hm_tocprescript.js` | TOC-Rendering und Vorab-Initialisierung |
-| `hm_indexscript.js` / `hm_indexprescript.js` | Index-Rendering und Vorab-Initialisierung |
-| `hm_searchscript.js` / `hm_searchprescript.js` | Such-Rendering und Vorab-Initialisierung |
-| `hm_pagescript.js` / `hm_pageprescript.js` | Seiten-Initialisierung |
-| `getUrlParams.js` | URL-Parameter-Handling |
 
 
 ## 7. CSS-Architektur
