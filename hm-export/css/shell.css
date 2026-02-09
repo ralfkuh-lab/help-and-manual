@@ -776,9 +776,15 @@ body.splitter-dragging * {
    PRINT STYLES
    ============================================ */
 @media print {
+    html, body {
+        height: auto;
+        overflow: visible;
+    }
+
     #shell {
         display: block;
         height: auto;
+        overflow: visible;
     }
 
     #sidebar,
@@ -790,11 +796,24 @@ body.splitter-dragging * {
 
     #content-area {
         display: block;
+        height: auto;
+        overflow: visible;
+        border: none;
+        border-radius: 0;
     }
 
     #content {
+        display: block;
+        height: auto;
         overflow: visible;
         padding: 0;
+    }
+
+    /* H&M setzt page-break-inside:avoid auf fast alle Elemente per Inline-Style.
+       Das verhindert Umbrüche innerhalb großer Blöcke und erzwingt stattdessen
+       Umbrüche nach Überschriften. Hier zurücksetzen. */
+    #content [style*="page-break-inside"] {
+        page-break-inside: auto !important;
     }
 }
 
@@ -818,7 +837,6 @@ body.splitter-dragging * {
     width: 16px;
     height: 16px;
     margin-right: 0.3em;
-    vertical-align: middle;
 }
 
 .related-topic-icon::before {
