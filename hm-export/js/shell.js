@@ -445,22 +445,73 @@
      * Open dialog to navigate to topic by ID
      */
     function openGotoDialog() {
-        const id = prompt('Topic-ID eingeben:');
-        if (id && id.trim()) {
-            // Try to find the topic by filename or partial match
-            const searchId = id.trim().toLowerCase();
-            const found = flatToc.find(item => {
-                const hf = item.hf.toLowerCase();
-                return hf === searchId ||
-                       hf === searchId + '.html' ||
-                       hf.includes(searchId);
+        // Create overlay + dialog if not yet in DOM
+        if (!document.getElementById('goto-overlay')) {
+            var html = '<div id="goto-overlay">' +
+                '<div id="goto-dialog">' +
+                    '<div id="goto-dialog-header">' +
+                        '<img src="./images/Search_32x32.png" alt="" />' +
+                        '<span>Kapitel per ID \u00f6ffnen</span>' +
+                    '</div>' +
+                    '<div id="goto-dialog-content">' +
+                        '<div id="goto-dialog-body">' +
+                            '<label for="goto-input">ID des Kapitels:</label>' +
+                            '<input type="text" id="goto-input" />' +
+                        '</div>' +
+                        '<div id="goto-dialog-footer">' +
+                            '<button id="goto-ok">\u00d6ffnen</button>' +
+                            '<button id="goto-cancel">Abbrechen</button>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+            $('body').append(html);
+
+            $('#goto-ok').on('click', gotoSubmit);
+            $('#goto-cancel').on('click', gotoClose);
+            $('#goto-overlay').on('click', function(e) {
+                if (e.target === this) gotoClose();
             });
-            if (found) {
-                loadTopic(found.hf);
-            } else {
-                alert('Topic "' + id + '" nicht gefunden.');
-            }
+            $('#goto-input').on('keydown', function(e) {
+                if (e.key === 'Enter') gotoSubmit();
+                if (e.key === 'Escape') gotoClose();
+            });
         }
+
+        // Position dialog near the button
+        var btn = document.getElementById('btn-goto');
+        var rect = btn.getBoundingClientRect();
+        var dlg = document.getElementById('goto-dialog');
+        dlg.style.position = 'fixed';
+        dlg.style.left = rect.left + 'px';
+        dlg.style.top = (rect.bottom + 4) + 'px';
+        dlg.style.transform = 'none';
+
+        $('#goto-input').val('');
+        $('#goto-overlay').show();
+        $('#goto-input').focus();
+    }
+
+    function gotoSubmit() {
+        var id = $('#goto-input').val().trim();
+        if (!id) return;
+        var searchId = id.toLowerCase();
+        var found = flatToc.find(function(item) {
+            var hf = item.hf.toLowerCase();
+            return hf === searchId ||
+                   hf === searchId + '.html' ||
+                   hf.includes(searchId);
+        });
+        if (found) {
+            gotoClose();
+            loadTopic(found.hf);
+        } else {
+            alert('Topic "' + id + '" nicht gefunden.');
+        }
+    }
+
+    function gotoClose() {
+        $('#goto-overlay').hide();
     }
 
     /**
