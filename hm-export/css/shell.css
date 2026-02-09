@@ -139,27 +139,27 @@ body {
     font-weight: normal;
 }
 
-/* Accordion Content - animated via JS (jQuery slideToggle) */
+/* Accordion Content - CSS transition on flex-grow (GPU-beschleunigt) */
 .accordion-content {
-    display: none;
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
+    display: flex;
+    flex: 0 0 0;  /* collapsed: kein Platz */
+    overflow: hidden;
     flex-direction: column;
-    background: #ffffff;  /* Content-Bereich weiß */
-    border: 1px solid #aaaaaa;  /* Referenz: ui-widget-content */
-    border-top: 0;  /* Referenz: ui-accordion-content */
+    background: #ffffff;
+    transition: flex-grow 300ms ease;
 }
 
 .accordion-panel.expanded .accordion-content {
-    display: flex;
+    flex: 1 1 0;  /* expanded: füllt verfügbaren Platz */
+    border: 1px solid #aaaaaa;  /* Referenz: ui-widget-content */
+    border-top: 0;  /* Referenz: ui-accordion-content */
 }
 
 /* ============================================
    PANEL: HILFE (TOC)
    ============================================ */
 #toc-container {
-    padding: 0.5rem 0;
+    padding: 0;
     flex: 1;
     overflow-y: auto;
 }
@@ -321,7 +321,7 @@ body {
 
 .keywords-item {
     list-style: none;
-    margin: 3.456px 0;  /* Referenz: li margin top/bottom */
+    margin: 0;
 }
 
 .keywords-wrapper {
