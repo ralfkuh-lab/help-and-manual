@@ -487,9 +487,9 @@
         dlg.style.top = (rect.bottom + 4) + 'px';
         dlg.style.transform = 'none';
 
-        $('#goto-input').val('');
+        $('#goto-input').val(currentTopic ? currentTopic.replace(/\.html$/, '') : '');
         $('#goto-overlay').show();
-        $('#goto-input').focus();
+        $('#goto-input').focus().select();
     }
 
     function gotoSubmit() {
