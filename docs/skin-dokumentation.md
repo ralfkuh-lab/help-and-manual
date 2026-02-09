@@ -105,7 +105,6 @@ Baggage/
 | `hm_pagescript.js` | Seiten-Script (H+M) |
 | `hm_pageprescript.js` | Seiten-Vorab-Script (H+M) |
 | `getUrlParams.js` | URL-Parameter-Handling (H+M) |
-| `postloadFuncs.js` | Post-Load-Funktionen (H+M) |
 
 **Bilder — Shell-UI:**
 
@@ -416,7 +415,6 @@ Von H+M mitgelieferte Scripts im Baggage (Pre-/Post-Scripts für H+M's eigene Se
 | `hm_searchscript.js` / `hm_searchprescript.js` | Such-Rendering und Vorab-Initialisierung |
 | `hm_pagescript.js` / `hm_pageprescript.js` | Seiten-Initialisierung |
 | `getUrlParams.js` | URL-Parameter-Handling |
-| `postloadFuncs.js` | Post-Load-Funktionen |
 
 
 ## 7. CSS-Architektur
