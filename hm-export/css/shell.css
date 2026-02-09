@@ -76,7 +76,7 @@ body {
     align-items: center;
     padding: .5em .5em .5em .7em;  /* Referenz: jquery-ui.css:186 */
     cursor: pointer;
-    background: transparent;  /* Referenz: ui-state-default = transparent, Sidebar-Weiß scheint durch */
+    background: #dfeaf7;  /* Inaktiver Tab-Header */
     border: 1px solid transparent;
     color: #454545;  /* Referenz: inactive header color */
     user-select: none;
@@ -146,6 +146,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     flex-direction: column;
+    background: #ffffff;  /* Content-Bereich weiß */
 }
 
 .accordion-panel.expanded .accordion-content {
