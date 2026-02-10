@@ -267,8 +267,16 @@
         if (hasLeadingStar && hasTrailingStar) return dictWord.indexOf(bare) !== -1;
         if (hasLeadingStar) return dictWord.length >= bare.length && dictWord.substring(dictWord.length - bare.length) === bare;
         if (hasTrailingStar) return dictWord.indexOf(bare) === 0;
-        // Wort-exakt (Default)
-        return dictWord === bare;
+        // Wort-exakt (Default) - auch Teile bei Sonderzeichen-Trennung prüfen
+        if (dictWord === bare) return true;
+        var sepRe = /[^a-z0-9\u00e4\u00f6\u00fc\u00df]/;
+        if (sepRe.test(dictWord)) {
+            var parts = dictWord.split(sepRe);
+            for (var i = 0; i < parts.length; i++) {
+                if (parts[i] === bare) return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -1146,8 +1154,9 @@
                 // Scroll to top
                 $('#content').scrollTop(0);
 
-                // Auto-highlight search terms if highlight mode is active
-                if (highlightActive && lastSearchWords.length) {
+                // Auto-highlight search terms only when Volltextsuche panel is active
+                if (highlightActive && lastSearchWords.length &&
+                    $('.accordion-panel[data-panel="search"]').hasClass('expanded')) {
                     highlightSearchTerms();
                 }
             }

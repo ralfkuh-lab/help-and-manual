@@ -504,7 +504,8 @@ mark.search-highlight.current-highlight {
 /* Search result count */
 .search-count {
     font-size: inherit;
-    color: #1E395B;
+    color: #666;
+    font-style: italic;
     margin: 0.3em 0;
     line-height: 1;
 }
