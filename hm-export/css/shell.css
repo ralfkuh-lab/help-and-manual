@@ -308,13 +308,13 @@ body.splitter-dragging * {
    PANEL: SCHLAGWORTSUCHE (Keywords)
    ============================================ */
 #keywords-filter {
-    padding: 0.3em 0.5em;  /* Referenz: kompakt */
+    padding: 0.3em 4px;
     flex-shrink: 0;
 }
 
-/* Keywords Count - unten angezeigt */
+/* Keywords Count */
 #keywords-count {
-    padding: 0.2em 0.5em;
+    padding: 0 4px;
     font-size: inherit;
     color: #666;
     flex-shrink: 0;
@@ -331,7 +331,7 @@ body.splitter-dragging * {
 }
 
 #keywords-container {
-    padding: 0.5rem 0;
+    padding: 0;
     flex: 1;
     overflow-y: auto;
 }
@@ -340,7 +340,7 @@ body.splitter-dragging * {
 .keywords-list {
     list-style: none;
     margin: 0;
-    padding: 0 0 0 2.3px;  /* Referenz: mainUl paddingLeft 2.304px */
+    padding: 0 0 0 4px;
     font-size: 0.72rem;  /* = 11.52px wie Referenz */
     line-height: 1.3em;  /* Referenz: 14.976px bei 11.52px font-size */
 }

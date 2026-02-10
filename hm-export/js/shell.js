@@ -151,6 +151,7 @@
         if (!filter) {
             // Show all
             $('.keywords-item').show();
+            $('#keywords-count').text('(' + $('.keywords-item').length + ')');
             return;
         }
 
@@ -169,6 +170,9 @@
                 $item.parents('.keywords-item').show();
             }
         });
+
+        // 3. Count aktualisieren
+        $('#keywords-count').text('(' + $('.keywords-item:visible').length + ')');
     }
 
     // ============================================
