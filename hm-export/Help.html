@@ -103,7 +103,14 @@
                 <div class="accordion-content">
                     <div id="search-form">
                         <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
-                        <button id="search-button">Suchen</button>
+                        <button id="search-button" title="Suchen">Suchen</button>
+                        <button id="search-help-button" class="search-toolbar-btn" title="Suchhilfe">?</button>
+                        <button id="search-highlight-button" class="search-toolbar-btn" title="Treffer hervorheben">&#x1F58D;</button>
+                        <button id="search-prev-button" class="search-toolbar-btn" title="Vorheriger Treffer">&lt;</button>
+                        <button id="search-next-button" class="search-toolbar-btn" title="N&#228;chster Treffer">&gt;</button>
+                    </div>
+                    <div id="search-help-text" style="display:none">
+                        <p>Mehrere W&#246;rter werden mit UND verkn&#252;pft (alle m&#252;ssen vorkommen).</p>
                     </div>
                     <div id="search-results">
                         <!-- Suchergebnisse werden hier angezeigt -->
@@ -130,6 +137,7 @@
     <!-- jQuery (von H&M exportiert) -->
     <script src="./js/jquery.js"></script>
     <!-- Suchdaten fuer Volltextsuche (von H&M exportiert) -->
+    <script src="./zoom_index.js"></script>
     <script src="./zoom_pageinfo.js"></script>
     <!-- Shell-Logik -->
     <script src="./js/shell.js"></script>

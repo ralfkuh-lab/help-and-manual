@@ -176,8 +176,12 @@
     }
 
     // ============================================
-    // Volltextsuche - uses pagedata from zoom_pageinfo.js
+    // Volltextsuche - uses dictwords from zoom_index.js + pagedata
     // ============================================
+
+    let lastSearchWords = [];
+    let highlightActive = false;
+    let currentHighlightIndex = -1;
 
     /**
      * Initialize fulltext search
@@ -192,10 +196,35 @@
                 performSearch();
             }
         });
+
+        // Hilfe-Button: toggle help text
+        $('#search-help-button').on('click', function() {
+            $('#search-help-text').toggle();
+        });
+
+        // Highlight-Button: toggle highlighting
+        $('#search-highlight-button').on('click', function() {
+            if (highlightActive) {
+                removeHighlights();
+                $(this).removeClass('active');
+            } else {
+                highlightSearchTerms();
+                $(this).addClass('active');
+            }
+        });
+
+        // Prev/Next highlight buttons
+        $('#search-prev-button').on('click', function() {
+            jumpToHighlight('prev');
+        });
+        $('#search-next-button').on('click', function() {
+            jumpToHighlight('next');
+        });
     }
 
     /**
-     * Perform fulltext search using pagedata
+     * Perform fulltext search using dictwords index (zoom_index.js)
+     * Falls back to pagedata-only search if dictwords unavailable
      */
     function performSearch() {
         const query = $('#search-input').val().trim().toLowerCase();
@@ -211,53 +240,101 @@
             return;
         }
 
-        // Search in pagedata: [url, title, description, image]
-        const results = [];
-        const queryWords = query.split(/\s+/);
+        const queryWords = query.split(/\s+/).filter(function(w) { return w.length > 0; });
+        let results = [];
 
-        pagedata.forEach(function(page) {
-            const url = page[0];
-            const title = page[1] || '';
-            const description = page[2] || '';
-            const searchText = (title + ' ' + description).toLowerCase();
+        if (typeof dictwords !== 'undefined' && dictwords.length > 0) {
+            // Use dictwords index for comprehensive search
+            var pageScores = {};
 
-            // Check if all query words are found
-            const allWordsFound = queryWords.every(function(word) {
-                return searchText.includes(word);
+            queryWords.forEach(function(searchWord, swIndex) {
+                for (var i = 0; i < dictwords.length; i++) {
+                    var parts = dictwords[i].split(' ');
+                    var word = parts[0];
+
+                    // Substring match (like Zoom SearchAsSubstring)
+                    if (word.indexOf(searchWord) === -1) continue;
+
+                    // Match found: parse page triplets (pageId, score, proximity)
+                    for (var k = 1; k < parts.length; k += 3) {
+                        var pageId = parseInt(parts[k]);
+                        var score = parseInt(parts[k + 1]);
+
+                        if (!pageScores[pageId]) {
+                            pageScores[pageId] = { score: 0, terms: {} };
+                        }
+                        pageScores[pageId].score += score;
+                        pageScores[pageId].terms[swIndex] = true;
+                    }
+                }
             });
 
-            if (allWordsFound) {
-                // Calculate simple relevance score
-                let score = 0;
-                queryWords.forEach(function(word) {
-                    if (title.toLowerCase().includes(word)) score += 10;
-                    if (description.toLowerCase().includes(word)) score += 1;
+            // AND logic: only pages containing ALL query words
+            var numTerms = queryWords.length;
+            for (var pageId in pageScores) {
+                var info = pageScores[pageId];
+                var termCount = 0;
+                for (var t in info.terms) termCount++;
+                if (termCount === numTerms) {
+                    var pid = parseInt(pageId);
+                    if (pid < pagedata.length) {
+                        results.push({
+                            url: pagedata[pid][0].replace('./', ''),
+                            title: pagedata[pid][1] || pagedata[pid][0],
+                            score: info.score
+                        });
+                    }
+                }
+            }
+        } else {
+            // Fallback: search in pagedata descriptions only
+            pagedata.forEach(function(page) {
+                var url = page[0];
+                var title = page[1] || '';
+                var description = page[2] || '';
+                var searchText = (title + ' ' + description).toLowerCase();
+
+                var allFound = queryWords.every(function(w) {
+                    return searchText.indexOf(w) !== -1;
                 });
 
-                results.push({
-                    url: url.replace('./', ''),
-                    title: title,
-                    description: description,
-                    score: score
-                });
-            }
-        });
+                if (allFound) {
+                    var score = 0;
+                    queryWords.forEach(function(w) {
+                        if (title.toLowerCase().indexOf(w) !== -1) score += 10;
+                        if (description.toLowerCase().indexOf(w) !== -1) score += 1;
+                    });
+                    results.push({
+                        url: url.replace('./', ''),
+                        title: title,
+                        score: score
+                    });
+                }
+            });
+        }
 
         // Sort by score descending
         results.sort(function(a, b) {
             return b.score - a.score;
         });
 
+        // Remember search words for highlighting
+        lastSearchWords = queryWords;
+
+        // Remove old highlights
+        removeHighlights();
+        $('#search-highlight-button').removeClass('active');
+
         // Display results
         if (results.length === 0) {
             resultsContainer.html('<p class="search-no-results">Keine Ergebnisse fuer "' + escapeHtml(query) + '"</p>');
         } else {
-            let html = '<ul class="search-results-list">';
+            var html = '<ul class="search-results-list">';
             html += '<li class="search-count">' + results.length + ' Kapitel gefunden.</li>';
 
             results.forEach(function(result) {
                 html += '<li class="search-result-item">';
-                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">' + result.title + '</a>';
+                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">' + escapeHtml(result.title) + '</a>';
                 html += '</li>';
             });
 
@@ -267,13 +344,118 @@
             // Add click handlers
             resultsContainer.find('.search-result-link').on('click', function(e) {
                 e.preventDefault();
-                const topic = $(this).data('topic');
+                var topic = $(this).data('topic');
                 loadTopic(topic);
                 if ($(window).width() < 768) {
                     $('#sidebar').removeClass('open');
                 }
             });
         }
+    }
+
+    /**
+     * Highlight search terms in #content using TreeWalker
+     */
+    function highlightSearchTerms() {
+        removeHighlights();
+        if (!lastSearchWords.length) return;
+
+        var content = document.getElementById('content');
+        if (!content) return;
+
+        // Build regex from all search words
+        var escaped = lastSearchWords.map(function(w) {
+            return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        });
+        var regex = new RegExp('(' + escaped.join('|') + ')', 'gi');
+
+        // Walk all text nodes and wrap matches with <mark>
+        var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
+        var textNodes = [];
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        textNodes.forEach(function(node) {
+            if (!regex.test(node.textContent)) return;
+            regex.lastIndex = 0;
+
+            var frag = document.createDocumentFragment();
+            var text = node.textContent;
+            var lastIdx = 0;
+            var match;
+
+            while ((match = regex.exec(text)) !== null) {
+                // Text before match
+                if (match.index > lastIdx) {
+                    frag.appendChild(document.createTextNode(text.substring(lastIdx, match.index)));
+                }
+                // Highlighted match
+                var mark = document.createElement('mark');
+                mark.className = 'search-highlight';
+                mark.textContent = match[0];
+                frag.appendChild(mark);
+                lastIdx = regex.lastIndex;
+            }
+
+            // Remaining text
+            if (lastIdx < text.length) {
+                frag.appendChild(document.createTextNode(text.substring(lastIdx)));
+            }
+
+            node.parentNode.replaceChild(frag, node);
+        });
+
+        highlightActive = true;
+        currentHighlightIndex = -1;
+    }
+
+    /**
+     * Remove all highlights from #content
+     */
+    function removeHighlights() {
+        $('#content mark.search-highlight').each(function() {
+            var parent = this.parentNode;
+            parent.replaceChild(document.createTextNode(this.textContent), this);
+            parent.normalize();
+        });
+        highlightActive = false;
+        currentHighlightIndex = -1;
+    }
+
+    /**
+     * Jump to prev/next highlight in content
+     */
+    function jumpToHighlight(direction) {
+        var marks = $('#content mark.search-highlight');
+        if (marks.length === 0) {
+            // Auto-activate highlighting if search was done
+            if (lastSearchWords.length) {
+                highlightSearchTerms();
+                $('#search-highlight-button').addClass('active');
+                marks = $('#content mark.search-highlight');
+                if (marks.length === 0) return;
+            } else {
+                return;
+            }
+        }
+
+        // Remove current marker
+        marks.removeClass('current-highlight');
+
+        if (direction === 'next') {
+            currentHighlightIndex++;
+            if (currentHighlightIndex >= marks.length) currentHighlightIndex = 0;
+        } else {
+            currentHighlightIndex--;
+            if (currentHighlightIndex < 0) currentHighlightIndex = marks.length - 1;
+        }
+
+        var target = marks.eq(currentHighlightIndex);
+        target.addClass('current-highlight');
+
+        // Scroll into view
+        target[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     // ============================================

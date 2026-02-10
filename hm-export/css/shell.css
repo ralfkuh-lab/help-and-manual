@@ -419,7 +419,8 @@ body.splitter-dragging * {
     height: auto;
 }
 
-#search-button {
+#search-button,
+.search-toolbar-btn {
     padding: 2px 6px;
     background: #e8f0f7;
     color: #333;
@@ -430,8 +431,43 @@ body.splitter-dragging * {
     font-family: inherit;
 }
 
-#search-button:hover {
+.search-toolbar-btn {
+    min-width: 22px;
+    text-align: center;
+}
+
+#search-button:hover,
+.search-toolbar-btn:hover {
     background: #cbe1fc;
+}
+
+#search-highlight-button.active {
+    background: #c4ddfc;
+    border-color: #88b0d8;
+}
+
+/* Suchhilfe-Text */
+#search-help-text {
+    padding: 4px 0.5em;
+    font-size: 0.9em;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+#search-help-text p {
+    margin: 0.2em 0;
+}
+
+/* Hervorhebung im Content */
+mark.search-highlight {
+    background: #fff3a8;
+    padding: 0;
+    color: inherit;
+}
+
+mark.search-highlight.current-highlight {
+    background: #ff9632;
 }
 
 #search-results {
