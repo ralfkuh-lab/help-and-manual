@@ -322,17 +322,12 @@ body.splitter-dragging * {
 
 #keywords-input {
     width: 100%;
-    padding: 2px 1px;  /* Referenz: kompakt */
-    border: 1px solid #aaa;
+    padding: 3px 4px;
+    border: 1px solid #999;
     border-radius: 0;
-    font-size: inherit;  /* erbt 0.8em = 11.52px */
+    font-size: 9pt;
     font-family: inherit;
     height: auto;
-}
-
-#keywords-input:focus {
-    outline: none;
-    border-color: #1265ab;
 }
 
 #keywords-container {
@@ -416,17 +411,12 @@ body.splitter-dragging * {
 
 #search-input {
     flex: 1;
-    padding: 2px 1px;  /* Referenz: kompakt */
-    border: 1px solid #aaa;
+    padding: 3px 4px;
+    border: 1px solid #999;
     border-radius: 0;
-    font-size: inherit;  /* erbt 0.8em = 11.52px */
+    font-size: 9pt;
     font-family: inherit;
     height: auto;
-}
-
-#search-input:focus {
-    outline: none;
-    border-color: #1265ab;
 }
 
 #search-button {

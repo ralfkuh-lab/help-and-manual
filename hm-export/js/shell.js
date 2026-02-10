@@ -154,18 +154,19 @@
             return;
         }
 
+        // 1. Alle verstecken
+        $('.keywords-item').hide();
+
+        // 2. Treffer finden, mit Nachfahren und Vorfahren anzeigen
         $('.keywords-item').each(function() {
             const $item = $(this);
             const text = $item.find('> .keywords-wrapper').text().toLowerCase();
-            const matches = text.includes(filter);
-            const hasMatchingChild = $item.find('.keywords-item').filter(function() {
-                return $(this).find('> .keywords-wrapper').text().toLowerCase().includes(filter);
-            }).length > 0;
-
-            if (matches || hasMatchingChild) {
+            if (text.includes(filter)) {
+                // Treffer + alle Nachfahren anzeigen
                 $item.show();
-            } else {
-                $item.hide();
+                $item.find('.keywords-item').show();
+                // Alle Vorfahren anzeigen
+                $item.parents('.keywords-item').show();
             }
         });
     }
