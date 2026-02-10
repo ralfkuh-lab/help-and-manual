@@ -181,6 +181,7 @@
 
     let lastSearchWords = [];
     let highlightActive = false;
+    let currentHighlightIndex = -1;
 
     /**
      * Initialize fulltext search
@@ -199,6 +200,7 @@
         // Hilfe-Button: toggle help text
         $('#search-help-button').on('click', function() {
             $('#search-help-text').toggle();
+            $(this).toggleClass('active');
         });
 
         // Highlight-Button: toggle highlighting
@@ -222,12 +224,85 @@
     }
 
     /**
+     * Parse search query into structured terms with operators
+     * Supports: quoted phrases, AND/OR/NOT operators, * wildcards
+     */
+    function parseSearchQuery(query) {
+        var terms = [];
+        // 1. Quoted phrases extrahieren: "wort1 wort2"
+        var remaining = query.replace(/"([^"]+)"/g, function(m, phrase) {
+            terms.push({ word: phrase.trim().toLowerCase(), op: 'AND', phrase: true });
+            return '';
+        });
+        // 2. Restliche Tokens splitten
+        var tokens = remaining.trim().toLowerCase().split(/\s+/).filter(function(t) { return t.length > 0; });
+        var nextOp = 'AND';
+        tokens.forEach(function(token) {
+            if (token === 'and') { nextOp = 'AND'; return; }
+            if (token === 'or')  { nextOp = 'OR'; return; }
+            if (token === 'not') { nextOp = 'NOT'; return; }
+            // Punkt entfernen (Referenz: Hinweis2)
+            token = token.replace(/\./g, '');
+            if (token.length === 0) return;
+            terms.push({ word: token, op: nextOp });
+            nextOp = 'AND'; // Reset nach jedem Wort
+        });
+        return terms;
+    }
+
+    /**
+     * Match a dictionary word against a search term
+     * Supports exact match (default), leading/trailing * wildcards, phrases
+     */
+    function matchWord(dictWord, searchTerm) {
+        var sw = searchTerm.word;
+        if (searchTerm.phrase) {
+            // Phrase: Substring-Suche (Phrase als Ganzes muss vorkommen)
+            return dictWord.indexOf(sw) !== -1;
+        }
+        var hasLeadingStar = sw.charAt(0) === '*';
+        var hasTrailingStar = sw.charAt(sw.length - 1) === '*';
+        var bare = sw.replace(/^\*|\*$/g, '');
+        if (bare.length === 0) return false;
+        if (hasLeadingStar && hasTrailingStar) return dictWord.indexOf(bare) !== -1;
+        if (hasLeadingStar) return dictWord.length >= bare.length && dictWord.substring(dictWord.length - bare.length) === bare;
+        if (hasTrailingStar) return dictWord.indexOf(bare) === 0;
+        // Wort-exakt (Default)
+        return dictWord === bare;
+    }
+
+    /**
+     * Find pages matching a single search term via dictwords index
+     */
+    function findPagesForTerm(term) {
+        var pageScores = {};
+        if (typeof dictwords === 'undefined' || dictwords.length === 0) return pageScores;
+
+        for (var i = 0; i < dictwords.length; i++) {
+            var parts = dictwords[i].split(' ');
+            var word = parts[0];
+
+            if (!matchWord(word, term)) continue;
+
+            for (var k = 1; k < parts.length; k += 3) {
+                var pageId = parseInt(parts[k]);
+                var score = parseInt(parts[k + 1]);
+                if (!pageScores[pageId]) {
+                    pageScores[pageId] = 0;
+                }
+                pageScores[pageId] += score;
+            }
+        }
+        return pageScores;
+    }
+
+    /**
      * Perform fulltext search using dictwords index (zoom_index.js)
-     * Falls back to pagedata-only search if dictwords unavailable
+     * Supports word-exact matching, * wildcards, AND/OR/NOT operators, quoted phrases
      */
     function performSearch() {
-        const query = $('#search-input').val().trim().toLowerCase();
-        const resultsContainer = $('#search-results');
+        var query = $('#search-input').val().trim();
+        var resultsContainer = $('#search-results');
 
         if (!query) {
             resultsContainer.html('<p class="search-hint">Bitte Suchbegriff eingeben.</p>');
@@ -239,67 +314,106 @@
             return;
         }
 
-        const queryWords = query.split(/\s+/).filter(function(w) { return w.length > 0; });
-        let results = [];
+        var terms = parseSearchQuery(query);
+        if (terms.length === 0) {
+            resultsContainer.html('<p class="search-hint">Bitte Suchbegriff eingeben.</p>');
+            return;
+        }
+
+        var results = [];
 
         if (typeof dictwords !== 'undefined' && dictwords.length > 0) {
-            // Use dictwords index for comprehensive search
-            var pageScores = {};
+            var andTerms = terms.filter(function(t) { return t.op === 'AND'; });
+            var orTerms = terms.filter(function(t) { return t.op === 'OR'; });
+            var notTerms = terms.filter(function(t) { return t.op === 'NOT'; });
 
-            queryWords.forEach(function(searchWord, swIndex) {
-                for (var i = 0; i < dictwords.length; i++) {
-                    var parts = dictwords[i].split(' ');
-                    var word = parts[0];
+            // Find pages for each AND term
+            var andPageSets = andTerms.map(function(t) { return findPagesForTerm(t); });
+            // Find pages for each OR term
+            var orPageSets = orTerms.map(function(t) { return findPagesForTerm(t); });
+            // Find pages for each NOT term
+            var notPageSets = notTerms.map(function(t) { return findPagesForTerm(t); });
 
-                    // Substring match (like Zoom SearchAsSubstring)
-                    if (word.indexOf(searchWord) === -1) continue;
+            // Build NOT exclusion set
+            var excludePages = {};
+            notPageSets.forEach(function(ps) {
+                for (var pid in ps) excludePages[pid] = true;
+            });
 
-                    // Match found: parse page triplets (pageId, score, proximity)
-                    for (var k = 1; k < parts.length; k += 3) {
-                        var pageId = parseInt(parts[k]);
-                        var score = parseInt(parts[k + 1]);
+            // Combine results: AND intersection + OR union
+            var finalScores = {};
 
-                        if (!pageScores[pageId]) {
-                            pageScores[pageId] = { score: 0, terms: {} };
+            if (andPageSets.length > 0) {
+                // Start with first AND term's pages
+                var basePids = andPageSets[0];
+                for (var pid in basePids) {
+                    // Check all other AND terms contain this page
+                    var allMatch = true;
+                    for (var ai = 1; ai < andPageSets.length; ai++) {
+                        if (!andPageSets[ai][pid]) { allMatch = false; break; }
+                    }
+                    if (allMatch && !excludePages[pid]) {
+                        var totalScore = 0;
+                        andPageSets.forEach(function(ps) { totalScore += (ps[pid] || 0); });
+                        finalScores[pid] = totalScore;
+                    }
+                }
+            }
+
+            // Add OR term pages (union, also exclude NOT pages)
+            orPageSets.forEach(function(ps) {
+                for (var pid in ps) {
+                    if (excludePages[pid]) continue;
+                    if (!finalScores[pid]) {
+                        // If there are AND terms, OR only adds to existing matches
+                        // If there are no AND terms, OR creates the result set
+                        if (andPageSets.length === 0) {
+                            finalScores[pid] = ps[pid];
                         }
-                        pageScores[pageId].score += score;
-                        pageScores[pageId].terms[swIndex] = true;
+                    } else {
+                        finalScores[pid] += ps[pid];
                     }
                 }
             });
 
-            // AND logic: only pages containing ALL query words
-            var numTerms = queryWords.length;
-            for (var pageId in pageScores) {
-                var info = pageScores[pageId];
-                var termCount = 0;
-                for (var t in info.terms) termCount++;
-                if (termCount === numTerms) {
-                    var pid = parseInt(pageId);
-                    if (pid < pagedata.length) {
-                        results.push({
-                            url: pagedata[pid][0].replace('./', ''),
-                            title: pagedata[pid][1] || pagedata[pid][0],
-                            score: info.score
-                        });
+            // If only OR terms (no AND terms): union of all OR pages
+            if (andPageSets.length === 0 && orPageSets.length > 0) {
+                orPageSets.forEach(function(ps) {
+                    for (var pid in ps) {
+                        if (excludePages[pid]) continue;
+                        if (!finalScores[pid]) finalScores[pid] = 0;
+                        finalScores[pid] += ps[pid];
                     }
+                });
+            }
+
+            // Convert to results
+            for (var pageId in finalScores) {
+                var pid = parseInt(pageId);
+                if (pid < pagedata.length) {
+                    results.push({
+                        url: pagedata[pid][0].replace('./', ''),
+                        title: pagedata[pid][1] || pagedata[pid][0],
+                        score: finalScores[pageId]
+                    });
                 }
             }
         } else {
-            // Fallback: search in pagedata descriptions only
+            // Fallback: simple pagedata search with parsed terms
+            var searchWords = terms.filter(function(t) { return t.op !== 'NOT'; }).map(function(t) { return t.word.replace(/^\*|\*$/g, ''); });
             pagedata.forEach(function(page) {
                 var url = page[0];
                 var title = page[1] || '';
                 var description = page[2] || '';
                 var searchText = (title + ' ' + description).toLowerCase();
 
-                var allFound = queryWords.every(function(w) {
+                var allFound = searchWords.every(function(w) {
                     return searchText.indexOf(w) !== -1;
                 });
 
                 if (allFound) {
                     var score = 0;
-                    queryWords.forEach(function(w) {
+                    searchWords.forEach(function(w) {
                         if (title.toLowerCase().indexOf(w) !== -1) score += 10;
                         if (description.toLowerCase().indexOf(w) !== -1) score += 1;
                     });
@@ -317,8 +431,10 @@
             return b.score - a.score;
         });
 
-        // Remember search words for highlighting
-        lastSearchWords = queryWords;
+        // Remember search words for highlighting (only actual words, no operators)
+        lastSearchWords = terms.filter(function(t) { return t.op !== 'NOT'; }).map(function(t) {
+            return t.word.replace(/^\*|\*$/g, '');
+        }).filter(function(w) { return w.length > 0; });
 
         // Activate highlighting by default after search
         highlightActive = true;
@@ -354,6 +470,7 @@
 
     /**
      * Highlight search terms in #content using TreeWalker
+     * Supports word-exact highlighting with word boundary awareness
      */
     function highlightSearchTerms() {
         removeHighlights();
@@ -362,7 +479,7 @@
         var content = document.getElementById('content');
         if (!content) return;
 
-        // Build regex from all search words
+        // Build regex from all search words (already stripped of * wildcards)
         var escaped = lastSearchWords.map(function(w) {
             return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         });
@@ -406,6 +523,7 @@
         });
 
         highlightActive = true;
+        currentHighlightIndex = -1;
     }
 
     /**
@@ -418,10 +536,11 @@
             parent.normalize();
         });
         highlightActive = false;
+        currentHighlightIndex = -1;
     }
 
     /**
-     * Jump to prev/next highlight in content (visited-highlight pattern)
+     * Jump to prev/next highlight in content (orange current-highlight)
      */
     function jumpToHighlight(direction) {
         var marks = $('#content mark.search-highlight');
@@ -436,20 +555,20 @@
             }
         }
 
+        // Remove old current-highlight
+        marks.removeClass('current-highlight');
+
         if (direction === 'next') {
-            var next = document.querySelector('.search-highlight:not(.visited-search-highlight)');
-            if (next) {
-                next.scrollIntoView({ block: 'center' });
-                next.classList.add('visited-search-highlight');
-            }
+            currentHighlightIndex++;
+            if (currentHighlightIndex >= marks.length) currentHighlightIndex = 0;
         } else {
-            var visited = document.querySelectorAll('.search-highlight.visited-search-highlight');
-            if (visited.length > 0) {
-                var last = visited[visited.length - 1];
-                last.classList.remove('visited-search-highlight');
-                last.scrollIntoView({ block: 'center' });
-            }
+            currentHighlightIndex--;
+            if (currentHighlightIndex < 0) currentHighlightIndex = marks.length - 1;
         }
+
+        var target = marks.eq(currentHighlightIndex);
+        target.addClass('current-highlight');
+        target[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     // ============================================
