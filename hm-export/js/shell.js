@@ -181,7 +181,6 @@
 
     let lastSearchWords = [];
     let highlightActive = false;
-    let currentHighlightIndex = -1;
 
     /**
      * Initialize fulltext search
@@ -321,9 +320,9 @@
         // Remember search words for highlighting
         lastSearchWords = queryWords;
 
-        // Remove old highlights
-        removeHighlights();
-        $('#search-highlight-button').removeClass('active');
+        // Activate highlighting by default after search
+        highlightActive = true;
+        $('#search-highlight-button').addClass('active');
 
         // Display results
         if (results.length === 0) {
@@ -334,7 +333,7 @@
 
             results.forEach(function(result) {
                 html += '<li class="search-result-item">';
-                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">' + escapeHtml(result.title) + '</a>';
+                html += '<a href="#' + result.url + '" class="search-result-link" data-topic="' + result.url + '">' + escapeHtml(decodeHtmlEntities(result.title)) + '</a>';
                 html += '</li>';
             });
 
@@ -407,7 +406,6 @@
         });
 
         highlightActive = true;
-        currentHighlightIndex = -1;
     }
 
     /**
@@ -420,16 +418,14 @@
             parent.normalize();
         });
         highlightActive = false;
-        currentHighlightIndex = -1;
     }
 
     /**
-     * Jump to prev/next highlight in content
+     * Jump to prev/next highlight in content (visited-highlight pattern)
      */
     function jumpToHighlight(direction) {
         var marks = $('#content mark.search-highlight');
         if (marks.length === 0) {
-            // Auto-activate highlighting if search was done
             if (lastSearchWords.length) {
                 highlightSearchTerms();
                 $('#search-highlight-button').addClass('active');
@@ -440,22 +436,20 @@
             }
         }
 
-        // Remove current marker
-        marks.removeClass('current-highlight');
-
         if (direction === 'next') {
-            currentHighlightIndex++;
-            if (currentHighlightIndex >= marks.length) currentHighlightIndex = 0;
+            var next = document.querySelector('.search-highlight:not(.visited-search-highlight)');
+            if (next) {
+                next.scrollIntoView({ block: 'center' });
+                next.classList.add('visited-search-highlight');
+            }
         } else {
-            currentHighlightIndex--;
-            if (currentHighlightIndex < 0) currentHighlightIndex = marks.length - 1;
+            var visited = document.querySelectorAll('.search-highlight.visited-search-highlight');
+            if (visited.length > 0) {
+                var last = visited[visited.length - 1];
+                last.classList.remove('visited-search-highlight');
+                last.scrollIntoView({ block: 'center' });
+            }
         }
-
-        var target = marks.eq(currentHighlightIndex);
-        target.addClass('current-highlight');
-
-        // Scroll into view
-        target[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     // ============================================
@@ -1032,6 +1026,11 @@
 
                 // Scroll to top
                 $('#content').scrollTop(0);
+
+                // Auto-highlight search terms if highlight mode is active
+                if (highlightActive && lastSearchWords.length) {
+                    highlightSearchTerms();
+                }
             }
         }
 
@@ -1224,6 +1223,12 @@
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
+    }
+
+    function decodeHtmlEntities(text) {
+        var div = document.createElement('div');
+        div.innerHTML = text;
+        return div.textContent;
     }
 
     function truncateText(text, maxLength) {

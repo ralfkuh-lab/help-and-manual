@@ -103,14 +103,26 @@
                 <div class="accordion-content">
                     <div id="search-form">
                         <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
-                        <button id="search-button" title="Suchen">Suchen</button>
-                        <button id="search-help-button" class="search-toolbar-btn" title="Suchhilfe">?</button>
-                        <button id="search-highlight-button" class="search-toolbar-btn" title="Treffer hervorheben">&#x1F58D;</button>
-                        <button id="search-prev-button" class="search-toolbar-btn" title="Vorheriger Treffer">&lt;</button>
-                        <button id="search-next-button" class="search-toolbar-btn" title="N&#228;chster Treffer">&gt;</button>
+                        <button id="search-button" class="search-toolbar-btn" title="Suchen">
+                            <span class="search-icon icon-search"></span>
+                        </button>
+                        <button id="search-help-button" class="search-toolbar-btn" title="Suchhilfe">
+                            <span class="search-icon icon-help"></span>
+                        </button>
+                        <button id="search-highlight-button" class="search-toolbar-btn" title="Treffer hervorheben">
+                            <span class="search-icon icon-lightbulb"></span>
+                        </button>
+                        <button id="search-prev-button" class="search-toolbar-btn" title="Vorheriger Treffer">
+                            <span class="search-icon icon-seek-prev"></span>
+                        </button>
+                        <button id="search-next-button" class="search-toolbar-btn" title="N&#228;chster Treffer">
+                            <span class="search-icon icon-seek-next"></span>
+                        </button>
                     </div>
                     <div id="search-help-text" style="display:none">
-                        <p>Mehrere W&#246;rter werden mit UND verkn&#252;pft (alle m&#252;ssen vorkommen).</p>
+                        <p><strong>Suchmethode</strong>: Teilwort-Suche (Eingabe wird als Teil des Wortes gesucht).</p>
+                        <p><strong>Tipp</strong>: Mehrere W&#246;rter werden mit UND verkn&#252;pft &ndash; alle m&#252;ssen vorkommen.</p>
+                        <p><strong>Hinweis</strong>: Gro&#223;-/Kleinschreibung wird ignoriert.</p>
                     </div>
                     <div id="search-results">
                         <!-- Suchergebnisse werden hier angezeigt -->
