@@ -24,19 +24,30 @@ help-and-manual/
 ├── referenz-output/      # NetHelp-Zielformat (Doc-To-Help generiert)
 ├── Ferber.hmskin         # Aktive Skin-Konfiguration (ZIP)
 ├── hmskin-work/          # Entpackte Skin zum Bearbeiten (in .gitignore)
-├── hmskin-extract.sh     # Extrahiert Skin nach hmskin-work/
-└── hmskin-pack.sh        # Packt hmskin-work/ zurück zu Ferber.hmskin
+├── hmskin-extract.ps1    # Extrahiert Skin nach hmskin-work/ (Windows PowerShell)
+├── hmskin-pack.ps1       # Packt hmskin-work/ zurück zu Ferber.hmskin (Windows PowerShell)
+├── hmskin-extract.sh     # Extrahiert Skin nach hmskin-work/ (Linux/Bash)
+└── hmskin-pack.sh        # Packt hmskin-work/ zurück zu Ferber.hmskin (Linux/Bash)
 ```
 
 ## Skin-Bearbeitung
 
-### Workflow
+### Workflow (Windows)
+```powershell
+.\hmskin-extract.ps1      # Skin entpacken
+# Dateien in hmskin-work/ bearbeiten
+.\hmskin-pack.ps1         # Skin packen
+git commit && git push    # Skin-Änderungen pushen
+# H&M Export durchführen (manuelle Aktion in Help+Manual)
+git add hm-export/ && git commit && git push  # Export-Ergebnis pushen
+```
+
+### Workflow (Linux)
 ```bash
 ./hmskin-extract.sh       # Skin entpacken
 # Dateien in hmskin-work/ bearbeiten
 ./hmskin-pack.sh          # Skin packen
-git commit && git push    # Änderungen pushen
-# User: git pull (Windows) → H&M Export → git push hm-export/
+git commit && git push    # Skin-Änderungen pushen
 ```
 
 ### .hmskin Struktur
@@ -68,6 +79,7 @@ Ferber.hmskin (ZIP)
 - [x] TOC-Highlighting und Auto-Expand bei Navigation
 - [x] CSS: `ferber.css` mit Referenz-Styles + H&M-Klassenmappings
 - [x] Toolbar mit Navigation (Prev/Next/Home/Goto), Chapters (Collapse/Load) und Print
+- [x] Unterkapitel laden: Level-basierte sequentielle Logik, startet mit aktueller Seite, zeigt TopicID
 - [x] Schlagwortsuche (Keywords) Panel mit Filter
 - [x] Volltextsuche Panel
 
@@ -153,14 +165,17 @@ window.addEventListener('message', function(e) {
 - [x] Suche implementieren (Volltextsuche über zoom_pageinfo.js)
 - [x] Index-Tab (Schlagwortsuche über hmkeywords.js)
 - [x] Breadcrumb-Navigation
+- [x] Unterkapitel laden mit Level-Logik (sequentiell, startet mit aktueller Seite, TopicID im Titel)
 - [ ] Print-Funktion
 - [ ] Titelmenu-Überarbeitung
 
 ### Erkenntnisse
 - H&M WebHelp hat eigene Navigation-Shell (iframes) - wir nutzen eigene Shell
 - H&M generiert TOC-Daten als JavaScript (hmcontent.js mit hmLoadTOC Callback)
+- TOC-Daten enthalten Level-Information (`lv` Property) für hierarchische Navigation
 - AJAX funktioniert nicht bei `file://` - gelöst mit iframe + postMessage
 - Shell-Dateien (Help.html, shell.js, shell.css) werden via Baggage/ mit exportiert
+- "Unterkapitel laden" nutzt Level-basierte Logik: lädt aktuelle Seite + alle folgenden mit höherem Level, stoppt bei gleicher Ebene
 
 ## Vergleich Output vs. Referenz — Bekannte Fallstricke
 
@@ -245,8 +260,17 @@ Neue Dateien im Baggage/ müssen in `project.hmxp` unter `<files>` eingetragen w
 
 **Tipp**: H+M Premium Pack registriert fehlende Dateien automatisch beim Speichern.
 
-### hmskin-pack.sh
-Das Pack-Script verwendet Python für Windows-kompatible ZIPs:
+### Pack-Scripts
+
+**hmskin-pack.ps1 (Windows PowerShell)**:
+- Verwendet .NET `System.IO.Compression.ZipFile`
+- Forward-Slashes in ZIP-Pfaden (`Baggage/Help.html`)
+- Explizite `Baggage/` Directory-Entry als erster Eintrag
+- Keine UTF-8 BOM in Dateien
+
+**hmskin-pack.sh (Linux Bash)**:
+- Verwendet Python für Windows-kompatible ZIPs
 - `create_system = 0` (MS-DOS/FAT statt Unix)
 - `external_attr = 0x10` für Verzeichnisse, `0x20` für Dateien
+- Forward-Slashes in ZIP-Pfaden
 - Keine Unix-spezifischen Extra-Felder
