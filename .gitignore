@@ -5,8 +5,6 @@ fertige-hilfe/
 # Extrahierte Dokumentation (zu groß für Git)
 docs/extracted/
 
-# hmskin Arbeitsverzeichnis
-hmskin-work/
 
 # Python
 __pycache__/

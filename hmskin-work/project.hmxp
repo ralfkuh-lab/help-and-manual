@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<helpproject xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="helpproject.xsd" version="2.2" isskin="true" isrepository="false">
+  <config>
+    <namespaces />
+    <export-task-groups />
+    <helpwindows />
+    <styleclasses />
+    <config-group name="project">
+      <config-value name="imageshortcuts_includebaggage">1</config-value>
+      <config-group name="custombuilds">
+        <config-value name="OPTINFO">Configure in Toolbox with "Skin Options"</config-value>
+      </config-group>
+      <config-value name="make0include">CHM</config-value>
+      <config-value name="make0status">*</config-value>
+    </config-group>
+    <config-group name="HTML">
+      <config-group name="TOPICTEMPLATES">
+        <config-value name="default" translate="true"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><%TOPIC_TITLE%></title>
+<meta charset="<%DOCCHARSET%>" />
+<meta name="generator" content="Help+Manual" />
+<link rel="stylesheet" type="text/css" href="./css/ferber.css" />
+<script>
+// postMessage listener for iframe-based loading (file:// CORS workaround)
+window.addEventListener('message', function(e) {
+    if (e.data === 'getContent' && window.parent) {
+        window.parent.postMessage({ doc: document.documentElement.outerHTML }, '*');
+    }
+});
+</script>
+<IF_PREVIOUS_PAGE><link rel="prev" href="<%HREF_PREVIOUS_PAGE%>" /></IF_PREVIOUS_PAGE>
+<IF_NEXT_PAGE><link rel="next" href="<%HREF_NEXT_PAGE%>" /></IF_NEXT_PAGE>
+</head>
+<body data-topic-id="<%TOPICID%>">
+<h1><%TOPIC_TITLE%></h1>
+<%TOPIC_TEXT%>
+</body>
+</html>]]></config-value>
+        <config-value name="Info" translate="true"><![CDATA[<%DOCTYPE%>
+<html lang="<%XMLLANG%>">
+<head>
+   <title><%TOPIC_TITLE%></title>
+   <meta name="generator" content="Help+Manual" />
+   <meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+   <IF_CHM><meta http-equiv="X-UA-Compatible" content="IE=8" /></IF_CHM>
+   <IF_HTML><meta http-equiv="X-UA-Compatible" content="IE=edge" /></IF_HTML>
+   <link type="text/css" href="<%STYLESHEET%>" rel="stylesheet" />
+   <style type="text/css">
+     body { margin: 0px; background: #FFFFFF; }
+   </style>
+</head>
+<body>
+<div id="container">
+<%TOPIC_TEXT%>
+</div>
+</body>
+</html>]]></config-value>
+      </config-group>
+      <config-value name="topiceditor">1</config-value>
+      <config-value name="topicsimpleheadercolor">#C0C0C0</config-value>
+      <config-value name="topicsimpletextcolor">#FFFFFF</config-value>
+      <config-value name="topicsimplebuttons">1</config-value>
+      <config-group name="TOPICSIMPLEBUTTON1">
+        <config-value name="CAPTION" translate="true">Top</config-value>
+        <config-value name="IMAGE"></config-value>
+      </config-group>
+      <config-group name="TOPICSIMPLEBUTTON2">
+        <config-value name="CAPTION" translate="true">Previous</config-value>
+        <config-value name="IMAGE"></config-value>
+      </config-group>
+      <config-group name="TOPICSIMPLEBUTTON3">
+        <config-value name="CAPTION" translate="true">Next</config-value>
+        <config-value name="IMAGE"></config-value>
+      </config-group>
+      <config-value name="frameeditor">0</config-value>
+      <config-value name="navigationstyle">-1</config-value>
+      <config-value name="contentwidth">40</config-value>
+      <config-value name="headframeheight">100</config-value>
+      <config-value name="contentborder">1</config-value>
+      <config-value name="headframescroll">0</config-value>
+      <config-value name="frametemplate" translate="true"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+  "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="<%XMLLANG%>">
+<head>
+<title><%TITLE%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+<script type="text/javascript" src="helpman_navigation.js"></script>
+<script type="text/javascript" src="<%CONTEXTID_JS_FILE%>"></script>
+<script type="text/javascript">
+<!--
+    var defaulttopic="<%HREF_DEFAULT_PAGE%>";
+    var query = window.location.search.substring(1).replace(/:|&#58;|&#x3a;|\//g,"");
+    if (query != "") {
+       defaulttopic = query + window.location.hash;
+       if (typeof(hmGetContextId) != "undefined") {
+         var tmpCntx = hmGetContextId(query);
+         if (tmpCntx != "") defaulttopic = tmpCntx;
+       }
+    }
+document.write('<frameset cols="40%,*" frameborder="1" framespacing="1">');
+if (document.getElementById) {
+  document.write('<frame name="hmnavigation" src="<%HREF_CONTENT_PAGE_DYN%>" title="Navigation frame">'); }
+else {
+  document.write('<frame name="hmnavigation" src="<%HREF_CONTENT_PAGE_STATIC%>" title="Navigation frame">'); }
+document.write('<frame name="hmcontent" src="' + defaulttopic + '" title="Content frame">');
+document.write('</frameset>');
+//-->
+</script>
+</head>
+<noscript>
+  <frameset cols="40%,*" frameborder="1" framespacing="1">
+    <frame name="hmnavigation" src="<%HREF_CONTENT_PAGE_STATIC%>" title="Navigation frame">
+    <frame name="hmcontent" src="<%HREF_DEFAULT_PAGE%>" title="Content frame">
+    <noframes>
+      This page requires frames<br><a href="<%HREF_CONTENT_PAGE_STATIC%>">Click here to view the table of contents without frames</a>
+    </noframes>
+  </frameset>
+</noscript>
+</html>]]></config-value>
+      <config-value name="headframehtml" translate="true"><![CDATA[<%DOCTYPE%>
+<html lang="<%XMLLANG%>">
+  <head>
+    <title><%TITLE%></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+  </head>
+  </head>
+  <body>
+    <p><%TITLE%></p>
+    <p>Content of the top frame goes here...</p>
+  </body>
+</html>]]></config-value>
+      <config-value name="hasindex">1</config-value>
+      <config-value name="hassearch">1</config-value>
+      <config-value name="contentnumbers">0</config-value>
+      <config-value name="contentlazysync">0</config-value>
+      <config-value name="contentsingleclick">1</config-value>
+      <config-value name="contentautocollapse">0</config-value>
+      <config-value name="contentexpand">0</config-value>
+      <config-value name="contentindent">25</config-value>
+      <config-value name="defaulticons">0</config-value>
+      <config-value name="iconopenbook">toc_chapter_open.svg</config-value>
+      <config-value name="iconclosedbook">toc_chapter_closed.svg</config-value>
+      <config-value name="icontopic">toc_topic.svg</config-value>
+      <config-value name="toceditor">1</config-value>
+      <config-value name="tocsimpletext1" translate="true"><![CDATA[<p class="navbar"><b>Contents</b>
+<IF_INDEX_PAGE> | <a href="<%HREF_INDEX_PAGE%>">Index</a></IF_INDEX_PAGE>
+<IF_SEARCH_PAGE> | <a href="<%HREF_SEARCH_PAGE%>">Search</a></IF_SEARCH_PAGE>
+</p>
+<hr/>]]></config-value>
+      <config-value name="tocsimplefont1">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="tocsimplefont2">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="tocsimplefont3">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="tocsimplefont4">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="tocsimplefont5">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="tocsimplefont6">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="contenttemplate" translate="true"><![CDATA[<%DOCTYPE%><IF_VAR[OPT_NOSERVER=true]>
+<%IE_MOTW_NOSERVER%></IF_VAR[OPT_NOSERVER=true]>
+<html lang="<%XMLLANG%>">
+<head>
+<!-- HMSKIN FILETYPE: TOC -->
+<title><%TITLE%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="cache-control" content="no-cache" /><IF_VAR[OPT_WEBFONTS=true]> 
+<HMINCLUDE:_google_webfonts.html></IF_VAR[OPT_WEBFONTS=true]>   
+<style type="text/css">
+div#noscript {display: none;}
+</style> 
+<noscript>
+<style type="text/css">
+	div#noscript {
+		display: block;
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		border: 1rem solid grey;
+		background-color: #eaeaea;
+		}
+	h2#noscriptwarning {
+		text-align: center;
+		position: relative;
+		top: 35%;
+		color: #333333;
+	}
+</style> 
+</noscript>
+<script type="text/javascript">
+<HMINCLUDE:hm_tocprescript.js>
+</script>
+<script id="jqscript" type="text/javascript"></script>
+</head>
+<body id="pgBody">
+<div id="noscript"><h2 id="noscriptwarning"><%NOJS_WARNING%></h2></div>
+<div id="page_wrapper">
+<!-- HMSKIN BODY START -->
+<div id="hmpageheader" class="noscript">
+<p class="navbar noscript" id="tocnoscriptnavbar">Contents&nbsp;|&nbsp;<a href="<%HREF_INDEX_PAGE%>" target="_self">Index</a>&nbsp;|&nbsp;<a href="<%HREF_SEARCH_PAGE%>" target="_self">Search</a></p>
+</div>
+<div id="hmpagebody">
+<h1 class="toc_title desk_tablet" id="hm_pageheader"><%TITLE%></h1>
+<div id="hmtoctree" role="doc-toc"></div> 
+</div>
+<!-- HMSKIN BODY END -->
+</div>
+<script type="text/javascript">
+<HMINCLUDE:hm_tocscript.js>
+</script> 
+</body>
+</html>]]></config-value>
+      <config-value name="indexeditor">1</config-value>
+      <config-value name="indexsimpletext1" translate="true"><![CDATA[<p class="navbar"><a href="<%HREF_CONTENT_PAGE%>">Contents</a>
+<IF_INDEX_PAGE> | <b>Index</b></IF_INDEX_PAGE>
+<IF_SEARCH_PAGE> | <a href="<%HREF_SEARCH_PAGE%>">Search</a></IF_SEARCH_PAGE>
+</p>
+<hr/>]]></config-value>
+      <config-value name="indexsections">A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z</config-value>
+      <config-value name="indexsimplefont1">font-family:Arial,Helvetica; font-size:14pt; font-weight:bold; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="indexsimplefont2">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="indexsimplefont3">font-family:Arial,Helvetica; font-size:10pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="indexsimplefont4">font-family:Arial,Helvetica; font-size:9pt; font-weight:normal; font-style:normal; text-decoration:none; </config-value>
+      <config-value name="indextemplate" translate="true"><![CDATA[<%DOCTYPE%><IF_VAR[OPT_NOSERVER=true]>
+<%IE_MOTW_NOSERVER%></IF_VAR[OPT_NOSERVER=true]>
+<html lang="<%XMLLANG%>">
+<head>
+<!-- HMSKIN FILETYPE: INDEX -->
+<title><%TITLE%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="cache-control" content="no-cache" /><IF_VAR[OPT_WEBFONTS=true]> 
+<HMINCLUDE:_google_webfonts.html></IF_VAR[OPT_WEBFONTS=true]>
+<style type="text/css">
+div#noscript {display: none;}
+</style> 
+<noscript>
+<style type="text/css">
+	div#noscript {
+		display: block;
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		border: 1rem solid grey;
+		background-color: #eaeaea;
+		}
+	h2#noscriptwarning {
+		text-align: center;
+		position: relative;
+		top: 35%;
+		color: #333333;
+	}
+</style> 
+</noscript>
+<script type="text/javascript">
+<HMINCLUDE:hm_indexprescript.js>
+</script> 
+<script id="jqscript" type="text/javascript"></script> 
+</head>
+<body>
+<div id="noscript"><h2 id="noscriptwarning"><%NOJS_WARNING%></h2></div>
+<div id="page_wrapper">
+<!-- HMSKIN BODY START -->
+<div id="hmpageheader" class="noscript">
+<p class="navbar noscript" id="tocnoindexnavbar"><a href="<%HREF_CONTENT_PAGE%>" target="_self">Contents</a>&nbsp;|&nbsp;Index<IF_SEARCH_PAGE>&nbsp;|&nbsp;<a href="<%HREF_SEARCH_PAGE%>" target="_self">Search</a></IF_SEARCH_PAGE></p>
+</div>
+<div id="hmpagebody">
+<div id="popmessage"></div>
+<div id="idxheadwrapper">
+	<ul id="idxheader"></ul> 
+	<form id="idxsearch">
+	<table id="searchtable">
+	<tr>
+	<td id="btn"><input type="submit" value="<%IDXTEXT_SEARCHBUTTON%>" id="searchbtn" form="idxsearch" /></td>
+	<td id="arg"><input type="text" name="searcharg" id="searcharg" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /></td>
+	</tr>
+	<tr>
+	<td colspan="2"><input type="checkbox" name="searchtype" id="idxmode" value="<%IDXTEXT_SEARCHMODE%>" checked><label for="idxmode" id="idxmodelabel">&nbsp;<%IDXTEXT_SEARCHMODE%></label></td>
+	</tr> 
+	</table>
+	</form>
+</div>
+<div id="hmindextree">
+	<div id="idxgroups"></div> 
+</div>
+</div>
+<!-- HMSKIN BODY END -->
+</div>
+<script type="text/javascript">
+<HMINCLUDE:hm_indexscript.js>
+</script>  
+</body>
+</html>]]></config-value>
+      <config-value name="searcheditor">1</config-value>
+      <config-value name="searchsimpletext1" translate="true"><![CDATA[<p class="navbar"><a href="<%HREF_CONTENT_PAGE%>">Contents</a>
+<IF_INDEX_PAGE> | <a href="<%HREF_INDEX_PAGE%>">Index</a></IF_INDEX_PAGE>
+<IF_SEARCH_PAGE> | <b>Search</b></IF_SEARCH_PAGE>
+</p>
+<hr/>
+<p class="submit">Enter one or more keywords to search ('*' and '?' wildcards are supported):</p>]]></config-value>
+      <config-value name="searchtemplate" translate="true"><![CDATA[<%DOCTYPE%><IF_VAR[OPT_NOSERVER=true]>
+<%IE_MOTW_NOSERVER%></IF_VAR[OPT_NOSERVER=true]>
+<html lang="<%XMLLANG%>">
+<head>
+<!-- HMSKIN FILETYPE: SEARCH -->
+<title><%TITLE%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" id="pageviewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, minimal-ui" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="cache-control" content="no-cache" /><IF_VAR[OPT_WEBFONTS=true]> 
+<HMINCLUDE:_google_webfonts.html></IF_VAR[OPT_WEBFONTS=true]>
+<style type="text/css">
+div#noscript {display: none;}
+</style> 
+<noscript>
+<style type="text/css">
+	div#noscript {
+		display: block;
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		border: 1rem solid grey;
+		background-color: #eaeaea;
+		}
+	h2#noscriptwarning {
+		text-align: center;
+		position: relative;
+		top: 35%;
+		color: #333333;
+	}
+</style> 
+</noscript>
+<script type="text/javascript">
+<HMINCLUDE:hm_searchprescript.js>
+if (<%SEARCH_NOSCORE%>) document.write("<style>div.infoline{display:none;}</style>");
+</script>
+<script id="jqscript" type="text/javascript"></script> 
+</head>
+<body>
+<div id="noscript"><h2 id="noscriptwarning"><%NOJS_WARNING%></h2></div>
+<div id="page_wrapper">
+<noscript>
+<p class="navbar" id="tocnoindexnavbar"><a href="<%HREF_CONTENT_PAGE%>" target="_self"><%TABTEXT_TOCTAB%></a><IF_INDEX_PAGE>&nbsp;|&nbsp;<a href="<%HREF_INDEX_PAGE%>" target="_self"><%TABTEXT_INDEXTAB%></a></IF_INDEX_PAGE>&nbsp;|&nbsp;<%TABTEXT_SEARCHTAB%></p>
+</noscript>
+<div id="hmpagebody">
+<span id="searchscript">
+<p class="submit" id="searchinstructions"><%SEARCH_HOWTO%></p>
+  <!-- This is where the search form and results will appear -->
+  <%SEARCH_SCRIPT%>
+</span>
+<noscript>
+<p><%SEARCH_JSWARN%></p>
+</noscript>
+</div>
+<!-- HMSKIN BODY END -->
+</div>
+<script type="text/javascript">
+<HMINCLUDE:hm_searchscript.js>
+</script> 
+</body>
+</html>]]></config-value>
+      <config-value name="layoutthreeframe">0</config-value>
+      <config-value name="iframebackcolor">#FFFFFF</config-value>
+      <config-value name="iframenavwidth">250</config-value>
+      <config-value name="iframemargins">5</config-value>
+      <config-value name="iframeborderwidth">1</config-value>
+      <config-value name="iframebordercolor">#FFFFFF</config-value>
+      <config-value name="iframeheaderheight">60</config-value>
+      <config-value name="iframeheaderhtml" translate="true"><![CDATA[<p><%TITLE%></p>]]></config-value>
+      <config-value name="forcetocsync">0</config-value>
+      <config-value name="htmlpopup">3</config-value>
+      <config-group name="htmlpopupjavaoptions">
+        <config-value name="mouseover">0</config-value>
+        <config-value name="borderwidth">2</config-value>
+        <config-value name="padding">4</config-value>
+        <config-value name="bordercolor">#777777</config-value>
+        <config-value name="bgcolor">#9e9e9e</config-value>
+        <config-value name="shadow">1</config-value>
+        <config-value name="roundedborders">1</config-value>
+      </config-group>
+      <config-value name="synctimestamp">1</config-value>
+      <config-value name="syncarchivebit">1</config-value>
+      <config-value name="exportutf8bom">1</config-value>
+      <config-group name="SEARCHCONSTANTS">
+        <config-value name="STR_ANY_OF_TERMS" translate="true">any of the terms</config-value>
+        <config-value name="STR_DIDYOUMEAN" translate="true">Did you mean:</config-value>
+        <config-value name="STR_FORM_ALL_SEARCH_WORDS" translate="true">all words</config-value>
+        <config-value name="STR_FORM_ANY_SEARCH_WORDS" translate="true">any words</config-value>
+        <config-value name="STR_FORM_MATCH" translate="true">Match:</config-value>
+        <config-value name="STR_FORM_RESULTS_PER_PAGE" translate="true">Results per page:</config-value>
+        <config-value name="STR_FORM_SEARCHFOR" translate="true">Search for:</config-value>
+        <config-value name="STR_FORM_SUBMIT_BUTTON" translate="true">Submit</config-value>
+        <config-value name="STR_NO_QUERY" translate="true">No search query entered.</config-value>
+        <config-value name="STR_NO_RESULTS" translate="true">No results</config-value>
+        <config-value name="STR_PAGES_OF_RESULTS" translate="true">pages of results.</config-value>
+        <config-value name="STR_PHRASE_CONTAINS_COMMON_WORDS" translate="true">Your search query contained too many common words to return the entire set of results available. Please try again with a more specific query for better results.</config-value>
+        <config-value name="STR_POSSIBLY_GET_MORE_RESULTS" translate="true">You can possibly get more results searching for</config-value>
+        <config-value name="STR_RESULT" translate="true">result</config-value>
+        <config-value name="STR_RESULT_PAGES" translate="true">Result Pages:</config-value>
+        <config-value name="STR_RESULT_PAGES_NEXT" translate="true">Next</config-value>
+        <config-value name="STR_RESULT_PAGES_PREVIOUS" translate="true">Previous</config-value>
+        <config-value name="STR_RESULT_SCORE" translate="true">Score: </config-value>
+        <config-value name="STR_RESULT_TERMS_MATCHED" translate="true">Terms matched: </config-value>
+        <config-value name="STR_RESULT_URL" translate="true">URL:</config-value>
+        <config-value name="STR_RESULTS" translate="true">results</config-value>
+        <config-value name="STR_RESULTS_FOR" translate="true">Search results for:</config-value>
+        <config-value name="STR_SKIPPED_FOLLOWING_WORDS" translate="true">The following word(s) are in the skip word list and have been omitted from your search:</config-value>
+        <config-value name="STR_SKIPPED_PHRASE" translate="true">Note that you can not search for exact phrases beginning with a skipped word</config-value>
+        <config-value name="STR_SORTBY_DATE" translate="true">Sort by date</config-value>
+        <config-value name="STR_SORTBY_RELEVANCE" translate="true">Sort by relevance</config-value>
+        <config-value name="STR_SORTEDBY_DATE" translate="true">Sorted by date &amp;#9660;</config-value>
+        <config-value name="STR_SORTEDBY_RELEVANCE" translate="true">Sorted by relevance</config-value>
+        <config-value name="STR_SUMMARY_FOUND" translate="true">found.</config-value>
+        <config-value name="STR_SUMMARY_FOUND_CONTAINING_ALL_TERMS" translate="true">found containing all search terms.</config-value>
+        <config-value name="STR_SUMMARY_FOUND_CONTAINING_SOME_TERMS" translate="true">found containing some search terms.</config-value>
+        <config-value name="STR_SUMMARY_NO_RESULTS_FOUND" translate="true">No results found.</config-value>
+      </config-group>
+      <config-value name="searchstoplist" translate="true">and or the it is an on we us to of has be all for in as so are that can you at its by have with into</config-value>
+      <config-value name="searchskipwordsmin">3</config-value>
+      <config-value name="searchplatform">JSFILE</config-value>
+      <config-value name="searchjoinwordchars">.-_'</config-value>
+      <config-value name="searchexactphrase">0</config-value>
+      <config-value name="searchhighlight">1</config-value>
+      <config-value name="searchallowdate">1</config-value>
+      <config-value name="searchaccentinsensitive">0</config-value>
+      <config-value name="searchsinglecase">0</config-value>
+      <config-value name="fontsizeencoding">3</config-value>
+      <config-value name="fontsizebase">100</config-value>
+    </config-group>
+    <config-group name="chm">
+      <config-value name="outputfile">AjaxTest_HTML45_iF_TOC.chm</config-value>
+      <config-value name="skin">$(HMMYDOC)DemoHelp\VariablesTest.hmskin</config-value>
+      <config-value name="deletetemp">1</config-value>
+    </config-group>
+    <config-group name="user">
+      <config-group name="tim">
+        <config-group name="project">
+          <config-value name="lastexport">0</config-value>
+        </config-group>
+      </config-group>
+    </config-group>
+    <config-group name="premiumpack">
+      <config-value name="ppversion">5.22</config-value>
+      <config-value name="ppoutput">HTML</config-value>
+      <config-value name="ppclass">RESPONSIVEFLEX5</config-value>
+      <config-group name="colorgroups">
+        <config-value name="colorgroup1"></config-value>
+        <config-value name="colorgroup2"></config-value>
+        <config-value name="colorgroup3"></config-value>
+        <config-value name="colorgroup4"></config-value>
+        <config-value name="colorgroup5"></config-value>
+        <config-value name="colorgroup6"></config-value>
+        <config-value name="colorgroup7"></config-value>
+        <config-value name="colorgroup8"></config-value>
+        <config-value name="colorgroup9"></config-value>
+        <config-value name="colorgroup10"></config-value>
+      </config-group>
+    </config-group>
+    <config-group name="common">
+      <config-value name="variables_parse_baggage">1</config-value>
+    </config-group>
+    <variables>
+      <variable id="ATOC_BTNTIP_OFF" type="text" translate="true">No contents for this topic</variable>
+      <variable id="ATOC_BTNTIP_ON" type="text" translate="true">Contents of this topic</variable>
+      <variable id="ATOC_LINKLIMIT" type="text" translate="true">45</variable>
+      <variable id="ATOC_MINHEADERS" type="text" translate="true">3</variable>
+      <variable id="ATOC_SHOW" type="text" translate="true">true</variable>
+      <variable id="ATOC_TIP" type="html" translate="true">Jump to:&amp;nbsp;</variable>
+      <variable id="ATOC_TITLE" type="text" translate="true">Scroll</variable>
+      <variable id="ATOC_TOP" type="text" translate="true">Scroll to Top of Page</variable>
+      <variable id="ATOC_TOPTIP" type="text" translate="true">Jump to top of page</variable>
+      <variable id="BLINK_ANCHOR_TARGET" type="text" translate="true">true</variable>
+      <variable id="BREAD_LABEL" type="text" translate="true">Navigation:</variable>
+      <variable id="BREAD_NOTOCENTRY" type="text" translate="true">No TOC entry for this topic</variable>
+      <variable id="BREAD_NOTOPIC" type="text" translate="true">No topics above this level</variable>
+      <variable id="BTNTEXT_HEADERUPDOWN_TIP" type="text" translate="true">Show/hide page header</variable>
+      <variable id="BTNTEXT_HOME" type="text" translate="true">Top</variable>
+      <variable id="BTNTEXT_HOMENO" type="text" translate="true">No topics above this level</variable>
+      <variable id="BTNTEXT_HOMETIP" type="text" translate="true">Go to top topic</variable>
+      <variable id="BTNTEXT_LTABLE" type="text" translate="true">Tap to View Table</variable>
+      <variable id="BTNTEXT_MAINNAV" type="text" translate="true">Main Navigation</variable>
+      <variable id="BTNTEXT_NAV_HIDE" type="text" translate="true">Hide Navigation Pane</variable>
+      <variable id="BTNTEXT_NAV_SHOW" type="text" translate="true">Show Navigation Pane</variable>
+      <variable id="BTNTEXT_NEXT" type="text" translate="true">Next</variable>
+      <variable id="BTNTEXT_NEXTNO" type="text" translate="true">This is the last topic</variable>
+      <variable id="BTNTEXT_NEXTTIP" type="text" translate="true">Go to next topic</variable>
+      <variable id="BTNTEXT_PREV" type="text" translate="true">Prev</variable>
+      <variable id="BTNTEXT_PREVNO" type="text" translate="true">This is the first topic</variable>
+      <variable id="BTNTEXT_PREVTIP" type="text" translate="true">Go to previous topic</variable>
+      <variable id="BTNTEXT_SEARCH" type="text" translate="true">Search</variable>
+      <variable id="BTNTEXT_SEARCHOFF" type="text" translate="true">Close Search</variable>
+      <variable id="BTNTEXT_SEARCHOFFTIP" type="text" translate="true">Close search page</variable>
+      <variable id="BTNTEXT_TOCLEFTRIGHT_TIP" type="text" translate="true">Show/hide navigation pane</variable>
+      <variable id="BTNTEXT_TOPICNAV" type="text" translate="true">Topic Navigation</variable>
+      <variable id="BTNTEXT_TOPICS" type="text" translate="true">Topics</variable>
+      <variable id="CODESAMPLE_COPIED" type="text" translate="true">Copied!</variable>
+      <variable id="CODESAMPLE_NOCOPY" type="text" translate="true">Sorry, cannot copy to clipboard with this browser!</variable>
+      <variable id="CONTAINER_BGCOLOR" type="text" translate="true">#f5f5f5</variable>
+      <variable id="DESK_TOCAUTOHIDE" type="text" translate="true">true</variable>
+      <variable id="DROPBANNER_BGCOLOR" type="text" translate="true">rgba(35,40,45,0.9)</variable>
+      <variable id="DROPBANNER_COLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="DROPBANNER_HOVERCOLOR" type="text" translate="true">#ffa500</variable>
+      <variable id="DROPMENU_ACTIVECOLOR" type="text" translate="true">#0a375c</variable>
+      <variable id="DROPMENU_BGCOLOR" type="text" translate="true">rgba(18,101,171,0.9)</variable>
+      <variable id="DROPMENU_COLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="DROPMENU_DIVIDERCOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="DROPMENU_FONTSIZE_DESK" type="text" translate="true">0.832</variable>
+      <variable id="DROPMENU_FONTSIZE_PHONE" type="text" translate="true">0.850</variable>
+      <variable id="DROPMENU_FONTSIZE_TABLET" type="text" translate="true">1</variable>
+      <variable id="DROPMENU_HEIGHT" type="text" translate="true">1.8</variable>
+      <variable id="DROPMENU_HLCOLOR" type="text" translate="true">rgba(140,196,243,0.9)</variable>
+      <variable id="DROPMENU_ICONSIZE_DESK" type="text" translate="true">1</variable>
+      <variable id="DROPMENU_ICONSIZE_PHONE" type="text" translate="true">1.6</variable>
+      <variable id="DROPMENU_ICONSIZE_TABLET" type="text" translate="true">1.1</variable>
+      <variable id="DROPMENU_LABEL" type="text" translate="true">Links</variable>
+      <variable id="DROPMENU_TIP" type="text" translate="true">Links to other pages</variable>
+      <variable id="DROPMENU_TOPFONTSIZE_DESK" type="text" translate="true">0.832</variable>
+      <variable id="DROPMENU_TOPFONTSIZE_TABLET" type="text" translate="true">0.900</variable>
+      <variable id="DROPMENU_WIDE_FONTSIZE_DESK" type="text" translate="true">1</variable>
+      <variable id="EMBEDDED_DOMAINS" type="html" translate="true"></variable>
+      <variable id="EMBEDDED_HIDEHELP" type="text" translate="true">Hide Embedded Help</variable>
+      <variable id="EMBEDDED_MAXZOOM" type="text" translate="true">1024px</variable>
+      <variable id="EMBEDDED_SHOWHELP" type="text" translate="true">Show Embedded Help</variable>
+      <variable id="EMBEDDED_ZOOM_POSITION" type="text" translate="true">top: -1em; bottom: 0;</variable>
+      <variable id="EMBEDDED_ZOOMHIDE" type="text" translate="true">none</variable>
+      <variable id="ERROR_NOTFOUND" type="text" translate="true">ERROR Topic Not Found</variable>
+      <variable id="FAVICON_FILE" type="text" translate="true">favicon.ico</variable>
+      <variable id="FAVICON_PATH" type="text" translate="true"></variable>
+      <variable id="FB_BODY" type="text" translate="true">Dear Support Staff,</variable>
+      <variable id="FB_MAILURL" type="text" translate="true"></variable>
+      <variable id="FB_MAILURL_QUERY" type="text" translate="true"></variable>
+      <variable id="FB_NOJS" type="text" translate="true">Documentation%20Feedback</variable>
+      <variable id="FB_OLDENCODE" type="text" translate="true">false</variable>
+      <variable id="FB_REF" type="text" translate="true">Reference:</variable>
+      <variable id="FB_SIMPLEFB" type="text" translate="true">false</variable>
+      <variable id="FB_SUBJ" type="text" translate="true">Feedback on:</variable>
+      <variable id="FB_TO" type="html" translate="true">Support Staff &lt;support@ec-software.com&gt;</variable>
+      <variable id="FB_TONOJS" type="text" translate="true">support@ec-software.com</variable>
+      <variable id="FEATURE_FONT_DESK" type="text" translate="true">'Trebuchet MS', Helvetica, Arial, sans-serif</variable>
+      <variable id="FEATURE_FONT_PHONE" type="text" translate="true">'Trebuchet MS', Helvetica, Arial, sans-serif</variable>
+      <variable id="FEATURE_FONT_TABLET" type="text" translate="true">'Trebuchet MS', Helvetica, Arial, sans-serif</variable>
+      <variable id="FEATURE_FONTSIZE_DESK" type="text" translate="true">1.1</variable>
+      <variable id="FEATURE_FONTSIZE_PHONE" type="text" translate="true">0.8</variable>
+      <variable id="FEATURE_FONTSIZE_TABLET" type="text" translate="true">1.1</variable>
+      <variable id="FEATURE_TEXTPOS_DESK" type="text" translate="true">bottom</variable>
+      <variable id="FEATURE_TEXTPOS_PHONE" type="text" translate="true">bottom</variable>
+      <variable id="FEATURE_TEXTPOS_TABLET" type="text" translate="true">bottom</variable>
+      <variable id="FEATURE_TIP_DESK" type="text" translate="true">Click to show/hide description</variable>
+      <variable id="FIELD_FULLHELPWIN" type="text" translate="true">Click here to open this topic in a full help window</variable>
+      <variable id="FIELD_NOVIDBOX" type="text" translate="true">Video lightboxes are not supported in field-level mode. You need to open this page in the main help to view this video.</variable>
+      <variable id="FIELD_PLAINPOPS" type="text" translate="true">Click outside popup to close. Popups in field-level topics are plain text only.</variable>
+      <variable id="FONTCHANGE_MAX" type="text">20</variable>
+      <variable id="FONTFACTOR_PHONE" type="text" translate="true">1.0</variable>
+      <variable id="FONTFACTOR_TABLET" type="text" translate="true">1.0</variable>
+      <variable id="GA_CONSENTREDIRECT" type="html" translate="true"></variable>
+      <variable id="GA_EXITLABEL" type="text" translate="true">exit_link</variable>
+      <variable id="GA_FILELABEL" type="text" translate="true">file_link</variable>
+      <variable id="GA_GDPR_OPTMODE" type="text" translate="true">optout</variable>
+      <variable id="GA_INDEXCLICKLABEL" type="text" translate="true">index_click</variable>
+      <variable id="GA_INDEXLABEL" type="text" translate="true">index_term</variable>
+      <variable id="GA_SEARCHCLICKLABEL" type="text" translate="true">search_click</variable>
+      <variable id="GA_SEARCHLABEL" type="text" translate="true">search_term</variable>
+      <variable id="GA_TOCCLICKLABEL" type="text" translate="true">toc_click</variable>
+      <variable id="GA_TOCWEBLABEL" type="text" translate="true">toc_weblink</variable>
+      <variable id="GA_TOPICLINKLABEL" type="text" translate="true">topic_link</variable>
+      <variable id="GA_WEBLABEL" type="text" translate="true">web_link</variable>
+      <variable id="HEADERBOX_HEIGHT" type="text" translate="true">3</variable>
+      <variable id="HEADERBOX_TOP" type="text" translate="true">0.0</variable>
+      <variable id="HEADERLOGO" type="text" translate="true">logo-image-desk.png</variable>
+      <variable id="HEADERLOGO_DIMENSIONS" type="text" translate="true">height: 2.8rem; width: 7.84rem;</variable>
+      <variable id="HEADERLOGO_MOBILE" type="text" translate="true">logo-image-mobile.png</variable>
+      <variable id="HEADERLOGO_OFFSET_DESK" type="text" translate="true">0.2</variable>
+      <variable id="HEADERLOGO_OFFSET_TABLET" type="text" translate="true">0.2</variable>
+      <variable id="HEADERLOGO_PHONE_DIMENSIONS" type="text" translate="true">width: 2.4rem; height: 2.2rem;</variable>
+      <variable id="HEADERLOGO_POSITION_DESK" type="text" translate="true">left</variable>
+      <variable id="HEADERLOGO_POSITION_TABLET" type="text" translate="true">left</variable>
+      <variable id="HEADERLOGO_TABLET_DIMENSIONS" type="text" translate="true">height: 2.1rem; width: 2.5rem;</variable>
+      <variable id="HEADERLOGO_TITLE" type="text" translate="true">EC Software Website</variable>
+      <variable id="HEADERLOGO_URL" type="html" translate="true">https://www.helpandmanual.com/</variable>
+      <variable id="HELP_MAXWIDTH" type="text" translate="true">1024px</variable>
+      <variable id="HMBTEXT_ASPXFULLWINDOW" type="text" translate="true">Open in New Window</variable>
+      <variable id="HMBTEXT_ASPXFULLWINDOW_TIP" type="text" translate="true">Open this documentation in a new tab</variable>
+      <variable id="HMBTEXT_ASPXOPENMOBILE" type="text" translate="true">Open WebHelp</variable>
+      <variable id="HMBTEXT_HEADER" type="text" translate="true">Show/Hide Page Header</variable>
+      <variable id="HMBTEXT_HEADER_HIDE" type="text" translate="true">Hide Page Header</variable>
+      <variable id="HMBTEXT_HEADER_HIDETIP" type="text" translate="true">Hide the banner header at the top of the page</variable>
+      <variable id="HMBTEXT_HEADER_SHOW" type="text" translate="true">Show Page Header</variable>
+      <variable id="HMBTEXT_HEADER_SHOWTIP" type="text" translate="true">Show the banner header at the top of the page</variable>
+      <variable id="HMBTEXT_MAIL" type="text" translate="true">Send Mail Feedback</variable>
+      <variable id="HMBTEXT_MAILTIP" type="text" translate="true">Send an E-Mail with Feedback on This Topic</variable>
+      <variable id="HMBTEXT_PERMALINK" type="text" translate="true">Save Permalink URL</variable>
+      <variable id="HMBTEXT_PERMALINKTIP" type="text" translate="true">Copy URL of current topic</variable>
+      <variable id="HMBTEXT_PRINT" type="text" translate="true">Print Topic</variable>
+      <variable id="HMBTEXT_PRINTTIP" type="text" translate="true">Print Current Topic</variable>
+      <variable id="HMBTEXT_SHARE" type="text" translate="true">Share This Topic</variable>
+      <variable id="HMBTEXT_SHARETIP" type="text" translate="true">Share this topic on social networks</variable>
+      <variable id="HMBTEXT_SHARETITLE" type="text" translate="true">Share this Topic</variable>
+      <variable id="HMBTEXT_TEXTMINUS" type="text" translate="true">Smaller Text</variable>
+      <variable id="HMBTEXT_TEXTMINUSTIP" type="text" translate="true">Decrease Font Size</variable>
+      <variable id="HMBTEXT_TEXTPLUS" type="text" translate="true">Larger Text</variable>
+      <variable id="HMBTEXT_TEXTPLUSTIP" type="text" translate="true">Increase Font Size</variable>
+      <variable id="HMBTEXT_TITLE" type="text" translate="true">More</variable>
+      <variable id="HMBTEXT_TITLETIP" type="text" translate="true">Additional Functions Menu</variable>
+      <variable id="HMBTEXT_TOGGLES" type="text" translate="true">Show/Hide Expanding Text</variable>
+      <variable id="HMBTEXT_TOGGLES_HIDE" type="text" translate="true">Hide Expanding Text</variable>
+      <variable id="HMBTEXT_TOGGLES_SHOW" type="text" translate="true">Show Expanding Text</variable>
+      <variable id="HMBTEXT_TOGGLESTIP" type="text" translate="true">Show/hide Expanding Text Blocks on Page</variable>
+      <variable id="HMBTEXT_ZOOMIN" type="text" translate="true">Zoom Window In</variable>
+      <variable id="HMBTEXT_ZOOMOUT" type="text" translate="true">Zoom Window Out</variable>
+      <variable id="HMBTEXT_ZOOMTIP" type="text" translate="true">Zoom window</variable>
+      <variable id="HREF_HELPURL" type="html" translate="true">https://www.helpandmanual.com/help/</variable>
+      <variable id="IDXDROPDOWN_BGCOLOR" type="text" translate="true">#f5f5f5</variable>
+      <variable id="IDXDROPDOWN_BORDERCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="IDXDROPDOWN_TEXTCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="IDXGROUPTITLE_BGCOLOR" type="text" translate="true">#bfbfbf</variable>
+      <variable id="IDXGROUPTITLE_BORDERCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="IDXGROUPTITLE_TEXTCOLOR" type="text" translate="true">#000000</variable>
+      <variable id="IDXTEXT_CLICKTIP" type="text" translate="true">Select sub-keywords of this entry to see references to</variable>
+      <variable id="IDXTEXT_NOTFOUND" type="text" translate="true">Not found!</variable>
+      <variable id="IDXTEXT_SEARCHBUTTON" type="text" translate="true">Search:</variable>
+      <variable id="IDXTEXT_SEARCHMODE" type="text" translate="true">From start of term</variable>
+      <variable id="IE_MOTW_NOSERVER" type="html" translate="true">&lt;!-- saved from url=(0014)about:internet --&gt;</variable>
+      <variable id="IMGTOGGLE_CLOSEMODE" type="text" translate="true">clickinside</variable>
+      <variable id="INDEX_DESK_EXPAND" type="text" translate="true">false</variable>
+      <variable id="INDEX_TEXTCOLOR" type="text" translate="true">#000000</variable>
+      <variable id="MAIN_BG_COLOR" type="text" translate="true">#dedede</variable>
+      <variable id="MAX_TOPIC_CACHE" type="text" translate="true">300</variable>
+      <variable id="MOBHEADERBOX_HEIGHT" type="text" translate="true">3.000</variable>
+      <variable id="MOBILE_TOCAUTOHIDE" type="text" translate="true">true</variable>
+      <variable id="MOBTOOLBAR_HEIGHT" type="text" translate="true">2.100</variable>
+      <variable id="NAVHANDLES_BORDERCOLOR" type="text" translate="true">transparent</variable>
+      <variable id="NAVHANDLES_DESK_ICONCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="NAVHANDLES_DESK_ICONSIZE" type="text" translate="true">2.2</variable>
+      <variable id="NAVHANDLES_PHONE_BGCOLOR" type="text" translate="true">#000000</variable>
+      <variable id="NAVHANDLES_PHONE_ICONCOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="NAVHANDLES_PHONE_ICONSIZE" type="text" translate="true">1.8</variable>
+      <variable id="NAVHANDLES_TABLET_ICONCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="NAVHANDLES_TABLET_ICONSIZE" type="text" translate="true">2.5</variable>
+      <variable id="NAVLINKS_ACTIVECOLOR" type="text" translate="true">#000000</variable>
+      <variable id="NAVLINKS_BGHLCOLOR" type="text" translate="true">#f5f5f5</variable>
+      <variable id="NAVLINKS_COLOR" type="text" translate="true">#444444</variable>
+      <variable id="NAVPANE_BGCOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="NAVPANE_BORDERCOLOR_PHONE" type="text" translate="true">#888888</variable>
+      <variable id="NAVPANE_TOPOFFSET" type="text" translate="true">0.5</variable>
+      <variable id="NAVTABS_ACTIVECOLOR" type="text" translate="true">#ffa500</variable>
+      <variable id="NAVTABS_BGCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="NAVTABS_COLOR" type="text" translate="true">#eaeaea</variable>
+      <variable id="NAVTABS_FONTSIZE_DESK" type="text" translate="true">1</variable>
+      <variable id="NAVTABS_FONTSIZE_PHONE" type="text" translate="true">1.2</variable>
+      <variable id="NAVTABS_FONTSIZE_TABLET" type="text" translate="true">1.095</variable>
+      <variable id="NAVTABS_ICON" type="text" translate="true">true</variable>
+      <variable id="NAVTABS_ICONSHIFT_DESK" type="text" translate="true">-0.18</variable>
+      <variable id="NAVTABS_ICONSHIFT_PHONE" type="text" translate="true">-0.2</variable>
+      <variable id="NAVTABS_ICONSHIFT_TABLET" type="text" translate="true">-0.15</variable>
+      <variable id="NAVTABS_ICONSIZE_DESK" type="text" translate="true">1.1</variable>
+      <variable id="NAVTABS_ICONSIZE_PHONE" type="text" translate="true">1</variable>
+      <variable id="NAVTABS_ICONSIZE_TABLET" type="text" translate="true">1.1</variable>
+      <variable id="NAVTABS_LEFTOFFSET_DESK" type="text" translate="true">0.2</variable>
+      <variable id="NAVTABS_LEFTOFFSET_PHONE" type="text" translate="true">0.2</variable>
+      <variable id="NAVTABS_LEFTOFFSET_TABLET" type="text" translate="true">0.2</variable>
+      <variable id="NAVTABS_POS_DESK" type="text" translate="true">0.313</variable>
+      <variable id="NAVTABS_POS_PHONE" type="text" translate="true">0.000</variable>
+      <variable id="NAVTABS_POS_TABLET" type="text" translate="true">0.300</variable>
+      <variable id="NAVTABS_SPACING_DESK" type="text" translate="true">0</variable>
+      <variable id="NAVTABS_SPACING_PHONE" type="text" translate="true">0.3</variable>
+      <variable id="NAVTABS_SPACING_TABLET" type="text" translate="true">0</variable>
+      <variable id="NAVTABS_TEXT" type="text" translate="true">true</variable>
+      <variable id="NAVTABS_TOPOFFSET_DESK" type="text" translate="true">0.3</variable>
+      <variable id="NAVTABS_TOPOFFSET_PHONE" type="text" translate="true">0.3</variable>
+      <variable id="NAVTABS_TOPOFFSET_TABLET" type="text" translate="true">0.3</variable>
+      <variable id="NAVWIDTH" type="text" translate="true">20.000</variable>
+      <variable id="NAVWIDTH_MOBILE" type="text" translate="true">15.500</variable>
+      <variable id="NOJS_WARNING" type="text" translate="true">Please enable JavaScript to view this site.</variable>
+      <variable id="OPT_BREADOFF" type="text" translate="true">false</variable>
+      <variable id="OPT_EMBEDDED_BORDER" type="text" translate="true">true</variable>
+      <variable id="OPT_EMBEDDED_HELP" type="text" translate="true">false</variable>
+      <variable id="OPT_EMBEDDED_HIDEHEADER" type="text" translate="true">true</variable>
+      <variable id="OPT_FAVICON" type="text" translate="true">true</variable>
+      <variable id="OPT_FEATUREIMG" type="text" translate="true">true</variable>
+      <variable id="OPT_HDFORMAT" type="text" translate="true">false</variable>
+      <variable id="OPT_HEADERMENUOFF" type="text" translate="true">false</variable>
+      <variable id="OPT_KEYBOARDINFO" type="text" translate="true">false</variable>
+      <variable id="OPT_MAILFB" type="text" translate="true">true</variable>
+      <variable id="OPT_MINTOPICHEADER" type="text" translate="true">false</variable>
+      <variable id="OPT_MOBTOCAUTOCLOSE" type="text" translate="true">true</variable>
+      <variable id="OPT_NOHEADERCONTROLS" type="text" translate="true">false</variable>
+      <variable id="OPT_NOHEADERLOGO" type="text" translate="true">false</variable>
+      <variable id="OPT_NOPRINT" type="text" translate="true">false</variable>
+      <variable id="OPT_NOSERVER" type="text" translate="true">false</variable>
+      <variable id="OPT_PARENTHOME" type="text" translate="true">true</variable>
+      <variable id="OPT_SIDETABS" type="text" translate="true">false</variable>
+      <variable id="OPT_SOCIALSHARE" type="text" translate="true">true</variable>
+      <variable id="OPT_TOPICFOOTER" type="text" translate="true">true</variable>
+      <variable id="OPT_WEBFONTS" type="text" translate="true">true</variable>
+      <variable id="PAGE_BG_COLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="PAGE_BG_IMAGE" type="text" translate="true">spacer.gif</variable>
+      <variable id="PAGE_BG_POSITION" type="text" translate="true">left top</variable>
+      <variable id="PAGE_BG_REPEAT" type="text" translate="true">repeat</variable>
+      <variable id="PAGE_BORDERCOLOR" type="text" translate="true">#888888</variable>
+      <variable id="PAGEHEAD_BGCOLOR" type="text" translate="true">#1265ab</variable>
+      <variable id="PAGEHEAD_BGCOLOR_PHONE" type="text" translate="true">#1265ab</variable>
+      <variable id="PAGEHEAD_BGIMAGE" type="text" translate="true">spacer.gif</variable>
+      <variable id="PAGEHEAD_BGPOS" type="text" translate="true">left top</variable>
+      <variable id="PAGEHEAD_BGREPEAT" type="text" translate="true">no-repeat</variable>
+      <variable id="PAGEHEAD_BORDERCOLOR" type="text" translate="true">#1265ab</variable>
+      <variable id="PAGEHEAD_CLOSED" type="text" translate="true">false</variable>
+      <variable id="PAGETOP_BACKGROUND" type="text" translate="true">spacer.gif</variable>
+      <variable id="PERMA_BOOKMARK" type="text" translate="true">Bookmark Topic</variable>
+      <variable id="PERMA_DOBOOKMARK" type="text" translate="true">Right-click on permalink to copy, then press CTRL+D or CMD+D to bookmark.</variable>
+      <variable id="PERMA_NOSERVER" type="text" translate="true">This page is stored locally. You can only bookmark pages on a web server.</variable>
+      <variable id="PERMA_SELECT" type="text" translate="true">Copy Permalink</variable>
+      <variable id="PERMA_TIP" type="text" translate="true">Right-click on permalink to copy to clipboard</variable>
+      <variable id="PERMA_TITLE" type="text" translate="true">Topic Permalink</variable>
+      <variable id="PERMA_TITLEBAR" type="text" translate="true">Save Topic Permalink</variable>
+      <variable id="POPUP_TITLEBAR_BGCOLOR" type="text" translate="true">#1265ab</variable>
+      <variable id="POPUP_TITLEBAR_TEXTCOLOR" type="text" translate="true">#f5f5f5</variable>
+      <variable id="POSTLOAD_PAGEFUNC" type="html" translate="true"></variable>
+      <variable id="POSTLOAD_TOPICFUNC" type="html" translate="true"></variable>
+      <variable id="PP3SKIN_STYLE" type="text">flat</variable>
+      <variable id="PRINT_BREADCRUMBS" type="text" translate="true">false</variable>
+      <variable id="PROJECT_ID" type="text" translate="true">User-defined Project ID</variable>
+      <variable id="PROJECTTITLE_COLOR_DESK" type="text" translate="true">#444444</variable>
+      <variable id="PROJECTTITLE_COLOR_PHONE" type="text" translate="true">#ffffff</variable>
+      <variable id="PROJECTTITLE_COLOR_TABLET" type="text" translate="true">#444444</variable>
+      <variable id="PROJECTTITLE_FONT_DESK" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="PROJECTTITLE_FONT_PHONE" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="PROJECTTITLE_FONT_TABLET" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="PROJECTTITLE_SIZE_DESK" type="text" translate="true">1.000</variable>
+      <variable id="PROJECTTITLE_SIZE_PHONE" type="text" translate="true">1.100</variable>
+      <variable id="PROJECTTITLE_SIZE_TABLET" type="text" translate="true">1.100</variable>
+      <variable id="SEARCH_HOWTO" type="text" translate="true">Enter one or more keywords to search ('*' and '?' wildcards are supported):</variable>
+      <variable id="SEARCH_JSWARN" type="text" translate="true">You must have JavaScript enabled to search this documentation.</variable>
+      <variable id="SEARCH_NOSCORE" type="text" translate="true">true</variable>
+      <variable id="SEARCH_TEXTCOLOR" type="text" translate="true">#000000</variable>
+      <variable id="SEARCHHL_BGCOLOR" type="text" translate="true">#888888</variable>
+      <variable id="SEARCHHL_TEXTCOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="SEARCHHL_TOPIC_BGCOLOR" type="text" translate="true">#ffff66</variable>
+      <variable id="SEARCHHL_TOPIC_TEXTCOLOR" type="text" translate="true">#000000</variable>
+      <variable id="SHADOW_COLOR" type="text" translate="true">#959595</variable>
+      <variable id="SHARING_FACEBOOKTIP" type="text" translate="true">Share topic on Facebook</variable>
+      <variable id="SHARING_LINKEDINTIP" type="text" translate="true">Share topic on LinkedIn</variable>
+      <variable id="SHARING_MAILTIP" type="text" translate="true">Share topic by mail</variable>
+      <variable id="SHARING_TWITTERTIP" type="text" translate="true">Tweet link to topic</variable>
+      <variable id="TABTEXT_INDEXTAB" type="text" translate="true">Index</variable>
+      <variable id="TABTEXT_INDEXTABTIP" type="text" translate="true">Keyword Index</variable>
+      <variable id="TABTEXT_SEARCHTAB" type="text" translate="true">Search</variable>
+      <variable id="TABTEXT_SEARCHTABTIP" type="text" translate="true">Search Topics</variable>
+      <variable id="TABTEXT_TOCTAB" type="text" translate="true">Contents</variable>
+      <variable id="TABTEXT_TOCTAB_PHONE" type="text" translate="true">Contents</variable>
+      <variable id="TABTEXT_TOCTABTIP" type="text" translate="true">Table of Contents</variable>
+      <variable id="TITLEBAR_CONTENT" type="text" translate="true">topic</variable>
+      <variable id="TOC_AUTOCLOSE" type="text" translate="true">true</variable>
+      <variable id="TOC_AUTOOPENCHAPTER" type="text" translate="true">true</variable>
+      <variable id="TOC_BGCOLOR_ACTIVE" type="text" translate="true">#e5e5e5</variable>
+      <variable id="TOC_EXPANDMAIN" type="text" translate="true">false</variable>
+      <variable id="TOC_FULLBUILD" type="text" translate="true">false</variable>
+      <variable id="TOC_TEXTCOLOR" type="text" translate="true">#444444</variable>
+      <variable id="TOC_TEXTCOLOR_ACTIVE" type="text" translate="true">#000000</variable>
+      <variable id="TOC_WEBLINK_ICON" type="text" translate="true">internet.svg</variable>
+      <variable id="TOPIC_TOPMARGIN" type="text" translate="true">0.5</variable>
+      <variable id="TOPICBODY_BGCOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="TOPICBORDER" type="text" translate="true">true</variable>
+      <variable id="TOPICFOOTER_DIVIDERCOLOR" type="text" translate="true">#888888</variable>
+      <variable id="TOPICFOOTER_FONT" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="TOPICFOOTER_FONTCOLOR" type="text" translate="true">#888888</variable>
+      <variable id="TOPICFOOTER_FONTSIZE" type="text" translate="true">0.7</variable>
+      <variable id="TOPICFOOTER_FOOTERWIDTH" type="text" translate="true">95</variable>
+      <variable id="TOPICFOOTER_HOVERCOLOR" type="text" translate="true">#000000</variable>
+      <variable id="TOPICHEADER_BGCOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="TOPICNAVICON_SIZE_DESK" type="text" translate="true">1.1</variable>
+      <variable id="TOPICNAVICON_SIZE_TABLET" type="text" translate="true">1.5</variable>
+      <variable id="TOPICTITLE_COLOR" type="text" translate="true">#333333</variable>
+      <variable id="TOPICTITLE_FONTSIZE_DESK" type="text" translate="true">1.3</variable>
+      <variable id="TOPICTITLE_FONTSIZE_PHONE" type="text" translate="true">1.15</variable>
+      <variable id="TOPICTITLE_FONTSIZE_PRINT" type="text" translate="true">1.3</variable>
+      <variable id="TOPICTITLE_FONTSIZE_TABLET" type="text" translate="true">1.3</variable>
+      <variable id="TOPICTITLEFONT_DESK" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="TOPICTITLEFONT_PHONE" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="TOPICTITLEFONT_TABLET" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="TOPMENU_ACTIVECOLOR" type="text" translate="true">#ffffff</variable>
+      <variable id="TOPMENU_COLOR" type="text" translate="true">#f5f5f5</variable>
+      <variable id="UIFONT_DESKTOP" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="UIFONT_PHONE" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="UIFONT_TABLET" type="text" translate="true">'Open Sans', Helvetica, Arial, sans-serif</variable>
+      <variable id="ZOOMIMAGE" type="text">zoomimage.jpg</variable>
+    </variables>
+  </config>
+  <project-files>
+    <file href="Baggage/$HMSKINPREVIEW.png" build="" filetype="baggage" />
+    <file href="Baggage/CollapseTableOfContents_32x32.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/favicon.ico" build="ALL" filetype="baggage" />
+    <file href="Baggage/Help.html" build="ALL" filetype="baggage" />
+    <file href="Baggage/help.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/home.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/index.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/jquery.js" build="ALL" filetype="baggage" />
+    <file href="Baggage/LoadAllSubChapters_32x32.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/next.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/previous.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/printer.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/search.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/Search_32x32.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/shell.css" build="ALL" filetype="baggage" />
+    <file href="Baggage/shell.js" build="ALL" filetype="baggage" />
+    <file href="Baggage/ferber.css" build="ALL" filetype="baggage" />
+    <file href="Baggage/hyperlink.png" build="ALL" filetype="baggage" />
+    <file href="Baggage/ui-icons_ikaros-help.png" build="ALL" filetype="baggage" />
+  </project-files>
+</helpproject>

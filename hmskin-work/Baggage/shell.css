@@ -1,0 +1,1032 @@
+/**
+ * Shell.css - Modern Help Shell Styles
+ * CSS Grid layout with responsive design
+ */
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 0.8em;  /* Referenz: user.css:732 */
+    color: #333;
+    background: #dfeaf7;  /* Referenz: hellblau statt grau */
+}
+
+/* ============================================
+   SHELL GRID LAYOUT
+   ============================================ */
+#shell {
+    display: grid;
+    grid-template-areas:
+        "toolbar toolbar toolbar"
+        "sidebar splitter content-area";
+    grid-template-columns: var(--sidebar-width, 344px) 5px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+#sidebar {
+    grid-area: sidebar;
+    background: #f5fafe;  /* Referenz: ui-widget-header Hintergrund */
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ============================================
+   SPLITTER (draggable between sidebar & content)
+   ============================================ */
+#splitter {
+    grid-area: splitter;
+    width: 5px;
+    cursor: col-resize;
+    background: #dfeaf7;
+    transition: background-color 0.15s ease;
+    z-index: 10;
+}
+
+#splitter:hover,
+#splitter.dragging {
+    background: #b8d4f0;
+}
+
+body.splitter-dragging {
+    cursor: col-resize !important;
+    user-select: none;
+}
+
+body.splitter-dragging * {
+    cursor: col-resize !important;
+}
+
+/* ============================================
+   ACCORDION PANELS
+   ============================================ */
+.accordion-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Collapsed panel takes minimal space */
+.accordion-panel:not(.expanded) {
+    flex-shrink: 0;
+}
+
+/* Expanded panel takes remaining space */
+.accordion-panel.expanded {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Accordion Header */
+.accordion-header {
+    display: flex;
+    align-items: center;
+    padding: .5em .5em .5em .7em;  /* Referenz: jquery-ui.css:186 */
+    cursor: pointer;
+    background: #dfeaf7;  /* Inaktiver Tab-Header */
+    border: 1px solid transparent;
+    color: #454545;  /* Referenz: inactive header color */
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.accordion-header:hover {
+    background: #cbe1fc;  /* Referenz: jquery-ui.css:958 */
+}
+
+.accordion-panel.expanded > .accordion-header {
+    background: #c4ddfc;  /* Referenz: jquery-ui.css:986 */
+    border: 1px solid #cccccc;  /* Referenz: jquery-ui.css */
+    color: #000;
+}
+
+/* Toggle Arrow - jQuery UI sprite icons */
+.accordion-toggle {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.3em;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 5px;
+    background-image: url('../images/ui-icons_ikaros-help.png');
+    background-repeat: no-repeat;
+    background-position: -32px -16px;  /* triangle-1-e (rechts) */
+}
+
+.accordion-panel.expanded .accordion-toggle {
+    background-position: -65px -16px;  /* triangle-1-s (unten) */
+}
+
+/* Accordion Icons via CSS ::before (avoids case-sensitivity path issues) */
+.accordion-icon {
+    margin-right: 0.4rem;
+    line-height: 1;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.accordion-icon-help::before {
+    content: url('../images/help.png');
+}
+
+.accordion-icon-index::before {
+    content: url('../images/Index.png');  /* H&M exportiert mit Großbuchstabe */
+}
+
+.accordion-icon-search::before {
+    content: url('../images/Search.png');  /* H&M exportiert mit Großbuchstabe */
+}
+
+/* Accordion Label */
+.accordion-label {
+    font-size: 1.3em;  /* Referenz: user.css:648 */
+    font-weight: normal;
+}
+
+/* Accordion Content - CSS transition on flex-grow (GPU-beschleunigt) */
+.accordion-content {
+    display: flex;
+    flex: 0 0 0;  /* collapsed: kein Platz */
+    overflow: hidden;
+    flex-direction: column;
+    background: #ffffff;
+    transition: flex-grow 600ms ease;
+}
+
+.accordion-panel.expanded .accordion-content {
+    flex: 1 1 0;  /* expanded: füllt verfügbaren Platz */
+    border-left: 1px solid #aaaaaa;  /* Referenz: ui-widget-content */
+    border-bottom: 1px solid #aaaaaa;
+    border-top: 0;  /* Referenz: ui-accordion-content */
+    border-right: 0;  /* rechts übernimmt #sidebar */
+}
+
+/* ============================================
+   PANEL: HILFE (TOC)
+   ============================================ */
+#toc-container {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* TOC List Styles */
+.toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-item {
+    list-style: none;
+    margin: 1px 0;  /* Referenz: li margin */
+}
+
+.toc-link-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1px 0.75rem 1px 0.5rem;  /* Referenz: link padding 1px top/bottom */
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.toc-link-wrapper:hover {
+    /* Keine Hintergrundfarbe bei Hover - nur Unterstreichung */
+}
+
+.toc-item.active-item > .toc-link-wrapper {
+    background-color: #cbe1fc;
+    /* Kein Border/Outline - Referenz: user.css:669-675 nur einfarbig */
+}
+
+/* Toggle button removed - Icon ist jetzt klickbar */
+
+/* Items without children - same padding as with children (no toggle) */
+.toc-item:not(.has-children) > .toc-link-wrapper {
+    padding-left: 0.5rem;
+}
+
+/* TOC Icon - Sprites aus ui-icons_ikaros-help.png */
+.toc-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+    background-image: url('../images/ui-icons_ikaros-help.png');
+    background-repeat: no-repeat;
+}
+
+/* Gefüllter Kreis für Items mit Kindern (zugeklappt) - 1. Symbol */
+.toc-item.has-children > .toc-link-wrapper .toc-icon {
+    background-position: 0px -96px;
+    cursor: pointer;
+}
+
+/* Hohler Kreis für aufgeklappte Items - 2. Symbol (dickerer Rand) */
+.toc-item.has-children.expanded > .toc-link-wrapper .toc-icon {
+    background-position: -16px -96px;
+}
+
+/* Hohler Kreis für Leaf-Items - 3. Symbol (dünnerer Rand) */
+.toc-item:not(.has-children) > .toc-link-wrapper .toc-icon {
+    background-position: -32px -96px;
+}
+
+/* TOC Link */
+.toc-link {
+    color: #1E395B;  /* Referenz: user.css:594 */
+    text-decoration: none;
+    font-size: 0.72rem;  /* = 11.52px (Referenz) */
+    line-height: 1.3;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.toc-link:hover {
+    color: #1265ab;
+    text-decoration: underline;
+}
+
+.toc-link.active {
+    color: #1E395B;
+    font-weight: normal;
+}
+
+.toc-link.active:hover {
+    color: #1E395B;
+}
+
+/* Children container - hidden by default */
+.toc-children {
+    display: none;
+    padding-left: 1rem;
+}
+
+.toc-item.expanded > .toc-children {
+    display: block;
+}
+
+/* Indentation for nested levels */
+.toc-list .toc-list .toc-link-wrapper {
+    padding-left: calc(0.5rem + 0.5rem);
+}
+
+.toc-list .toc-list .toc-list .toc-link-wrapper {
+    padding-left: calc(0.5rem + 1rem);
+}
+
+.toc-list .toc-list .toc-list .toc-list .toc-link-wrapper {
+    padding-left: calc(0.5rem + 1.5rem);
+}
+
+/* ============================================
+   PANEL: SCHLAGWORTSUCHE (Keywords)
+   ============================================ */
+#keywords-filter {
+    padding: 0.3em 4px;
+    flex-shrink: 0;
+}
+
+/* Keywords Count */
+#keywords-count {
+    padding: 0 4px;
+    font-size: inherit;
+    color: #666;
+    flex-shrink: 0;
+}
+
+#keywords-input {
+    width: 100%;
+    padding: 3px 4px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 9pt;
+    font-family: inherit;
+    height: auto;
+}
+
+#keywords-container {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Keywords List Styles */
+.keywords-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 4px;
+    font-size: 0.72rem;  /* = 11.52px wie Referenz */
+    line-height: 1.3em;  /* Referenz: 14.976px bei 11.52px font-size */
+}
+
+.keywords-item {
+    list-style: none;
+    margin: 0;
+}
+
+.keywords-wrapper {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.15s ease;
+}
+
+.keywords-wrapper:hover {
+    background-color: #cbe1fc;  /* Referenz: gleiche Hover-Farbe */
+}
+
+/* Toggle hidden - sub-items immer sichtbar */
+.keywords-toggle {
+    display: none;
+}
+
+/* Keyword link */
+.keywords-link {
+    color: #1E395B;  /* Referenz: user.css:594 */
+    text-decoration: none;
+    font-size: inherit;
+    cursor: pointer;
+    line-height: inherit;
+}
+
+.keywords-link:hover {
+    text-decoration: underline;
+}
+
+/* Non-clickable keyword text */
+.keywords-text {
+    color: #1E395B;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Multiple links indicator */
+.keywords-more {
+    color: #888;
+    font-size: inherit;
+    margin-left: 0.5em;
+}
+
+/* Children container - immer sichtbar */
+.keywords-children {
+    display: block;
+    padding-left: 4px;  /* Referenz: nestedUl paddingLeft */
+    margin-left: 15px;  /* Referenz: nestedUl marginLeft */
+}
+
+/* ============================================
+   PANEL: VOLLTEXTSUCHE (Search)
+   ============================================ */
+#search-form {
+    padding: 0.3em 0.5em;  /* Referenz: kompakt */
+    display: flex;
+    gap: 0.3em;
+    flex-shrink: 0;
+}
+
+#search-input {
+    flex: 1;
+    padding: 3px 4px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 9pt;
+    font-family: inherit;
+    height: auto;
+}
+
+.search-toolbar-btn {
+    padding: 2px;
+    background: #e8f0f7;
+    color: #333;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sprite-Icons für Such-Toolbar */
+.search-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/ui-icons_ikaros-help.png');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.icon-search     { background-position: -160px -112px; }
+.icon-help       { background-position: -48px -144px; }
+.icon-lightbulb  { background-position: -128px -128px; }
+.icon-seek-prev  { background-position: -144px -192px; }
+.icon-seek-next  { background-position: -112px -192px; }
+
+#search-button:hover,
+.search-toolbar-btn:hover {
+    background: #cbe1fc;
+}
+
+.search-toolbar-btn.active {
+    background: #c4ddfc;
+    border-color: #88b0d8;
+}
+
+/* Suchhilfe-Text */
+#search-help-text {
+    padding: 4px 0.5em;
+    font-size: 0.9em;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+#search-help-text p {
+    margin: 0.2em 0;
+}
+
+/* Hervorhebung im Content */
+mark.search-highlight {
+    background-color: #ff0;
+    color: #000;
+    padding: 0;
+}
+
+mark.search-highlight.current-highlight {
+    background-color: #ff9632;
+}
+
+#search-results {
+    padding: 0.3em 0.5em;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Search hints/errors */
+.search-hint,
+.search-error,
+.search-no-results {
+    color: #666;
+    font-size: inherit;
+    font-style: italic;
+}
+
+.search-error {
+    color: #c00;
+}
+
+/* Search result count */
+.search-count {
+    font-size: inherit;
+    color: #666;
+    font-style: italic;
+    margin: 0.3em 0;
+    line-height: 1;
+}
+
+/* Search results list */
+.search-results-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-result-item {
+    margin: 0.15em 0;
+}
+
+.search-result-link {
+    text-decoration: none;
+    color: #1E395B;  /* Referenz: user.css:594 */
+    font-size: inherit;
+    line-height: 1;
+}
+
+.search-result-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   CONTENT AREA (wrapper for toolbar + breadcrumb + content)
+   ============================================ */
+#content-area {
+    grid-area: content-area;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #aaa;  /* Referenz: Content-Panel Border */
+    border-radius: 6px;      /* Referenz: ui-corner-all */
+}
+
+/* ============================================
+   TOOLBAR
+   ============================================ */
+#toolbar {
+    grid-area: toolbar;
+    display: flex;
+    gap: 0;
+    padding: 0.2rem;
+    margin-bottom: 5px;
+    background: linear-gradient(to bottom, #fff, #dfeaf7);
+    border-bottom: 1px solid #aaa;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.75rem;
+}
+
+.toolbar-group:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 0.25rem;
+    border-right: 1px solid #c0c0c0;
+    padding-right: 0.75rem;
+}
+
+.toolbar-group:last-child .toolbar-buttons {
+    border-right: none;
+    padding-right: 0;
+}
+
+.toolbar-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 70px;
+    font-size: inherit;
+}
+
+.toolbar-btn:hover:not(:disabled) {
+    background: #e8f0f7;
+    border-color: #b8d4f0;
+}
+
+.toolbar-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.toolbar-btn img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.25rem;
+}
+
+.toolbar-btn span {
+    font-size: 0.8em;
+    font-family: "Segoe UI", Arial, sans-serif;  /* Referenz: Segoe UI statt Arial */
+    color: #454545;  /* Referenz: #454545 */
+    text-align: center;
+    line-height: 1.2;
+}
+
+.toolbar-label {
+    font-size: 0.8em;
+    color: #738399;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ============================================
+   TOPIC BAR (Wrapper für Breadcrumb, wie Referenz c1topicBar)
+   ============================================ */
+#topic-bar {
+    padding: 5px 20px 0;
+    flex-shrink: 0;
+}
+
+#topic-bar:has(#breadcrumb:empty) {
+    display: none;
+}
+
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+#breadcrumb {
+    padding: 2px 0;
+    border-bottom: 1px solid;
+    font-size: 0.9em;
+    /* color erbt #333 von body → border-bottom wird dunkelgrau */
+}
+
+#breadcrumb:empty {
+    display: none;
+}
+
+#breadcrumb a {
+    color: #1265ab;
+    text-decoration: none;
+}
+
+#breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+#breadcrumb .separator {
+    color: #666;
+    margin: 0 0.5rem;
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+#content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 2rem 1.5rem;
+    position: relative;
+}
+
+#content.loading::before {
+    content: 'Laden...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: #666;
+}
+
+#content.loading > * {
+    opacity: 0.3;
+}
+
+/* Error message styling */
+.error-message {
+    padding: 2rem;
+    background: #fff3f3;
+    border: 1px solid #ffccc7;
+    border-radius: 4px;
+    color: #a8071a;
+}
+
+.error-message h2 {
+    margin-top: 0;
+    color: #cf1322;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 900px) {
+    #shell {
+        grid-template-columns: var(--sidebar-width, 240px) 5px 1fr;
+    }
+
+    .accordion-header {
+        padding: 0.4rem 0.5rem;
+    }
+
+    .accordion-label {
+        font-size: 0.85rem;
+    }
+
+    .toolbar-btn {
+        min-width: 60px;
+        padding: 0.35rem;
+    }
+
+    .toolbar-btn span {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #shell {
+        grid-template-areas:
+            "toolbar"
+            "content-area";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    #splitter {
+        display: none;
+    }
+
+    #sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 1000;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+        padding-top: 60px; /* Space for toolbar */
+    }
+
+    #sidebar.open {
+        display: flex;
+    }
+
+    /* Overlay when sidebar is open */
+    #sidebar.open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: -1;
+    }
+
+    #content {
+        padding: 1rem;
+    }
+
+    /* Hide toolbar labels on mobile */
+    .toolbar-label {
+        display: none;
+    }
+
+    .toolbar-btn span {
+        display: none;
+    }
+
+    .toolbar-btn {
+        min-width: auto;
+        padding: 0.5rem;
+    }
+
+    .toolbar-group {
+        padding-right: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #content {
+        padding: 0.75rem;
+    }
+
+    .toolbar-btn img {
+        width: 24px;
+        height: 24px;
+    }
+
+    #toolbar {
+        padding: 0.35rem;
+    }
+}
+
+/* ============================================
+   GOTO DIALOG
+   ============================================ */
+#goto-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+#goto-dialog {
+    position: fixed;
+    background: #fff;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+    min-width: 380px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt;
+}
+
+#goto-dialog-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: #eef3fa;
+}
+
+#goto-dialog-header img {
+    width: 20px;
+    height: 20px;
+}
+
+#goto-dialog-header span {
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+#goto-dialog-content {
+    border: 5px solid #e8e8e8;
+    border-top: none;
+}
+
+#goto-dialog-body {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 16px;
+}
+
+#goto-dialog-body label {
+    white-space: nowrap;
+}
+
+#goto-dialog-body input {
+    flex: 1;
+    padding: 3px 4px;
+    font-size: 9pt;
+    border: 1px solid #999;
+}
+
+#goto-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 16px 14px;
+}
+
+#goto-dialog-footer button {
+    min-width: 90px;
+    padding: 4px 16px;
+    font-size: 9pt;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #fff, #dfeaf7);
+    border: 1px solid #aaa;
+    border-radius: 3px;
+}
+
+#goto-dialog-footer button:hover {
+    background: linear-gradient(to bottom, #fff, #cde0f5);
+}
+
+#goto-dialog-footer button:active {
+    background: linear-gradient(to bottom, #dfeaf7, #fff);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    html, body {
+        height: auto;
+        overflow: visible;
+    }
+
+    #shell {
+        display: block;
+        height: auto;
+        overflow: visible;
+    }
+
+    #sidebar,
+    #splitter,
+    #toolbar,
+    #topic-bar {
+        display: none;
+    }
+
+    #content-area {
+        display: block;
+        height: auto;
+        overflow: visible;
+        border: none;
+        border-radius: 0;
+    }
+
+    #content {
+        display: block;
+        height: auto;
+        overflow: visible;
+        padding: 0;
+    }
+
+    /* H&M setzt page-break-inside:avoid auf fast alle Elemente per Inline-Style.
+       Das verhindert Umbrüche innerhalb großer Blöcke und erzwingt stattdessen
+       Umbrüche nach Überschriften. Hier zurücksetzen. */
+    #content [style*="page-break-inside"] {
+        page-break-inside: auto !important;
+    }
+
+    /* Remove link styling in subchapter titles for print */
+    .subchapter-title a {
+        color: #333333 !important;
+        text-decoration: none !important;
+    }
+}
+
+/* ============================================
+   RELATED TOPICS (Themen)
+   ============================================ */
+.related-topics-header hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1em 0 0.5em 0;
+}
+
+.related-topics p {
+    margin: 0.3em 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.related-topic-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.3em;
+}
+
+.related-topic-icon::before {
+    content: "\00BB";
+    color: #4a7ab5;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+a.topic-link {
+    text-decoration: none;
+    color: #1E395B;
+}
+
+a.topic-link:hover {
+    text-decoration: underline;
+    color: #2a5a8f;
+}
+
+/* ============================================
+   Subchapter Combined View
+   ============================================ */
+
+.subchapter {
+    margin-bottom: 2rem;
+}
+
+.subchapter-title {
+    color: #1E395B;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.subchapter-title .topic-id {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Link styling for clickable subchapter titles */
+.subchapter-title a {
+    color: inherit;           /* Erbt #1E395B von .subchapter-title */
+    text-decoration: none;    /* Keine Unterstreichung */
+}
+
+.subchapter-title a:hover {
+    text-decoration: underline;  /* Unterstreichung bei Hover */
+    cursor: pointer;
+}
+
+/* Separator between subchapters */
+.subchapter + hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 2px solid #ddd;
+}

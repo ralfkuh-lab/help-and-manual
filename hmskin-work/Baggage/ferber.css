@@ -1,0 +1,589 @@
+/* TRMS Combined Styles - Reference + H&M Class Mappings */
+/* Based on D2H_Handbuch_HTML.css and TRMS.css from referenz-output */
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;  /* Referenz: kein Body-Padding */
+  color: #333333;  /* Referenz: #333 statt #000 */
+  /* font-size: 11pt entfernt - wird von shell.css gesteuert (0.8em = 12.8px) */
+}
+
+/* H&M generiert font-size: 0.80rem (=12.8px) inline auf Spans.
+   Referenz nutzt 11pt (=14.67px) via CSS-Klasse auf <p>.
+   Override: Spans erben font-size vom Parent-Paragraph. */
+#content [style*="font-size: 0.80rem"] {
+  font-size: inherit !important;
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+H1 {
+  font-size: 20pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  font-weight: bold;
+  margin: 12pt 0pt 3pt;
+  text-indent: 0pt;
+}
+
+H2 {
+  font-size: 18pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  font-weight: bold;
+  margin: 18pt 0pt 3pt;
+  text-indent: 0pt;
+}
+
+H3 {
+  font-size: 16pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  font-weight: bold;
+  margin: 12pt 0pt 3pt;
+  text-indent: 0pt;
+}
+
+H4 {
+  font-size: 14pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  font-weight: bold;
+  margin: 12pt 0pt 3pt;
+  text-indent: 0pt;
+}
+
+H5 {
+  font-size: 12pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  font-weight: bold;
+  margin: 6pt 0pt 3pt;
+  text-indent: 0pt;
+}
+
+H6 {
+  font-size: 12pt;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  margin: 12pt 0pt 3pt;
+  text-indent: 0pt;
+}
+
+/* ============================================
+   NORMAL TEXT - Reference Classes
+   ============================================ */
+
+P.MsoNormal,
+p.p_Normal {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt;
+}
+
+span.MsoNormal {
+  color: windowtext;
+  text-decoration: none;
+}
+
+/* ============================================
+   LISTS - Reference Classes
+   ============================================ */
+
+P.Aufzhlung1,
+p.p_Aufzaehlung1 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 3pt 17.85pt;
+  text-indent: -17.85pt;
+}
+
+P.Aufzhlung2,
+p.p_Aufzaehlung2 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 3pt 35.15pt;
+  text-indent: -17.6pt;
+}
+
+P.Aufzhlung3,
+p.p_Aufzaehlung3 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 3pt 52.75pt;
+  text-indent: -17.6pt;
+}
+
+/* Listenpunkte: Quadrat statt runder Bullet (Referenz: image10_1.png) */
+span.f_Aufzaehlung1[style*="display:inline-block"] {
+  font-size: 0 !important;
+  line-height: 1;
+  width: 1.2rem !important;
+  margin-left: -1.2rem !important;
+}
+span.f_Aufzaehlung1[style*="display:inline-block"]::before {
+  content: "\25A0";
+  font-size: 7.5pt;
+  color: #000;
+  vertical-align: 15%;
+}
+p.p_Aufzaehlung1 {
+  padding-left: 1.2rem !important;
+}
+
+P.MsoListBullet,
+P.MsoListBullet2,
+P.MsoListBullet3,
+P.MsoListBullet4,
+P.MsoListBullet5 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+}
+
+P.MsoListBullet { margin: 3pt 0pt 3pt 17.85pt; text-indent: -17.85pt; }
+P.MsoListBullet2 { margin: 3pt 0pt 3pt 35.2pt; text-indent: -17.6pt; }
+P.MsoListBullet3 { margin: 3pt 0pt 3pt 46.3pt; text-indent: -18pt; }
+P.MsoListBullet4 { margin: 3pt 0pt 3pt 60.45pt; text-indent: -18pt; }
+P.MsoListBullet5 { margin: 3pt 0pt 3pt 74.6pt; text-indent: -18pt; }
+
+/* ============================================
+   HEADINGS - Custom Styles
+   ============================================ */
+
+P.berschriftEinfach,
+p.p_UeberschriftEinfach {
+  font-size: 11pt;
+  font-family: "Segoe UI Semibold", sans-serif;
+  page-break-after: avoid;
+  margin: 9pt 0pt 3pt;
+}
+
+span.f_UeberschriftEinfach {
+  font-size: 11pt;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+P.berschriftEinfachGross,
+p.p_UeberschriftEinfach_Gross {
+  font-size: 11pt;
+  border-top: medium none;
+  font-family: "Segoe UI Semibold", sans-serif;
+  border-right: medium none;
+  border-bottom: 1pt solid;  /* Referenz: windowtext 1pt solid auf Wrapper-Div */
+  page-break-after: avoid;
+  padding-bottom: 1pt;
+  padding-top: 0pt;
+  padding-left: 0pt;
+  border-left: medium none;
+  margin: 9pt 14.2pt 3pt 0pt;
+  padding-right: 0pt;
+}
+
+span.f_UeberschriftEinfach_Gross {
+  font-size: 11pt;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+/* ============================================
+   CODE STYLES
+   ============================================ */
+
+P.Quellcode,
+p.p_Quellcode {
+  font-size: 9pt;
+  border-top: medium none;
+  font-family: "Courier New";
+  border-right: medium none;
+  background: #e1eaf6;
+  border-bottom: medium none;
+  padding: 6pt;
+  border-left: medium none;
+  margin: 6pt 5.65pt;
+}
+
+P.QuellcodeKonsole,
+p.p_Quellcode_Konsole {
+  font-size: 9pt;
+  border-top: medium none;
+  font-family: "Courier New";
+  border-right: medium none;
+  background: #d9d9d9;
+  border-bottom: medium none;
+  padding: 6pt;
+  border-left: medium none;
+  margin: 3pt 5.65pt;
+}
+
+span.f_Quellcode,
+span.f_Quellcode_Konsole {
+  font-size: 9pt;
+  font-family: "Courier New";
+}
+
+P.QuellcodeXml,
+p.p_Quellcode_Xml {
+  font-size: 9pt;
+  font-family: "Courier New";
+  background: #edf7f9;
+  margin: 3pt 5.65pt;
+  padding: 6pt;
+}
+
+P.QuellcodeJavaScript,
+p.p_Quellcode_JavaScript {
+  font-size: 9pt;
+  font-family: "Courier New";
+  background: #eaf1dd;
+  margin: 3pt 5.65pt;
+  padding: 6pt;
+}
+
+P.QuellcodeEingerckt,
+p.p_Quellcode_Eingerueckt {
+  font-size: 9pt;
+  font-family: "Courier New";
+  background: #e1eaf6;
+  margin: 6pt 5.65pt 6pt 22.7pt;
+  padding: 6pt;
+}
+
+P.QuellcodeOhneFarbe,
+p.p_Quellcode_OhneFarbe {
+  font-size: 9pt;
+  font-family: "Courier New";
+  margin: 3pt 5.65pt;
+}
+
+PRE {
+  font-size: 11pt;
+  font-family: Consolas;
+  margin: 0pt;
+}
+
+/* ============================================
+   INDENTATION STYLES
+   ============================================ */
+
+P.Einzug1,
+p.p_Einzug1 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 3pt 17.6pt;
+}
+
+P.Einzug2,
+p.p_Einzug2 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 3pt 35.45pt;
+}
+
+P.Einzug3,
+p.p_Einzug3 {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 3pt 53pt;
+}
+
+/* ============================================
+   MESSAGE STYLES
+   ============================================ */
+
+P.Meldungstext,
+p.p_Meldungstext {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  background: #d9d9d9;
+  margin: 3pt 56.7pt 3pt 35.45pt;
+}
+
+P.Meldungstext-Kopfzeile,
+p.p_Meldungstext_Kopfzeile {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  background: #d9d9d9;
+  font-weight: bold;
+  margin: 3pt 56.7pt 0pt 35.45pt;
+}
+
+/* TRMS.css additions */
+P.MeldungstextCxSpFirst {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  background: #d9d9d9;
+  margin: 3pt 56.7pt 0pt 35.45pt;
+}
+
+P.MeldungstextCxSpMiddle {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  background: #d9d9d9;
+  margin: 0pt 56.7pt 0pt 35.45pt;
+}
+
+P.MeldungstextCxSpLast {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  background: #d9d9d9;
+  margin: 0pt 56.7pt 3pt 35.45pt;
+}
+
+/* ============================================
+   EDITION MARKERS
+   ============================================ */
+
+SPAN.Editionshinweis,
+span.f_Editionshinweis {
+  border: #548dd4 1pt solid;
+  font-family: "Tahoma", sans-serif;
+  background: #daeef3;
+  font-weight: normal;
+  padding: 2pt;
+}
+
+SPAN.IKAROSbasic { color: blue; }
+SPAN.IKAROSplus { color: #993300; }
+SPAN.IKAROSenterprise { color: gray; }
+SPAN.IKAROSKMS { color: #7030a0; }
+SPAN.IKAROSFrance { color: #00b050; }
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+table {
+  border-collapse: collapse;
+}
+
+div[align] table {
+  text-align: left;
+}
+
+/* Tabellenbreite: responsive wie Referenz (min 50%, max 90%) */
+#content table {
+  width: auto !important;
+  min-width: 50%;
+  max-width: 90%;
+}
+
+#content table td,
+#content table th {
+  width: auto !important;
+}
+
+/* Tabellenkopf: Referenz = hellblau, schwarzer Text, linksbündig */
+/* !important nötig weil H&M Inline-Styles auf th generiert */
+th {
+  background-color: #E1EAF6 !important;
+  color: #000000 !important;
+  text-align: left !important;
+  text-shadow: 1px 1px 1px grey !important;
+}
+
+th p {
+  text-align: left !important;
+}
+
+th .f_Strong,
+th strong {
+  color: #000000 !important;
+}
+
+/* Tabellenzellen-Hintergrund: weiß (Standard), nur Header hellblau */
+td {
+  background-color: #FFFFFF !important;
+}
+
+/* Tabellen ohne <thead>: erste Zeile = Header (H&M generiert manchmal td statt th) */
+table:not(:has(thead)) > tbody > tr:first-child > td {
+  background-color: #E1EAF6 !important;
+  color: #000000 !important;
+  text-align: left !important;
+  text-shadow: 1px 1px 1px grey !important;
+}
+
+table:not(:has(thead)) > tbody > tr:first-child > td .f_Strong,
+table:not(:has(thead)) > tbody > tr:first-child > td strong {
+  color: #000000 !important;
+}
+
+P.Tabelleninhalt,
+p.p_Tabelleninhalt {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 3pt 0pt 0pt;
+}
+
+P.StandardBigTables {
+  font-size: 7pt;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0pt 0pt 0pt 5.65pt;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+a,
+a.weblink,
+SPAN.MsoHyperlink {
+  text-decoration: underline;
+  color: blue;
+}
+
+SPAN.MsoHyperlinkFollowed {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* ============================================
+   CAPTIONS AND DESCRIPTIONS
+   ============================================ */
+
+P.MsoCaption,
+p.p_caption {
+  font-size: 9pt;
+  font-family: "Segoe UI", sans-serif;
+  font-style: italic;
+  margin: 0pt 0pt 9pt 35.45pt;
+}
+
+P.Beschr-Abb {
+  font-size: 9pt;
+  font-family: "Segoe UI", sans-serif;
+  font-style: italic;
+  margin: 0pt 0pt 9pt 36.85pt;
+}
+
+P.Abbildung {
+  font-size: 11pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  margin: 6pt 0pt 0pt 73.7pt;
+  text-indent: -36.85pt;
+}
+
+/* ============================================
+   TITLE STYLES
+   ============================================ */
+
+P.MsoTitle {
+  font-size: 28pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  margin: 6pt 0pt;
+  text-indent: 0pt;
+}
+
+P.MsoSubtitle {
+  font-size: 20pt;
+  font-family: "Segoe UI", sans-serif;
+  page-break-after: avoid;
+  margin: 12pt 0pt 20pt -28.35pt;
+}
+
+P.Inhalt {
+  font-size: 18pt;
+  font-family: "Eras LT Demi";
+  page-break-after: avoid;
+  margin: 12pt 0pt;
+}
+
+/* ============================================
+   MISC STYLES
+   ============================================ */
+
+hr {
+  color: #000000;
+}
+
+SPAN.Systemzitat {
+  font-family: "Courier New";
+}
+
+SPAN.QuellcodeKommentar {
+  text-decoration: none;
+  font-family: "Tahoma", sans-serif;
+  font-weight: normal;
+  color: #0070c0;
+  font-style: normal;
+  letter-spacing: 0.5pt;
+}
+
+/* ============================================
+   INLINE FORMATTING - H&M Generated Classes
+   ============================================ */
+
+span.f_Strong {
+  font-weight: bold;
+}
+
+/* Referenz user.css:259 - text-shadow für alle Bold/Semibold-Elemente */
+*[style*="Segoe UI Semibold"],
+strong,
+span.f_Strong,
+.p_UeberschriftEinfach,
+span.f_UeberschriftEinfach {
+  text-shadow: 1px 1px 1px grey !important;
+}
+
+/* Hide trial version warning - can be removed in production */
+/*
+body > p:first-child {
+  display: none;
+}
+body > hr:first-of-type {
+  display: none;
+}
+*/
+
+/* ============================================
+   HYPERLINK COLORS AND BEHAVIORS
+   (ehemals custom_topic_styles.css)
+   ============================================ */
+
+/* Topic-Links: Icon statt Text, wie Referenz */
+a.topiclink {
+  font-size: 0px !important;
+  text-decoration: none !important;
+}
+a.topiclink:after {
+  content: " " url('../images/hyperlink.png');
+}
+a.topiclink:visited {color: blue;}
+a.topiclink:hover {color: blue; }
+a.weblink {color: blue; text-decoration: underline;}
+a.weblink:visited {color: blue;}
+a.weblink:hover {color: blue; }
+a.popuplink {color: blue; text-decoration: underline;}
+a.popuplink:visited {color: blue;}
+a.popuplink:hover {color: blue; }
+a.filelink {color: blue; text-decoration: underline;}
+a.filelink:visited {color: blue;}
+a.filelink:hover {color: blue; }
+a.scriptlink{color: blue; text-decoration: underline;}
+a.scriptlink:visited {color: blue;}
+a.scriptlink:hover {color: blue;}
+a.inline-toggle {color: blue; text-decoration: underline;}
+a.inline-toggle:visited {color: blue;}
+a.inline-toggle:hover {color: blue; }
+a.dropdown-toggle {color: blue; text-decoration: underline;}
+a.dropdown-toggle:visited {color: blue;}
+a.dropdown-toggle:hover {color: blue; }
+
+/* Special tables for info boxes */
+#callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+#callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+#callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+#callout-table a {text-decoration: none; color: blue;}
+#callout-table a:visited {text-decoration: none; color: blue;}
+#overview-table a {text-decoration: none; color: #000000;}
+#overview-table a:visited {text-decoration: none; color: #000000;}
+#callout-table a:hover, #overview-table a:hover {text-decoration: underline;}

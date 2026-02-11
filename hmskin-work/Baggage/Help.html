@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TRMS Hilfe</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/shell.css" />
+    <link rel="stylesheet" href="./css/ferber.css" />
+</head>
+<body>
+    <div id="shell">
+        <!-- Toolbar (volle Breite) -->
+        <div id="toolbar">
+            <div class="toolbar-group" id="toolbar-navigation">
+                <div class="toolbar-buttons">
+                    <button id="btn-prev" class="toolbar-btn" title="Vorheriges Kapitel" disabled>
+                        <img src="./images/previous.png" alt="" />
+                        <span>Vorheriges<br/>Kapitel</span>
+                    </button>
+                    <button id="btn-next" class="toolbar-btn" title="Nächstes Kapitel" disabled>
+                        <img src="./images/next.png" alt="" />
+                        <span>Nächstes<br/>Kapitel</span>
+                    </button>
+                    <button id="btn-home" class="toolbar-btn" title="Zur Startseite">
+                        <img src="./images/home.png" alt="" />
+                        <span>Zur<br/>Startseite</span>
+                    </button>
+                    <button id="btn-goto" class="toolbar-btn" title="Kapitel per ID öffnen">
+                        <img src="./images/Search_32x32.png" alt="" />
+                        <span>Kapitel per<br/>ID öffnen</span>
+                    </button>
+                </div>
+                <div class="toolbar-label">Navigation</div>
+            </div>
+
+            <div class="toolbar-group" id="toolbar-chapters">
+                <div class="toolbar-buttons">
+                    <button id="btn-collapse-toc" class="toolbar-btn" title="Baumansicht aufräumen">
+                        <img src="./images/CollapseTableOfContents_32x32.png" alt="" />
+                        <span>Baumansicht<br/>aufräumen</span>
+                    </button>
+                    <button id="btn-load-subchapters" class="toolbar-btn" title="Unterkapitel laden">
+                        <img src="./images/LoadAllSubChapters_32x32.png" alt="" />
+                        <span>Unterkapitel<br/>laden</span>
+                    </button>
+                </div>
+                <div class="toolbar-label">Kapitel</div>
+            </div>
+
+            <div class="toolbar-group" id="toolbar-print">
+                <div class="toolbar-buttons">
+                    <button id="btn-print" class="toolbar-btn" title="Drucken">
+                        <img src="./images/printer.png" alt="" />
+                        <span>Drucken</span>
+                    </button>
+                </div>
+                <div class="toolbar-label">Drucken</div>
+            </div>
+        </div>
+
+        <nav id="sidebar">
+            <!-- Accordion Panel: Hilfe -->
+            <div class="accordion-panel expanded" data-panel="toc">
+                <div class="accordion-header">
+                    <span class="accordion-toggle"></span>
+                    <span class="accordion-icon accordion-icon-help"></span>
+                    <span class="accordion-label">Hilfe</span>
+                </div>
+                <div class="accordion-content">
+                    <div id="toc-container">
+                        <!-- TOC wird von shell.js via hmLoadTOC eingefuegt -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Panel: Schlagwortsuche -->
+            <div class="accordion-panel" data-panel="keywords">
+                <div class="accordion-header">
+                    <span class="accordion-toggle"></span>
+                    <span class="accordion-icon accordion-icon-index"></span>
+                    <span class="accordion-label">Schlagwortsuche</span>
+                </div>
+                <div class="accordion-content">
+                    <div id="keywords-filter">
+                        <input type="text" id="keywords-input" placeholder="Schlagwort filtern..." />
+                    </div>
+                    <div id="keywords-count"></div>
+                    <div id="keywords-container">
+                        <!-- Keywords werden von shell.js via hmLoadIndex eingefuegt -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Panel: Volltextsuche -->
+            <div class="accordion-panel" data-panel="search">
+                <div class="accordion-header">
+                    <span class="accordion-toggle"></span>
+                    <span class="accordion-icon accordion-icon-search"></span>
+                    <span class="accordion-label">Volltextsuche</span>
+                </div>
+                <div class="accordion-content">
+                    <div id="search-form">
+                        <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
+                        <button id="search-button" class="search-toolbar-btn" title="Suchen">
+                            <span class="search-icon icon-search"></span>
+                        </button>
+                        <button id="search-help-button" class="search-toolbar-btn" title="Suchhilfe">
+                            <span class="search-icon icon-help"></span>
+                        </button>
+                        <button id="search-highlight-button" class="search-toolbar-btn" title="Treffer hervorheben">
+                            <span class="search-icon icon-lightbulb"></span>
+                        </button>
+                        <button id="search-prev-button" class="search-toolbar-btn" title="Vorheriger Treffer">
+                            <span class="search-icon icon-seek-prev"></span>
+                        </button>
+                        <button id="search-next-button" class="search-toolbar-btn" title="N&#228;chster Treffer">
+                            <span class="search-icon icon-seek-next"></span>
+                        </button>
+                    </div>
+                    <div id="search-help-text" style="display:none">
+                        <p>Standard-Suchmethode: Wort-exakt.</p>
+                        <p><strong>Tipp1</strong>: Setzen Sie ein Sternchen &quot;*&quot; vor und/oder hinter den Suchbegriff, um mehr zu finden.</p>
+                        <p><strong>Tipp2</strong>: Sie k&#246;nnen auch logische Operatoren verwenden: AND, OR, NOT.<br/>
+                        Beispiel: Gl&#228;ubiger OR Rechtsanwalt AND Kosten NOT Vertrag.</p>
+                        <p><strong>Hinweis1</strong>: Leerzeichen werden als AND behandelt.</p>
+                        <p><strong>Hinweis2</strong>: Einige Zeichen wie der Punkt werden bei der Suche ignoriert und daher automatisch aus dem Suchausdruck entfernt.</p>
+                    </div>
+                    <div id="search-results">
+                        <!-- Suchergebnisse werden hier angezeigt -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="splitter"></div>
+
+        <main id="content-area">
+            <!-- Topic Bar (Wrapper für Breadcrumb, wie Referenz c1topicBar) -->
+            <div id="topic-bar">
+                <div id="breadcrumb"></div>
+            </div>
+
+            <!-- Content -->
+            <div id="content">
+                <p>Laden...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- jQuery (von H&M exportiert) -->
+    <script src="./js/jquery.js"></script>
+    <!-- Suchdaten fuer Volltextsuche (von H&M exportiert) -->
+    <script src="./zoom_index.js"></script>
+    <script src="./zoom_pageinfo.js"></script>
+    <!-- Shell-Logik -->
+    <script src="./js/shell.js"></script>
+    <!-- TOC-Daten (ruft hmLoadTOC auf) -->
+    <script src="./js/hmcontent.js"></script>
+    <!-- Keyword-Index (ruft hmLoadIndex auf) -->
+    <script src="./js/hmkwindex.js"></script>
+    <!-- Context-ID Mapping (von H&M exportiert) -->
+    <script src="./js/hmcontextids.js"></script>
+</body>
+</html>
