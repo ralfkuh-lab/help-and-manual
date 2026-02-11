@@ -69,6 +69,8 @@ for root, dirs, files in os.walk(work_dir):
     for file_name in files:
         file_path = os.path.join(root, file_name)
         arc_name = os.path.relpath(file_path, work_dir)
+        # WICHTIG: Immer Forward-Slashes für ZIP-Pfade (cross-platform)
+        arc_name = arc_name.replace('\\', '/')
         if arc_name.startswith('Baggage/'):
             baggage_files.append((file_path, arc_name))
         else:
