@@ -1,6 +1,7 @@
 # Output-Verzeichnisse (werden bei jedem Export neu generiert)
 test-output/
 fertige-hilfe/
+en/
 
 # Extrahierte Dokumentation (zu groß für Git)
 docs/extracted/

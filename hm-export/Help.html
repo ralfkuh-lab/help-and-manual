@@ -15,48 +15,48 @@
         <div id="toolbar">
             <div class="toolbar-group" id="toolbar-navigation">
                 <div class="toolbar-buttons">
-                    <button id="btn-prev" class="toolbar-btn" title="Vorheriges Kapitel" disabled>
+                    <button id="btn-prev" class="toolbar-btn" title="Vorheriges Kapitel" data-i18n-title="tipPrev" disabled>
                         <img src="./images/previous.png" alt="" />
-                        <span>Vorheriges<br/>Kapitel</span>
+                        <span data-i18n="btnPrev">Vorheriges<br/>Kapitel</span>
                     </button>
-                    <button id="btn-next" class="toolbar-btn" title="Nächstes Kapitel" disabled>
+                    <button id="btn-next" class="toolbar-btn" title="Nächstes Kapitel" data-i18n-title="tipNext" disabled>
                         <img src="./images/next.png" alt="" />
-                        <span>Nächstes<br/>Kapitel</span>
+                        <span data-i18n="btnNext">Nächstes<br/>Kapitel</span>
                     </button>
-                    <button id="btn-home" class="toolbar-btn" title="Zur Startseite">
+                    <button id="btn-home" class="toolbar-btn" title="Zur Startseite" data-i18n-title="tipHome">
                         <img src="./images/home.png" alt="" />
-                        <span>Zur<br/>Startseite</span>
+                        <span data-i18n="btnHome">Zur<br/>Startseite</span>
                     </button>
-                    <button id="btn-goto" class="toolbar-btn" title="Kapitel per ID öffnen">
+                    <button id="btn-goto" class="toolbar-btn" title="Kapitel per ID öffnen" data-i18n-title="tipGoto">
                         <img src="./images/Search_32x32.png" alt="" />
-                        <span>Kapitel per<br/>ID öffnen</span>
+                        <span data-i18n="btnGoto">Kapitel per<br/>ID öffnen</span>
                     </button>
                 </div>
-                <div class="toolbar-label">Navigation</div>
+                <div class="toolbar-label" data-i18n="labelNavigation">Navigation</div>
             </div>
 
             <div class="toolbar-group" id="toolbar-chapters">
                 <div class="toolbar-buttons">
-                    <button id="btn-collapse-toc" class="toolbar-btn" title="Baumansicht aufräumen">
+                    <button id="btn-collapse-toc" class="toolbar-btn" title="Baumansicht aufräumen" data-i18n-title="tipCollapse">
                         <img src="./images/CollapseTableOfContents_32x32.png" alt="" />
-                        <span>Baumansicht<br/>aufräumen</span>
+                        <span data-i18n="btnCollapse">Baumansicht<br/>aufräumen</span>
                     </button>
-                    <button id="btn-load-subchapters" class="toolbar-btn" title="Unterkapitel laden">
+                    <button id="btn-load-subchapters" class="toolbar-btn" title="Unterkapitel laden" data-i18n-title="tipLoadSub">
                         <img src="./images/LoadAllSubChapters_32x32.png" alt="" />
-                        <span>Unterkapitel<br/>laden</span>
+                        <span data-i18n="btnLoadSub">Unterkapitel<br/>laden</span>
                     </button>
                 </div>
-                <div class="toolbar-label">Kapitel</div>
+                <div class="toolbar-label" data-i18n="labelChapters">Kapitel</div>
             </div>
 
             <div class="toolbar-group" id="toolbar-print">
                 <div class="toolbar-buttons">
-                    <button id="btn-print" class="toolbar-btn" title="Drucken">
+                    <button id="btn-print" class="toolbar-btn" title="Drucken" data-i18n-title="tipPrint">
                         <img src="./images/printer.png" alt="" />
-                        <span>Drucken</span>
+                        <span data-i18n="btnPrint">Drucken</span>
                     </button>
                 </div>
-                <div class="toolbar-label">Drucken</div>
+                <div class="toolbar-label" data-i18n="labelPrint">Drucken</div>
             </div>
         </div>
 
@@ -66,7 +66,7 @@
                 <div class="accordion-header">
                     <span class="accordion-toggle"></span>
                     <span class="accordion-icon accordion-icon-help"></span>
-                    <span class="accordion-label">Hilfe</span>
+                    <span class="accordion-label" data-i18n="tabHelp">Hilfe</span>
                 </div>
                 <div class="accordion-content">
                     <div id="toc-container">
@@ -80,11 +80,11 @@
                 <div class="accordion-header">
                     <span class="accordion-toggle"></span>
                     <span class="accordion-icon accordion-icon-index"></span>
-                    <span class="accordion-label">Schlagwortsuche</span>
+                    <span class="accordion-label" data-i18n="tabKeywords">Schlagwortsuche</span>
                 </div>
                 <div class="accordion-content">
                     <div id="keywords-filter">
-                        <input type="text" id="keywords-input" placeholder="Schlagwort filtern..." />
+                        <input type="text" id="keywords-input" placeholder="Schlagwort filtern..." data-i18n-placeholder="placeholderKeywords" />
                     </div>
                     <div id="keywords-count"></div>
                     <div id="keywords-container">
@@ -98,28 +98,28 @@
                 <div class="accordion-header">
                     <span class="accordion-toggle"></span>
                     <span class="accordion-icon accordion-icon-search"></span>
-                    <span class="accordion-label">Volltextsuche</span>
+                    <span class="accordion-label" data-i18n="tabFulltext">Volltextsuche</span>
                 </div>
                 <div class="accordion-content">
                     <div id="search-form">
-                        <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." />
-                        <button id="search-button" class="search-toolbar-btn" title="Suchen">
+                        <input type="text" id="search-input" placeholder="Suchbegriff eingeben..." data-i18n-placeholder="placeholderSearch" />
+                        <button id="search-button" class="search-toolbar-btn" title="Suchen" data-i18n-title="tipSearch">
                             <span class="search-icon icon-search"></span>
                         </button>
-                        <button id="search-help-button" class="search-toolbar-btn" title="Suchhilfe">
+                        <button id="search-help-button" class="search-toolbar-btn" title="Suchhilfe" data-i18n-title="tipSearchHelp">
                             <span class="search-icon icon-help"></span>
                         </button>
-                        <button id="search-highlight-button" class="search-toolbar-btn" title="Treffer hervorheben">
+                        <button id="search-highlight-button" class="search-toolbar-btn" title="Treffer hervorheben" data-i18n-title="tipHighlight">
                             <span class="search-icon icon-lightbulb"></span>
                         </button>
-                        <button id="search-prev-button" class="search-toolbar-btn" title="Vorheriger Treffer">
+                        <button id="search-prev-button" class="search-toolbar-btn" title="Vorheriger Treffer" data-i18n-title="tipPrevMatch">
                             <span class="search-icon icon-seek-prev"></span>
                         </button>
-                        <button id="search-next-button" class="search-toolbar-btn" title="N&#228;chster Treffer">
+                        <button id="search-next-button" class="search-toolbar-btn" title="N&#228;chster Treffer" data-i18n-title="tipNextMatch">
                             <span class="search-icon icon-seek-next"></span>
                         </button>
                     </div>
-                    <div id="search-help-text" style="display:none">
+                    <div id="search-help-text" data-i18n="searchHelpHtml" style="display:none">
                         <p>Standard-Suchmethode: Wort-exakt.</p>
                         <p><strong>Tipp1</strong>: Setzen Sie ein Sternchen &quot;*&quot; vor und/oder hinter den Suchbegriff, um mehr zu finden.</p>
                         <p><strong>Tipp2</strong>: Sie k&#246;nnen auch logische Operatoren verwenden: AND, OR, NOT.<br/>
@@ -144,7 +144,7 @@
 
             <!-- Content -->
             <div id="content">
-                <p>Laden...</p>
+                <p data-i18n="loading">Laden...</p>
             </div>
         </main>
     </div>

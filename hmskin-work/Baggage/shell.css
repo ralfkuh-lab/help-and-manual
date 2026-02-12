@@ -679,7 +679,7 @@ mark.search-highlight.current-highlight {
 }
 
 #content.loading::before {
-    content: 'Laden...';
+    content: var(--loading-text, 'Laden...');
     position: absolute;
     top: 50%;
     left: 50%;

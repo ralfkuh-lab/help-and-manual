@@ -6,6 +6,145 @@
 (function() {
     'use strict';
 
+    // ============================================
+    // i18n - Language detection & translations
+    // ============================================
+
+    var LANG = (function() {
+        var href = window.location.href.toUpperCase();
+        if (href.indexOf('/EN/') !== -1) return 'en';
+        return 'de';
+    })();
+
+    var STRINGS = {
+        // Page titles
+        pageTitle:            { de: 'TRMS Hilfe', en: 'TRMS Help' },
+        pageTitleSuffix:      { de: ' - TRMS Hilfe', en: ' - TRMS Help' },
+
+        // Button labels (HTML with <br/>)
+        btnPrev:              { de: 'Vorheriges<br/>Kapitel', en: 'Previous<br/>Chapter' },
+        btnNext:              { de: 'N\u00e4chstes<br/>Kapitel', en: 'Next<br/>Chapter' },
+        btnHome:              { de: 'Zur<br/>Startseite', en: 'Go to<br/>Home' },
+        btnGoto:              { de: 'Kapitel per<br/>ID \u00f6ffnen', en: 'Open Chapter<br/>by ID' },
+        btnCollapse:          { de: 'Baumansicht<br/>aufr\u00e4umen', en: 'Collapse<br/>Tree View' },
+        btnLoadSub:           { de: 'Unterkapitel<br/>laden', en: 'Load<br/>Subchapters' },
+        btnPrint:             { de: 'Drucken', en: 'Print' },
+
+        // Button tooltips
+        tipPrev:              { de: 'Vorheriges Kapitel', en: 'Previous Chapter' },
+        tipNext:              { de: 'N\u00e4chstes Kapitel', en: 'Next Chapter' },
+        tipHome:              { de: 'Zur Startseite', en: 'Go to Home Page' },
+        tipGoto:              { de: 'Kapitel per ID \u00f6ffnen', en: 'Open Chapter by ID' },
+        tipCollapse:          { de: 'Baumansicht aufr\u00e4umen', en: 'Collapse Tree View' },
+        tipLoadSub:           { de: 'Unterkapitel laden', en: 'Load Subchapters' },
+        tipPrint:             { de: 'Drucken', en: 'Print' },
+        tipSearch:            { de: 'Suchen', en: 'Search' },
+        tipSearchHelp:        { de: 'Suchhilfe', en: 'Search Help' },
+        tipHighlight:         { de: 'Treffer hervorheben', en: 'Highlight Matches' },
+        tipPrevMatch:         { de: 'Vorheriger Treffer', en: 'Previous Match' },
+        tipNextMatch:         { de: 'N\u00e4chster Treffer', en: 'Next Match' },
+
+        // Toolbar group labels
+        labelNavigation:      { de: 'Navigation', en: 'Navigation' },
+        labelChapters:        { de: 'Kapitel', en: 'Chapters' },
+        labelPrint:           { de: 'Drucken', en: 'Print' },
+
+        // Accordion tab labels
+        tabHelp:              { de: 'Hilfe', en: 'Help' },
+        tabKeywords:          { de: 'Schlagwortsuche', en: 'Keyword Search' },
+        tabFulltext:          { de: 'Volltextsuche', en: 'Full-Text Search' },
+
+        // Input placeholders
+        placeholderKeywords:  { de: 'Schlagwort filtern...', en: 'Filter keywords...' },
+        placeholderSearch:    { de: 'Suchbegriff eingeben...', en: 'Enter search term...' },
+
+        // Search help (full HTML block)
+        searchHelpHtml: {
+            de: '<p>Standard-Suchmethode: Wort-exakt.</p>' +
+                '<p><strong>Tipp1</strong>: Setzen Sie ein Sternchen &quot;*&quot; vor und/oder hinter den Suchbegriff, um mehr zu finden.</p>' +
+                '<p><strong>Tipp2</strong>: Sie k\u00f6nnen auch logische Operatoren verwenden: AND, OR, NOT.<br/>' +
+                'Beispiel: Gl\u00e4ubiger OR Rechtsanwalt AND Kosten NOT Vertrag.</p>' +
+                '<p><strong>Hinweis1</strong>: Leerzeichen werden als AND behandelt.</p>' +
+                '<p><strong>Hinweis2</strong>: Einige Zeichen wie der Punkt werden bei der Suche ignoriert und daher automatisch aus dem Suchausdruck entfernt.</p>',
+            en: '<p>Default search method: exact word match.</p>' +
+                '<p><strong>Tip 1</strong>: Use an asterisk &quot;*&quot; before and/or after the search term to find more results.</p>' +
+                '<p><strong>Tip 2</strong>: You can also use logical operators: AND, OR, NOT.<br/>' +
+                'Example: creditor OR lawyer AND costs NOT contract.</p>' +
+                '<p><strong>Note 1</strong>: Spaces are treated as AND.</p>' +
+                '<p><strong>Note 2</strong>: Some characters like the period are ignored during search and are automatically removed from the search expression.</p>'
+        },
+
+        // Search messages
+        searchHint:           { de: 'Bitte Suchbegriff eingeben.', en: 'Please enter a search term.' },
+        searchNoData:         { de: 'Suchdaten nicht verfuegbar.', en: 'Search data not available.' },
+        searchNoResults:      { de: 'Keine Ergebnisse fuer "{query}"', en: 'No results for "{query}"' },
+        searchCount:          { de: '{count} Kapitel gefunden.', en: '{count} chapters found.' },
+
+        // Goto dialog
+        gotoTitle:            { de: 'Kapitel per ID \u00f6ffnen', en: 'Open Chapter by ID' },
+        gotoLabel:            { de: 'ID des Kapitels:', en: 'Chapter ID:' },
+        gotoOk:               { de: '\u00d6ffnen', en: 'Open' },
+        gotoCancel:           { de: 'Abbrechen', en: 'Cancel' },
+
+        // Alert messages
+        alertNotFound:        { de: 'Topic "{id}" nicht gefunden.', en: 'Topic "{id}" not found.' },
+        alertNoChapter:       { de: 'Aktuelles Kapitel nicht gefunden.', en: 'Current chapter not found.' },
+        alertNoSubchapters:   { de: 'Keine Unterkapitel vorhanden.', en: 'No subchapters available.' },
+
+        // Loading/progress
+        loading:              { de: 'Laden...', en: 'Loading...' },
+        loadingChapters:      { de: 'Lade Kapitel...', en: 'Loading chapters...' },
+        loadingProgress:      { de: 'Lade Kapitel {current} von {total}...', en: 'Loading chapter {current} of {total}...' },
+
+        // Error messages
+        errorLoadTitle:       { de: 'Fehler beim Laden', en: 'Loading Error' },
+        errorLoadText:        { de: 'Die Seite "{url}" konnte nicht geladen werden.', en: 'The page "{url}" could not be loaded.' },
+
+        // Section headers
+        relatedTopics:        { de: 'Themen:', en: 'Topics:' },
+
+        // Breadcrumb separator
+        breadcrumbSep:        { de: '/', en: '/' }
+    };
+
+    /**
+     * Get translated string with optional placeholder substitution.
+     * Usage: t('key') or t('key', { count: 5, query: 'test' })
+     */
+    function t(key, vars) {
+        var entry = STRINGS[key];
+        if (!entry) return '[' + key + ']';
+        var str = entry[LANG] || entry['de'] || '';
+        if (vars) {
+            for (var k in vars) {
+                if (vars.hasOwnProperty(k)) {
+                    str = str.replace(new RegExp('\\{' + k + '\\}', 'g'), vars[k]);
+                }
+            }
+        }
+        return str;
+    }
+
+    /**
+     * Apply translations to all HTML elements with data-i18n attributes.
+     * Called once at initialization.
+     */
+    function applyTranslations() {
+        document.title = t('pageTitle');
+        document.documentElement.lang = LANG;
+        document.documentElement.style.setProperty('--loading-text', '"' + t('loading') + '"');
+
+        $('[data-i18n]').each(function() {
+            $(this).html(t($(this).data('i18n')));
+        });
+        $('[data-i18n-title]').each(function() {
+            $(this).attr('title', t($(this).data('i18n-title')));
+        });
+        $('[data-i18n-placeholder]').each(function() {
+            $(this).attr('placeholder', t($(this).data('i18n-placeholder')));
+        });
+    }
+
     // Global state
     let tocData = null;
     let keywordsData = null;
@@ -31,12 +170,26 @@
     function flattenToc(items) {
         items.forEach(function(item) {
             if (item.hf) {
-                flatToc.push(item);
+                // Level-Information mit aufnehmen
+                flatToc.push({
+                    hf: item.hf,
+                    cp: item.cp,
+                    lv: item.lv
+                });
             }
             if (item.items && item.items.length > 0) {
                 flattenToc(item.items);
             }
         });
+    }
+
+    /**
+     * Escape HTML special characters to prevent XSS
+     */
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
     }
 
     // ============================================
@@ -313,18 +466,18 @@
         var resultsContainer = $('#search-results');
 
         if (!query) {
-            resultsContainer.html('<p class="search-hint">Bitte Suchbegriff eingeben.</p>');
+            resultsContainer.html('<p class="search-hint">' + t('searchHint') + '</p>');
             return;
         }
 
         if (typeof pagedata === 'undefined') {
-            resultsContainer.html('<p class="search-error">Suchdaten nicht verfuegbar.</p>');
+            resultsContainer.html('<p class="search-error">' + t('searchNoData') + '</p>');
             return;
         }
 
         var terms = parseSearchQuery(query);
         if (terms.length === 0) {
-            resultsContainer.html('<p class="search-hint">Bitte Suchbegriff eingeben.</p>');
+            resultsContainer.html('<p class="search-hint">' + t('searchHint') + '</p>');
             return;
         }
 
@@ -450,10 +603,10 @@
 
         // Display results
         if (results.length === 0) {
-            resultsContainer.html('<p class="search-no-results">Keine Ergebnisse fuer "' + escapeHtml(query) + '"</p>');
+            resultsContainer.html('<p class="search-no-results">' + t('searchNoResults', { query: escapeHtml(query) }) + '</p>');
         } else {
             var html = '<ul class="search-results-list">';
-            html += '<li class="search-count">' + results.length + ' Kapitel gefunden.</li>';
+            html += '<li class="search-count">' + t('searchCount', { count: results.length }) + '</li>';
 
             results.forEach(function(result) {
                 html += '<li class="search-result-item">';
@@ -587,6 +740,7 @@
      * Initialize the shell after TOC data is loaded
      */
     function initShell() {
+        applyTranslations();
         buildTocTree(tocData, $('#toc-container'));
 
         // Initialize accordion
@@ -759,16 +913,16 @@
                 '<div id="goto-dialog">' +
                     '<div id="goto-dialog-header">' +
                         '<img src="./images/Search_32x32.png" alt="" />' +
-                        '<span>Kapitel per ID \u00f6ffnen</span>' +
+                        '<span>' + t('gotoTitle') + '</span>' +
                     '</div>' +
                     '<div id="goto-dialog-content">' +
                         '<div id="goto-dialog-body">' +
-                            '<label for="goto-input">ID des Kapitels:</label>' +
+                            '<label for="goto-input">' + t('gotoLabel') + '</label>' +
                             '<input type="text" id="goto-input" />' +
                         '</div>' +
                         '<div id="goto-dialog-footer">' +
-                            '<button id="goto-ok">\u00d6ffnen</button>' +
-                            '<button id="goto-cancel">Abbrechen</button>' +
+                            '<button id="goto-ok">' + t('gotoOk') + '</button>' +
+                            '<button id="goto-cancel">' + t('gotoCancel') + '</button>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
@@ -814,7 +968,7 @@
             gotoClose();
             loadTopic(found.hf);
         } else {
-            alert('Topic "' + id + '" nicht gefunden.');
+            alert(t('alertNotFound', { id: id }));
         }
     }
 
@@ -831,30 +985,136 @@
     }
 
     /**
-     * Load all subchapters of current topic into content area
+     * Load current topic and all subchapters sequentially into content area
+     * Stops when reaching a topic at the same or higher level as the start topic
      */
     function loadAllSubchapters() {
         if (!currentTopic) return;
 
-        // Find current topic in TOC data
-        const tocItem = findTocItem(tocData, currentTopic);
-        if (!tocItem || !tocItem.items || tocItem.items.length === 0) {
-            alert('Keine Unterkapitel vorhanden.');
+        // Find current topic in flatToc
+        const currentIndex = flatToc.findIndex(item => item.hf === currentTopic);
+        if (currentIndex === -1) {
+            alert(t('alertNoChapter'));
             return;
         }
 
-        // Collect all child topics
-        const childTopics = [];
-        collectChildTopics(tocItem.items, childTopics);
+        const startLevel = flatToc[currentIndex].lv;
 
-        if (childTopics.length === 0) {
-            alert('Keine Unterkapitel vorhanden.');
+        // Collect topics to load: current + all following with level > startLevel
+        const topicsToLoad = [];
+
+        // 1. Add current topic first
+        topicsToLoad.push(flatToc[currentIndex]);
+
+        // 2. Add following topics with higher level (deeper in hierarchy)
+        for (let i = currentIndex + 1; i < flatToc.length; i++) {
+            const topic = flatToc[i];
+
+            // Stop when we reach a topic at same or higher level
+            if (topic.lv <= startLevel) {
+                break;
+            }
+
+            topicsToLoad.push(topic);
+        }
+
+        if (topicsToLoad.length === 0) {
+            alert(t('alertNoSubchapters'));
             return;
         }
 
-        // Load all child topics and concatenate content
-        $('#content').addClass('loading');
-        loadMultipleTopics(childTopics);
+        // Show loading state
+        $('#content').addClass('loading').html('<p>' + t('loadingChapters') + '</p>');
+
+        // Load topics sequentially
+        loadTopicsSequentially(topicsToLoad, 0, []);
+    }
+
+    /**
+     * Recursively load topics one by one
+     * @param {Array} topics - Array of topic objects to load
+     * @param {number} index - Current index
+     * @param {Array} loadedContents - Accumulated content array
+     */
+    function loadTopicsSequentially(topics, index, loadedContents) {
+        // Base case: all topics loaded
+        if (index >= topics.length) {
+            displayCombinedContent(loadedContents);
+            return;
+        }
+
+        const topic = topics[index];
+
+        // Load current topic
+        loadSingleTopicSequential(topic.hf, topic.cp, function(error, content, topicId) {
+            if (error) {
+                console.error('Error loading topic:', topic.hf, error);
+                // Continue with next topic despite error
+                loadTopicsSequentially(topics, index + 1, loadedContents);
+                return;
+            }
+
+            // Add loaded content with title and topicId
+            loadedContents.push({
+                title: topic.cp,
+                topicId: topicId,
+                content: content,
+                url: topic.hf  // NEU: URL für Verlinkung speichern
+            });
+
+            // Update loading message
+            $('#content').html('<p>' + t('loadingProgress', { current: index + 1, total: topics.length }) + '</p>');
+
+            // Continue with next topic
+            loadTopicsSequentially(topics, index + 1, loadedContents);
+        });
+    }
+
+    /**
+     * Display combined content of all loaded topics
+     * @param {Array} contents - Array of {title, topicId, content, url} objects
+     */
+    function displayCombinedContent(contents) {
+        let combinedHtml = '';
+
+        contents.forEach(function(c, index) {
+            if (c) {
+                // Add separator before all topics except the first
+                if (index > 0) {
+                    combinedHtml += '<hr style="margin: 2rem 0; border: none; border-top: 2px solid #ddd;">';
+                }
+
+                combinedHtml += '<div class="subchapter">';
+
+                // Add title with TopicID
+                // First title (index 0) is not a link (user is already on that page)
+                // Subsequent titles are clickable links
+                if (index === 0) {
+                    // Static title (no link)
+                    combinedHtml += '<h2 class="subchapter-title">' +
+                                   escapeHtml(c.title) +
+                                   ' <span class="topic-id">(' + escapeHtml(c.topicId) + ')</span>' +
+                                   '</h2>';
+                } else {
+                    // Clickable title (with link)
+                    combinedHtml += '<h2 class="subchapter-title">' +
+                                   '<a href="' + escapeHtml(c.url) + '">' + escapeHtml(c.title) + '</a>' +
+                                   ' <span class="topic-id">(' + escapeHtml(c.topicId) + ')</span>' +
+                                   '</h2>';
+                }
+
+                // Add content (remove original h1/h2 if present to avoid duplication)
+                let cleanContent = c.content;
+                cleanContent = cleanContent.replace(/<h1[^>]*>.*?<\/h1>/i, '');
+                cleanContent = cleanContent.replace(/<h2[^>]*>.*?<\/h2>/i, '');
+
+                combinedHtml += cleanContent;
+                combinedHtml += '</div>';
+            }
+        });
+
+        $('#content').html(combinedHtml).removeClass('loading');
+        $('#content').scrollTop(0);
     }
 
     /**
@@ -873,79 +1133,55 @@
         return null;
     }
 
-    /**
-     * Collect all child topic URLs recursively
-     */
-    function collectChildTopics(items, result) {
-        items.forEach(function(item) {
-            if (item.hf) {
-                result.push({ url: item.hf, title: item.cp });
-            }
-            if (item.items && item.items.length > 0) {
-                collectChildTopics(item.items, result);
-            }
-        });
-    }
 
     /**
-     * Load multiple topics and concatenate their content
+     * Load a single topic via iframe and return its content via callback
+     * @param {string} url - Topic URL
+     * @param {string} title - Topic title
+     * @param {function} callback - Called with (error, htmlContent, topicId)
      */
-    function loadMultipleTopics(topics) {
-        let loadedCount = 0;
-        const contents = [];
+    function loadSingleTopicSequential(url, title, callback) {
+        const iframe = $('<iframe class="topic-loader-sequential">')
+            .attr('src', url)
+            .css({ position: 'absolute', left: '-9999px', width: '1px', height: '1px' })
+            .appendTo('body');
 
-        topics.forEach(function(topic, index) {
-            // Create hidden iframe for each topic
-            const iframe = $('<iframe class="topic-loader-multi">')
-                .attr('src', topic.url)
-                .css({ position: 'absolute', left: '-9999px', width: '1px', height: '1px' })
-                .appendTo('body');
+        let completed = false;
 
-            function onMessage(event) {
-                if (event.data && event.data.doc) {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(event.data.doc, 'text/html');
-                    const bodyContent = doc.body.innerHTML;
+        function onMessage(event) {
+            if (completed) return;
+            if (event.data && event.data.doc) {
+                completed = true;
+                window.removeEventListener('message', onMessage);
+                iframe.remove();
 
-                    contents[index] = {
-                        title: topic.title,
-                        content: bodyContent
-                    };
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(event.data.doc, 'text/html');
+                const bodyContent = doc.body.innerHTML;
 
-                    loadedCount++;
-                    window.removeEventListener('message', onMessage);
-                    iframe.remove();
+                // Extract TopicID from body data attribute or derive from URL
+                const topicId = doc.body.getAttribute('data-topic-id') ||
+                               url.replace('.html', '');
 
-                    if (loadedCount === topics.length) {
-                        // All topics loaded, combine content
-                        let combinedHtml = '';
-                        contents.forEach(function(c) {
-                            if (c) {
-                                combinedHtml += '<div class="subchapter">';
-                                combinedHtml += c.content;
-                                combinedHtml += '</div><hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">';
-                            }
-                        });
-                        $('#content').html(combinedHtml).removeClass('loading');
-                        $('#content').scrollTop(0);
-                    }
-                }
+                callback(null, bodyContent, topicId);
             }
+        }
 
-            window.addEventListener('message', onMessage);
+        window.addEventListener('message', onMessage);
 
-            iframe.on('load', function() {
-                iframe[0].contentWindow.postMessage('getContent', '*');
-            });
+        iframe.on('load', function() {
+            iframe[0].contentWindow.postMessage('getContent', '*');
         });
 
-        // Timeout fallback
+        // Timeout for error handling
         setTimeout(function() {
-            $('.topic-loader-multi').remove();
-            if (loadedCount < topics.length) {
-                $('#content').removeClass('loading');
+            if (!completed) {
+                completed = true;
+                window.removeEventListener('message', onMessage);
+                iframe.remove();
+                callback(new Error('Timeout loading ' + url), null, null);
             }
-        }, 10000);
+        }, 5000);
     }
 
     /**
@@ -1112,7 +1348,7 @@
                 // Update content
                 $('#content').html(bodyContent).removeClass('loading');
                 if (title) {
-                    document.title = title + ' - TRMS Hilfe';
+                    document.title = title + t('pageTitleSuffix');
                 }
 
                 // #11: Append "Themen:" section with child topic links
@@ -1121,7 +1357,7 @@
                     if (tocItem && tocItem.items && tocItem.items.length > 0) {
                         var themenHtml = '<div class="related-topics-header">';
                         themenHtml += '<hr />';
-                        themenHtml += '<p>Themen:</p>';
+                        themenHtml += '<p>' + t('relatedTopics') + '</p>';
                         themenHtml += '<div class="related-topics">';
                         tocItem.items.forEach(function(child) {
                             if (child.hf) {
@@ -1176,8 +1412,8 @@
                 iframe.remove();
                 $('#content').html(
                     '<div class="error-message">' +
-                    '<h2>Fehler beim Laden</h2>' +
-                    '<p>Die Seite "' + url + '" konnte nicht geladen werden.</p>' +
+                    '<h2>' + t('errorLoadTitle') + '</h2>' +
+                    '<p>' + t('errorLoadText', { url: url }) + '</p>' +
                     '</div>'
                 ).removeClass('loading');
             }
@@ -1268,7 +1504,7 @@
 
         const html = parentPath.map(function(item) {
             return '<a href="#' + item.url + '" data-topic="' + item.url + '">' + escapeHtml(item.title) + '</a>';
-        }).join('<span class="separator">/</span>');
+        }).join('<span class="separator">' + t('breadcrumbSep') + '</span>');
 
         $('#breadcrumb').html(html);
 
